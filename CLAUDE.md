@@ -57,6 +57,17 @@ Direções visuais por perfil:
 
 Tom de copy: maduro, direto, consultivo; frases curtas em contraste ("Ter embarcação é uma coisa. Tornar o uso simples é outra."); sem clichês ("imperdível", "luxo sem igual") e sem promessas ("valorização garantida").
 
+## Auditoria EC 3.1 (assets/js/section-audit.js) — vale para projetos MCMV
+Ativa quando strategy.method / templateMeta / projectName contém "mcmv". Antes de entregar um projeto, deixar a Auditoria sem itens:
+- CTAs obrigatórios: hero `primaryCta` = "QUERO MEU APARTAMENTO" (ou "QUERO ME CANDIDATAR"); payment `cta` = "QUERO MINHA PROPOSTA"; form-sender `buttonText` = "GARANTIR MEU CADASTRO"; smart-plant `cardButtonText` = "QUERO ESCOLHER MINHA PLANTA".
+- Termos proibidos em qualquer texto: aprovado, garantido/garantida, crédito liberado, sem consulta SPC/Serasa, sem burocracia, grátis, última chance, só hoje, "do governo".
+- Títulos, eyebrows, badges e CTAs não podem ter linguagem fraca ("consulte", "conforme tabela", "talvez", "sujeito à análise"). A ressalva vai na nota ou no FAQ. Títulos com até ~12 palavras. Valor em R$ no título ou badge precisa de * e nota.
+- Com `anti-ia-copy-policy` na página, usar `seo.aiTraining: "disallow"`.
+- Âncoras dos links precisam existir numa seção visível. `image-single` sem imagem deve ficar oculto.
+- A exportação ZIP falha sem `seo.canonical` HTTPS quando o sitemap está ligado. Meta description entre 120 e 160 caracteres.
+- `seo.sourceNotes` aparece no rodapé publicado ("Fontes:"): escrever em linguagem pública, sem notas internas.
+- `location.places` usa o formato `rótulo|texto`: rótulos com até ~6 letras ("Centro", "Lojas", "Saúde"), senão quebram no celular.
+
 ## Pontos de atenção conhecidos
 - No projeto NAU (19/11), o `hero-plus` ainda está com o texto de demonstração do plugin ("Uma primeira impressão que faz o imóvel parecer único.", badge "Apresentação exclusiva", links `#destaques` que não existem na página).
 - No editor publicado: o ícone do card "Agendamento Sender" na biblioteca aparece como o texto "calendar-days"; em 60% de zoom, a prévia corta o hero pela esquerda.
