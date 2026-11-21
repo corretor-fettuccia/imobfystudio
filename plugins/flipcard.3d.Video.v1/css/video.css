@@ -1,0 +1,37 @@
+/* Vídeo de fundo isolado do contexto 3D.
+   A face (.flip-card__front/.flip-card__back) NÃO recebe overflow, filter ou
+   qualquer propriedade que force flattening; assim preserve-3d e translateZ(60px)
+   continuam funcionando como no Flip Card 4.3.0. */
+[data-plugin="flipcard-3d-video-v1"] .flip-card__video-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    pointer-events: none;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+[data-plugin="flipcard-3d-video-v1"] .flip-card__video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    border: 0;
+    pointer-events: none;
+}
+
+/* Mesma hierarquia visual do original: mídia no plano 0, overlay no plano da face
+   e conteúdo elevado fisicamente por translateZ(60px). */
+[data-plugin="flipcard-3d-video-v1"] .flip-card__front::after,
+[data-plugin="flipcard-3d-video-v1"] .flip-card__back::after {
+    z-index: 1;
+}
+
+[data-plugin="flipcard-3d-video-v1"] .flip-card__inner {
+    z-index: 2;
+}

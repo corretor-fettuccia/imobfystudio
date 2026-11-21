@@ -1,0 +1,39 @@
+<div class="spp-config"
+  data-campaign="{{campaignName}}"
+  data-layout-mode="{{layoutMode}}"
+  data-desktop-scale="{{desktopScale}}"
+  data-open-always="{{openAlways}}"
+  data-date-range="{{dateRangeEnabled}}"
+  data-start="{{startDate}}"
+  data-end="{{endDate}}"
+  data-reopen-enabled="{{reopenEnabled}}"
+  data-reopen-seconds="{{reopenSeconds}}"
+  data-delay="{{delaySeconds}}"
+  data-scroll-enabled="{{scrollEnabled}}"
+  data-scroll-percent="{{scrollPercent}}"
+  data-close-backdrop="{{closeOnBackdrop}}"
+  data-once-session="{{showOncePerSession}}"
+  data-mobile-image="{{showImageMobile}}">
+
+  <div class="spp-editor-status" hidden aria-live="polite">
+    <strong>Popup Pro</strong>
+    <span data-spp-editor-message></span>
+  </div>
+
+  <div class="spp-overlay" data-layout-mode="{{layoutMode}}" hidden aria-hidden="true">
+    <div class="spp-dialog" role="dialog" aria-modal="true" aria-label="{{campaignName}}" tabindex="-1">
+      <button class="spp-close" type="button" aria-label="Fechar popup" title="Fechar">×</button>
+
+      {{#if image}}<div class="spp-media"><img src="{{image}}" alt="{{imageAlt}}"></div>{{/if}}
+
+      <div class="spp-content">
+        <div class="spp-copyarea">
+          {{#if eyebrow}}<p class="spp-eyebrow">{{eyebrow}}</p>{{/if}}
+          <h2 class="spp-title">{{title}}</h2>
+          {{#if copy}}<p class="spp-copy">{{copy|br}}</p>{{/if}}
+        </div>
+        {{#if ctaText}}<div class="spp-actions"><a class="spp-cta" href="{{ctaLink}}">{{ctaText}}</a></div>{{/if}}
+      </div>
+    </div>
+  </div>
+</div>

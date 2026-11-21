@@ -1,0 +1,9 @@
+{
+  "id": "specs",
+  "name": "Ficha do imóvel",
+  "version": "1.1.0",
+  "type": "section",
+  "category": "interest",
+  "css": "plugin.css",
+  "js": "plugin.js"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "hero-plus",
+  "name": "Hero Imobiliário Plus",
+  "version": "1.1.0",
+  "type": "section",
+  "category": "Conversão",
+  "description": "Hero imobiliário full-bleed com transições sem bordas, movimento cinematográfico otimizado e tipografia responsiva.",
+  "css": "plugin.css",
+  "js": "plugin.js"
+}

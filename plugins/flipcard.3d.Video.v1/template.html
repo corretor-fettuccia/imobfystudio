@@ -1,0 +1,24 @@
+<div class="flip-card-plugin-container">
+  <div class="flip-card-single">
+    <div class="flip-card" data-flipcard-plugin="true" data-card-slot="1">
+      <div class="flip-card__front">
+        <div class="flip-card__video-layer"><video class="flip-card__video" data-face-video="front" data-src="{{frontVideo}}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+        <div class="flip-card__inner">
+          <div class="flip-card__icon"><i class="{{frontIcon}}"></i></div>
+          <h3 class="flip-card__title">{{frontTitle}}</h3>
+          <ul class="flip-card__list" data-check-icons="{{showItemIcons}}">{{frontItems|list}}</ul>
+          {{#if frontHasButton}}<a class="btn-flip" href="{{frontButtonLink}}" target="_blank" rel="noopener noreferrer">{{frontButtonText}}</a>{{/if}}
+        </div>
+      </div>
+      <div class="flip-card__back">
+        <div class="flip-card__video-layer"><video class="flip-card__video" data-face-video="back" data-src="{{backVideo}}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video></div>
+        <div class="flip-card__inner">
+          <div class="flip-card__icon"><i class="{{backIcon}}"></i></div>
+          <h3 class="flip-card__title">{{backTitle}}</h3>
+          <ul class="flip-card__list" data-check-icons="{{showItemIcons}}">{{backItems|list}}</ul>
+          {{#if backHasButton}}<a class="btn-flip" href="{{backButtonLink}}" target="_blank" rel="noopener noreferrer">{{backButtonText}}</a>{{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

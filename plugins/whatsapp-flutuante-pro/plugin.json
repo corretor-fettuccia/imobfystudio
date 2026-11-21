@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 3,
+  "id": "whatsapp-flutuante-pro",
+  "name": "WhatsApp flutuante Pro",
+  "version": "1.1.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "◉",
+  "description": "Botão flutuante sempre visível, configurável com mensagem URL encoded, posição, pulso, balão e foto no ícone durante o hover.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "phone": "5551998111078",
+    "message": "Olá! Gostaria de receber mais informações sobre o empreendimento.",
+    "urlEncoding": "Codificar automaticamente",
+    "buttonLabel": "Falar pelo WhatsApp",
+    "ariaLabel": "Conversar pelo WhatsApp",
+    "position": "Inferior direita",
+    "offsetX": 20,
+    "offsetY": 20,
+    "buttonSize": 58,
+    "showLabel": false,
+    "pulse": true,
+    "showHoverBubble": true,
+    "hoverText": "Estamos disponíveis também",
+    "openNewTab": true,
+    "backgroundColor": "#25d366",
+    "iconColor": "#ffffff",
+    "textColor": "#ffffff",
+    "hoverImage": ""
+  },
+  "fields": [
+    {
+      "key": "phone",
+      "label": "WhatsApp com DDI",
+      "type": "text",
+      "group": "Contato"
+    },
+    {
+      "key": "message",
+      "label": "Mensagem inicial",
+      "type": "textarea",
+      "group": "Contato"
+    },
+    {
+      "key": "urlEncoding",
+      "label": "Codificação da mensagem",
+      "type": "select",
+      "options": [
+        "Codificar automaticamente",
+        "Mensagem já codificada"
+      ],
+      "group": "Contato"
+    },
+    {
+      "key": "buttonLabel",
+      "label": "Texto ao lado do ícone",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "ariaLabel",
+      "label": "Descrição para acessibilidade",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "showLabel",
+      "label": "Exibir texto no botão",
+      "type": "toggle",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "position",
+      "label": "Posição",
+      "type": "select",
+      "options": [
+        "Inferior direita",
+        "Inferior esquerda",
+        "Superior direita",
+        "Superior esquerda"
+      ],
+      "group": "Posição"
+    },
+    {
+      "key": "offsetX",
+      "label": "Distância horizontal (px)",
+      "type": "range",
+      "min": 0,
+      "max": 160,
+      "step": 1,
+      "group": "Posição"
+    },
+    {
+      "key": "offsetY",
+      "label": "Distância vertical (px)",
+      "type": "range",
+      "min": 0,
+      "max": 160,
+      "step": 1,
+      "group": "Posição"
+    },
+    {
+      "key": "buttonSize",
+      "label": "Tamanho do botão (px)",
+      "type": "range",
+      "min": 44,
+      "max": 92,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Cor do botão",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "iconColor",
+      "label": "Cor do ícone",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "pulse",
+      "label": "Ativar efeito pulsante",
+      "type": "toggle",
+      "group": "Efeitos"
+    },
+    {
+      "key": "showHoverBubble",
+      "label": "Exibir balão no hover",
+      "type": "toggle",
+      "group": "Efeitos"
+    },
+    {
+      "key": "hoverText",
+      "label": "Texto do balão",
+      "type": "text",
+      "group": "Efeitos"
+    },
+    {
+      "key": "hoverImage",
+      "label": "Foto no hover",
+      "type": "image",
+      "group": "Efeitos",
+      "note": "Cole uma URL da imagem ou carregue um arquivo local. Arquivos locais são incorporados pelo editor em Base64 (data:image/...)."
+    },
+    {
+      "key": "openNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "Comportamento"
+    }
+  ]
+}

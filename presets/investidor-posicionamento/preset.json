@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "investidor-posicionamento",
+  "name": "Foco no posicionamento de mercado",
+  "description": "Modelo para investidor com foco na posição competitiva do ativo e do produto.",
+  "category": "Investidor",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco no posicionamento de mercado",
+    "templateMeta": {
+      "presetId": "investidor-posicionamento",
+      "category": "Investidor",
+      "subcategory": ""
+    }
+  }
+}

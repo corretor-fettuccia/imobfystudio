@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "alto-padrao-exclusividade",
+  "name": "Exclusividade e público seleto",
+  "description": "Modelo de alto padrão com foco em exclusividade, curadoria e público seleto.",
+  "category": "Alto padrão",
+  "baseBlueprint": "launch",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Exclusividade e público seleto",
+    "templateMeta": {
+      "presetId": "alto-padrao-exclusividade",
+      "category": "Alto padrão",
+      "subcategory": ""
+    }
+  }
+}

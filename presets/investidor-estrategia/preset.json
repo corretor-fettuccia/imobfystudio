@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "investidor-estrategia",
+  "name": "Foco na estratégia",
+  "description": "Modelo para investidor com foco na tese, estratégia de entrada e saída.",
+  "category": "Investidor",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco na estratégia",
+    "templateMeta": {
+      "presetId": "investidor-estrategia",
+      "category": "Investidor",
+      "subcategory": ""
+    }
+  }
+}

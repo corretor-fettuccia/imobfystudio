@@ -1,0 +1,15 @@
+const assert=require('node:assert/strict');
+const fs=require('fs'),path=require('path'),vm=require('vm');
+const ROOT=path.join(__dirname,'..');
+global.window={};
+vm.runInThisContext(fs.readFileSync(path.join(ROOT,'assets/js/typography-system.js'),'utf8'));
+const api=window.ImobifyTypeSystem;
+const brand={typographyWizardEnabled:true,typographyRoles:api.rolePreset('editorial')};
+const css=api.bridgeCss(brand);
+assert.ok(css.indexOf('p:not(.eyebrow)')<css.indexOf('[class*="subtitle"]'),'subheadline must override body selector when both apply');
+assert.ok(css.includes(':not([data-ib-type-mode="local"])'));
+assert.ok(!css.includes('color:var(--ib-headline-color)!important'),'inherited colors remain native');
+brand.typographyRoles.eyebrow.color='custom';brand.typographyRoles.eyebrow.customColor='#abcdef';
+assert.match(api.bridgeCss(brand),/color:var\(--ib-eyebrow-color\)!important/);
+assert.deepEqual(api.usedFonts(brand),['Playfair Display']);
+console.log('cascade tested');

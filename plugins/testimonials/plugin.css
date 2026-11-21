@@ -1,0 +1,6 @@
+.testimonials-section{padding-block:var(--section-space);background:var(--surface)}.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.testimonial-grid blockquote{margin:0;padding:clamp(1.5rem,3vw,2.4rem);background:#fff;border-radius:var(--radius);box-shadow:0 16px 50px rgba(31,39,37,.06)}.testimonial-grid blockquote>span{font:700 3rem var(--heading);line-height:1;color:var(--primary)}.testimonial-grid blockquote>p{min-height:130px;margin:.8rem 0 2rem;color:#535c60}.testimonial-grid footer{display:flex;flex-direction:column;border-top:1px solid #e8eaeb;padding-top:1rem}.testimonial-grid footer strong{font-size:.85rem}.testimonial-grid footer small{color:#8a9396}@media(max-width:800px){.testimonial-grid{grid-template-columns:1fr}.testimonial-grid blockquote>p{min-height:auto}}
+/* 6.0.41 — variable-length quotes should not leave artificial blank bands. */
+.testimonial-grid blockquote{min-width:0;display:flex;flex-direction:column}
+.testimonial-grid blockquote>p{min-height:0;flex:1;overflow-wrap:anywhere;line-height:1.7}
+.testimonial-grid blockquote footer{margin-top:auto}
+@media(max-width:720px){.testimonial-grid{grid-template-columns:1fr}.testimonial-grid blockquote{padding:clamp(1.3rem,5vw,2rem)}}

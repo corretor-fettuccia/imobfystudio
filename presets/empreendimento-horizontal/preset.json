@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "empreendimento-horizontal",
+  "name": "Empreendimento horizontal",
+  "description": "Modelo para condomínios e empreendimentos residenciais horizontais.",
+  "category": "Empreendimento horizontal",
+  "baseBlueprint": "launch",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Empreendimento horizontal",
+    "templateMeta": {
+      "presetId": "empreendimento-horizontal",
+      "category": "Empreendimento horizontal",
+      "subcategory": ""
+    }
+  }
+}

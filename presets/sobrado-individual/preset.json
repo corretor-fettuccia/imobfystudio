@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "sobrado-individual",
+  "name": "Sobrado individual",
+  "description": "Modelo para venda ou apresentação de sobrado individual.",
+  "category": "Sobrado individual",
+  "baseBlueprint": "construction",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Sobrado individual",
+    "templateMeta": {
+      "presetId": "sobrado-individual",
+      "category": "Sobrado individual",
+      "subcategory": ""
+    }
+  }
+}

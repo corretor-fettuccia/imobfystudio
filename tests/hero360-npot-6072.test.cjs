@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const script=fs.readFileSync(path.join(root,'plugins/hero360-tour/plugin.js'),'utf8');
+const meta=JSON.parse(fs.readFileSync(path.join(root,'plugins/hero360-tour/plugin.json'),'utf8'));
+assert.equal(meta.version,'1.2.7');new vm.Script(script);
+assert.match(script,/gl\.TEXTURE_WRAP_S,gl\.CLAMP_TO_EDGE/);
+assert.doesNotMatch(script,/gl\.TEXTURE_WRAP_S,gl\.REPEAT/);
+assert.match(script,/gl\.TEXTURE_WRAP_T,gl\.CLAMP_TO_EDGE/);
+assert.match(script,/fract\(0\.5\+longitude/);
+assert.match(script,/function revealFirstFrame\(\)/);
+assert.match(script,/root\.dataset\.ims360Loaded='rendering'/);
+assert.match(script,/revealFirstFrame\(\);projectSpots/);
+assert.match(script,/function useCanvas2D\(reason\)/);
+assert.match(script,/webglcontextlost/);
+assert.match(script,/gl\.readPixels/);
+assert.match(script,/O primeiro quadro WebGL permaneceu preto/);
+console.log('Hero360Tour NPOT WebGL 1 + primeiro quadro + recuperação Canvas 2D: OK');

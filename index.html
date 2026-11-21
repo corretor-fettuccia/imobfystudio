@@ -1,0 +1,675 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c1018" />
+    <meta name="description" content="Editor visual para criação de landing pages imobiliárias estáticas." />
+    <title>Imobify Studio — Framework de Landing Pages Imobiliárias</title>
+    <link rel="stylesheet" href="assets/css/editor.css" />
+
+<link rel="stylesheet" href="assets/css/typography-wizard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/motion-modal.css">
+  <link rel="stylesheet" href="assets/css/seo-optimizer.css">
+  <link rel="stylesheet" href="assets/css/section-audit.css">
+<style id="pd-editor-style">#parallax-design-modal{position:fixed;inset:0;z-index:999999;background:#000b;display:flex;align-items:center;justify-content:center;font-family:system-ui;color:#edf4ff}#parallax-design-modal .pd-panel{width:min(1100px,96vw);max-height:94vh;display:flex;flex-direction:column;background:#17202b;border:1px solid #526275;border-radius:16px;overflow:hidden}#parallax-design-modal header,#parallax-design-modal footer{padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:#111b26}#parallax-design-modal button{cursor:pointer;background:#2b394a;color:#fff;border:1px solid #647084;border-radius:8px;padding:9px}#parallax-design-modal button.primary{background:#237ce5}#parallax-design-modal .pd-layout{display:grid;grid-template-columns: 1fr 1fr;overflow:auto;min-height:0}#parallax-design-modal .pd-controls{padding:14px;overflow:auto;max-height:70vh}#parallax-design-modal details{border-bottom:1px solid #35475a;padding:10px 0}#parallax-design-modal summary{cursor:pointer;font-weight:700;padding:7px}#parallax-design-modal .pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:10px}#parallax-design-modal .pd-field{font-size:12px;display:flex;flex-direction:column;gap:6px}#parallax-design-modal input,#parallax-design-modal select{max-width:100%;background:#253446;color:#fff;border:1px solid #60718a;padding:6px;border-radius:5px}#parallax-design-modal .pd-preview-wrap{padding:15px;background:#0e1924;display:flex;flex-direction:column;gap:10px}#parallax-design-modal .pd-stage{background:linear-gradient(120deg,#1f4a61,#516783,#192334);height:360px;display:flex;align-items:center;justify-content:center;overflow:auto;border-radius:8px}#parallax-design-modal .pd-stage.mobile{width:260px;max-width:100%;align-self:center}#parallax-design-modal .pd-card{box-sizing:border-box;max-width:95%;color:#fff;display:flex;flex-direction:column;gap:8px;container-type:inline-size}#parallax-design-modal .pd-card h2{font-size:clamp(15px,4cqw,35px);margin:0}#parallax-design-modal .pd-card h3{font-size:clamp(12px,3cqw,22px);margin:0}#parallax-design-modal .pd-card p{font-size:clamp(11px,2cqw,16px);margin:0}#parallax-design-modal .pd-card a{background:#fff;color:#111;padding:9px;border-radius:30px;align-self:flex-start}#parallax-design-modal .pd-devices{display:flex;gap:6px}#parallax-design-modal .pd-devices .active{background:#2179d0}@keyframes pd-appear{from{opacity:0;transform:translateY(15px);filter:blur(8px)}to{opacity:1;transform:none;filter:blur(0)}}@media(max-width:760px){#parallax-design-modal .pd-layout{grid-template-columns:1fr}#parallax-design-modal .pd-controls{max-height:none}#parallax-design-modal .pd-stage{height:260px}}@keyframes pd-effect-fade{from{opacity:0}to{opacity:1}}
+@keyframes pd-effect-fade-up{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pd-effect-slide-left{from{opacity:0;transform:translateX(55px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pd-effect-slide-right{from{opacity:0;transform:translateX(-55px)}to{opacity:1;transform:translateX(0)}}
+@keyframes pd-effect-zoom-in{from{opacity:0;transform:scale(.78)}to{opacity:1;transform:scale(1)}}
+@keyframes pd-effect-blur-in{from{opacity:0;filter:blur(20px)}to{opacity:1;filter:blur(0)}}
+@keyframes pd-effect-mask-reveal{from{opacity:1;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
+@keyframes pd-effect-soft-focus{from{opacity:0;filter:blur(12px);transform:scale(1.04)}to{opacity:1;filter:blur(0);transform:scale(1)}}
+@keyframes pd-effect-ripple-reveal{from{opacity:0;clip-path:circle(0% at 50% 50%);transform:scale(.94)}to{opacity:1;clip-path:circle(75% at 50% 50%);transform:scale(1)}}
+
+/* Parallax advanced panel - compact density and responsive control grid */
+#parallax-design-modal .pd-panel{width:min(1360px,98vw);max-height:96vh;border-radius:11px}
+#parallax-design-modal .pd-layout{grid-template-columns:minmax(480px,1.15fr) minmax(360px,0.85fr);overflow:hidden}
+#parallax-design-modal .pd-controls{padding:7px 10px;max-height:calc(96vh - 110px);scrollbar-gutter:stable}
+#parallax-design-modal header,#parallax-design-modal footer{padding:8px 12px}
+#parallax-design-modal details{padding:3px 0}
+#parallax-design-modal summary{padding:5px 3px;font-size:12px}
+#parallax-design-modal .pd-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:7px 9px;padding:6px 2px 9px}
+#parallax-design-modal .pd-field{font-size:10px;gap:3px;min-width:0;line-height:1.25}
+#parallax-design-modal .pd-field input,#parallax-design-modal .pd-field select{width:100%;min-width:0;min-height:29px;padding:4px 6px;font-size:11px}
+#parallax-design-modal .pd-field input[type=color]{height:29px}
+#parallax-design-modal .pd-field small{font-size:9px;line-height:1.2;color:#a8b5c5}
+#parallax-design-modal .pd-field button{padding:4px 6px;font-size:10px}
+#parallax-design-modal .pd-preview-wrap{padding:9px;gap:6px}
+#parallax-design-modal .pd-stage{height:min(360px,54vh)}
+#parallax-design-modal .pd-devices button{padding:5px 8px}
+@media(max-width:1020px){#parallax-design-modal .pd-layout{grid-template-columns:minmax(360px,1fr) minmax(260px,.8fr)}#parallax-design-modal .pd-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){#parallax-design-modal .pd-layout{grid-template-columns:1fr;overflow:auto}#parallax-design-modal .pd-controls{max-height:none}#parallax-design-modal .pd-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#parallax-design-modal .pd-stage{height:200px}}
+@media(max-width:420px){#parallax-design-modal .pd-grid{grid-template-columns:1fr 1fr;gap:6px}}
+</style>
+<script>
+  // Fontes globais: carregamento sob demanda para manter a previa coerente com a exportacao.
+  const imobifyTypographyFontsLoaded = new Set();
+  function imobifyLoadTypographyFont(name){
+    const font=String(name||'').trim();
+    if(!font || imobifyTypographyFontsLoaded.has(font) || /^(inherit|system-ui|serif|sans-serif)$/i.test(font)) return;
+    imobifyTypographyFontsLoaded.add(font);
+    const link=document.createElement('link');link.rel='stylesheet';
+    link.href='https://fonts.googleapis.com/css2?family='+encodeURIComponent(font).replace(/%20/g,'+')+':wght@300;400;500;600;700;800;900&display=swap';
+    link.onerror=()=>imobifyTypographyFontsLoaded.delete(font);
+    document.head.appendChild(link);
+  }
+  document.addEventListener('change',e=>{if(e.target?.matches?.('[data-brand="headingFont"],[data-brand="bodyFont"]'))imobifyLoadTypographyFont(e.target.value)});
+</script>
+</head>
+  <body>
+    <div class="studio" id="studio">
+      <header class="topbar">
+        <div class="brand" aria-label="Imobify Studio">
+          <span class="brand-mark">I</span>
+          <span><strong>IMOBIFY</strong><small>Studio 7.5.1</small></span>
+        </div>
+        <div class="project-name">
+          <span class="status-dot"></span>
+          <input id="projectName" value="Residencial Aurora" aria-label="Nome do projeto" />
+        </div>
+        <div class="topbar-actions">
+          <button class="btn icon-btn" id="undoBtn" title="Desfazer" aria-label="Desfazer">↶</button>
+          <button class="btn icon-btn" id="redoBtn" title="Refazer" aria-label="Refazer">↷</button>
+          <button class="btn" id="newProjectBtn">Novo</button>
+          <button class="btn" id="quickBlankProjectBtn" type="button" title="Criar projeto sem seções ou elementos">＋ Em branco</button>
+          <div class="project-file-menu-wrap">
+            <button class="btn project-file-menu-button" id="saveBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+              <span>Projeto</span><span class="project-file-menu-caret" aria-hidden="true">▾</span>
+            </button>
+            <div class="project-file-menu" id="projectFileMenu" role="menu" hidden>
+              <button type="button" role="menuitem" data-project-file-action="load"><span>Carregar</span><small>Abrir JSON do disco local</small></button>
+              <button type="button" role="menuitem" data-project-file-action="save"><span>Salvar</span><small>Gravar JSON no disco local</small></button>
+            </div>
+            <input type="file" id="projectFileInput" accept="application/json,.json" hidden />
+          </div>
+
+          <button class="btn" id="previewBtn">Pré-visualizar</button>
+          <button class="btn btn-primary" id="compileBtn"><span>Exportar</span> ZIP</button>
+        </div>
+      </header>
+
+      <aside class="left-panel panel">
+        <nav class="panel-tabs" aria-label="Ferramentas">
+          <button class="panel-tab is-active" data-tab="components"><span>⊞</span>Componentes</button>
+          <button class="panel-tab" data-tab="structure"><span>▦</span>Estrutura da página</button>
+          <button class="panel-tab" data-tab="audit"><span>⚑</span>Auditoria<b class="audit-tab-count" aria-label="pontos de atenção">…</b></button>
+          <button class="panel-tab" data-tab="design"><span>◈</span>Design</button>
+          <button class="panel-tab" data-tab="seo"><span>◎</span>SEO</button>
+          <button class="panel-tab" data-tab="project"><span>⚙</span>Projeto</button>
+        </nav>
+
+        <div class="panel-content">
+          <section class="tool-tab is-active" id="tab-components" aria-label="Componentes para adicionar">
+            <div class="section-heading"><div><small>BIBLIOTECA</small><h2>Componentes</h2></div></div>
+            <p class="helper">Escolha um componente para adicionar ou instale um novo pacote. Os itens já adicionados ficam na aba Estrutura da página.</p>
+          </section>
+          <section class="tool-tab" id="tab-structure">
+            <div class="section-heading"><div><small>ELEMENTOS DO PROJETO</small><h2>Estrutura da página</h2></div></div>
+            <p class="helper">Gerencie as seções já adicionadas, sua posição e a composição atual da página.</p>
+            <div class="section-heading">
+              <div><small>CONDUÇÃO</small><h2>Estratégia comercial</h2></div>
+              <span class="pill">Inteligente</span>
+            </div>
+            <label class="field-label" for="methodSelect">Método de persuasão</label>
+            <select id="methodSelect" class="control">
+              <optgroup label="Clássicos">
+                <option value="aida">AIDA — Atenção, interesse, desejo, ação</option>
+                <option value="pas">PAS — Problema, agitação, solução</option>
+                <option value="bab">BAB — Antes, depois, ponte</option>
+                <option value="fourps">4 Ps — Promessa, imagem, prova, impulso</option>
+              </optgroup>
+              <optgroup label="Minha Casa Minha Vida / produto popular">
+                <option value="mcmvResult">MCMV — Resultado primeiro</option>
+                <option value="mcmvRent">MCMV — Saída do aluguel</option>
+                <option value="mcmvPatio">MCMV — Casa + pátio</option>
+                <option value="mcmvConstruction">MCMV — Terreno + Construção</option>
+                <option value="mcmvObjections">MCMV — Quebra de objeções</option>
+                <option value="mcmvFast">MCMV — Oferta direta / imediatista</option>
+              </optgroup>
+            </select>
+            <label class="field-label" for="profileSelect">Perfil de condução</label>
+            <select id="profileSelect" class="control">
+              <option value="consultive">Consultivo — confiança e decisão segura</option>
+              <option value="family">Moradia — bem-estar e pertencimento</option>
+              <option value="investment">Investimento — dados e valorização</option>
+              <option value="urgency">Oportunidade — escassez responsável</option>
+              <option value="popular">Popular / MCMV — direto e simples</option>
+              <option value="firstHome">Primeira casa — processo fácil de entender</option>
+              <option value="patio">Casa + pátio — efeito final e terreno + construção</option>
+            </select>
+            <div class="strategy-card" id="strategyCard"></div>
+            <button class="btn btn-wide" id="applyStrategyBtn">Aplicar roteiro recomendado</button>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>NAVEGAÇÃO</small><h2>Comportamento da página</h2></div></div>
+            <div class="form-stack" id="pageSettingsControls">
+              <label>Rolagem<select class="control" data-page-setting="scrollMode"><option value="flow">Contínua — padrão WordPress</option><option value="snap">Encaixe suave entre seções</option></select></label>
+              <label>Movimento<select class="control" data-page-setting="motion"><option value="subtle">Suave</option><option value="expressive">Envolvente</option><option value="minimal">Mínimo</option></select></label>
+            </div>
+
+            <div class="divider"></div>
+            <div class="section-heading compact">
+              <div><small>COMPOSIÇÃO</small><h2>Novo segmento</h2></div>
+              <span class="pill">1–5</span>
+            </div>
+            <div class="segment-composer" id="segmentComposer" data-direction="columns">
+              <p>Crie uma área e distribua componentes em colunas ou linhas. Cada célula pode receber mais de um item.</p>
+              <div class="segment-axis" role="group" aria-label="Orientação do segmento">
+                <button class="is-active" type="button" data-segment-axis="columns"><span>▥</span> Colunas</button>
+                <button type="button" data-segment-axis="rows"><span>☷</span> Linhas</button>
+              </div>
+              <div class="segment-track-picker" role="group" aria-label="Quantidade de divisões">
+                <button type="button" data-segment-tracks="1" aria-label="1 divisão"><span class="segment-track-icon" style="--tracks:1"></span><b>1</b></button>
+                <button class="is-active" type="button" data-segment-tracks="2" aria-label="2 divisões"><span class="segment-track-icon" style="--tracks:2"></span><b>2</b></button>
+                <button type="button" data-segment-tracks="3" aria-label="3 divisões"><span class="segment-track-icon" style="--tracks:3"></span><b>3</b></button>
+                <button type="button" data-segment-tracks="4" aria-label="4 divisões"><span class="segment-track-icon" style="--tracks:4"></span><b>4</b></button>
+                <button type="button" data-segment-tracks="5" aria-label="5 divisões"><span class="segment-track-icon" style="--tracks:5"></span><b>5</b></button>
+              </div>
+              <button class="btn btn-wide segment-add" type="button" id="addSegmentBtn">+ Inserir segmento</button>
+            </div>
+
+            <div class="divider"></div>
+            <div class="section-heading compact">
+              <div><small>BLOCOS</small><h2>Plugins disponíveis</h2></div>
+              <span id="pluginCount" class="count"></span>
+            </div>
+            <div class="plugin-install" id="pluginDropZone">
+              <div><span class="plugin-install-icon">⬡</span><strong>Plugin Play</strong></div>
+              <p>Arraste um plugin ZIP ou selecione o pacote para instalar.</p>
+              <label class="btn btn-wide file-btn">Instalar plugin .zip<input type="file" id="pluginZipInput" accept=".zip,application/zip" /></label>
+              <small id="pluginInstallStatus">Formato: plugin.json + HTML + CSS + JS</small>
+            </div>
+            <div class="search-wrap"><span>⌕</span><input id="pluginSearch" placeholder="Buscar plugin..." /></div>
+            <div id="pluginLibrary" class="plugin-library"></div>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>PÁGINA</small><h2>Ordem das seções</h2></div></div>
+            <div id="sectionList" class="section-list"></div>
+            <button class="btn btn-wide add-section-btn" type="button" id="addSectionBtn">+ Adicionar seção</button>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>BIBLIOTECA</small><h2>Blocos reutilizáveis</h2></div></div>
+            <div id="reusableBlockList" class="reusable-block-list"></div>
+          </section>
+
+          <section class="tool-tab" id="tab-design">
+            <div class="section-heading"><div><small>IDENTIDADE</small><h2>Presets visuais</h2></div></div>
+            <p class="helper">Escolha entre os perfis de cores, com tipografia e CTAs coordenados, ou personalize cada variável. As alterações não substituem o layout existente.</p>
+            <div class="info-card design-info"><strong>Perfil do projeto</strong><p>Define o padrão de todos os componentes. Controles locais de um plugin continuam disponíveis para exceções específicas.</p></div>
+            <div id="presetGrid" class="preset-grid"></div>
+            <button class="ib-tw-launch" type="button" id="openTypographyWizardBtn">✦ Abrir Wizard de Tipografia e Estilo →</button>
+            <div class="form-stack design-stack" id="designControls">
+              <div class="design-group-title"><strong>Combinação guiada</strong><small>Use técnica de paleta e perfil tipográfico como ponto de partida; depois personalize qualquer variável.</small></div>
+              <label>Técnica de paleta
+                <select class="control" data-brand="paletteTechnique" id="paletteTechniqueSelect">
+                  <option value="manual">Manual</option>
+                  <option value="60-30-10">60–30–10</option>
+                  <option value="complementary">Complementar</option>
+                  <option value="analogous">Análoga</option>
+                  <option value="triadic">Tríade</option>
+                  <option value="monochromatic">Monocromática</option>
+                </select>
+                <small class="field-note" id="paletteTechniqueHint"></small>
+              </label>
+              <button class="btn design-technique-action" type="button" id="applyPaletteTechniqueBtn">Gerar paleta pela cor principal</button>
+              <label>Perfil tipográfico
+                <select class="control" data-brand="typographyProfile" id="typographyProfileSelect"></select>
+                <small class="field-note" id="typographyProfileHint"></small>
+              </label>
+              <button class="btn design-technique-action" type="button" id="applyTypographyProfileBtn">Aplicar perfil tipográfico</button>
+
+              <div class="design-group-title"><strong>Cores globais</strong><small>Aplicadas à página e aos plugins compatíveis.</small></div>
+              <label>Contraste funcional
+                <select class="control" data-brand="contrastMode" id="contrastModeSelect">
+                  <option value="aa">Automático — WCAG AA</option>
+                  <option value="comfort">Conforto alto — alvo 7:1</option>
+                  <option value="manual">Manual — sem proteção</option>
+                </select>
+                <small class="field-note">Mantém sua paleta, mas corrige automaticamente a cor do texto quando o contraste ficar insuficiente.</small>
+              </label>
+              <div class="contrast-audit" id="contrastAudit" aria-live="polite"></div>
+              <label>Destaque do texto
+                <select class="control" data-brand="textEffect" id="textEffectSelect">
+                  <option value="auto">Automático — adapta ao fundo</option>
+                  <option value="soft">Suave — sombra discreta</option>
+                  <option value="strong">Forte — sombra + microcontorno</option>
+                  <option value="none">Sem efeito</option>
+                </select>
+                <small class="field-note">Em fundos escuros e imagens, reforça o texto claro com sombra/halo e microcontorno. Em fundos claros, o efeito é reduzido.</small>
+              </label>
+              <label>Intensidade do destaque <output data-brand-output="textEffectStrength"></output><input class="control" type="range" min="0" max="100" step="1" data-brand="textEffectStrength" /></label>
+
+              <div class="design-group-title"><strong>Títulos e subtítulos</strong><small>Contorno proporcional à fonte e sombras independentes para separar o texto do fundo.</small></div>
+              <label>Borda dos títulos <output data-brand-output="titleOutlineWidth"></output><input class="control" type="range" min="0" max="8" step="0.1" data-brand="titleOutlineWidth" /><small class="field-note">Percentual do tamanho da fonte. 1% em um título de 100 px corresponde a aproximadamente 1 px.</small></label>
+              <label>Cor da borda dos títulos<input class="control color-control" type="color" data-brand="titleOutlineColor" /></label>
+              <label>Sombreamento dos títulos
+                <select class="control" data-brand="titleShadowStyle">
+                  <option value="none">Sem sombra</option>
+                  <option value="soft">Suave</option>
+                  <option value="contrast">Contraste multicamada</option>
+                  <option value="cinematic">Cinematográfico</option>
+                  <option value="glow">Halo / brilho</option>
+                </select>
+              </label>
+              <label>Cor da sombra dos títulos<input class="control color-control" type="color" data-brand="titleShadowColor" /></label>
+              <label>Intensidade da sombra dos títulos <output data-brand-output="titleShadowStrength"></output><input class="control" type="range" min="0" max="100" step="1" data-brand="titleShadowStrength" /></label>
+
+              <label>Borda dos subtítulos <output data-brand-output="subtitleOutlineWidth"></output><input class="control" type="range" min="0" max="6" step="0.1" data-brand="subtitleOutlineWidth" /><small class="field-note">Também é proporcional ao tamanho da fonte, evitando uma borda exagerada no mobile.</small></label>
+              <label>Cor da borda dos subtítulos<input class="control color-control" type="color" data-brand="subtitleOutlineColor" /></label>
+              <label>Sombreamento dos subtítulos
+                <select class="control" data-brand="subtitleShadowStyle">
+                  <option value="none">Sem sombra</option>
+                  <option value="soft">Suave</option>
+                  <option value="contrast">Contraste multicamada</option>
+                  <option value="cinematic">Cinematográfico</option>
+                  <option value="glow">Halo / brilho</option>
+                </select>
+              </label>
+              <label>Cor da sombra dos subtítulos<input class="control color-control" type="color" data-brand="subtitleShadowColor" /></label>
+              <label>Intensidade da sombra dos subtítulos <output data-brand-output="subtitleShadowStrength"></output><input class="control" type="range" min="0" max="100" step="1" data-brand="subtitleShadowStrength" /></label>
+
+              <label>Cor principal<input class="control color-control" type="color" data-brand="primary" /></label>
+              <label>Cor de destaque<input class="control color-control" type="color" data-brand="accent" /></label>
+              <label>Fundo claro<input class="control color-control" type="color" data-brand="surface" /></label>
+              <label>Fundo escuro<input class="control color-control" type="color" data-brand="dark" /></label>
+              <label>Cor estrutural / contraste<input class="control color-control" type="color" data-brand="ink" /></label>
+              <label>Cor dos títulos<input class="control color-control" type="color" data-brand="headingColor" /></label>
+              <label>Cor dos textos<input class="control color-control" type="color" data-brand="bodyColor" /></label>
+              <label>Cor dos textos secundários<input class="control color-control" type="color" data-brand="mutedColor" /></label>
+              <label>Títulos sobre fundo escuro<input class="control color-control" type="color" data-brand="inverseHeadingColor" /></label>
+              <label>Textos sobre fundo escuro<input class="control color-control" type="color" data-brand="inverseBodyColor" /></label>
+
+              <div class="design-group-title"><strong>Kit global de botões</strong><small>Modelos, materiais e interação para CTAs de todo o framework e plugins. O kit preserva texto, link, tamanho e mecânica do componente.</small></div>
+              <label>Modelo rápido
+                <select class="control" id="buttonKitSelect" aria-label="Modelo rápido do botão">
+                  <option value="custom">Personalizado</option>
+                </select>
+                <small class="field-note" id="buttonKitHint">Escolha um modelo e refine os controles abaixo.</small>
+              </label>
+              <label>Cor do fundo<input class="control color-control" type="color" data-brand="actionButtonBackground" /></label>
+              <label>Cor da fonte<input class="control color-control" type="color" data-brand="actionButtonText" /></label>
+              <label>Efeito do botão
+                <select class="control" data-brand="actionButtonEffect">
+                  <option value="flat">Sólido / limpo</option>
+                  <option value="soft-shadow">Soft Shadow</option>
+                  <option value="depth">3D Profundidade</option>
+                  <option value="depth-glow">Profundidade + Glow</option>
+                  <option value="glow">Glow</option>
+                  <option value="glass">Glass</option>
+                  <option value="liquid-glass">Liquid Glass</option>
+                  <option value="shine">Shine Sweep</option>
+                  <option value="gradient">Gradient Flow</option>
+                  <option value="pulse">Pulse CTA</option>
+                  <option value="border-reveal">Border Reveal</option>
+                  <option value="fill-slide">Fill Slide</option>
+                  <option value="magnetic">Magnetic Hover</option>
+                  <option value="scale-pop">Scale Pop</option>
+                  <option value="ripple">Ripple</option>
+                  <option value="neon">Neon Edge</option>
+                  <option value="outline-minimal">Clean Outline</option>
+                  <option value="ghost-minimal">Ghost Minimal</option>
+                  <option value="underline-editorial">Editorial Underline</option>
+                  <option value="satin-luxury">Quiet Luxury</option>
+                  <option value="metal-gold">Metal Dourado</option>
+                  <option value="machined-steel">Aço Usinado</option>
+                  <option value="industrial-plate">Placa Industrial</option>
+                  <option value="carbon-fiber">Fibra de Carbono</option>
+                  <option value="embossed">Relevo Emboss</option>
+                  <option value="clay">Clay 3D</option>
+                  <option value="bubble">Bubble Candy</option>
+                  <option value="jelly">Jelly Gel</option>
+                  <option value="sticker">Sticker Pop</option>
+                  <option value="comic">Comic Impact</option>
+                  <option value="neumorph">Neumorphism</option>
+                  <option value="aurora">Aurora Gradient</option>
+                  <option value="holographic">Holográfico</option>
+                  <option value="cyber">Cyber Circuit</option>
+                  <option value="spotlight">Spotlight</option>
+                  <option value="brutalist">Brutalista</option>
+                  <option value="paper-cut">Papel Recortado</option>
+                  <option value="pixel">Pixel Retrô</option>
+                  <option value="ceramic">Cerâmica</option>
+                  <option value="wood">Madeira</option>
+                  <option value="magnet-orbit">Magnetic Orbit</option>
+                  <option value="tilt-3d">Tilt 3D</option>
+                  <option value="cursor-halo">Cursor Halo</option>
+                  <option value="liquid-follow">Liquid Follow</option>
+                  <option value="rubber-wobble">Rubber Wobble</option>
+                  <option value="split-curtain">Split Curtain</option>
+                  <option value="glitch-shift">Glitch Shift</option>
+                  <option value="orbit-ring">Orbit Ring</option>
+                  <option value="neon-trace">Neon Trace</option>
+                  <option value="gravity-lift">Gravity Lift</option>
+                  <option value="flip-reveal">Flip Reveal</option>
+                  <option value="prism-shimmer">Prism Shimmer</option>
+                  <option value="heartbeat">Heartbeat</option>
+                  <option value="spring-pop">Spring Pop</option>
+                  <option value="kinetic-outline">Kinetic Outline</option>
+                  <option value="satin-reveal">Satin Reveal</option>
+                  <option value="industrial-impact">Industrial Impact</option>
+                  <option value="liquid-jelly">Liquid Jelly</option>
+                  <option value="cyber-pixel">Cyber Pixel</option>
+                  <option value="neon-explosion">Neon Explosion</option>
+                  <option value="editorial-stamp">Editorial Stamp</option>
+                  <option value="mechanical-switch">Mechanical Switch</option>
+                  <option value="aurora-spark">Aurora Spark</option>
+                  <option value="glass-prism">Glass Prism</option>
+                  <option value="magnet-shock">Magnet Shock</option>
+                  <option value="playful-confetti">Playful Confetti</option>
+                </select>
+                <small class="field-note">A aparência é aplicada pela camada semântica global, inclusive em CTAs de plugins instalados.</small>
+              </label>
+              <label>Efeito ao clicar
+                <select class="control" data-brand="actionButtonClickEffect">
+                  <option value="press">Press / afundar</option>
+                  <option value="ripple">Ripple</option>
+                  <option value="bounce">Bounce</option>
+                  <option value="flash">Flash</option>
+                  <option value="shockwave">Shockwave / onda de impacto</option>
+<option value="confetti">Confete / partículas</option>
+<option value="sparks">Faíscas metálicas</option>
+<option value="rings">Anéis concêntricos</option>
+<option value="stamp">Carimbo / impacto</option>
+<option value="jelly">Gelatina / elasticidade</option>
+<option value="spin">Micro-rotação</option>
+<option value="flip">Flip 3D</option>
+<option value="success">Check de confirmação visual</option>
+<option value="glow-burst">Explosão luminosa</option>
+<option value="pixel-burst">Pixel Burst</option>
+<option value="shake">Tremor mecânico</option>
+                  <option value="none">Nenhum</option>
+                </select>
+              </label>
+              <label>Profundidade <output data-brand-output="actionButtonDepth"></output><input class="control" type="range" min="0" max="20" step="1" data-brand="actionButtonDepth" /></label>
+              <label>Brilho / glow <output data-brand-output="actionButtonGlow"></output><input class="control" type="range" min="0" max="100" step="1" data-brand="actionButtonGlow" /></label>
+              <label>Opacidade do vidro <output data-brand-output="actionButtonGlassOpacity"></output><input class="control" type="range" min="8" max="100" step="1" data-brand="actionButtonGlassOpacity" /></label>
+              <label>Desfoque do vidro <output data-brand-output="actionButtonGlassBlur"></output><input class="control" type="range" min="0" max="36" step="1" data-brand="actionButtonGlassBlur" /></label>
+              <label>Brilho interno <output data-brand-output="actionButtonShine"></output><input class="control" type="range" min="0" max="100" step="1" data-brand="actionButtonShine" /></label>
+              <label>Espessura da borda <output data-brand-output="actionButtonBorderWidth"></output><input class="control" type="range" min="0" max="4" step="0.5" data-brand="actionButtonBorderWidth" /></label>
+              <label>Escala no hover <output data-brand-output="actionButtonHoverScale"></output><input class="control" type="range" min="100" max="115" step="1" data-brand="actionButtonHoverScale" /></label>
+              <label>Velocidade do efeito <output data-brand-output="actionButtonSpeed"></output><input class="control" type="range" min="80" max="700" step="10" data-brand="actionButtonSpeed" /></label>
+
+              <div class="design-effect-preview" id="designEffectPreview" aria-live="polite">
+                <small>PRÉVIA DOS EFEITOS</small>
+                <h3>Título com contraste</h3>
+                <p>Subtítulo com leitura destacada sobre o perfil visual.</p>
+                <button type="button" tabindex="-1">Chamada de ação</button>
+              </div>
+
+              <div class="design-group-title"><strong>Tipografia global</strong><small>Hierarquia responsiva de títulos e textos.</small></div>
+              <label>Fonte dos títulos<select class="control" data-brand="headingFont"><option>Manrope</option><option>DM Sans</option><option>Playfair Display</option><option>Montserrat</option><option>Josefin Sans</option><option>Inter</option><option>Source Sans 3</option><option>Plus Jakarta Sans</option><option>Outfit</option><option>Sora</option><option>Urbanist</option><option>Poppins</option><option>Lato</option><option>Nunito Sans</option><option>Work Sans</option><option>Raleway</option><option>Archivo</option><option>Barlow</option><option>Barlow Condensed</option><option>Roboto</option><option>Roboto Slab</option><option>Merriweather</option><option>Lora</option><option>Cormorant Garamond</option><option>Libre Baskerville</option><option>DM Serif Display</option><option>Bodoni Moda</option><option>Cinzel</option><option>Space Grotesk</option><option>IBM Plex Sans</option><option>IBM Plex Serif</option><option>Figtree</option><option>Public Sans</option></select></label>
+              <label>Fonte dos textos<select class="control" data-brand="bodyFont"><option>Manrope</option><option>DM Sans</option><option>Playfair Display</option><option>Montserrat</option><option>Josefin Sans</option><option>Inter</option><option>Source Sans 3</option><option>Plus Jakarta Sans</option><option>Outfit</option><option>Sora</option><option>Urbanist</option><option>Poppins</option><option>Lato</option><option>Nunito Sans</option><option>Work Sans</option><option>Raleway</option><option>Archivo</option><option>Barlow</option><option>Barlow Condensed</option><option>Roboto</option><option>Roboto Slab</option><option>Merriweather</option><option>Lora</option><option>Cormorant Garamond</option><option>Libre Baskerville</option><option>DM Serif Display</option><option>Bodoni Moda</option><option>Cinzel</option><option>Space Grotesk</option><option>IBM Plex Sans</option><option>IBM Plex Serif</option><option>Figtree</option><option>Public Sans</option></select></label>
+              <label>Peso dos títulos <output data-brand-output="headingWeight"></output><input class="control" type="range" min="400" max="900" step="100" data-brand="headingWeight" /></label>
+              <label>Tamanho máximo H1 <output data-brand-output="h1Size"></output><input class="control" type="range" min="52" max="150" step="1" data-brand="h1Size" /></label>
+              <label>Tamanho máximo H2 <output data-brand-output="h2Size"></output><input class="control" type="range" min="36" max="110" step="1" data-brand="h2Size" /></label>
+              <label>Tamanho máximo H3 <output data-brand-output="h3Size"></output><input class="control" type="range" min="18" max="54" step="1" data-brand="h3Size" /></label>
+              <label>Tamanho do texto <output data-brand-output="bodySize"></output><input class="control" type="range" min="13" max="24" step="1" data-brand="bodySize" /></label>
+              <label>Altura de linha do texto <output data-brand-output="bodyLineHeight"></output><input class="control" type="range" min="1.2" max="2" step="0.05" data-brand="bodyLineHeight" /></label>
+              <label>Altura de linha dos títulos <output data-brand-output="headingLineHeight"></output><input class="control" type="range" min="0.9" max="1.5" step="0.01" data-brand="headingLineHeight" /></label>
+              <label>Espaçamento das letras dos títulos <output data-brand-output="headingTracking"></output><input class="control" type="range" min="-0.08" max="0.08" step="0.005" data-brand="headingTracking" /></label>
+              <label>Espaçamento das chamadas curtas <output data-brand-output="eyebrowTracking"></output><input class="control" type="range" min="0" max="0.28" step="0.01" data-brand="eyebrowTracking" /></label>
+              <label>Espaçamento entre letras do texto <output data-brand-output="bodyTracking"></output><input class="control" type="range" min="-0.03" max="0.12" step="0.005" data-brand="bodyTracking" /></label>
+              <label>Recuo da primeira linha <output data-brand-output="paragraphIndent"></output><input class="control" type="range" min="0" max="48" step="2" data-brand="paragraphIndent" /><small class="field-note">Aplica recuo apenas em parágrafos de leitura; padrão zero preserva o layout.</small></label>
+              <label>Espaço entre parágrafos <output data-brand-output="paragraphSpacing"></output><input class="control" type="range" min="0" max="32" step="2" data-brand="paragraphSpacing" /></label>
+              <label>Largura ideal de leitura <output data-brand-output="textMeasure"></output><input class="control" type="range" min="42" max="82" step="1" data-brand="textMeasure" /><small class="field-note">Limita parágrafos longos para melhorar ritmo e escaneabilidade.</small></label>
+
+              <div class="design-group-title"><strong>Composição e espaçamento</strong><small>Controla containers, seções, grids, cards e blocos.</small></div>
+              <label>Largura máxima do conteúdo <output data-brand-output="containerWidth"></output><input class="control" type="range" min="880" max="1600" step="10" data-brand="containerWidth" /></label>
+              <label>Espaçamento vertical das seções <output data-brand-output="sectionSpace"></output><input class="control" type="range" min="40" max="200" step="4" data-brand="sectionSpace" /><small class="field-note">Valor de desktop; no mobile o respiro é reduzido proporcionalmente para preservar a composição.</small></label>
+              <label>Espaço entre blocos principais <output data-brand-output="contentGap"></output><input class="control" type="range" min="20" max="120" step="2" data-brand="contentGap" /></label>
+              <label>Espaço entre elementos <output data-brand-output="elementGap"></output><input class="control" type="range" min="4" max="64" step="2" data-brand="elementGap" /></label>
+              <label>Padding de cards/componentes <output data-brand-output="componentPadding"></output><input class="control" type="range" min="12" max="80" step="2" data-brand="componentPadding" /></label>
+              <label>Arredondamento <output data-brand-output="radius"></output><input class="control" type="range" min="0" max="48" data-brand="radius" /></label>
+            </div>
+            <div class="button-row">
+              <button class="btn" id="savePresetBtn">Baixar preset</button>
+              <label class="btn file-btn">Importar preset<input type="file" id="importPresetInput" accept="application/json" /></label>
+            </div>
+          </section>
+
+          <section class="tool-tab" id="tab-audit" aria-label="Auditoria da página">
+            <div class="section-heading"><div><small>INSPEÇÃO DE SEÇÕES</small><h2>Auditoria da página</h2></div><span class="score" id="auditScore">–</span></div>
+            <p class="helper">Clique em um ponto para abrir o campo no inspetor. Ajustes com botão são aplicados na hora e podem ser desfeitos com Desfazer.</p>
+            <div class="audit-panel" id="auditPanel"></div>
+          </section>
+
+          <section class="tool-tab" id="tab-seo">
+            <div class="section-heading"><div><small>INDEXAÇÃO</small><h2>SEO e compartilhamento</h2></div><span class="score" id="seoScore">0%</span></div>
+            <div class="seo-preview">
+              <span style="display:flex;align-items:center;gap:7px"><img id="seoPreviewIcon" alt="Ícone" style="width:22px;height:22px;object-fit:contain;display:none" /><span id="seoPreviewUrl">seudominio.com.br</span></span>
+              <strong id="seoPreviewTitle">Título da página</strong>
+              <p id="seoPreviewDescription">A descrição aparecerá aqui.</p>
+              <img id="seoPreviewShare" alt="Prévia da imagem Open Graph" style="display:none;width:100%;aspect-ratio:1200/630;object-fit:cover;border-radius:8px;margin-top:12px" />
+            </div>
+            <div class="form-stack" id="seoControls">
+              <label>Título SEO <span data-counter="title"></span><input class="control" data-seo="title" maxlength="60" /></label>
+              <label>Meta description <span data-counter="description"></span><textarea class="control" data-seo="description" maxlength="160" rows="4"></textarea></label>
+              <label>Palavras-chave<input class="control" data-seo="keywords" placeholder="apartamento, canoas, lançamento" /></label>
+              <label>URL canônica<input class="control" type="url" data-seo="canonical" placeholder="https://seudominio.com.br/pagina/" /></label>
+              <div class="seo-sitemap-card" id="seoSitemapCard">
+                <div><strong>Sitemap XML automático</strong><span id="seoSitemapStatus">Será gerado ao compilar o ZIP.</span></div>
+                <code id="seoSitemapUrl">https://seudominio.com.br/sitemap.xml</code>
+              </div>
+              <label>Gerar sitemap.xml + mapa das imagens<select class="control" data-seo="sitemapEnabled"><option value="yes">Sim — automático</option><option value="no">Não gerar</option></select></label>
+              <label>Frequência sugerida<select class="control" data-seo="sitemapChangefreq"><option value="daily">Diária</option><option value="weekly">Semanal</option><option value="monthly">Mensal</option><option value="yearly">Anual</option></select></label>
+              <label>Prioridade no sitemap<select class="control" data-seo="sitemapPriority"><option value="1.0">1.0 — principal</option><option value="0.8">0.8 — alta</option><option value="0.6">0.6 — normal</option><option value="0.4">0.4 — secundária</option></select></label>
+              <label>Imagem social (Open Graph)
+                <span class="image-drop seo-icon-drop">Carregar imagem social (PNG / JPEG)<input type="file" id="seoShareInput" accept=".png,.jpg,.jpeg,image/png,image/jpeg" /></span>
+                <input class="control" data-seo="ogImage" placeholder="./share.png ou ./share.jpg (gerado no ZIP)" />
+                <small id="seoShareSize">A imagem será otimizada automaticamente para menos de 300 KB, sem trocar PNG por JPEG ou vice-versa. Publicação na raiz: share.png ou share.jpg. Proporção sugerida: 1200 × 630 px.</small>
+              </label>
+              <div class="seo-icon-config">
+                <strong>Ícone do site (Favicon / Apple Touch Icon)</strong>
+                <button class="btn" type="button" id="openSeoVectorizer">Preparar ícone SVG no vetorizador</button>
+                <input class="control" data-seo="favicon" placeholder="./icon.svg (gerado no ZIP)" aria-label="URL do favicon" />
+                <small id="seoIconSize">O vetorizador permite prévia, ajustes e informa o tamanho final do SVG. O arquivo será exportado como icon.svg na raiz.</small>
+              </div>
+              <label>Robôs<select class="control" data-seo="robots"><option value="index, follow">Indexar e seguir</option><option value="noindex, nofollow">Não indexar</option></select></label>
+              <label>Nome do empreendimento<input class="control" data-seo="propertyName" /></label>
+              <label>Tipo do imóvel (Schema)<select class="control" data-seo="propertySchemaType"><option value="Place">Imóvel / empreendimento (genérico)</option><option value="Residence">Residência</option><option value="House">Casa</option><option value="SingleFamilyResidence">Casa unifamiliar</option><option value="Apartment">Apartamento</option><option value="ApartmentComplex">Condomínio / complexo de apartamentos</option></select></label>
+              <label>Endereço<input class="control" data-seo="address" /></label>
+              <label>Cidade<input class="control" data-seo="city" /></label>
+              <label>Estado<input class="control" data-seo="region" value="RS" /></label>
+              <label>Preço inicial (opcional)<input class="control" data-seo="price" placeholder="Ex.: R$ 389.900,00" /></label>
+              <div class="info-card"><strong>Schema imobiliário seguro</strong><p>O compilador usa RealEstateListing + imóvel e adiciona Offer apenas quando houver preço válido. Não gera Product vazio.</p></div>
+              <label>CEP<input class="control" data-seo="postalCode" /></label>
+              <label>Responsável pelo conteúdo<input class="control" data-seo="authorName" /></label>
+              <label>Especialidade / função<input class="control" data-seo="authorRole" /></label>
+              <label>URL do autor/perfil<input class="control" type="url" data-seo="authorUrl" placeholder="https://..." /></label>
+              <label>Marca / imobiliária<input class="control" data-seo="organizationName" /></label>
+              <label>URL da organização<input class="control" type="url" data-seo="organizationUrl" placeholder="https://..." /></label>
+              <label>Última revisão<input class="control" type="date" data-seo="lastReviewed" /></label>
+              <label>Fonte das informações<textarea class="control" data-seo="sourceNotes" rows="3" placeholder="Matrícula, tabela comercial, memorial, incorporadora..."></textarea></label>
+              <label>Contexto/local exclusivo<textarea class="control" data-seo="localInsight" rows="3" placeholder="Informação específica deste imóvel e desta localização."></textarea></label>
+              <label>Busca por IA<select class="control" data-seo="aiSearch"><option value="allow">Permitir descoberta (OAI-SearchBot)</option><option value="disallow">Bloquear descoberta</option></select></label>
+              <label>Treinamento por IA<select class="control" data-seo="aiTraining"><option value="disallow">Bloquear GPTBot</option><option value="allow">Permitir GPTBot</option></select></label>
+            </div>
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>READINESS 5.0</small><h2>Qualidade do resultado</h2></div><span class="score" id="readinessAverage">0</span></div>
+            <div class="checklist" id="readinessMetrics"></div>
+            <div class="checklist" id="seoChecklist"></div>
+          </section>
+
+          <section class="tool-tab" id="tab-project">
+            <div class="info-card ai-guide-panel" id="aiGuidePanel" style="margin:0 0 16px;padding:16px;border:1px solid rgba(69,151,224,.55);border-radius:12px;display:grid;gap:12px;">
+              <div><strong>Instruções para IA — criar landing page</strong><p style="margin:6px 0 0">Baixe o manual MD e anexe à IA para orientar a criação do projeto JSON editável no ImobStudio.</p></div>
+              <a class="btn btn-primary btn-wide" id="downloadAiInstructionsBtn" href="./docs/IMOBSTUDIO-GUIA-IA-LANDING-PAGES.md" download="IMOBSTUDIO-GUIA-IA-LANDING-PAGES-7.1.md" style="display:flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;min-height:42px">↓ Baixar MD — Manual IA atualizado</a>
+            </div>
+            <div class="section-heading"><div><small>PRODUÇÃO</small><h2>Projetos em escala</h2></div><span class="count" id="projectCount">1</span></div>
+            <div class="info-card"><strong>Fluxo de produção em massa</strong><p>Crie por modelo, duplique, troque os dados globais e exporte várias landing pages de uma vez.</p></div>
+            <div class="form-stack">
+              <label>Modelo inicial<select class="control" id="blueprintSelect"></select></label>
+            </div>
+            <div class="button-row">
+              <button class="btn" id="newFromBlueprintBtn">Novo por modelo</button>
+              <button class="btn" id="duplicateProjectBtn">Duplicar atual</button>
+            </div>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>PRESETS DE PROJETO</small><h2>Modelos cadastrados</h2></div><span class="count" id="projectPresetCount">0</span></div>
+            <p class="helper">Os presets são carregados de <b>presets/presets.json</b>. Você pode criar um novo projeto, aplicar um modelo ao projeto atual ou salvar o projeto atual como novo preset.</p>
+            <div class="project-preset-library" id="projectPresetLibrary"></div>
+            <div class="button-column">
+              <button class="btn btn-wide" id="openPresetNewProjectBtn">Novo projeto por preset</button>
+              <button class="btn btn-wide btn-primary" id="saveProjectAsPresetBtn">Salvar projeto atual como preset</button>
+            </div>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>DADOS GLOBAIS</small><h2>Informações do imóvel</h2></div></div>
+            <p class="helper">Preencha uma vez e aplique em SEO, localização, preço, contato, rodapé e Form.v4.</p>
+            <div class="form-stack" id="siteDataControls">
+              <label>Empreendimento<input class="control" data-site-data="propertyName"></label>
+              <label>Cidade<input class="control" data-site-data="city"></label>
+              <label>Endereço<input class="control" data-site-data="address"></label>
+              <label>Preço de referência<input class="control" data-site-data="price"></label>
+              <label>WhatsApp com DDI<input class="control" data-site-data="whatsapp"></label>
+              <label>Telefone exibido<input class="control" data-site-data="phone"></label>
+              <label>Corretor ou marca<input class="control" data-site-data="broker"></label>
+              <label>CRECI<input class="control" data-site-data="license"></label>
+              <label>E-mail<input class="control" type="email" data-site-data="email"></label>
+              <label>Endpoint do Form.v4<input class="control" type="url" data-site-data="endpoint"></label>
+            </div>
+            <button class="btn btn-wide" id="applySiteDataBtn">Aplicar dados em toda a página</button>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>MEUS PROJETOS</small><h2>Biblioteca de produção</h2></div></div>
+            <div id="projectLibrary" class="project-library"></div>
+            <button class="btn btn-wide btn-primary" id="compileBatchBtn">Exportar todos em lote</button>
+
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>ARQUIVO</small><h2>Projeto e dados</h2></div></div>
+            <div class="info-card project-file-hint"><strong>Projeto no disco local</strong><p>Use o botão <b>Projeto</b> na barra superior para carregar ou salvar o arquivo JSON. O projeto não é persistido automaticamente no navegador.</p></div>
+            <div class="button-column">
+              <button class="btn btn-wide danger" id="resetProjectBtn">Restaurar demonstração</button>
+            </div>
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>PLUGIN PLAY</small><h2>Componentes instalados</h2></div></div>
+            <div id="installedPluginList" class="installed-plugin-list"></div>
+            <div class="divider"></div>
+            <div class="section-heading compact"><div><small>COMPILAÇÃO</small><h2>Saída estática</h2></div></div>
+            <ul class="feature-list">
+              <li><span>✓</span> HTML5 sem dependência de servidor</li>
+              <li><span>✓</span> CSS e JS combinados por plugin</li>
+              <li><span>✓</span> Imagens incorporadas ao pacote</li>
+              <li><span>✓</span> SEO, Open Graph e Schema.org</li>
+              <li><span>✓</span> Compatível com mobile e desktop</li>
+            </ul>
+          </section>
+        </div>
+      </aside>
+
+      <div class="panel-resizer panel-resizer-left" id="leftPanelResizer" role="separator" aria-orientation="vertical" aria-label="Redimensionar barra de ferramentas" tabindex="0" title="Arraste para redimensionar"></div>
+
+      <main class="workspace">
+        <div class="canvas-toolbar">
+          <div class="device-switcher" role="group" aria-label="Tamanho da prévia">
+            <button class="device-btn is-active" data-device="desktop" title="Desktop">▰</button>
+            <button class="device-btn" data-device="tablet" title="Tablet">▯</button>
+            <button class="device-btn" data-device="mobile" title="Mobile">▯</button>
+          </div>
+          <div class="zoom-control"><span>−</span><input type="range" min="45" max="100" value="60" id="zoomRange" /><span>+</span><output id="zoomOutput">60%</output></div>
+          <span class="autosave-status is-dirty" id="autosaveStatus">Não salvo em disco</span>
+        </div>
+        <div class="canvas-stage" id="canvasStage">
+          <div class="browser-frame" id="browserFrame">
+            <div class="browser-bar"><span></span><span></span><span></span><div>residencialaurora.com.br</div></div>
+            <iframe id="previewFrame" title="Prévia da landing page" sandbox="allow-scripts allow-forms" allow="fullscreen *; autoplay *; geolocation *; accelerometer *; gyroscope *; magnetometer *; xr-spatial-tracking *; web-share *"></iframe>
+          </div>
+        </div>
+      </main>
+
+      <div class="panel-resizer panel-resizer-right" id="rightPanelResizer" role="separator" aria-orientation="vertical" aria-label="Redimensionar barra de atributos" tabindex="0" title="Arraste para redimensionar"></div>
+
+      <aside class="right-panel panel">
+        <div class="inspector-header">
+          <div><small>INSPETOR</small><h2 id="inspectorTitle">Selecione uma seção</h2></div>
+          <div class="inspector-state-menu-wrap">
+            <button class="btn icon-btn inspector-state-menu-button" id="inspectorStateMenuButton" type="button" title="Estado do componente" aria-label="Abrir menu de estado do componente" aria-haspopup="menu" aria-expanded="false">☰</button>
+            <div class="inspector-state-menu" id="inspectorStateMenu" role="menu" hidden>
+              <button type="button" role="menuitem" data-component-state-action="save-component"><strong>Salvar componente</strong><small>Exporta somente o item selecionado</small></button>
+              <button type="button" role="menuitem" data-component-state-action="save-group"><strong>Salvar grupo</strong><small>Exporta o Segmento ou container e seus itens</small></button>
+              <button type="button" role="menuitem" data-component-state-action="load"><strong>Carregar estado</strong><small>Aplica um arquivo .saved.json compatível</small></button>
+            </div>
+            <input id="componentStateInput" type="file" accept="application/json,.json" hidden>
+          </div>
+        </div>
+        <div id="inspectorEmpty" class="empty-state"><span>✦</span><strong>Personalize sua página</strong><p>Clique em uma seção da prévia ou na lista para editar texto, imagens e ações.</p></div>
+        <div id="inspectorContent" class="inspector-content"></div>
+      </aside>
+    </div>
+
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+    <dialog id="newProjectDialog" class="new-project-dialog" aria-labelledby="newProjectDialogTitle">
+      <div class="dialog-toolbar"><div><strong id="newProjectDialogTitle">Novo projeto</strong><small>Comece em branco ou escolha um modelo cadastrado em presets/presets.json</small></div><button class="btn" id="closeNewProjectDialog">Fechar</button></div>
+      <div class="new-project-content">
+        <button class="new-project-blank" id="createBlankProjectBtn" type="button"><span>＋</span><div><strong>Novo projeto em branco</strong><small>Cria um projeto sem seções para montar do zero.</small></div></button>
+        <div class="new-project-heading"><strong>Novo projeto de modelo</strong><small>Escolha a categoria e o foco do projeto.</small></div>
+        <div id="newProjectPresetTree" class="new-project-preset-tree"></div>
+      </div>
+    </dialog>
+    <dialog id="saveProjectPresetDialog" class="save-project-preset-dialog" aria-labelledby="saveProjectPresetTitle">
+      <div class="dialog-toolbar"><div><strong id="saveProjectPresetTitle">Salvar projeto como preset</strong><small>Cadastra a composição atual para reutilização.</small></div><button class="btn" id="closeSaveProjectPresetDialog">Fechar</button></div>
+      <div class="save-project-preset-content">
+        <label>Nome do preset<input class="control" id="projectPresetName" placeholder="Ex.: Casa individual — venda direta"></label>
+        <label>ID / diretório<input class="control" id="projectPresetId" placeholder="casa-individual-venda-direta"></label>
+        <label>Categoria<input class="control" id="projectPresetCategory" placeholder="Personalizado"></label>
+        <label>Descrição<textarea class="control" id="projectPresetDescription" rows="4" placeholder="Explique quando este preset deve ser usado."></textarea></label>
+        <div class="preset-save-note">Ao usar <b>Salvar no Studio</b>, selecione a pasta raiz do Imobify Studio. O sistema atualiza automaticamente <code>presets/presets.json</code> e grava <code>presets/&lt;id&gt;/preset.json</code>.</div>
+        <div class="button-row preset-save-actions">
+          <button class="btn btn-primary" id="savePresetToStudioBtn">Salvar no Studio</button>
+          <button class="btn" id="exportProjectPresetZipBtn">Exportar ZIP</button>
+        </div>
+      </div>
+    </dialog>
+    <dialog id="previewDialog" class="preview-dialog">
+      <div class="dialog-toolbar"><strong>Pré-visualização</strong><button class="btn" id="closePreviewBtn">Fechar</button></div>
+      <iframe id="fullPreviewFrame" title="Pré-visualização completa" sandbox="allow-scripts allow-forms allow-popups" allow="fullscreen *; autoplay *; geolocation *; accelerometer *; gyroscope *; magnetometer *; xr-spatial-tracking *; web-share *"></iframe>
+    </dialog>
+    <dialog id="progressDialog" class="progress-dialog">
+      <div class="progress-mark">↓</div><h2>Compilando sua landing page</h2><p id="progressText">Organizando plugins e arquivos...</p><div class="progress-track"><span id="progressBar"></span></div>
+    </dialog>
+    <dialog id="blockDialog" class="block-dialog">
+      <div class="dialog-toolbar"><div><strong id="blockDialogTitle">Adicionar seção</strong><small id="blockDialogSubtitle">Escolha um componente para inserir na página</small></div><button class="btn" id="closeBlockDialog">Fechar</button></div>
+      <div class="block-picker-list" id="blockPickerList"></div>
+    </dialog>
+    <dialog id="floatingHelpDialog" class="floating-help-dialog" aria-labelledby="floatingHelpTitle">
+      <div class="dialog-toolbar floating-help-toolbar">
+        <div><strong id="floatingHelpTitle">Como usar — Floating Container Pro</strong><small>Exemplos gerados com a configuração atual da instância selecionada</small></div>
+        <button class="btn" id="closeFloatingHelpDialog">Fechar</button>
+      </div>
+      <div class="floating-help-content" id="floatingHelpContent"></div>
+    </dialog>
+    <dialog id="heroPlusStudioDialog" class="hero-plus-studio-dialog" aria-labelledby="heroPlusStudioTitle">
+      <div class="dialog-toolbar hero-plus-studio-toolbar">
+        <div><strong id="heroPlusStudioTitle">Hero Imobiliário Plus — Studio</strong><small>Tipografia, movimento, perspectiva, partículas, iluminação e animação do hero selecionado.</small></div>
+        <button class="btn" id="closeHeroPlusStudioDialog">Fechar</button>
+      </div>
+      <div class="hero-plus-studio-content" id="heroPlusStudioContent"></div>
+    </dialog>
+
+    <script src="vendor/jszip.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/icon-library.js"></script>
+    <script src="assets/js/catalog.js"></script>
+    <script src="assets/js/plugin-loader.js"></script>
+    <script src="assets/js/typography-system.js"></script>
+    <script src="assets/js/renderer.js"></script>
+    <dialog id="seoVectorModal" class="seo-vector-modal" aria-label="Vetorizador de ícones">
+      <div class="seo-vector-head"><strong>Preparar favicon / Apple Touch Icon</strong><button type="button" class="btn" id="closeSeoVectorizer">Fechar</button></div>
+      <iframe id="seoVectorFrame" title="Vetorizador de ícones" loading="lazy" data-src="tools/vetorizador-icones/index.html"></iframe>
+    </dialog>
+    <script src="assets/js/compiler.js"></script>
+    <script src="assets/js/component-state.js"></script>
+    <script src="assets/js/preset-loader.js"></script>
+    <script src="assets/js/left-panel-navigation.js"></script>
+    <script src="assets/js/typography-wizard.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/ai-guide.js"></script>
+    <script src="assets/js/inspector-accordion.js"></script>
+    <script src="assets/js/seo-optimizer.js"></script>
+    <script src="assets/js/section-audit.js"></script>
+
+</body>
+</html>

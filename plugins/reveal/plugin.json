@@ -1,0 +1,9 @@
+{
+  "id": "reveal",
+  "name": "Revelação no scroll",
+  "version": "6.0.0",
+  "type": "behavior",
+  "category": "effect",
+  "css": "plugin.css",
+  "js": "plugin.js"
+}

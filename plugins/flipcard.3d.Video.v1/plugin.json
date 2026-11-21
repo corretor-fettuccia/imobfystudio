@@ -1,0 +1,484 @@
+{
+  "schemaVersion": 3,
+  "id": "flipcard-3d-video-v1",
+  "name": "Flip Card 3D Video Single",
+  "version": "1.1.0",
+  "type": "section",
+  "category": "Interação",
+  "icon": "◫",
+  "description": "Um Flip Card 3D com vídeo por instância, pronto para composição em linhas ou colunas pelo Segmento nativo.",
+  "composition": { "role": "both", "cardinality": "single" },
+  "migration": { "legacyGrid": { "slots": 4, "columnsField": "gridColumns", "gapField": "gridGap" } },
+  "origin": "Derivado do Flip Card 3D Grid 4.3.0 e atualizado para cardinalidade single; o vídeo permanece em uma camada interna isolada.",
+  "entry": {
+    "template": "template.html",
+    "styles": [
+      "css/flipcard.4.0.css",
+      "css/layout.css",
+      "css/video.css"
+    ],
+    "scripts": [
+      "js/flipcard.4.0.js",
+      "plugin.js"
+    ]
+  },
+  "defaults": {
+    "gridColumns": "3",
+    "gridGap": 28,
+    "showItemIcons": true,
+    "frontIcon": "fas fa-hand-holding-usd",
+    "frontTitle": "Parcelamento direto",
+    "frontItems": "Entrada a partir de 20%\nTaxas a partir de 0,99% a.m.\nAprovação em 24h",
+    "frontVideo": "",
+    "frontHasButton": true,
+    "frontButtonText": "Simular",
+    "frontButtonLink": "#contato",
+    "backIcon": "fas fa-calculator",
+    "backTitle": "Simulação rápida",
+    "backItems": "Taxa reduzida\nLance livre\nGestão digital",
+    "backVideo": "",
+    "backHasButton": true,
+    "backButtonText": "Quero simular",
+    "backButtonLink": "#contato",
+    "card2Enabled": true,
+    "card2FrontIcon": "fas fa-house",
+    "card2FrontTitle": "Card 2",
+    "card2FrontItems": "Primeiro destaque\nSegundo destaque\nTerceiro destaque",
+    "card2FrontVideo": "",
+    "card2FrontHasButton": false,
+    "card2FrontButtonText": "Saiba mais",
+    "card2FrontButtonLink": "#contato",
+    "card2BackIcon": "fas fa-check",
+    "card2BackTitle": "Mais informações",
+    "card2BackItems": "Informação complementar\nCondição especial\nPróximo passo",
+    "card2BackVideo": "",
+    "card2BackHasButton": true,
+    "card2BackButtonText": "Quero saber mais",
+    "card2BackButtonLink": "#contato",
+    "card3Enabled": false,
+    "card3FrontIcon": "fas fa-house",
+    "card3FrontTitle": "Card 3",
+    "card3FrontItems": "Primeiro destaque\nSegundo destaque\nTerceiro destaque",
+    "card3FrontVideo": "",
+    "card3FrontHasButton": false,
+    "card3FrontButtonText": "Saiba mais",
+    "card3FrontButtonLink": "#contato",
+    "card3BackIcon": "fas fa-check",
+    "card3BackTitle": "Mais informações",
+    "card3BackItems": "Informação complementar\nCondição especial\nPróximo passo",
+    "card3BackVideo": "",
+    "card3BackHasButton": true,
+    "card3BackButtonText": "Quero saber mais",
+    "card3BackButtonLink": "#contato",
+    "card4Enabled": false,
+    "card4FrontIcon": "fas fa-house",
+    "card4FrontTitle": "Card 4",
+    "card4FrontItems": "Primeiro destaque\nSegundo destaque\nTerceiro destaque",
+    "card4FrontVideo": "",
+    "card4FrontHasButton": false,
+    "card4FrontButtonText": "Saiba mais",
+    "card4FrontButtonLink": "#contato",
+    "card4BackIcon": "fas fa-check",
+    "card4BackTitle": "Mais informações",
+    "card4BackItems": "Informação complementar\nCondição especial\nPróximo passo",
+    "card4BackVideo": "",
+    "card4BackHasButton": true,
+    "card4BackButtonText": "Quero saber mais",
+    "card4BackButtonLink": "#contato"
+  },
+  "fields": [
+    {
+      "key": "gridColumns",
+      "label": "Colunas no desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "1 coluna",
+          "value": "1"
+        },
+        {
+          "label": "2 colunas",
+          "value": "2"
+        },
+        {
+          "label": "3 colunas",
+          "value": "3"
+        },
+        {
+          "label": "4 colunas",
+          "value": "4"
+        }
+      ],
+      "group": "Layout"
+    },
+    {
+      "key": "gridGap",
+      "label": "Espaço entre cards",
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 4,
+      "group": "Layout"
+    },
+    {
+      "key": "showItemIcons",
+      "label": "Ícones nos itens",
+      "type": "toggle",
+      "group": "Layout"
+    },
+    {
+      "key": "frontIcon",
+      "label": "Ícone frente",
+      "type": "text",
+      "group": "Card 1"
+    },
+    {
+      "key": "frontTitle",
+      "label": "Título frente",
+      "type": "text",
+      "group": "Card 1"
+    },
+    {
+      "key": "frontItems",
+      "label": "Itens frente — um por linha",
+      "type": "textarea",
+      "group": "Card 1"
+    },
+    {
+      "key": "frontVideo",
+      "label": "Vídeo frente",
+      "type": "video",
+      "group": "Card 1"
+    },
+    {
+      "key": "frontHasButton",
+      "label": "Botão na frente",
+      "type": "toggle",
+      "group": "Card 1"
+    },
+    {
+      "key": "frontButtonText",
+      "label": "Texto botão frente",
+      "type": "text",
+      "group": "Card 1"
+    },
+    {
+      "key": "frontButtonLink",
+      "label": "Link botão frente",
+      "type": "url",
+      "group": "Card 1"
+    },
+    {
+      "key": "backIcon",
+      "label": "Ícone verso",
+      "type": "text",
+      "group": "Card 1"
+    },
+    {
+      "key": "backTitle",
+      "label": "Título verso",
+      "type": "text",
+      "group": "Card 1"
+    },
+    {
+      "key": "backItems",
+      "label": "Itens verso — um por linha",
+      "type": "textarea",
+      "group": "Card 1"
+    },
+    {
+      "key": "backVideo",
+      "label": "Vídeo verso",
+      "type": "video",
+      "group": "Card 1"
+    },
+    {
+      "key": "backHasButton",
+      "label": "Botão no verso",
+      "type": "toggle",
+      "group": "Card 1"
+    },
+    {
+      "key": "backButtonText",
+      "label": "Texto botão verso",
+      "type": "text",
+      "group": "Card 1"
+    },
+    {
+      "key": "backButtonLink",
+      "label": "Link botão verso",
+      "type": "url",
+      "group": "Card 1"
+    },
+    {
+      "key": "card2Enabled",
+      "label": "Exibir este card",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontIcon",
+      "label": "Ícone frente",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontTitle",
+      "label": "Título frente",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontItems",
+      "label": "Itens frente — um por linha",
+      "type": "textarea",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontVideo",
+      "label": "Vídeo frente",
+      "type": "video",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontHasButton",
+      "label": "Botão na frente",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontButtonText",
+      "label": "Texto botão frente",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2FrontButtonLink",
+      "label": "Link botão frente",
+      "type": "url",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackIcon",
+      "label": "Ícone verso",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackTitle",
+      "label": "Título verso",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackItems",
+      "label": "Itens verso — um por linha",
+      "type": "textarea",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackVideo",
+      "label": "Vídeo verso",
+      "type": "video",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackHasButton",
+      "label": "Botão no verso",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackButtonText",
+      "label": "Texto botão verso",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2BackButtonLink",
+      "label": "Link botão verso",
+      "type": "url",
+      "group": "Card 2"
+    },
+    {
+      "key": "card3Enabled",
+      "label": "Exibir este card",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontIcon",
+      "label": "Ícone frente",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontTitle",
+      "label": "Título frente",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontItems",
+      "label": "Itens frente — um por linha",
+      "type": "textarea",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontVideo",
+      "label": "Vídeo frente",
+      "type": "video",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontHasButton",
+      "label": "Botão na frente",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontButtonText",
+      "label": "Texto botão frente",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3FrontButtonLink",
+      "label": "Link botão frente",
+      "type": "url",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackIcon",
+      "label": "Ícone verso",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackTitle",
+      "label": "Título verso",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackItems",
+      "label": "Itens verso — um por linha",
+      "type": "textarea",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackVideo",
+      "label": "Vídeo verso",
+      "type": "video",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackHasButton",
+      "label": "Botão no verso",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackButtonText",
+      "label": "Texto botão verso",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3BackButtonLink",
+      "label": "Link botão verso",
+      "type": "url",
+      "group": "Card 3"
+    },
+    {
+      "key": "card4Enabled",
+      "label": "Exibir este card",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontIcon",
+      "label": "Ícone frente",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontTitle",
+      "label": "Título frente",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontItems",
+      "label": "Itens frente — um por linha",
+      "type": "textarea",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontVideo",
+      "label": "Vídeo frente",
+      "type": "video",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontHasButton",
+      "label": "Botão na frente",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontButtonText",
+      "label": "Texto botão frente",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4FrontButtonLink",
+      "label": "Link botão frente",
+      "type": "url",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackIcon",
+      "label": "Ícone verso",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackTitle",
+      "label": "Título verso",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackItems",
+      "label": "Itens verso — um por linha",
+      "type": "textarea",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackVideo",
+      "label": "Vídeo verso",
+      "type": "video",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackHasButton",
+      "label": "Botão no verso",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackButtonText",
+      "label": "Texto botão verso",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4BackButtonLink",
+      "label": "Link botão verso",
+      "type": "url",
+      "group": "Card 4"
+    }
+  ]
+}

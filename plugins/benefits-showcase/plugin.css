@@ -1,0 +1,216 @@
+/* Benefits Showcase v1 — standalone export-safe CSS */
+.bs-section{padding:clamp(64px,8vw,112px) 0;background:var(--bs-bg);color:var(--bs-text);overflow:hidden}.bs-section .bs-heading{max-width:780px;margin:0 auto 42px;text-align:center}.bs-heading .eyebrow{color:var(--bs-accent);font-size:.76rem;letter-spacing:.22em;font-weight:650;text-transform:uppercase;margin:0 0 18px}.bs-heading h2{font-family:var(--heading);letter-spacing:-.035em;line-height:1.1;font-size:clamp(2.15rem,5vw,4.25rem);margin:0 0 18px;color:inherit}.bs-heading .bs-subtitle{font-size:clamp(1rem,1.6vw,1.22rem);line-height:1.6;opacity:.75;margin:0}.bs-grid{display:grid;grid-template-columns:repeat(var(--bs-columns),minmax(0,1fr));gap:var(--bs-gap)}.bs-card{min-width:0;position:relative;background:var(--bs-card);border:1px solid rgba(114,97,75,.075);border-radius:var(--bs-radius);padding:clamp(21px,2.5vw,35px);box-shadow:0 14px 38px rgba(38,28,15,.065);transition:transform .32s ease,box-shadow .32s ease,opacity .3s ease}.bs-card:hover{transform:translateY(-5px);box-shadow:0 22px 45px rgba(38,28,15,.12)}.bs-icon{display:flex;justify-content:center;align-items:center;width:calc(var(--bs-icon-size) + 32px);height:calc(var(--bs-icon-size) + 32px);border-radius:50%;background:color-mix(in srgb,var(--bs-accent) 12%,white);color:var(--bs-text);margin:0 0 24px}.bs-icon svg{max-width:70%;max-height:70%}.bs-section[data-bs-icon-style=rounded] svg{stroke-linecap:round;stroke-linejoin:round;stroke-width:2.3}.bs-section[data-bs-icon-style=sharp] svg{stroke-linecap:square;stroke-linejoin:miter;stroke-width:1.5}.bs-card h3{font-family:var(--heading);font-size:clamp(1.05rem,1.4vw,1.35rem);font-weight:700;line-height:1.3;letter-spacing:-.02em;margin:0 0 10px;color:inherit}.bs-card p{font-size:clamp(.9rem,1.1vw,1rem);line-height:1.65;margin:0;opacity:.72}.bs-section[data-bs-align=center] .bs-card{text-align:center}.bs-section[data-bs-align=center] .bs-icon{margin-left:auto;margin-right:auto}.bs-section[data-bs-layout=bento] .bs-featured{grid-column:span 2;display:flex;align-items:center;gap:24px}.bs-section[data-bs-layout=bento] .bs-featured .bs-icon{flex-shrink:0;margin:0}.bs-section[data-bs-layout=editorial] .bs-grid{gap:0}.bs-section[data-bs-layout=editorial] .bs-card{border-radius:0;box-shadow:none;background:transparent;border:0;border-bottom:1px solid color-mix(in srgb,var(--bs-text) 15%,transparent)}.bs-section[data-bs-layout=list] .bs-grid{grid-template-columns:1fr}.bs-section[data-bs-layout=list] .bs-card{display:flex;align-items:center;gap:22px;padding:18px 22px}.bs-section[data-bs-layout=list] .bs-icon{flex-shrink:0;margin:0;width:56px;height:56px}.bs-section[data-bs-layout=list] .bs-icon svg{width:30px;height:30px}.bs-filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:-12px 0 28px}.bs-filter{font:inherit;cursor:pointer;border:1px solid color-mix(in srgb,var(--bs-text) 15%,transparent);background:transparent;border-radius:100px;padding:9px 17px;color:inherit}.bs-filter.is-active{background:var(--bs-text);color:var(--bs-card)}.bs-card[hidden]{display:none!important}@media(min-width:761px) and (max-width:1000px){.bs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.bs-section{padding:60px 0}.bs-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.bs-card{padding:20px}.bs-section[data-bs-layout=bento] .bs-featured{grid-column:span 2}.bs-icon{margin-bottom:15px}.bs-heading{margin-bottom:30px!important}}@media(max-width:520px){.bs-grid{grid-template-columns:1fr}.bs-section[data-bs-layout=bento] .bs-featured{grid-column:auto;display:block}.bs-section[data-bs-layout=bento] .bs-featured .bs-icon{margin-bottom:15px}.bs-section[data-bs-layout=list] .bs-card{padding:15px;gap:14px}.bs-heading h2{font-size:clamp(2rem,9vw,3rem)}}@media(prefers-reduced-motion:no-preference){.bs-section.bs-motion-ready .bs-card:not(.bs-visible){opacity:0;transform:translateY(20px)}.bs-section.bs-motion-ready[data-bs-motion=mask] .bs-card:not(.bs-visible){clip-path:inset(0 0 100% 0);transform:none}.bs-section.bs-motion-ready[data-bs-motion=elevate] .bs-card:not(.bs-visible){transform:translateY(35px) scale(.97)}.bs-section.bs-motion-ready .bs-card{transition:opacity var(--bs-duration) ease,transform var(--bs-duration) cubic-bezier(.2,.8,.2,1),clip-path var(--bs-duration) ease,box-shadow .3s ease;transition-delay:calc(var(--bs-index)*var(--bs-stagger))}.bs-section.bs-motion-ready .bs-card.bs-visible{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}@media(prefers-reduced-motion:reduce){.bs-section *, .bs-section *:before,.bs-section *:after{animation:none!important;transition:none!important}}
+
+/* v1.1.1 — inherited project typography. No independent Georgia display stack. */
+[data-plugin="benefits-showcase"] .bs-heading .eyebrow { font-family:var(--ib-eyebrow-font,var(--body));font-size:var(--ib-eyebrow-size,.76rem);font-weight:var(--ib-eyebrow-weight,700);line-height:var(--ib-eyebrow-line,1.35);letter-spacing:var(--ib-eyebrow-tracking,var(--eyebrow-tracking,.14em)); }
+[data-plugin="benefits-showcase"] .bs-heading h2 { font-family:var(--ib-headline-font,var(--heading));font-weight:var(--ib-headline-weight,var(--heading-weight));line-height:var(--ib-headline-line,var(--heading-line));letter-spacing:var(--ib-headline-tracking,var(--heading-tracking));font-size:clamp(2rem,4.4vw,var(--h2-max,4.25rem)); }
+[data-plugin="benefits-showcase"] .bs-heading .bs-subtitle { font-family:var(--ib-subheadline-font,var(--body));font-weight:var(--ib-subheadline-weight,400);line-height:var(--ib-subheadline-line,var(--body-line));letter-spacing:var(--ib-subheadline-tracking,0em);font-size:clamp(1rem,1.65vw,var(--ib-subheadline-size,1.22rem)); }
+[data-plugin="benefits-showcase"] .bs-card h3 { font-family:var(--ib-subheadline-font,var(--heading));font-weight:var(--ib-subheadline-weight,var(--heading-weight));line-height:var(--ib-subheadline-line,1.3);letter-spacing:var(--ib-subheadline-tracking,var(--heading-tracking));font-size:clamp(1.05rem,1.6vw,var(--h3-max,1.35rem)); }
+[data-plugin="benefits-showcase"] .bs-card p { font-family:var(--ib-body-font,var(--body));font-size:clamp(.95rem,1.1vw,var(--body-size,1rem));line-height:var(--ib-body-line,var(--body-line));letter-spacing:var(--ib-body-tracking,0em); }
+[data-plugin="benefits-showcase"] .bs-filter { font-family:var(--ib-body-font,var(--body));font-weight:var(--ib-body-weight,500); }
+/* Explicit local typography in the inspector should use project base tokens, not cached wizard customizations. */
+[data-plugin="benefits-showcase"][data-ib-type-mode="local"] { --ib-eyebrow-font:var(--body);--ib-subheadline-font:var(--body);--ib-headline-font:var(--heading);--ib-body-font:var(--body); }
+
+[data-plugin="benefits-showcase"] .bs-heading h2,[data-plugin="benefits-showcase"] .bs-card h3{color:var(--bs-title,var(--heading-color));}
+
+
+/* v1.2.0 — Fundo fotográfico imersivo com contraste preservado. 
+   O elemento sticky permanece apenas dentro desta section, inclusive em iOS/Android,
+   sem depender de background-attachment:fixed (inconsistente em WebKit móvel). */
+[data-plugin="benefits-showcase"][data-bs-image="true"] {
+  position:relative;
+  --bs-section-pad:clamp(64px,8vw,112px);
+  padding-block:var(--bs-section-pad);
+  overflow:clip;
+  isolation:isolate;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-backdrop {
+  position:sticky;
+  top:0;
+  display:block;
+  width:100%;
+  height:100vh;
+  height:100dvh;
+  margin-top:calc(-1 * var(--bs-section-pad));
+  margin-bottom:-100vh;
+  margin-bottom:-100dvh;
+  pointer-events:none;
+  z-index:0;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-bg-image {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center var(--bs-image-y,50%);
+  pointer-events:none;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-backdrop::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(8,18,30,var(--bs-overlay,.76));
+  pointer-events:none;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"][data-bs-fixed="false"] .bs-backdrop {
+  position:absolute;
+  inset:0;
+  height:100%;
+  margin:0;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] > .site-container {
+  position:relative;
+  z-index:1;
+}
+/* Contraste elevado apenas quando existe foto; o motor de tipografia continua controlando fontes e escala. */
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading .eyebrow,
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading h2,
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading .bs-subtitle {
+  color:#fff;
+  text-shadow:0 2px 12px rgba(0,0,0,.4);
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading .bs-subtitle { opacity:1; }
+/* Os cards preservam a paleta do projeto e oferecem uma superfície sólida
+   para nunca depender da legibilidade do texto diretamente sobre a foto. */
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-card {
+  background:var(--bs-card);
+  color:var(--bs-text);
+  border-color:color-mix(in srgb,var(--bs-text) 13%,transparent);
+  box-shadow:0 12px 30px rgba(0,0,0,.16);
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-card h3 { color:var(--bs-title,var(--bs-text)); }
+[data-plugin="benefits-showcase"][data-bs-image="true"][data-bs-layout="editorial"] .bs-card {
+  padding:clamp(21px,2.5vw,35px);
+  border-radius:var(--bs-radius);
+  border:1px solid color-mix(in srgb,var(--bs-text) 13%,transparent);
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"][data-bs-layout="editorial"] .bs-grid { gap:var(--bs-gap); }
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-filter {
+  background:rgba(8,18,30,.76);
+  border-color:rgba(255,255,255,.65);
+  color:#fff;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-filter.is-active {
+  background:#fff;
+  color:#101b2b;
+}
+@media(max-width:760px){
+  [data-plugin="benefits-showcase"][data-bs-image="true"] { --bs-section-pad:60px; }
+}
+@supports not (overflow:clip){
+  [data-plugin="benefits-showcase"][data-bs-image="true"] {overflow:visible;}
+}
+
+
+/* v1.2.1 — Integracao direta com os tokens de composicao e tipografia do core.
+   O container e suas margens responsivas sao gerenciados por .site-container (base.css
+   + design-system.css); nao se aplicam paddings horizontais proprios ao componente.
+   Sem Wizard: escala tipografica do projeto; com Wizard: a ponte global (important)
+   assume cada papel, com os overrides locais da secao preservados. */
+[data-plugin="benefits-showcase"] {
+  --bs-section-pad:var(--section-space,clamp(64px,8vw,112px));
+  padding-block:var(--bs-section-pad);
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] {
+  --bs-section-pad:var(--section-space,clamp(64px,8vw,112px));
+  padding-block:var(--bs-section-pad);
+}
+/* O cabecalho comeca na mesma margem dos cards e das demais sections.
+   A medida de leitura vem do projeto; o modo centralizado e opt-in. */
+[data-plugin="benefits-showcase"] .bs-heading {
+  box-sizing:border-box;
+  width:100%;
+  max-width:min(100%,var(--text-measure,66ch));
+  margin:0 0 var(--content-gap,56px);
+  text-align:left;
+}
+[data-plugin="benefits-showcase"][data-bs-align="center"] .bs-heading {
+  margin-inline:auto;
+  text-align:center;
+}
+/* Sem preset de fontes, tamanho ou ritmo autonomos: os tokens abaixo sao os
+   mesmos usados em h2, h3, texto e eyebrow pelo core. O Wizard global tem
+   prioridade via seu bridgeCss e os estilos locais seguem independentes. */
+[data-plugin="benefits-showcase"] .bs-heading .eyebrow {
+  font-family:var(--body);
+  font-weight:700;
+  font-size:.72rem;
+  line-height:1.35;
+  letter-spacing:var(--eyebrow-tracking,.12em);
+  margin:0 0 var(--element-gap,20px);
+}
+[data-plugin="benefits-showcase"] .bs-heading h2 {
+  font-family:var(--heading);
+  font-size:clamp(2.1rem,5vw,var(--h2-max,77px));
+  font-weight:var(--heading-weight,700);
+  line-height:var(--heading-line,1.05);
+  letter-spacing:var(--heading-tracking,-.04em);
+  margin:0 0 var(--element-gap,20px);
+  max-width:22ch;
+  text-wrap:balance;
+}
+[data-plugin="benefits-showcase"][data-bs-align="center"] .bs-heading h2 { margin-inline:auto; }
+[data-plugin="benefits-showcase"] .bs-heading .bs-subtitle {
+  font-family:var(--body);
+  font-size:calc(var(--body-size,16px) * 1.125);
+  font-weight:400;
+  line-height:var(--body-line,1.6);
+  letter-spacing:var(--body-tracking,0em);
+  max-width:var(--text-measure,66ch);
+  margin:0;
+}
+[data-plugin="benefits-showcase"] .bs-card h3 {
+  font-family:var(--heading);
+  font-size:clamp(1.15rem,2vw,var(--h3-max,25px));
+  font-weight:var(--heading-weight,700);
+  line-height:var(--heading-line,1.05);
+  letter-spacing:var(--heading-tracking,-.04em);
+  margin:0 0 calc(var(--element-gap,20px) * .5);
+}
+[data-plugin="benefits-showcase"] .bs-card p {
+  font-family:var(--body);
+  font-size:var(--body-size,16px);
+  font-weight:400;
+  line-height:var(--body-line,1.6);
+  letter-spacing:var(--body-tracking,0em);
+}
+/* Area util do card baseada no padding padrao. A grade e o gap continuam
+   ajustaveis no inspetor, como escolhas explicitamente locais de composicao. */
+[data-plugin="benefits-showcase"] .bs-card {
+  padding:var(--component-padding,36px);
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"][data-bs-layout="editorial"] .bs-card {
+  padding:var(--component-padding,36px);
+}
+/* A composicao lista tem altura compacta propria, mas preserva a densidade
+   proporcional do padding configurado no projeto. */
+[data-plugin="benefits-showcase"][data-bs-layout="list"] .bs-card {
+  padding:calc(var(--component-padding,36px) * .6);
+}
+@media(max-width:720px) {
+  /* Nao repetir os 60px do antigo preset; no mobile o core calcula --section-space.
+     .site-container tambem muda para 14px de margem via base.css. */
+  [data-plugin="benefits-showcase"] .bs-heading { margin-bottom:var(--content-gap,36px); }
+  [data-plugin="benefits-showcase"] .bs-card { padding:var(--component-padding,24px); }
+  [data-plugin="benefits-showcase"][data-bs-image="true"][data-bs-layout="editorial"] .bs-card { padding:var(--component-padding,24px); }
+  [data-plugin="benefits-showcase"][data-bs-layout="list"] .bs-card { padding:calc(var(--component-padding,24px) * .6); }
+  [data-plugin="benefits-showcase"] .bs-heading h2 {
+    font-size:clamp(2rem,10vw,min(var(--h2-max,77px),3.35rem));
+  }
+}
+
+/* A camada sticky compensa ambas as margens negativas para que o primeiro texto
+   comece APOS o padding superior do projeto (antes iniciava no topo da section). */
+[data-plugin="benefits-showcase"][data-bs-image="true"][data-bs-fixed="true"] .bs-backdrop {
+  margin-bottom:calc(var(--bs-section-pad) - 100vh);
+  margin-bottom:calc(var(--bs-section-pad) - 100dvh);
+}
+/* Quando existe fotografia, usar as cores inversas SEM alterar fontes, pesos
+   e tamanhos do Wizard. O operador ainda pode aplicar cores locais explicitamente. */
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading .eyebrow,
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading h2 {
+  color:var(--inverse-heading-color,#fff) !important;
+}
+[data-plugin="benefits-showcase"][data-bs-image="true"] .bs-heading .bs-subtitle {
+  color:var(--inverse-body-color,#e2e6ee) !important;
+}

@@ -1,0 +1,33 @@
+/* Integração single: uma instância corresponde a um card.
+   Linhas e colunas são compostas pelo Segmento nativo do framework. */
+[data-plugin="flip-card-pro"] {
+    padding-block: var(--section-space);
+    background: var(--surface);
+}
+
+[data-plugin="flip-card-pro"] .flip-card-plugin-container {
+    width: min(320px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+[data-plugin="flip-card-pro"] .flip-card-single {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+[data-plugin="flip-card-pro"] .flip-card {
+    width: 320px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+    [data-plugin="flip-card-pro"] .flip-card-plugin-container {
+        width: min(280px, calc(100% - 28px));
+    }
+
+    [data-plugin="flip-card-pro"] .flip-card {
+        width: min(280px, 100%);
+    }
+}

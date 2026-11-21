@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 3,
+  "id": "meu-componente",
+  "name": "Meu componente",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Plugin Play",
+  "icon": "⬡",
+  "description": "Componente inicial para personalização",
+  "composition": { "role": "both" },
+  "entry": { "template": "template.html", "style": "plugin.css", "script": "plugin.js" },
+  "defaults": { "eyebrow": "NOVO COMPONENTE", "title": "Edite este título", "copy": "Este conteúdo será controlado pelo inspetor." },
+  "fields": [
+    { "key": "eyebrow", "label": "Chamada superior", "type": "text", "group": "Conteúdo" },
+    { "key": "title", "label": "Título", "type": "textarea", "group": "Conteúdo" },
+    { "key": "copy", "label": "Texto", "type": "textarea", "group": "Conteúdo" }
+  ]
+}

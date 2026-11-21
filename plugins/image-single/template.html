@@ -1,0 +1,5 @@
+<figure class="iis-figure" data-align="{{alignment}}" data-ratio="{{aspectRatio}}" data-fit="{{objectFit}}" data-shadow="{{shadowStyle}}" data-caption-align="{{captionAlign}}" style="--iis-max-width:{{maxWidth}}px;--iis-radius:{{borderRadius}}px;--iis-padding-y:{{paddingY}}px;--iis-background:{{backgroundColor}}">
+  {{#if linkUrl}}<a class="iis-link" href="{{linkUrl|href}}" aria-label="Abrir imagem: {{alt}}"{{#if openNewTab}} target="_blank" rel="noopener noreferrer"{{/if}}><img class="iis-image" src="{{image}}" alt="{{alt}}" loading="{{loading}}" decoding="async"></a>{{/if}}
+  {{#unless linkUrl}}<img class="iis-image" src="{{image}}" alt="{{alt}}" loading="{{loading}}" decoding="async">{{/unless}}
+  {{#if caption}}<figcaption>{{caption|br}}</figcaption>{{/if}}
+</figure>

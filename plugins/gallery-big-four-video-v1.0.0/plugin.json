@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 3,
+  "id": "gallery-big-four-video",
+  "name": "Galeria Big Four Video",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Galeria",
+  "icon": "▥",
+  "description": "Galeria Big Four original com suporte híbrido a imagem e vídeo, play on hover, autoplay loop e autoplay boomerang.",
+  "origin": "Baseado no plugin gallery-big-four v2.2.0 enviado pelo usuário",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "EXPERIÊNCIAS DO EMPREENDIMENTO",
+    "title": "Cinco ambientes. Uma nova forma de viver.",
+    "height": 620,
+
+    "mediaType1": "image", "image1": "assets/images/gallery-1.jpg", "video1": "", "videoBehavior1": "hover", "videoFit1": "cover", "videoPosition1": "center", "title1": "Living integrado", "vertical1": "CONVÍVIO",
+    "mediaType2": "image", "image2": "assets/images/gallery-2.jpg", "video2": "", "videoBehavior2": "hover", "videoFit2": "cover", "videoPosition2": "center", "title2": "Rooftop ao pôr do sol", "vertical2": "ROOFTOP",
+    "mediaType3": "image", "image3": "assets/images/gallery-3.jpg", "video3": "", "videoBehavior3": "hover", "videoFit3": "cover", "videoPosition3": "center", "title3": "Piscina e lazer", "vertical3": "LAZER",
+    "mediaType4": "image", "image4": "assets/images/lifestyle.jpg", "video4": "", "videoBehavior4": "hover", "videoFit4": "cover", "videoPosition4": "center", "title4": "Paisagismo autoral", "vertical4": "NATUREZA",
+    "mediaType5": "image", "image5": "assets/images/hero-placeholder.jpg", "video5": "", "videoBehavior5": "hover", "videoFit5": "cover", "videoPosition5": "center", "title5": "Arquitetura contemporânea", "vertical5": "DESIGN"
+  },
+  "fields": [
+    { "key": "eyebrow", "label": "Chamada superior", "type": "text", "group": "Seção" },
+    { "key": "title", "label": "Título", "type": "textarea", "group": "Seção" },
+    { "key": "height", "label": "Altura da galeria", "type": "range", "min": 380, "max": 820, "step": 10, "group": "Seção" },
+
+    { "key": "mediaType1", "label": "Tipo de mídia", "type": "select", "options": [{"label":"Imagem","value":"image"},{"label":"Vídeo","value":"video"}], "group": "Painel 1" },
+    { "key": "image1", "label": "Imagem / poster", "type": "image", "group": "Painel 1" },
+    { "key": "video1", "label": "Vídeo", "type": "video", "group": "Painel 1" },
+    { "key": "videoBehavior1", "label": "Comportamento do vídeo", "type": "select", "options": [{"label":"Play on hover / toque","value":"hover"},{"label":"Autoplay • loop simples","value":"autoplay-loop"},{"label":"Autoplay • boomerang","value":"autoplay-boomerang"}], "group": "Painel 1" },
+    { "key": "videoFit1", "label": "Enquadramento", "type": "select", "options": [{"label":"Preencher frame (cover)","value":"cover"},{"label":"Mostrar inteiro (contain)","value":"contain"},{"label":"Esticar ao frame (fill)","value":"fill"},{"label":"Tamanho natural (none)","value":"none"}], "group": "Painel 1" },
+    { "key": "videoPosition1", "label": "Posição no frame", "type": "select", "options": [{"label":"Centro","value":"center"},{"label":"Topo","value":"center top"},{"label":"Base","value":"center bottom"},{"label":"Esquerda","value":"left center"},{"label":"Direita","value":"right center"}], "group": "Painel 1" },
+    { "key": "title1", "label": "Título 1", "type": "text", "group": "Painel 1" },
+    { "key": "vertical1", "label": "Texto vertical 1", "type": "text", "group": "Painel 1" },
+
+    { "key": "mediaType2", "label": "Tipo de mídia", "type": "select", "options": [{"label":"Imagem","value":"image"},{"label":"Vídeo","value":"video"}], "group": "Painel 2" },
+    { "key": "image2", "label": "Imagem / poster", "type": "image", "group": "Painel 2" },
+    { "key": "video2", "label": "Vídeo", "type": "video", "group": "Painel 2" },
+    { "key": "videoBehavior2", "label": "Comportamento do vídeo", "type": "select", "options": [{"label":"Play on hover / toque","value":"hover"},{"label":"Autoplay • loop simples","value":"autoplay-loop"},{"label":"Autoplay • boomerang","value":"autoplay-boomerang"}], "group": "Painel 2" },
+    { "key": "videoFit2", "label": "Enquadramento", "type": "select", "options": [{"label":"Preencher frame (cover)","value":"cover"},{"label":"Mostrar inteiro (contain)","value":"contain"},{"label":"Esticar ao frame (fill)","value":"fill"},{"label":"Tamanho natural (none)","value":"none"}], "group": "Painel 2" },
+    { "key": "videoPosition2", "label": "Posição no frame", "type": "select", "options": [{"label":"Centro","value":"center"},{"label":"Topo","value":"center top"},{"label":"Base","value":"center bottom"},{"label":"Esquerda","value":"left center"},{"label":"Direita","value":"right center"}], "group": "Painel 2" },
+    { "key": "title2", "label": "Título 2", "type": "text", "group": "Painel 2" },
+    { "key": "vertical2", "label": "Texto vertical 2", "type": "text", "group": "Painel 2" },
+
+    { "key": "mediaType3", "label": "Tipo de mídia", "type": "select", "options": [{"label":"Imagem","value":"image"},{"label":"Vídeo","value":"video"}], "group": "Painel 3" },
+    { "key": "image3", "label": "Imagem / poster", "type": "image", "group": "Painel 3" },
+    { "key": "video3", "label": "Vídeo", "type": "video", "group": "Painel 3" },
+    { "key": "videoBehavior3", "label": "Comportamento do vídeo", "type": "select", "options": [{"label":"Play on hover / toque","value":"hover"},{"label":"Autoplay • loop simples","value":"autoplay-loop"},{"label":"Autoplay • boomerang","value":"autoplay-boomerang"}], "group": "Painel 3" },
+    { "key": "videoFit3", "label": "Enquadramento", "type": "select", "options": [{"label":"Preencher frame (cover)","value":"cover"},{"label":"Mostrar inteiro (contain)","value":"contain"},{"label":"Esticar ao frame (fill)","value":"fill"},{"label":"Tamanho natural (none)","value":"none"}], "group": "Painel 3" },
+    { "key": "videoPosition3", "label": "Posição no frame", "type": "select", "options": [{"label":"Centro","value":"center"},{"label":"Topo","value":"center top"},{"label":"Base","value":"center bottom"},{"label":"Esquerda","value":"left center"},{"label":"Direita","value":"right center"}], "group": "Painel 3" },
+    { "key": "title3", "label": "Título 3", "type": "text", "group": "Painel 3" },
+    { "key": "vertical3", "label": "Texto vertical 3", "type": "text", "group": "Painel 3" },
+
+    { "key": "mediaType4", "label": "Tipo de mídia", "type": "select", "options": [{"label":"Imagem","value":"image"},{"label":"Vídeo","value":"video"}], "group": "Painel 4" },
+    { "key": "image4", "label": "Imagem / poster", "type": "image", "group": "Painel 4" },
+    { "key": "video4", "label": "Vídeo", "type": "video", "group": "Painel 4" },
+    { "key": "videoBehavior4", "label": "Comportamento do vídeo", "type": "select", "options": [{"label":"Play on hover / toque","value":"hover"},{"label":"Autoplay • loop simples","value":"autoplay-loop"},{"label":"Autoplay • boomerang","value":"autoplay-boomerang"}], "group": "Painel 4" },
+    { "key": "videoFit4", "label": "Enquadramento", "type": "select", "options": [{"label":"Preencher frame (cover)","value":"cover"},{"label":"Mostrar inteiro (contain)","value":"contain"},{"label":"Esticar ao frame (fill)","value":"fill"},{"label":"Tamanho natural (none)","value":"none"}], "group": "Painel 4" },
+    { "key": "videoPosition4", "label": "Posição no frame", "type": "select", "options": [{"label":"Centro","value":"center"},{"label":"Topo","value":"center top"},{"label":"Base","value":"center bottom"},{"label":"Esquerda","value":"left center"},{"label":"Direita","value":"right center"}], "group": "Painel 4" },
+    { "key": "title4", "label": "Título 4", "type": "text", "group": "Painel 4" },
+    { "key": "vertical4", "label": "Texto vertical 4", "type": "text", "group": "Painel 4" },
+
+    { "key": "mediaType5", "label": "Tipo de mídia", "type": "select", "options": [{"label":"Imagem","value":"image"},{"label":"Vídeo","value":"video"}], "group": "Painel 5" },
+    { "key": "image5", "label": "Imagem / poster", "type": "image", "group": "Painel 5" },
+    { "key": "video5", "label": "Vídeo", "type": "video", "group": "Painel 5" },
+    { "key": "videoBehavior5", "label": "Comportamento do vídeo", "type": "select", "options": [{"label":"Play on hover / toque","value":"hover"},{"label":"Autoplay • loop simples","value":"autoplay-loop"},{"label":"Autoplay • boomerang","value":"autoplay-boomerang"}], "group": "Painel 5" },
+    { "key": "videoFit5", "label": "Enquadramento", "type": "select", "options": [{"label":"Preencher frame (cover)","value":"cover"},{"label":"Mostrar inteiro (contain)","value":"contain"},{"label":"Esticar ao frame (fill)","value":"fill"},{"label":"Tamanho natural (none)","value":"none"}], "group": "Painel 5" },
+    { "key": "videoPosition5", "label": "Posição no frame", "type": "select", "options": [{"label":"Centro","value":"center"},{"label":"Topo","value":"center top"},{"label":"Base","value":"center bottom"},{"label":"Esquerda","value":"left center"},{"label":"Direita","value":"right center"}], "group": "Painel 5" },
+    { "key": "title5", "label": "Título 5", "type": "text", "group": "Painel 5" },
+    { "key": "vertical5", "label": "Texto vertical 5", "type": "text", "group": "Painel 5" }
+  ]
+}

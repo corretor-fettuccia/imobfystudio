@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 3,
+  "id": "mainframe",
+  "name": "MainFrame",
+  "version": "1.0.2",
+  "type": "section",
+  "category": "Conteúdo",
+  "icon": "▣",
+  "description": "Incorpora uma página externa ou HTML isolado em um iframe responsivo, com altura desktop/mobile e controles de aparência.",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "mode": "url",
+    "url": "",
+    "htmlContent": "<div style=\"font: 18px system-ui; padding: 32px; text-align: center\"><h2>Conteúdo incorporado</h2><p>Edite o HTML no inspetor MainFrame.</p></div>",
+    "title": "Conteúdo incorporado",
+    "heightDesktop": 620,
+    "heightMobile": 460,
+    "maxWidth": 1280,
+    "fullWidth": true,
+    "alignment": "center",
+    "paddingY": 24,
+    "radius": 12,
+    "background": "#ffffff",
+    "shadow": "none",
+    "lazyLoad": false,
+    "allowFullscreen": true,
+    "allowAutoplay": false,
+    "allowClipboard": false,
+    "htmlScripts": false
+  },
+  "fields": [
+    {
+      "key": "mode",
+      "label": "Origem do conteúdo",
+      "type": "select",
+      "group": "Conteúdo",
+      "options": [
+        {
+          "label": "Site externo (URL)",
+          "value": "url"
+        },
+        {
+          "label": "Código HTML isolado",
+          "value": "html"
+        }
+      ]
+    },
+    {
+      "key": "url",
+      "label": "URL HTTPS do site / tour / mapa",
+      "type": "text",
+      "group": "Conteúdo",
+      "note": "HTTPS recomendado; o site deve permitir inclusão em iframe (X-Frame-Options / CSP frame-ancestors)."
+    },
+    {
+      "key": "htmlContent",
+      "label": "HTML incorporado (modo HTML)",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "note": "Conteúdo executado dentro de iframe sandbox isolado. Não copie scripts de terceiros não confiáveis."
+    },
+    {
+      "key": "title",
+      "label": "Título acessível do frame",
+      "type": "text",
+      "group": "Acessibilidade"
+    },
+    {
+      "key": "heightDesktop",
+      "label": "Altura desktop (px)",
+      "type": "range",
+      "group": "Dimensões",
+      "min": 160,
+      "max": 1600,
+      "step": 20
+    },
+    {
+      "key": "heightMobile",
+      "label": "Altura mobile (px)",
+      "type": "range",
+      "group": "Dimensões",
+      "min": 160,
+      "max": 1400,
+      "step": 20
+    },
+    {
+      "key": "maxWidth",
+      "label": "Largura máxima (px)",
+      "type": "range",
+      "group": "Dimensões",
+      "min": 320,
+      "max": 1920,
+      "step": 20
+    },
+    {
+      "key": "fullWidth",
+      "label": "Usar largura disponível",
+      "type": "toggle",
+      "group": "Dimensões"
+    },
+    {
+      "key": "alignment",
+      "label": "Alinhamento",
+      "type": "select",
+      "group": "Dimensões",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ]
+    },
+    {
+      "key": "paddingY",
+      "label": "Espaço vertical (px)",
+      "type": "range",
+      "group": "Aparência",
+      "min": 0,
+      "max": 160,
+      "step": 4
+    },
+    {
+      "key": "radius",
+      "label": "Arredondamento (px)",
+      "type": "range",
+      "group": "Aparência",
+      "min": 0,
+      "max": 64,
+      "step": 2
+    },
+    {
+      "key": "background",
+      "label": "Cor do fundo",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "shadow",
+      "label": "Sombra",
+      "type": "select",
+      "group": "Aparência",
+      "options": [
+        {
+          "label": "Sem sombra",
+          "value": "none"
+        },
+        {
+          "label": "Suave",
+          "value": "soft"
+        },
+        {
+          "label": "Elevada",
+          "value": "raised"
+        }
+      ]
+    },
+    {
+      "key": "lazyLoad",
+      "label": "Carregamento tardio",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "allowFullscreen",
+      "label": "Permitir tela cheia",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "allowAutoplay",
+      "label": "Permitir autoplay",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "allowClipboard",
+      "label": "Permitir clipboard",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "htmlScripts",
+      "label": "Permitir JavaScript no HTML isolado",
+      "type": "toggle",
+      "group": "Segurança",
+      "note": "Executa scripts apenas dentro do frame isolado, sem allow-same-origin."
+    }
+  ]
+}

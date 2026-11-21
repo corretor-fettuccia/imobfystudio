@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "description": "Modelos de produção para landing pages imobiliárias",
+  "blueprints": {
+    "launch": {
+      "name": "Lançamento imobiliário",
+      "strategy": "aida",
+      "profile": "family",
+      "sections": [
+        "hero",
+        "highlights",
+        "specs",
+        "property-slider",
+        "gallery",
+        "lifestyle",
+        "testimonials",
+        "payment",
+        "location",
+        "faq",
+        "form-sender-v4",
+        "footer"
+      ]
+    },
+    "construction": {
+      "name": "Terreno e construção",
+      "strategy": "pas",
+      "profile": "consultive",
+      "sections": [
+        "hero",
+        "highlights",
+        "specs",
+        "gallery",
+        "payment",
+        "faq",
+        "form-sender-v4",
+        "footer"
+      ]
+    },
+    "investment": {
+      "name": "Imóvel para investimento",
+      "strategy": "fourps",
+      "profile": "investment",
+      "sections": [
+        "hero",
+        "property-slider",
+        "specs",
+        "location",
+        "testimonials",
+        "payment",
+        "faq",
+        "form-sender-v4",
+        "footer"
+      ]
+    },
+    "quick": {
+      "name": "Oferta rápida",
+      "strategy": "aida",
+      "profile": "urgency",
+      "sections": [
+        "hero",
+        "highlights",
+        "payment",
+        "form-sender-v4",
+        "footer"
+      ]
+    }
+  },
+  "headingWeight": 700,
+  "headingLineHeight": 1.05,
+  "headingTracking": -0.04,
+  "bodySize": 16,
+  "bodyLineHeight": 1.6,
+  "h1Size": 107,
+  "h2Size": 77,
+  "h3Size": 25,
+  "containerWidth": 1180,
+  "sectionSpace": 144,
+  "contentGap": 56,
+  "elementGap": 20,
+  "componentPadding": 36,
+  "inverseHeadingColor": "#ffffff",
+  "inverseBodyColor": "#dbe1e5",
+  "headingColor": "#101318",
+  "bodyColor": "#30383d",
+  "mutedColor": "#6b747b"
+}

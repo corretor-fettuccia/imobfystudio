@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "investidor-nicho",
+  "name": "Foco no nicho de mercado",
+  "description": "Modelo para investidor com foco em segmento, público e especialização do produto.",
+  "category": "Investidor",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco no nicho de mercado",
+    "templateMeta": {
+      "presetId": "investidor-nicho",
+      "category": "Investidor",
+      "subcategory": ""
+    }
+  }
+}

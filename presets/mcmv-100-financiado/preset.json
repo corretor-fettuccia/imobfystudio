@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "mcmv-100-financiado",
+  "name": "Minha Casa Minha Vida — 100% financiado",
+  "description": "Modelo de comunicação focado na possibilidade de financiar integralmente a operação elegível.",
+  "category": "Financiamento",
+  "baseBlueprint": "mcmvFast",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Minha Casa Minha Vida — 100% financiado",
+    "templateMeta": {
+      "presetId": "mcmv-100-financiado",
+      "category": "Financiamento",
+      "subcategory": "Minha Casa Minha Vida"
+    }
+  }
+}

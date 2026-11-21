@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 3,
+  "id": "professional-branding-pro",
+  "name": "Professional Branding Pro",
+  "version": "1.2.0",
+  "type": "section",
+  "category": "Branding",
+  "icon": "◆",
+  "description": "Seção premium de posicionamento profissional integrada ao perfil visual global do projeto, com manifesto, identidade e enquadramento responsivo.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "useProjectProfile": true,
+    "kicker": "POSICIONAMENTO PROFISSIONAL",
+    "introWord": "Eu",
+    "headline": "Não vendo imóveis",
+    "headlineAccent": "Estruturo decisões.",
+    "identityLine": "ROBERTO FETTUCCIA · CRECI 83599-F",
+    "specialty": "Aquisição estruturada · Terreno + Construção · Crédito Imobiliário",
+    "showSpecialty": true,
+    "typewriterEnabled": true,
+    "typingSpeed": 58,
+    "quote1Enabled": true,
+    "quote1": "Grandes patrimônios são construídos com estratégia, não apenas com recursos.\n\nSegurança para construir. Clareza para decidir.",
+    "quote1Author": "ROBERTO FETTUCCIA — Aquisição estruturada.",
+    "quote2Enabled": true,
+    "quote2": "Transformando terreno, planejamento e construção em patrimônio de valor.",
+    "quote2Author": "ROBERTO FETTUCCIA — Construção financiada.",
+    "quote3Enabled": true,
+    "quote3": "Quem domina as regras do jogo transforma conhecimento em vantagem e riscos em decisões calculadas.\n\nConhecer as regras é importante. Dominar suas consequências é o que gera vantagem.",
+    "quote3Author": "ROBERTO FETTUCCIA — O melhor consultor é burocrata.",
+    "quote4Enabled": true,
+    "quote4": "Quem conhece o processo em profundidade toma decisões que os outros nem enxergam.",
+    "quote4Author": "ROBERTO FETTUCCIA — Excelência é atenção aos detalhes.",
+    "ctaEnabled": true,
+    "ctaText": "Conheça meu perfil",
+    "ctaUrl": "/perfil-profissional",
+    "ctaNewTab": false,
+    "navigationLabel": "NAVEGAR",
+    "showTopNavigation": true,
+    "showBottomNavigation": true,
+    "showDots": true,
+    "autoplay": true,
+    "autoplayMs": 5200,
+    "pauseOnHover": true,
+    "transitionMs": 650,
+    "transitionEffect": "wipe",
+    "backgroundImage": "assets/images/corporate.webp",
+    "backgroundPositionX": 50,
+    "backgroundPositionY": 50,
+    "backgroundColor": "#090a0b",
+    "overlayColor": "#08090a",
+    "overlayOpacity": 68,
+    "accentColor": "#ccb78b",
+    "headingColor": "#ffffff",
+    "textColor": "#f3f1ec",
+    "mutedColor": "#a7a7a7",
+    "cardColor": "#121315",
+    "cardOpacity": 78,
+    "cardBorderOpacity": 34,
+    "cardBlur": 12,
+    "cardRadius": 26,
+    "contentWidth": 1400,
+    "sectionMinHeight": 680,
+    "paddingTop": 96,
+    "paddingBottom": 112,
+    "columnGap": 72,
+    "headlineSize": 66,
+    "quoteSize": 24,
+    "layout": "quotes-left",
+    "grain": true,
+    "revealOnScroll": true,
+    "revealDistance": 28,
+    "backgroundFit": "cover",
+    "backgroundZoom": 100,
+    "backgroundMobilePositionX": 50,
+    "backgroundMobilePositionY": 50,
+    "backgroundMobileZoom": 100
+  },
+  "fields": [
+    {
+      "key": "useProjectProfile",
+      "label": "Seguir perfil visual do projeto",
+      "type": "toggle",
+      "group": "Perfil do projeto"
+    },
+    {
+      "key": "kicker",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Identidade"
+    },
+    {
+      "key": "introWord",
+      "label": "Palavra de entrada",
+      "type": "text",
+      "group": "Identidade"
+    },
+    {
+      "key": "headline",
+      "label": "Frase principal",
+      "type": "textarea",
+      "group": "Identidade"
+    },
+    {
+      "key": "headlineAccent",
+      "label": "Frase de destaque",
+      "type": "textarea",
+      "group": "Identidade"
+    },
+    {
+      "key": "identityLine",
+      "label": "Nome / credencial",
+      "type": "text",
+      "group": "Identidade"
+    },
+    {
+      "key": "specialty",
+      "label": "Especialidades",
+      "type": "textarea",
+      "group": "Identidade"
+    },
+    {
+      "key": "showSpecialty",
+      "label": "Exibir especialidades",
+      "type": "toggle",
+      "group": "Identidade"
+    },
+    {
+      "key": "typewriterEnabled",
+      "label": "Efeito máquina de escrever",
+      "type": "toggle",
+      "group": "Identidade"
+    },
+    {
+      "key": "typingSpeed",
+      "label": "Velocidade da digitação (ms)",
+      "type": "range",
+      "min": 18,
+      "max": 160,
+      "step": 2,
+      "group": "Identidade"
+    },
+    {
+      "key": "quote1Enabled",
+      "label": "Exibir manifesto 1",
+      "type": "toggle",
+      "group": "Manifesto 1"
+    },
+    {
+      "key": "quote1",
+      "label": "Texto",
+      "type": "textarea",
+      "group": "Manifesto 1"
+    },
+    {
+      "key": "quote1Author",
+      "label": "Assinatura",
+      "type": "text",
+      "group": "Manifesto 1"
+    },
+    {
+      "key": "quote2Enabled",
+      "label": "Exibir manifesto 2",
+      "type": "toggle",
+      "group": "Manifesto 2"
+    },
+    {
+      "key": "quote2",
+      "label": "Texto",
+      "type": "textarea",
+      "group": "Manifesto 2"
+    },
+    {
+      "key": "quote2Author",
+      "label": "Assinatura",
+      "type": "text",
+      "group": "Manifesto 2"
+    },
+    {
+      "key": "quote3Enabled",
+      "label": "Exibir manifesto 3",
+      "type": "toggle",
+      "group": "Manifesto 3"
+    },
+    {
+      "key": "quote3",
+      "label": "Texto",
+      "type": "textarea",
+      "group": "Manifesto 3"
+    },
+    {
+      "key": "quote3Author",
+      "label": "Assinatura",
+      "type": "text",
+      "group": "Manifesto 3"
+    },
+    {
+      "key": "quote4Enabled",
+      "label": "Exibir manifesto 4",
+      "type": "toggle",
+      "group": "Manifesto 4"
+    },
+    {
+      "key": "quote4",
+      "label": "Texto",
+      "type": "textarea",
+      "group": "Manifesto 4"
+    },
+    {
+      "key": "quote4Author",
+      "label": "Assinatura",
+      "type": "text",
+      "group": "Manifesto 4"
+    },
+    {
+      "key": "ctaEnabled",
+      "label": "Exibir CTA",
+      "type": "toggle",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaUrl",
+      "label": "Link",
+      "type": "url",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "CTA"
+    },
+    {
+      "key": "navigationLabel",
+      "label": "Rótulo de navegação",
+      "type": "text",
+      "group": "Carrossel"
+    },
+    {
+      "key": "showTopNavigation",
+      "label": "Navegação superior",
+      "type": "toggle",
+      "group": "Carrossel"
+    },
+    {
+      "key": "showBottomNavigation",
+      "label": "Navegação inferior",
+      "type": "toggle",
+      "group": "Carrossel"
+    },
+    {
+      "key": "showDots",
+      "label": "Indicadores / dots",
+      "type": "toggle",
+      "group": "Carrossel"
+    },
+    {
+      "key": "autoplay",
+      "label": "Autoplay",
+      "type": "toggle",
+      "group": "Carrossel"
+    },
+    {
+      "key": "autoplayMs",
+      "label": "Intervalo autoplay (ms)",
+      "type": "range",
+      "min": 1800,
+      "max": 12000,
+      "step": 100,
+      "group": "Carrossel"
+    },
+    {
+      "key": "pauseOnHover",
+      "label": "Pausar ao passar o mouse",
+      "type": "toggle",
+      "group": "Carrossel"
+    },
+    {
+      "key": "transitionMs",
+      "label": "Transição (ms)",
+      "type": "range",
+      "min": 180,
+      "max": 1800,
+      "step": 10,
+      "group": "Carrossel"
+    },
+    {
+      "key": "transitionEffect",
+      "label": "Efeito",
+      "type": "select",
+      "options": [
+        {
+          "label": "Wipe cinematográfico",
+          "value": "wipe"
+        },
+        {
+          "label": "Slide suave",
+          "value": "slide"
+        },
+        {
+          "label": "Fade",
+          "value": "fade"
+        }
+      ],
+      "group": "Carrossel"
+    },
+    {
+      "key": "backgroundImage",
+      "label": "Imagem de fundo",
+      "type": "image",
+      "group": "Fundo"
+    },
+    {
+      "key": "backgroundFit",
+      "label": "Modo de enquadramento",
+      "type": "select",
+      "options": [
+        {
+          "label": "Preencher / recortar (Cover)",
+          "value": "cover"
+        },
+        {
+          "label": "Imagem inteira (Contain)",
+          "value": "contain"
+        },
+        {
+          "label": "Esticar ao quadro (Fill)",
+          "value": "fill"
+        }
+      ],
+      "group": "Fundo"
+    },
+    {
+      "key": "backgroundZoom",
+      "label": "Zoom desktop (%)",
+      "type": "range",
+      "min": 100,
+      "max": 220,
+      "step": 1,
+      "group": "Fundo"
+    },
+    {
+      "key": "backgroundPositionX",
+      "label": "Foco horizontal (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Fundo"
+    },
+    {
+      "key": "backgroundPositionY",
+      "label": "Foco vertical (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Fundo"
+    },
+    {
+      "key": "backgroundMobilePositionX",
+      "label": "Foco mobile X (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Fundo · Mobile"
+    },
+    {
+      "key": "backgroundMobilePositionY",
+      "label": "Foco mobile Y (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Fundo · Mobile"
+    },
+    {
+      "key": "backgroundMobileZoom",
+      "label": "Zoom mobile (%)",
+      "type": "range",
+      "min": 100,
+      "max": 220,
+      "step": 1,
+      "group": "Fundo · Mobile"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Cor base",
+      "type": "color",
+      "group": "Fundo"
+    },
+    {
+      "key": "overlayColor",
+      "label": "Cor do overlay",
+      "type": "color",
+      "group": "Fundo"
+    },
+    {
+      "key": "overlayOpacity",
+      "label": "Overlay (%)",
+      "type": "range",
+      "min": 0,
+      "max": 95,
+      "step": 1,
+      "group": "Fundo"
+    },
+    {
+      "key": "grain",
+      "label": "Textura sutil",
+      "type": "toggle",
+      "group": "Fundo"
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "headingColor",
+      "label": "Cor dos títulos",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "mutedColor",
+      "label": "Cor secundária",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "cardColor",
+      "label": "Cor do card",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "cardOpacity",
+      "label": "Opacidade do card (%)",
+      "type": "range",
+      "min": 15,
+      "max": 100,
+      "step": 1,
+      "group": "Cores"
+    },
+    {
+      "key": "cardBorderOpacity",
+      "label": "Intensidade da borda (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Cores"
+    },
+    {
+      "key": "layout",
+      "label": "Composição desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "Manifesto à esquerda",
+          "value": "quotes-left"
+        },
+        {
+          "label": "Manifesto à direita",
+          "value": "quotes-right"
+        }
+      ],
+      "group": "Layout"
+    },
+    {
+      "key": "contentWidth",
+      "label": "Largura máxima (px)",
+      "type": "range",
+      "min": 960,
+      "max": 1800,
+      "step": 20,
+      "group": "Layout"
+    },
+    {
+      "key": "sectionMinHeight",
+      "label": "Altura mínima (px)",
+      "type": "range",
+      "min": 420,
+      "max": 1100,
+      "step": 10,
+      "group": "Layout"
+    },
+    {
+      "key": "paddingTop",
+      "label": "Espaço superior (px)",
+      "type": "range",
+      "min": 20,
+      "max": 220,
+      "step": 4,
+      "group": "Layout"
+    },
+    {
+      "key": "paddingBottom",
+      "label": "Espaço inferior (px)",
+      "type": "range",
+      "min": 20,
+      "max": 240,
+      "step": 4,
+      "group": "Layout"
+    },
+    {
+      "key": "columnGap",
+      "label": "Distância entre colunas (px)",
+      "type": "range",
+      "min": 20,
+      "max": 160,
+      "step": 4,
+      "group": "Layout"
+    },
+    {
+      "key": "headlineSize",
+      "label": "Título desktop (px)",
+      "type": "range",
+      "min": 34,
+      "max": 96,
+      "step": 2,
+      "group": "Layout"
+    },
+    {
+      "key": "quoteSize",
+      "label": "Manifesto desktop (px)",
+      "type": "range",
+      "min": 16,
+      "max": 38,
+      "step": 1,
+      "group": "Layout"
+    },
+    {
+      "key": "cardBlur",
+      "label": "Desfoque do card (px)",
+      "type": "range",
+      "min": 0,
+      "max": 32,
+      "step": 1,
+      "group": "Layout"
+    },
+    {
+      "key": "cardRadius",
+      "label": "Arredondamento (px)",
+      "type": "range",
+      "min": 0,
+      "max": 52,
+      "step": 2,
+      "group": "Layout"
+    },
+    {
+      "key": "revealOnScroll",
+      "label": "Revelar ao entrar na tela",
+      "type": "toggle",
+      "group": "Animação"
+    },
+    {
+      "key": "revealDistance",
+      "label": "Distância da entrada (px)",
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "group": "Animação"
+    }
+  ]
+}

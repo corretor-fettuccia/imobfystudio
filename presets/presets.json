@@ -1,0 +1,171 @@
+{
+  "schemaVersion": 1,
+  "description": "Registro de presets de projeto do Imobify Studio 5.8.0. Cada item aponta para um diretório contendo preset.json.",
+  "presets": [
+    {
+      "id": "loteamento",
+      "name": "Loteamento",
+      "description": "Modelo para apresentação e comercialização de loteamentos.",
+      "category": "Loteamento",
+      "directory": "presets/loteamento",
+      "file": "preset.json",
+      "order": 1
+    },
+    {
+      "id": "empreendimento-vertical",
+      "name": "Empreendimento vertical",
+      "description": "Modelo para edifícios, lançamentos e unidades em torre.",
+      "category": "Empreendimento vertical",
+      "directory": "presets/empreendimento-vertical",
+      "file": "preset.json",
+      "order": 2
+    },
+    {
+      "id": "empreendimento-horizontal",
+      "name": "Empreendimento horizontal",
+      "description": "Modelo para condomínios e empreendimentos residenciais horizontais.",
+      "category": "Empreendimento horizontal",
+      "directory": "presets/empreendimento-horizontal",
+      "file": "preset.json",
+      "order": 3
+    },
+    {
+      "id": "investimento",
+      "name": "Investimento",
+      "description": "Modelo imobiliário orientado à apresentação da oportunidade de investimento.",
+      "category": "Investimento",
+      "directory": "presets/investimento",
+      "file": "preset.json",
+      "order": 4
+    },
+    {
+      "id": "casa-individual",
+      "name": "Casa individual",
+      "description": "Modelo para venda ou apresentação de casa individual.",
+      "category": "Casa individual",
+      "directory": "presets/casa-individual",
+      "file": "preset.json",
+      "order": 5
+    },
+    {
+      "id": "sobrado-individual",
+      "name": "Sobrado individual",
+      "description": "Modelo para venda ou apresentação de sobrado individual.",
+      "category": "Sobrado individual",
+      "directory": "presets/sobrado-individual",
+      "file": "preset.json",
+      "order": 6
+    },
+    {
+      "id": "mcmv-imovel-na-planta",
+      "name": "Minha Casa Minha Vida — imóvel na planta",
+      "description": "Modelo de financiamento MCMV para imóvel adquirido na planta.",
+      "category": "Financiamento",
+      "directory": "presets/mcmv-imovel-na-planta",
+      "file": "preset.json",
+      "order": 7,
+      "subcategory": "Minha Casa Minha Vida"
+    },
+    {
+      "id": "mcmv-100-financiado",
+      "name": "Minha Casa Minha Vida — 100% financiado",
+      "description": "Modelo de comunicação focado na possibilidade de financiar integralmente a operação elegível.",
+      "category": "Financiamento",
+      "directory": "presets/mcmv-100-financiado",
+      "file": "preset.json",
+      "order": 8,
+      "subcategory": "Minha Casa Minha Vida"
+    },
+    {
+      "id": "mcmv-pela-parcela",
+      "name": "Minha Casa Minha Vida — pela parcela (atender dor)",
+      "description": "Modelo orientado à dor do cliente, começando pela parcela possível e pela viabilidade financeira.",
+      "category": "Financiamento",
+      "directory": "presets/mcmv-pela-parcela",
+      "file": "preset.json",
+      "order": 9,
+      "subcategory": "Minha Casa Minha Vida"
+    },
+    {
+      "id": "alto-padrao-exclusividade",
+      "name": "Exclusividade e público seleto",
+      "description": "Modelo de alto padrão com foco em exclusividade, curadoria e público seleto.",
+      "category": "Alto padrão",
+      "directory": "presets/alto-padrao-exclusividade",
+      "file": "preset.json",
+      "order": 10
+    },
+    {
+      "id": "alto-padrao-oportunidade",
+      "name": "Foco na oportunidade",
+      "description": "Modelo de alto padrão orientado à oportunidade e condição de aquisição.",
+      "category": "Alto padrão",
+      "directory": "presets/alto-padrao-oportunidade",
+      "file": "preset.json",
+      "order": 11
+    },
+    {
+      "id": "alto-padrao-rendimento",
+      "name": "Foco no rendimento",
+      "description": "Modelo de alto padrão orientado a renda, valorização e performance patrimonial.",
+      "category": "Alto padrão",
+      "directory": "presets/alto-padrao-rendimento",
+      "file": "preset.json",
+      "order": 12
+    },
+    {
+      "id": "alto-padrao-seguranca-comodidade",
+      "name": "Foco na segurança e comodidade",
+      "description": "Modelo de alto padrão orientado a segurança, conforto e conveniência.",
+      "category": "Alto padrão",
+      "directory": "presets/alto-padrao-seguranca-comodidade",
+      "file": "preset.json",
+      "order": 13
+    },
+    {
+      "id": "investidor-retorno",
+      "name": "Foco no retorno do investimento",
+      "description": "Modelo para investidor com foco em retorno, renda e valorização.",
+      "category": "Investidor",
+      "directory": "presets/investidor-retorno",
+      "file": "preset.json",
+      "order": 14
+    },
+    {
+      "id": "investidor-posicionamento",
+      "name": "Foco no posicionamento de mercado",
+      "description": "Modelo para investidor com foco na posição competitiva do ativo e do produto.",
+      "category": "Investidor",
+      "directory": "presets/investidor-posicionamento",
+      "file": "preset.json",
+      "order": 15
+    },
+    {
+      "id": "investidor-estrategia",
+      "name": "Foco na estratégia",
+      "description": "Modelo para investidor com foco na tese, estratégia de entrada e saída.",
+      "category": "Investidor",
+      "directory": "presets/investidor-estrategia",
+      "file": "preset.json",
+      "order": 16
+    },
+    {
+      "id": "investidor-nicho",
+      "name": "Foco no nicho de mercado",
+      "description": "Modelo para investidor com foco em segmento, público e especialização do produto.",
+      "category": "Investidor",
+      "directory": "presets/investidor-nicho",
+      "file": "preset.json",
+      "order": 17
+    },
+    {
+      "id": "investidor-demanda",
+      "name": "Foco na demanda",
+      "description": "Modelo para investidor com foco na demanda real, absorção e liquidez.",
+      "category": "Investidor",
+      "directory": "presets/investidor-demanda",
+      "file": "preset.json",
+      "order": 18
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "id": "flip-card-pro",
+  "name": "Flip Card 3D",
+  "version": "4.2.1",
+  "type": "section",
+  "category": "Interação",
+  "icon": "◫",
+  "description": "Cartão 3D com frente, verso, hover e toque",
+  "origin": "Adaptado do pacote flip-card.zip enviado pelo usuário",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "CONDIÇÕES QUE CABEM NO SEU PLANO",
+    "title": "Descubra uma possibilidade de cada vez.",
+    "copy": "Passe o mouse ou toque no cartão para revelar mais informações.",
+    "frontIcon": "R$",
+    "frontTitle": "Entrada facilitada",
+    "frontDescription": "Uma composição que pode ser adaptada ao seu perfil financeiro.",
+    "frontItems": "Entrada a partir de 10%\nUso do FGTS conforme enquadramento\nFinanciamento sujeito à análise",
+    "frontImage": "assets/images/gallery-1.jpg",
+    "backIcon": "✓",
+    "backTitle": "Próximo passo",
+    "backDescription": "Receba uma simulação personalizada e compare cenários com segurança.",
+    "backItems": "Análise de renda\nEstimativa de entrada\nPrazo e parcela sugeridos",
+    "backImage": "assets/images/gallery-2.jpg",
+    "ctaText": "Quero simular",
+    "ctaLink": "#contato",
+    "cardWidth": 360,
+    "cardHeight": 460,
+    "flipMode": "hover-click"
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Seção"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Seção"
+    },
+    {
+      "key": "copy",
+      "label": "Texto de apoio",
+      "type": "textarea",
+      "group": "Seção"
+    },
+    {
+      "key": "frontIcon",
+      "label": "Ícone ou texto",
+      "type": "text",
+      "group": "Frente"
+    },
+    {
+      "key": "frontTitle",
+      "label": "Título",
+      "type": "text",
+      "group": "Frente"
+    },
+    {
+      "key": "frontDescription",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Frente"
+    },
+    {
+      "key": "frontItems",
+      "label": "Itens, um por linha",
+      "type": "textarea",
+      "group": "Frente"
+    },
+    {
+      "key": "frontImage",
+      "label": "Imagem",
+      "type": "image",
+      "group": "Frente"
+    },
+    {
+      "key": "backIcon",
+      "label": "Ícone ou texto",
+      "type": "text",
+      "group": "Verso"
+    },
+    {
+      "key": "backTitle",
+      "label": "Título",
+      "type": "text",
+      "group": "Verso"
+    },
+    {
+      "key": "backDescription",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Verso"
+    },
+    {
+      "key": "backItems",
+      "label": "Itens, um por linha",
+      "type": "textarea",
+      "group": "Verso"
+    },
+    {
+      "key": "backImage",
+      "label": "Imagem",
+      "type": "image",
+      "group": "Verso"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "Ação"
+    },
+    {
+      "key": "ctaLink",
+      "label": "Destino do CTA",
+      "type": "url",
+      "group": "Ação"
+    },
+    {
+      "key": "flipMode",
+      "label": "Ativação",
+      "type": "select",
+      "options": [
+        "hover-click",
+        "click"
+      ],
+      "group": "Comportamento"
+    },
+    {
+      "key": "cardWidth",
+      "label": "Largura",
+      "type": "range",
+      "min": 280,
+      "max": 520,
+      "step": 10,
+      "group": "Comportamento"
+    },
+    {
+      "key": "cardHeight",
+      "label": "Altura",
+      "type": "range",
+      "min": 380,
+      "max": 620,
+      "step": 10,
+      "group": "Comportamento"
+    }
+  ]
+}

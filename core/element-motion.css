@@ -1,0 +1,2 @@
+/* Individual element animations use WAAPI and do not alter the section's CSS motion. */
+@media (prefers-reduced-motion:reduce){[data-element-motion] *{animation-duration:.01ms!important;animation-delay:0ms!important}}

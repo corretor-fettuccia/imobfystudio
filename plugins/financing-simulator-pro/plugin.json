@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 3,
+  "id": "financing-simulator-pro",
+  "name": "Financing Simulator Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "∑",
+  "description": "Simulador financeiro genérico com parcela estimada, comprometimento de renda e CTA para WhatsApp.",
+  "composition": { "role": "both" },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "SIMULAÇÃO INICIAL",
+    "title": "Veja uma estimativa antes de falar com o especialista.",
+    "description": "Ajuste os valores abaixo para visualizar uma estimativa matemática de financiamento.",
+    "propertyValue": 500000,
+    "downPayment": 100000,
+    "annualRate": 10.5,
+    "years": 30,
+    "monthlyIncome": 12000,
+    "whatsapp": "5551998111078",
+    "ctaText": "Quero uma análise personalizada",
+    "disclaimer": "Simulação meramente estimativa. Taxas, seguros, sistema de amortização, subsídios, enquadramento e aprovação dependem da instituição financeira e da análise de crédito."
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "description",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "propertyValue",
+      "label": "Valor padrão do imóvel",
+      "type": "number",
+      "min": 10000,
+      "max": 10000000,
+      "step": 1000,
+      "group": "Valores iniciais"
+    },
+    {
+      "key": "downPayment",
+      "label": "Entrada padrão",
+      "type": "number",
+      "min": 0,
+      "max": 5000000,
+      "step": 1000,
+      "group": "Valores iniciais"
+    },
+    {
+      "key": "annualRate",
+      "label": "Taxa anual estimada (%)",
+      "type": "number",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "group": "Valores iniciais"
+    },
+    {
+      "key": "years",
+      "label": "Prazo padrão (anos)",
+      "type": "number",
+      "min": 1,
+      "max": 35,
+      "step": 1,
+      "group": "Valores iniciais"
+    },
+    {
+      "key": "monthlyIncome",
+      "label": "Renda mensal padrão",
+      "type": "number",
+      "min": 0,
+      "max": 1000000,
+      "step": 500,
+      "group": "Valores iniciais"
+    },
+    {
+      "key": "whatsapp",
+      "label": "WhatsApp com DDI/DDD",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "disclaimer",
+      "label": "Aviso da simulação",
+      "type": "textarea",
+      "group": "Aviso"
+    }
+  ]
+}

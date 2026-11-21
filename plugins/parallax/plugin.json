@@ -1,0 +1,653 @@
+{
+  "schemaVersion": 3,
+  "id": "parallax",
+  "name": "Parallax",
+  "version": "2.10.3",
+  "type": "section",
+  "category": "Experiência imersiva",
+  "icon": "▶",
+  "description": "Parallax cinematográfico com navegação progressiva, banner de liberação de scroll, marcadores com salto pausado e motores dedicados para desktop/Android e iOS.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "videoSrc": "",
+    "poster": "assets/images/poster.jpg",
+    "startTime": 0,
+    "endTime": 30,
+    "scrollHeight": 8000,
+    "smoothing": 0.12,
+    "timeEpsilon": 0.025,
+    "interactionMode": "cinematic",
+    "autoStart": false,
+    "autoStartDelay": 1.0,
+    "cinematicSpeed": 1.0,
+    "cinematicRamp": 0.8,
+    "wheelThreshold": 42,
+    "gestureCooldown": 180,
+    "reverse": false,
+    "preload": "auto",
+    "fit": "cover",
+    "positionX": 50,
+    "positionY": 50,
+    "scaleDesktop": 1,
+    "scaleMobile": 1.08,
+    "mobilePositionX": 50,
+    "mobilePositionY": 50,
+    "overlayColor": "#000000",
+    "overlayOpacity": 30,
+    "showProgress": true,
+    "showScrollHint": true,
+    "showSkip": true,
+    "showRestart": true,
+    "showSound": false,
+    "showChapters": true,
+    "debugTime": false,
+    "pausePoints": "",
+    "heroPoints": "[{\"id\":\"hero-1\",\"startTime\":2,\"endTime\":6,\"position\":\"center\",\"eyebrow\":\"UM NOVO JEITO DE VIVER\",\"title\":\"Uma experiência pensada para transformar sua rotina.\",\"text\":\"Arquitetura, conforto e localização apresentados em uma narrativa visual imersiva.\",\"buttonText\":\"Saiba mais\",\"buttonLink\":\"#destaques\",\"animation\":\"fade-up\",\"width\":680,\"align\":\"center\",\"boomerang\":false,\"boomerangSeconds\":1.5,\"boomerangRepeats\":2,\"hideOnMobile\":false,\"enabled\":true,\"boomerangAtTime\":2,\"boomerangSpan\":1.5,\"boomerangDuration\":3.0,\"boomerangCycles\":2,\"cinematicStop\":true,\"transitionMs\":0},{\"id\":\"hero-2\",\"startTime\":9,\"endTime\":14,\"position\":\"center-left\",\"eyebrow\":\"ARQUITETURA\",\"title\":\"Cada detalhe valoriza o seu investimento.\",\"text\":\"Ambientes projetados para unir funcionalidade, estética e bem-estar.\",\"buttonText\":\"Ver diferenciais\",\"buttonLink\":\"#diferenciais\",\"animation\":\"slide-right\",\"width\":560,\"align\":\"left\",\"boomerang\":false,\"boomerangSeconds\":1.5,\"boomerangRepeats\":2,\"hideOnMobile\":false,\"enabled\":true,\"boomerangAtTime\":9,\"boomerangSpan\":1.5,\"boomerangDuration\":3.0,\"boomerangCycles\":2,\"cinematicStop\":true,\"transitionMs\":0},{\"id\":\"hero-3\",\"startTime\":16,\"endTime\":21,\"position\":\"top-right\",\"eyebrow\":\"LOCALIZAÇÃO\",\"title\":\"Perto do que importa.\",\"text\":\"Mobilidade e conveniência para uma rotina mais simples.\",\"animation\":\"blur-in\",\"width\":500,\"align\":\"right\",\"boomerang\":false,\"boomerangSeconds\":1.5,\"boomerangRepeats\":2,\"hideOnMobile\":false,\"enabled\":true,\"boomerangAtTime\":16,\"boomerangSpan\":1.5,\"boomerangDuration\":3.0,\"boomerangCycles\":2,\"cinematicStop\":true,\"transitionMs\":0},{\"id\":\"hero-4\",\"startTime\":23,\"endTime\":29,\"position\":\"bottom-right\",\"eyebrow\":\"CONDIÇÕES ESPECIAIS\",\"title\":\"Fale com um especialista.\",\"text\":\"Receba valores, plantas e condições de pagamento.\",\"buttonText\":\"Entrar em contato\",\"buttonLink\":\"https://wa.me/5551998111078\",\"animation\":\"zoom-in\",\"width\":560,\"align\":\"right\",\"boomerang\":false,\"boomerangSeconds\":1.5,\"boomerangRepeats\":2,\"hideOnMobile\":false,\"enabled\":true,\"boomerangAtTime\":23,\"boomerangSpan\":1.5,\"boomerangDuration\":3.0,\"boomerangCycles\":2,\"cinematicStop\":true,\"transitionMs\":0}]",
+    "disableOnMobile": false,
+    "mobileBreakpoint": 767,
+    "scrollDirection": "forward",
+    "cinematicDurationMs": 2600,
+    "cinematicAccelMs": 700,
+    "cinematicDecelMs": 1100,
+    "cinematicAccelCurve": "0.42,0,0.58,1",
+    "cinematicDecelCurve": "0.42,0,0.58,1",
+    "timelineFps": 30,
+    "timelineSnap": true,
+    "cinematicMaxRate": 2.0,
+    "videoDuration": 0,
+    "endTimeAuto": true,
+    "experienceProfile": "cinema-smooth",
+    "preloadMode": "complete",
+    "restartOnReturnStart": true,
+    "restartOnReturnDelayMs": 120,
+    "mobileAutoAdapt": true,
+    "mobileTypographyScale": 0.82,
+    "bannerFontFamily": "inherit",
+    "bannerEyebrowSize": 12,
+    "bannerTitleSize": 56,
+    "bannerSubtitleSize": 20,
+    "bannerTextSize": 16,
+    "bannerButtonSize": 14,
+    "bannerTitleWeight": 800,
+    "bannerTextWeight": 400,
+    "bannerTitleLineHeight": 0.98,
+    "bannerTextLineHeight": 1.55,
+    "forwardOnlyScroll": true,
+    "audioMuted": true,
+    "backgroundAudio": "",
+    "backgroundLoop": true,
+    "backgroundVolume": 35,
+    "narrationVolume": 100,
+    "audioDucking": true,
+    "duckingVolume": 10,
+    "videoAudio": false,
+    "audioFadeOutDuration": 5
+  },
+  "fields": [
+    {
+      "key": "videoSrc",
+      "label": "Vídeo MP4/WebM",
+      "type": "video",
+      "group": "Vídeo",
+      "note": "Aceita upload local (até 120 MB), URL HTTPS ou caminho do projeto. A duração é detectada automaticamente pelos metadados do vídeo."
+    },
+    {
+      "key": "poster",
+      "label": "Poster / fallback",
+      "type": "image",
+      "group": "Vídeo"
+    },
+    {
+      "key": "experienceProfile",
+      "label": "Perfil da experiência",
+      "type": "select",
+      "group": "Experiência",
+      "options": [
+        {
+          "label": "Cinema suave — recomendado",
+          "value": "cinema-smooth"
+        },
+        {
+          "label": "Cinema premium — mais elegante",
+          "value": "cinema-premium"
+        },
+        {
+          "label": "Performance — aparelhos mais fracos",
+          "value": "performance"
+        },
+        {
+          "label": "Mobile — otimizado para celular",
+          "value": "mobile"
+        },
+        {
+          "label": "Personalizado — usar ajustes avançados",
+          "value": "custom"
+        }
+      ],
+      "note": "Os perfis controlam aceleração, velocidade e sensibilidade sem exigir ajuste fino manual."
+    },
+    {
+      "key": "preloadMode",
+      "label": "Carregamento do vídeo",
+      "type": "select",
+      "group": "Vídeo",
+      "options": [
+        {
+          "label": "Completo — baixar 100% antes de iniciar",
+          "value": "complete"
+        },
+        {
+          "label": "Inteligente — buffer automático do navegador",
+          "value": "smart"
+        },
+        {
+          "label": "Metadados — carregamento mínimo",
+          "value": "metadata"
+        }
+      ],
+      "note": "Completo cria um Blob local antes de liberar a experiência e reduz travamentos por rede."
+    },
+    {
+      "key": "restartOnReturnStart",
+      "label": "Ao voltar ao IN, retornar automaticamente ao Banner 1",
+      "type": "toggle",
+      "group": "Experiência",
+      "note": "IN é somente o limite inicial. Ao voltar do primeiro banner até IN por gesto, o vídeo relança automaticamente até o Banner 1."
+    },
+    {
+      "key": "restartOnReturnDelayMs",
+      "label": "Pausa no IN antes de retornar (ms)",
+      "type": "number",
+      "min": 0,
+      "max": 3000,
+      "step": 20,
+      "group": "Experiência"
+    },
+    {
+      "key": "preload",
+      "label": "Preload",
+      "type": "select",
+      "options": [
+        "auto",
+        "metadata",
+        "none"
+      ],
+      "group": "Vídeo",
+      "panel": "advanced"
+    },
+    {
+      "key": "videoDuration",
+      "label": "Duração detectada do vídeo (s)",
+      "type": "number",
+      "min": 0,
+      "max": 86400,
+      "step": 0.001,
+      "group": "Tempo e scroll"
+    },
+    {
+      "key": "startTime",
+      "label": "INICIAR VÍDEO — primeiro frame (s)",
+      "type": "number",
+      "min": 0,
+      "max": 86400,
+      "step": 0.1,
+      "group": "Tempo e scroll"
+    },
+    {
+      "key": "endTime",
+      "label": "LIBERAR SCROLL — ponto de saída (s)",
+      "type": "number",
+      "min": 0.1,
+      "max": 86400,
+      "step": 0.1,
+      "group": "Tempo e scroll"
+    },
+    {
+      "key": "endTimeAuto",
+      "label": "Marcador LIBERAR ao carregar/trocar vídeo",
+      "type": "select",
+      "group": "Tempo e scroll",
+      "options": [
+        {
+          "label": "Automático — liberar no fim do vídeo",
+          "value": "true"
+        },
+        {
+          "label": "Manual — usar o marcador da timeline",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "key": "scrollHeight",
+      "label": "Altura do percurso (px)",
+      "type": "range",
+      "min": 1500,
+      "max": 30000,
+      "step": 250,
+      "group": "Tempo e scroll"
+    },
+    {
+      "key": "smoothing",
+      "label": "Suavização",
+      "type": "range",
+      "min": 0.02,
+      "max": 0.5,
+      "step": 0.01,
+      "group": "Tempo e scroll",
+      "panel": "advanced"
+    },
+    {
+      "key": "timeEpsilon",
+      "label": "Precisão de atualização",
+      "type": "range",
+      "min": 0.01,
+      "max": 0.3,
+      "step": 0.005,
+      "group": "Tempo e scroll",
+      "panel": "advanced"
+    },
+    {
+      "key": "interactionMode",
+      "label": "Modo de navegação",
+      "type": "select",
+      "group": "Navegação cinematográfica",
+      "options": [
+        {
+          "label": "Cinematográfico — 1 gesto avança até o próximo card",
+          "value": "cinematic"
+        },
+        {
+          "label": "Contínuo — scroll acompanha os frames",
+          "value": "continuous"
+        }
+      ]
+    },
+    {
+      "key": "forwardOnlyScroll",
+      "label": "Não permitir voltar com o scroll",
+      "type": "toggle",
+      "group": "Navegação cinematográfica",
+      "note": "Quando ativado, wheel, trackpad, swipe e teclas de rolagem não retornam aos banners anteriores. Marcadores e controles diretos continuam podendo reposicionar o vídeo."
+    },
+    {
+      "key": "autoStart",
+      "label": "Início automático da primeira etapa",
+      "type": "toggle",
+      "group": "Navegação cinematográfica"
+    },
+    {
+      "key": "autoStartDelay",
+      "label": "Iniciar após (segundos)",
+      "type": "number",
+      "min": 0,
+      "max": 30,
+      "step": 0.1,
+      "group": "Navegação cinematográfica"
+    },
+    {
+      "key": "cinematicDurationMs",
+      "label": "Duração da etapa até o card (ms) — 0 = automática",
+      "type": "range",
+      "min": 0,
+      "max": 10000,
+      "step": 50,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "cinematicAccelMs",
+      "label": "Aceleração (ms)",
+      "type": "range",
+      "min": 100,
+      "max": 4000,
+      "step": 25,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "cinematicDecelMs",
+      "label": "Desaceleração antes de cada chave (ms)",
+      "type": "range",
+      "min": 100,
+      "max": 4000,
+      "step": 25,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "cinematicAccelCurve",
+      "label": "Curva manual — aceleração",
+      "type": "text",
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "cinematicDecelCurve",
+      "label": "Curva manual — desaceleração",
+      "type": "text",
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "cinematicSpeed",
+      "label": "Velocidade de cruzeiro (x) — usada se duração = 0",
+      "type": "range",
+      "min": 0.35,
+      "max": 3,
+      "step": 0.05,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "cinematicMaxRate",
+      "label": "Velocidade máxima para preservar fluidez (x)",
+      "type": "range",
+      "min": 1,
+      "max": 4,
+      "step": 0.1,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "wheelThreshold",
+      "label": "Força mínima do gesto de scroll",
+      "type": "range",
+      "min": 8,
+      "max": 180,
+      "step": 2,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "gestureCooldown",
+      "label": "Bloqueio entre gestos (ms)",
+      "type": "range",
+      "min": 0,
+      "max": 1200,
+      "step": 20,
+      "group": "Navegação cinematográfica",
+      "panel": "advanced"
+    },
+    {
+      "key": "scrollDirection",
+      "label": "Direção do scroll no vídeo",
+      "type": "select",
+      "group": "Tempo e scroll",
+      "options": [
+        {
+          "label": "Normal — descer avança o vídeo",
+          "value": "forward"
+        },
+        {
+          "label": "Invertida — descer retrocede o vídeo",
+          "value": "reverse"
+        }
+      ]
+    },
+    {
+      "key": "pausePoints",
+      "label": "Pausas legadas (compatibilidade)",
+      "type": "textarea",
+      "group": "Tempo e scroll",
+      "panel": "advanced"
+    },
+    {
+      "key": "fit",
+      "label": "Enquadramento",
+      "type": "select",
+      "options": [
+        "cover",
+        "contain"
+      ],
+      "group": "Enquadramento"
+    },
+    {
+      "key": "positionX",
+      "label": "Posição horizontal desktop (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Enquadramento"
+    },
+    {
+      "key": "positionY",
+      "label": "Posição vertical desktop (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Enquadramento"
+    },
+    {
+      "key": "scaleDesktop",
+      "label": "Escala desktop",
+      "type": "range",
+      "min": 1,
+      "max": 2,
+      "step": 0.01,
+      "group": "Enquadramento"
+    },
+    {
+      "key": "disableOnMobile",
+      "label": "Desativar experiência no mobile",
+      "type": "toggle",
+      "group": "Mobile"
+    },
+    {
+      "key": "mobileBreakpoint",
+      "label": "Breakpoint mobile (px)",
+      "type": "number",
+      "min": 320,
+      "max": 1200,
+      "step": 1,
+      "group": "Mobile"
+    },
+    {
+      "key": "mobilePositionX",
+      "label": "Posição horizontal mobile (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Mobile"
+    },
+    {
+      "key": "mobilePositionY",
+      "label": "Posição vertical mobile (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Mobile"
+    },
+    {
+      "key": "scaleMobile",
+      "label": "Escala mobile",
+      "type": "range",
+      "min": 1,
+      "max": 2.5,
+      "step": 0.01,
+      "group": "Mobile"
+    },
+    {
+      "key": "mobileAutoAdapt",
+      "label": "Adaptar banners do desktop no mobile",
+      "type": "toggle",
+      "group": "Mobile",
+      "note": "Mantém posição, alinhamento e recuos em escala, respeitando safe-area."
+    },
+    {
+      "key": "mobileTypographyScale",
+      "label": "Escala tipográfica mobile",
+      "type": "range",
+      "min": 0.55,
+      "max": 1,
+      "step": 0.01,
+      "group": "Mobile"
+    },
+    {
+      "key": "overlayColor",
+      "label": "Cor do overlay",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "overlayOpacity",
+      "label": "Transparência do overlay (%) · 0 transparente / 100 opaco",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "timelineFps",
+      "label": "FPS da timeline",
+      "type": "select",
+      "options": [
+        "24",
+        "25",
+        "30",
+        "50",
+        "60"
+      ],
+      "group": "Timeline",
+      "panel": "advanced"
+    },
+    {
+      "key": "timelineSnap",
+      "label": "Encaixar chaves nos frames",
+      "type": "select",
+      "group": "Timeline",
+      "options": [
+        {
+          "label": "Ativado",
+          "value": "true"
+        },
+        {
+          "label": "Desativado",
+          "value": "false"
+        }
+      ],
+      "panel": "advanced"
+    },
+    {
+      "key": "heroPoints",
+      "label": "Pontos de conteúdo",
+      "type": "textarea",
+      "group": "Conteúdos programáveis",
+      "panel": "advanced"
+    },
+    {
+      "key": "showProgress",
+      "label": "Barra de progresso",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "showScrollHint",
+      "label": "Indicador role para explorar",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "showSkip",
+      "label": "Botão pular introdução",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "showRestart",
+      "label": "Botão reiniciar",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "showSound",
+      "label": "Botão de som",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "showChapters",
+      "label": "Marcadores de capítulos",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "debugTime",
+      "label": "Mostrar segundo atual",
+      "type": "toggle",
+      "group": "Desenvolvimento"
+    },
+    {
+      "key": "audioMuted",
+      "label": "Muted — iniciar sem áudio",
+      "type": "toggle",
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "backgroundAudio",
+      "label": "Música ambiente (MP3 / OGG / M4A / WebM)",
+      "type": "audio",
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "backgroundLoop",
+      "label": "Repetir música (loop)",
+      "type": "toggle",
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "backgroundVolume",
+      "label": "Volume da música (%)",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "audioFadeOutDuration",
+      "label": "Fade-out ao sair do Parallax (segundos)",
+      "type": "number",
+      "min": 0,
+      "max": 30,
+      "step": 0.5,
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "narrationVolume",
+      "label": "Volume padrão da narração (%)",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "audioDucking",
+      "label": "Reduzir música durante narração",
+      "type": "toggle",
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "duckingVolume",
+      "label": "Volume da música durante narração (%)",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "group": "Áudio multitrack"
+    },
+    {
+      "key": "videoAudio",
+      "label": "Permitir áudio original do vídeo",
+      "type": "toggle",
+      "group": "Áudio multitrack"
+    }
+  ]
+}

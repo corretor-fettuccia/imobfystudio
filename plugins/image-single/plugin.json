@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 3,
+  "id": "image-single",
+  "name": "Imagem Single",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Imagem",
+  "icon": "▧",
+  "description": "Uma imagem responsiva por instância, com legenda, link, proporção, recorte e aparência configuráveis.",
+  "composition": {
+    "role": "both",
+    "cardinality": "single"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "image": "assets/images/image-placeholder.svg",
+    "alt": "Imagem do empreendimento",
+    "caption": "",
+    "linkUrl": "",
+    "openNewTab": false,
+    "loading": "lazy",
+    "aspectRatio": "auto",
+    "objectFit": "cover",
+    "alignment": "center",
+    "maxWidth": 1120,
+    "borderRadius": 16,
+    "shadowStyle": "soft",
+    "captionAlign": "left",
+    "paddingY": 24,
+    "backgroundColor": "#ffffff"
+  },
+  "fields": [
+    { "key": "image", "label": "Imagem", "type": "image", "group": "Imagem" },
+    { "key": "alt", "label": "Texto alternativo", "type": "text", "group": "Acessibilidade", "note": "Descreva o conteúdo essencial da imagem. Se ela for apenas decorativa, deixe vazio." },
+    { "key": "caption", "label": "Legenda opcional", "type": "textarea", "group": "Conteúdo" },
+    { "key": "linkUrl", "label": "Link opcional", "type": "text", "group": "Ação", "note": "Aceita #âncora ou URL HTTP/HTTPS. Deixe vazio para exibir somente a imagem." },
+    { "key": "openNewTab", "label": "Abrir link em nova aba", "type": "toggle", "group": "Ação" },
+    { "key": "loading", "label": "Carregamento", "type": "select", "options": [
+      { "label": "Tardio (recomendado)", "value": "lazy" },
+      { "label": "Imediato", "value": "eager" }
+    ], "group": "Desempenho" },
+    { "key": "aspectRatio", "label": "Proporção", "type": "select", "options": [
+      { "label": "Original", "value": "auto" },
+      { "label": "Horizontal 16:9", "value": "16-9" },
+      { "label": "Horizontal 4:3", "value": "4-3" },
+      { "label": "Quadrada 1:1", "value": "1-1" },
+      { "label": "Vertical 4:5", "value": "4-5" },
+      { "label": "Vertical 9:16", "value": "9-16" }
+    ], "group": "Composição" },
+    { "key": "objectFit", "label": "Ajuste no quadro", "type": "select", "options": [
+      { "label": "Preencher / recortar", "value": "cover" },
+      { "label": "Conter imagem inteira", "value": "contain" }
+    ], "group": "Composição" },
+    { "key": "alignment", "label": "Alinhamento", "type": "select", "options": [
+      { "label": "Esquerda", "value": "left" },
+      { "label": "Centro", "value": "center" },
+      { "label": "Direita", "value": "right" }
+    ], "group": "Composição" },
+    { "key": "maxWidth", "label": "Largura máxima (px)", "type": "range", "min": 160, "max": 1800, "step": 20, "group": "Composição" },
+    { "key": "paddingY", "label": "Respiro vertical (px)", "type": "range", "min": 0, "max": 160, "step": 2, "group": "Composição" },
+    { "key": "borderRadius", "label": "Arredondamento (px)", "type": "range", "min": 0, "max": 80, "step": 2, "group": "Aparência" },
+    { "key": "shadowStyle", "label": "Sombra", "type": "select", "options": [
+      { "label": "Sem sombra", "value": "none" },
+      { "label": "Suave", "value": "soft" },
+      { "label": "Elevada", "value": "raised" },
+      { "label": "Cinematográfica", "value": "cinematic" }
+    ], "group": "Aparência" },
+    { "key": "captionAlign", "label": "Alinhamento da legenda", "type": "select", "options": [
+      { "label": "Esquerda", "value": "left" },
+      { "label": "Centro", "value": "center" },
+      { "label": "Direita", "value": "right" }
+    ], "group": "Aparência" },
+    { "key": "backgroundColor", "label": "Cor atrás da imagem", "type": "color", "group": "Aparência" }
+  ]
+}

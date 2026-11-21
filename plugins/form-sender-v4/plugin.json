@@ -1,0 +1,395 @@
+{
+  "schemaVersion": 3,
+  "id": "form-sender-v4",
+  "name": "Form Sender v4",
+  "version": "4.5.0",
+  "type": "section",
+  "category": "Captação",
+  "icon": "✉",
+  "description": "Form Sender v4 com complementação rápida obrigatória: mobile em etapas automáticas, modal centralizado com altura natural sem vazamento de opções, última resposta envia, desktop preservado, modal sem fechar/pular e autocomplete configurável",
+  "composition": {
+    "role": "both"
+  },
+  "origin": "Form.v4.zip enviado pelo usuário — fontes originais preservadas",
+  "entry": {
+    "template": "template.html",
+    "styles": [
+      "financial-flow.css",
+      "css/formulario.css",
+      "css/notify-send.css",
+      "adapter.css"
+    ],
+    "scripts": [
+      "financial-flow.js",
+      "js/notify-send.js",
+      "js/formulario.js",
+      "adapter.js"
+    ]
+  },
+  "defaults": {
+    "showIntro": true,
+    "eyebrow": "FALE COM UM ESPECIALISTA",
+    "title": "Receba as informações completas.",
+    "copy": "Preencha os dados para receber valores, plantas e disponibilidade atualizada.",
+    "product": "The Garden - New Edition",
+    "endpoint": "https://script.google.com/macros/s/AKfycbxxA_8OOrK8oSJk6dFSC4bSvIHxICKLYG6ZpalORyFnM5fe-I4eLil-KGsKyoD31NMWlg/exec",
+    "buttonText": "Enviar Mensagem",
+    "successMessage": "Nosso consultor entrará em contato!",
+    "successTitle": "Fique atento",
+    "successAvatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "showMessage": true,
+    "showCheckboxes": false,
+    "showBirthdate": false,
+    "quickComplement": true,
+    "quickTitle": "Antes de finalizar, só me confirma rapidinho…",
+    "quickCopy": "São só alguns cliques para eu entender melhor o seu momento.",
+    "quickConfirmText": "Concluir envio",
+    "quickQ1Enabled": true,
+    "quickQ1Label": "Qual é o seu objetivo?",
+    "quickQ1Type": "single",
+    "quickQ1Options": "Moradia|Investimento|Construção",
+    "quickQ1Required": true,
+    "quickQ2Enabled": true,
+    "quickQ2Label": "Em qual momento está a sua procura?",
+    "quickQ2Type": "single",
+    "quickQ2Options": "Imediata|Já tenho decisão tomada|Próximos meses|Só pesquisando",
+    "quickQ2Required": true,
+    "quickQ3Enabled": true,
+    "quickQ3Label": "O que é mais importante para você agora?",
+    "quickQ3Type": "single",
+    "quickQ3Options": "Valores e condições|Localização|Projeto e diferenciais|Potencial de investimento",
+    "quickQ3Required": true,
+    "fieldAutocomplete": true,
+    "quickQ4Enabled": true,
+    "quickQ4Label": "Prefere o contato em qual período?",
+    "quickQ4Type": "single",
+    "quickQ4Options": "Manhã|Almoço|Tarde|Noite",
+    "quickQ4Required": true,
+    "financialEnabled": false,
+    "financialTitle": "Para entender suas condições",
+    "financialCopy": "Responda algumas perguntas para personalizar seu atendimento.",
+    "financialQuestions": "[\n  {\n    \"id\": \"renda\",\n    \"label\": \"Qual é a renda familiar mensal aproximada?\",\n    \"type\": \"select\",\n    \"options\": [\n      \"Até R$ 3.000\",\n      \"R$ 3.001 a R$ 5.000\",\n      \"R$ 5.001 a R$ 7.000\",\n      \"R$ 7.001 a R$ 10.000\",\n      \"Acima de R$ 10.000\"\n    ],\n    \"required\": true\n  },\n  {\n    \"id\": \"imovel\",\n    \"label\": \"Possui imóvel em seu nome?\",\n    \"type\": \"yesno\",\n    \"required\": true\n  },\n  {\n    \"id\": \"carteira\",\n    \"label\": \"Possui pelo menos 3 anos de carteira assinada?\",\n    \"type\": \"yesno\",\n    \"required\": true\n  },\n  {\n    \"id\": \"fgts\",\n    \"label\": \"Possui FGTS disponível ou recursos para entrada?\",\n    \"type\": \"select\",\n    \"options\": [\n      \"Tenho FGTS\",\n      \"Tenho recursos para entrada\",\n      \"Tenho ambos\",\n      \"Ainda não tenho\"\n    ],\n    \"showIf\": {\n      \"id\": \"carteira\",\n      \"equals\": \"Sim\"\n    },\n    \"required\": true\n  },\n  {\n    \"id\": \"nascimento\",\n    \"label\": \"Qual sua data de nascimento?\",\n    \"type\": \"date\",\n    \"required\": false\n  },\n  {\n    \"id\": \"dependentes\",\n    \"label\": \"Possui dependentes?\",\n    \"type\": \"yesno\",\n    \"required\": true\n  }\n]",
+    "fixedBackground": false,
+    "backgroundImage": ""
+  },
+  "fields": [
+    {
+      "key": "showIntro",
+      "label": "Exibir apresentação",
+      "type": "toggle",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "copy",
+      "label": "Texto de apoio",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "product",
+      "label": "Produto ou empreendimento",
+      "type": "text",
+      "group": "Integração"
+    },
+    {
+      "key": "endpoint",
+      "label": "Endpoint POST",
+      "type": "url",
+      "group": "Integração"
+    },
+    {
+      "key": "buttonText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "Integração"
+    },
+    {
+      "key": "successMessage",
+      "label": "Mensagem de sucesso",
+      "type": "textarea",
+      "group": "Integração"
+    },
+    {
+      "key": "successTitle",
+      "label": "Título da notificação",
+      "type": "text",
+      "group": "Integração"
+    },
+    {
+      "key": "successAvatar",
+      "label": "Avatar da notificação",
+      "type": "url",
+      "group": "Integração"
+    },
+    {
+      "key": "showMessage",
+      "label": "Exibir campo de mensagem",
+      "type": "toggle",
+      "group": "Campos opcionais"
+    },
+    {
+      "key": "showCheckboxes",
+      "label": "Exibir perfil de financiamento",
+      "type": "toggle",
+      "group": "Campos opcionais"
+    },
+    {
+      "key": "showBirthdate",
+      "label": "Exibir data de nascimento",
+      "type": "toggle",
+      "group": "Campos opcionais"
+    },
+    {
+      "key": "fieldAutocomplete",
+      "label": "Autocomplete em nome, telefone e e-mail",
+      "type": "toggle",
+      "group": "Campos principais",
+      "note": "Ative para permitir que o navegador/celular sugira e preencha automaticamente nome, e-mail e telefone."
+    },
+    {
+      "key": "quickComplement",
+      "label": "Complementação rápida antes do envio",
+      "type": "toggle",
+      "group": "Complementação rápida"
+    },
+    {
+      "key": "quickTitle",
+      "label": "Título do banner",
+      "type": "text",
+      "group": "Complementação rápida"
+    },
+    {
+      "key": "quickCopy",
+      "label": "Texto de apoio",
+      "type": "textarea",
+      "group": "Complementação rápida"
+    },
+    {
+      "key": "quickConfirmText",
+      "label": "Botão concluir",
+      "type": "text",
+      "group": "Complementação rápida"
+    },
+    {
+      "key": "quickQ1Enabled",
+      "label": "Pergunta 1 ativa",
+      "type": "toggle",
+      "group": "Pergunta rápida 1"
+    },
+    {
+      "key": "quickQ1Label",
+      "label": "Pergunta",
+      "type": "text",
+      "group": "Pergunta rápida 1"
+    },
+    {
+      "key": "quickQ1Type",
+      "label": "Tipo de resposta",
+      "type": "select",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ],
+      "group": "Pergunta rápida 1"
+    },
+    {
+      "key": "quickQ1Options",
+      "label": "Opções (separadas por |)",
+      "type": "text",
+      "group": "Pergunta rápida 1",
+      "note": "Ex.: Moradia|Investimento|Construção. Ignorado em Sim/Não e Verdadeiro/Falso."
+    },
+    {
+      "key": "quickQ2Enabled",
+      "label": "Pergunta 2 ativa",
+      "type": "toggle",
+      "group": "Pergunta rápida 2"
+    },
+    {
+      "key": "quickQ2Label",
+      "label": "Pergunta",
+      "type": "text",
+      "group": "Pergunta rápida 2"
+    },
+    {
+      "key": "quickQ2Type",
+      "label": "Tipo de resposta",
+      "type": "select",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ],
+      "group": "Pergunta rápida 2"
+    },
+    {
+      "key": "quickQ2Options",
+      "label": "Opções (separadas por |)",
+      "type": "text",
+      "group": "Pergunta rápida 2",
+      "note": "Ex.: Moradia|Investimento|Construção. Ignorado em Sim/Não e Verdadeiro/Falso."
+    },
+    {
+      "key": "quickQ3Enabled",
+      "label": "Pergunta 3 ativa",
+      "type": "toggle",
+      "group": "Pergunta rápida 3"
+    },
+    {
+      "key": "quickQ3Label",
+      "label": "Pergunta",
+      "type": "text",
+      "group": "Pergunta rápida 3"
+    },
+    {
+      "key": "quickQ3Type",
+      "label": "Tipo de resposta",
+      "type": "select",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ],
+      "group": "Pergunta rápida 3"
+    },
+    {
+      "key": "quickQ3Options",
+      "label": "Opções (separadas por |)",
+      "type": "text",
+      "group": "Pergunta rápida 3",
+      "note": "Ex.: Moradia|Investimento|Construção. Ignorado em Sim/Não e Verdadeiro/Falso."
+    },
+    {
+      "key": "quickQ4Enabled",
+      "label": "Pergunta 4 ativa",
+      "type": "toggle",
+      "group": "Pergunta rápida 4"
+    },
+    {
+      "key": "quickQ4Label",
+      "label": "Pergunta",
+      "type": "text",
+      "group": "Pergunta rápida 4"
+    },
+    {
+      "key": "quickQ4Type",
+      "label": "Tipo de resposta",
+      "type": "select",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ],
+      "group": "Pergunta rápida 4"
+    },
+    {
+      "key": "quickQ4Options",
+      "label": "Opções (separadas por |)",
+      "type": "text",
+      "group": "Pergunta rápida 4",
+      "note": "Ex.: Manhã|Almoço|Tarde|Noite. Ignorado em Sim/Não e Verdadeiro/Falso."
+    },
+    {
+      "key": "financialEnabled",
+      "label": "Habilitar condições financeiras",
+      "type": "toggle",
+      "group": "Condições financeiras"
+    },
+    {
+      "key": "financialTitle",
+      "label": "Título do questionário financeiro",
+      "type": "text",
+      "group": "Condições financeiras"
+    },
+    {
+      "key": "financialCopy",
+      "label": "Texto introdutório financeiro",
+      "type": "textarea",
+      "group": "Condições financeiras"
+    },
+    {
+      "key": "financialQuestions",
+      "label": "Árvore de perguntas (JSON): adicione/remova perguntas e use showIf para ramificar",
+      "type": "textarea",
+      "group": "Condições financeiras",
+      "note": "Cada pergunta possui id, label, type, required, options e showIf opcional: {\"id\":\"carteira\",\"equals\":\"Sim\"}. Suporta select, yesno, text, date, number, multiple. Máximo 30 perguntas."
+    },
+    {
+      "key": "fixedBackground",
+      "label": "Imagem de fundo fixa durante a rolagem",
+      "type": "toggle",
+      "group": "Imagem de fundo"
+    },
+    {
+      "key": "backgroundImage",
+      "label": "Imagem de fundo (URL HTTPS)",
+      "type": "url",
+      "group": "Imagem de fundo"
+    }
+  ]
+}

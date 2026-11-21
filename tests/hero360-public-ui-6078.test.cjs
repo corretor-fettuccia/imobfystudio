@@ -1,0 +1,13 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const dir=path.join(__dirname,'../plugins/hero360-tour');
+const js=fs.readFileSync(path.join(dir,'plugin.js'),'utf8');
+const html=fs.readFileSync(path.join(dir,'template.html'),'utf8');
+const css=fs.readFileSync(path.join(dir,'plugin.css'),'utf8');
+const manifest=require(path.join(dir,'plugin.json'));
+assert.equal(manifest.version,'1.2.7');new vm.Script(js);
+assert.equal((html.match(/class="ims360-motion-toggle"/g)||[]).length,1);
+assert(!/ims360-motion-debug|ims360-motion-recenter|ims360-motion-status/.test(html));
+assert(!/ims360-motion-debug/.test(js+css));
+assert(js.includes("'Desativar movimento'"));
+for(const token of ['beginCalibration','calibrateSample','lastSafeYaw','outlier','motionGenericStart','deviceorientation'])assert(js.includes(token),token);
+console.log('Hero360Tour 1.2.6: UI única e calibração presentes');

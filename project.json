@@ -1,0 +1,12 @@
+{
+  "name": "Imobify Studio",
+  "version": "7.5.1",
+  "description": "Construtor visual imobiliário com novo fluxo de projeto por modelos hierárquicos, presets de projeto cadastráveis em presets/presets.json, projeto JSON no disco local, design system global e Plugin Play compatível.",
+  "entry": "index.html",
+  "pluginRegistry": "plugins/registry.json",
+  "pluginSchema": "plugin-sdk/plugin-package.schema.json",
+  "modelsDirectory": "models",
+  "output": "ZIP estático",
+  "presetsRegistry": "presets/presets.json",
+  "presetsDirectory": "presets"
+}

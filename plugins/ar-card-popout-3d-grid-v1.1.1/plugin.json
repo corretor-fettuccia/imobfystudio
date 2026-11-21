@@ -1,0 +1,1300 @@
+{
+  "schemaVersion": 3,
+  "id": "ar-card-popout-3d",
+  "name": "AR Card Popout 3D Single",
+  "version": "1.2.0",
+  "type": "section",
+  "category": "Interação",
+  "icon": "▱",
+  "description": "Um AR Card Popout 3D por instância, pronto para composição em linhas ou colunas pelo Segmento nativo.",
+  "composition": { "role": "both", "cardinality": "single" },
+  "migration": { "legacyGrid": { "slots": 4, "columnsField": "gridColumns", "gapField": "gridGap" } },
+  "origin": "Convertido do projeto ar-card-popout-v9-texto-3d.zip e atualizado para cardinalidade single, preservando a mecânica visual do V9.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "gridColumns": "3",
+    "gridGap": 28,
+    "cardImage": "assets/card-normal.png",
+    "cardImageAlt": "",
+    "projectionImage": "assets/popout.png",
+    "projectionImageAlt": "",
+    "kicker": "DESTAQUE",
+    "title": "Seu texto principal aqui",
+    "subtitle": "Uma chamada curta para complementar.",
+    "textColor": "#ffffff",
+    "showCta": true,
+    "ctaText": "FALAR AGORA",
+    "ctaUrl": "https://wa.me/5551998111078",
+    "ctaNewTab": true,
+    "ctaUseProjectColors": false,
+    "ctaColor": "#2c66ff",
+    "alignment": "center",
+    "useProjectTypography": true,
+    "radiusMode": "original",
+    "cardRadius": 22,
+    "cardRadiusMobile": 19,
+    "cardWidth": 220,
+    "cardHeight": 330,
+    "cardWidthMobile": 190,
+    "cardHeightMobile": 285,
+    "sceneWidth": 360,
+    "sceneHeight": 430,
+    "sceneWidthMobile": 300,
+    "sceneHeightMobile": 365,
+    "perspective": 720,
+    "perspectiveMobile": 660,
+    "openTilt": 68,
+    "openOffsetY": 50,
+    "projectionWidth": 103,
+    "projectionOffsetY": -34,
+    "projectionDepth": 92,
+    "projectionOffsetYMobile": -25,
+    "projectionDepthMobile": 75,
+    "projectionShadows": true,
+    "projectionShadowColor": "#000000",
+    "projectionShadowOpacity": 28,
+    "projectionShadowX": 0,
+    "projectionShadowY": 20,
+    "projectionShadowBlur": 13,
+    "castShadowOpacity": 90,
+    "castShadowBlur": 7,
+    "castShadowOffsetY": 24,
+    "castShadowScaleX": 94,
+    "contactShadowOpacity": 76,
+    "contactShadowBlur": 4,
+    "contactShadowOffsetY": 14,
+    "contactShadowScaleX": 86,
+    "textDepth": 22,
+    "pointerTilt": true,
+    "pulseOnHover": true,
+    "floatProjection": true,
+    "openByDefault": false,
+    "card2Enabled": true,
+    "card2CardImage": "assets/card-normal.png",
+    "card2CardImageAlt": "",
+    "card2ProjectionImage": "assets/popout.png",
+    "card2ProjectionImageAlt": "",
+    "card2Kicker": "DESTAQUE 2",
+    "card2Title": "Seu texto do card 2",
+    "card2Subtitle": "Uma chamada curta para complementar.",
+    "card2TextColor": "#ffffff",
+    "card2ShowCta": true,
+    "card2CtaText": "FALAR AGORA",
+    "card2CtaUrl": "https://wa.me/5551998111078",
+    "card2CtaNewTab": true,
+    "card2CtaUseProjectColors": false,
+    "card2CtaColor": "#2c66ff",
+    "card2OpenByDefault": false,
+    "card2ProjectionShadows": true,
+    "card2ProjectionShadowColor": "#000000",
+    "card2ProjectionShadowOpacity": 28,
+    "card2ProjectionShadowX": 0,
+    "card2ProjectionShadowY": 20,
+    "card2ProjectionShadowBlur": 13,
+    "card2CastShadowOpacity": 90,
+    "card2CastShadowBlur": 7,
+    "card2CastShadowOffsetY": 24,
+    "card2CastShadowScaleX": 94,
+    "card2ContactShadowOpacity": 76,
+    "card2ContactShadowBlur": 4,
+    "card2ContactShadowOffsetY": 14,
+    "card2ContactShadowScaleX": 86,
+    "card3Enabled": false,
+    "card3CardImage": "assets/card-normal.png",
+    "card3CardImageAlt": "",
+    "card3ProjectionImage": "assets/popout.png",
+    "card3ProjectionImageAlt": "",
+    "card3Kicker": "DESTAQUE 3",
+    "card3Title": "Seu texto do card 3",
+    "card3Subtitle": "Uma chamada curta para complementar.",
+    "card3TextColor": "#ffffff",
+    "card3ShowCta": true,
+    "card3CtaText": "FALAR AGORA",
+    "card3CtaUrl": "https://wa.me/5551998111078",
+    "card3CtaNewTab": true,
+    "card3CtaUseProjectColors": false,
+    "card3CtaColor": "#2c66ff",
+    "card3OpenByDefault": false,
+    "card3ProjectionShadows": true,
+    "card3ProjectionShadowColor": "#000000",
+    "card3ProjectionShadowOpacity": 28,
+    "card3ProjectionShadowX": 0,
+    "card3ProjectionShadowY": 20,
+    "card3ProjectionShadowBlur": 13,
+    "card3CastShadowOpacity": 90,
+    "card3CastShadowBlur": 7,
+    "card3CastShadowOffsetY": 24,
+    "card3CastShadowScaleX": 94,
+    "card3ContactShadowOpacity": 76,
+    "card3ContactShadowBlur": 4,
+    "card3ContactShadowOffsetY": 14,
+    "card3ContactShadowScaleX": 86,
+    "card4Enabled": false,
+    "card4CardImage": "assets/card-normal.png",
+    "card4CardImageAlt": "",
+    "card4ProjectionImage": "assets/popout.png",
+    "card4ProjectionImageAlt": "",
+    "card4Kicker": "DESTAQUE 4",
+    "card4Title": "Seu texto do card 4",
+    "card4Subtitle": "Uma chamada curta para complementar.",
+    "card4TextColor": "#ffffff",
+    "card4ShowCta": true,
+    "card4CtaText": "FALAR AGORA",
+    "card4CtaUrl": "https://wa.me/5551998111078",
+    "card4CtaNewTab": true,
+    "card4CtaUseProjectColors": false,
+    "card4CtaColor": "#2c66ff",
+    "card4OpenByDefault": false,
+    "card4ProjectionShadows": true,
+    "card4ProjectionShadowColor": "#000000",
+    "card4ProjectionShadowOpacity": 28,
+    "card4ProjectionShadowX": 0,
+    "card4ProjectionShadowY": 20,
+    "card4ProjectionShadowBlur": 13,
+    "card4CastShadowOpacity": 90,
+    "card4CastShadowBlur": 7,
+    "card4CastShadowOffsetY": 24,
+    "card4CastShadowScaleX": 94,
+    "card4ContactShadowOpacity": 76,
+    "card4ContactShadowBlur": 4,
+    "card4ContactShadowOffsetY": 14,
+    "card4ContactShadowScaleX": 86
+  },
+  "fields": [
+    {
+      "key": "gridColumns",
+      "label": "Colunas no desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "1 coluna",
+          "value": "1"
+        },
+        {
+          "label": "2 colunas",
+          "value": "2"
+        },
+        {
+          "label": "3 colunas",
+          "value": "3"
+        },
+        {
+          "label": "4 colunas",
+          "value": "4"
+        }
+      ],
+      "group": "Grid"
+    },
+    {
+      "key": "gridGap",
+      "label": "Espaço entre cards",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "group": "Grid"
+    },
+    {
+      "key": "cardImage",
+      "label": "Imagem do card",
+      "type": "image",
+      "group": "Mídia"
+    },
+    {
+      "key": "cardImageAlt",
+      "label": "Texto alternativo do card",
+      "type": "text",
+      "group": "Mídia"
+    },
+    {
+      "key": "projectionImage",
+      "label": "Imagem projetada / popout",
+      "type": "image",
+      "group": "Mídia"
+    },
+    {
+      "key": "projectionImageAlt",
+      "label": "Texto alternativo da projeção",
+      "type": "text",
+      "group": "Mídia"
+    },
+    {
+      "key": "kicker",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Texto 3D"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Texto 3D"
+    },
+    {
+      "key": "subtitle",
+      "label": "Subtítulo",
+      "type": "textarea",
+      "group": "Texto 3D"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Texto 3D"
+    },
+    {
+      "key": "textDepth",
+      "label": "Profundidade do título",
+      "type": "range",
+      "min": 10,
+      "max": 44,
+      "step": 1,
+      "group": "Texto 3D"
+    },
+    {
+      "key": "useProjectTypography",
+      "label": "Usar fontes do Perfil Visual",
+      "type": "toggle",
+      "group": "Texto 3D"
+    },
+    {
+      "key": "showCta",
+      "label": "Exibir CTA",
+      "type": "toggle",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaUrl",
+      "label": "Link do botão",
+      "type": "url",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaUseProjectColors",
+      "label": "Usar cores dos botões do projeto",
+      "type": "toggle",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaColor",
+      "label": "Cor local do CTA",
+      "type": "color",
+      "group": "CTA"
+    },
+    {
+      "key": "alignment",
+      "label": "Alinhamento do componente",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "radiusMode",
+      "label": "Arredondamento",
+      "type": "select",
+      "options": [
+        {
+          "label": "Original do V9",
+          "value": "original"
+        },
+        {
+          "label": "Perfil Visual do projeto",
+          "value": "project"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "cardRadius",
+      "label": "Raio desktop · original (px)",
+      "type": "range",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "group": "Composição"
+    },
+    {
+      "key": "cardRadiusMobile",
+      "label": "Raio mobile · original (px)",
+      "type": "range",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "group": "Composição"
+    },
+    {
+      "key": "cardWidth",
+      "label": "Largura do card · desktop",
+      "type": "range",
+      "min": 160,
+      "max": 420,
+      "step": 2,
+      "group": "Dimensões"
+    },
+    {
+      "key": "cardHeight",
+      "label": "Altura do card · desktop",
+      "type": "range",
+      "min": 220,
+      "max": 620,
+      "step": 2,
+      "group": "Dimensões"
+    },
+    {
+      "key": "cardWidthMobile",
+      "label": "Largura do card · mobile",
+      "type": "range",
+      "min": 140,
+      "max": 300,
+      "step": 2,
+      "group": "Dimensões"
+    },
+    {
+      "key": "cardHeightMobile",
+      "label": "Altura do card · mobile",
+      "type": "range",
+      "min": 210,
+      "max": 460,
+      "step": 2,
+      "group": "Dimensões"
+    },
+    {
+      "key": "sceneWidth",
+      "label": "Área 3D · largura desktop",
+      "type": "range",
+      "min": 260,
+      "max": 720,
+      "step": 5,
+      "group": "Dimensões"
+    },
+    {
+      "key": "sceneHeight",
+      "label": "Área 3D · altura desktop",
+      "type": "range",
+      "min": 320,
+      "max": 760,
+      "step": 5,
+      "group": "Dimensões"
+    },
+    {
+      "key": "sceneWidthMobile",
+      "label": "Área 3D · largura mobile",
+      "type": "range",
+      "min": 240,
+      "max": 420,
+      "step": 5,
+      "group": "Dimensões"
+    },
+    {
+      "key": "sceneHeightMobile",
+      "label": "Área 3D · altura mobile",
+      "type": "range",
+      "min": 300,
+      "max": 620,
+      "step": 5,
+      "group": "Dimensões"
+    },
+    {
+      "key": "perspective",
+      "label": "Perspectiva · desktop",
+      "type": "range",
+      "min": 420,
+      "max": 1400,
+      "step": 10,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "perspectiveMobile",
+      "label": "Perspectiva · mobile",
+      "type": "range",
+      "min": 420,
+      "max": 1200,
+      "step": 10,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "openTilt",
+      "label": "Inclinação ao abrir (°)",
+      "type": "range",
+      "min": 30,
+      "max": 82,
+      "step": 1,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "openOffsetY",
+      "label": "Descida do card aberto (px)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "projectionWidth",
+      "label": "Largura da projeção (%)",
+      "type": "range",
+      "min": 70,
+      "max": 160,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionOffsetY",
+      "label": "Altura da projeção · desktop",
+      "type": "range",
+      "min": -120,
+      "max": 40,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionDepth",
+      "label": "Profundidade da projeção · desktop",
+      "type": "range",
+      "min": 20,
+      "max": 180,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionOffsetYMobile",
+      "label": "Altura da projeção · mobile",
+      "type": "range",
+      "min": -100,
+      "max": 40,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionDepthMobile",
+      "label": "Profundidade da projeção · mobile",
+      "type": "range",
+      "min": 20,
+      "max": 150,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionShadows",
+      "label": "Exibir sombras da projeção",
+      "type": "toggle",
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowColor",
+      "label": "Cor das sombras",
+      "type": "color",
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowOpacity",
+      "label": "Sombra do objeto · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowX",
+      "label": "Sombra do objeto · deslocamento X",
+      "type": "range",
+      "min": -60,
+      "max": 60,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowY",
+      "label": "Sombra do objeto · deslocamento Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowBlur",
+      "label": "Sombra do objeto · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "castShadowOpacity",
+      "label": "Sombra projetada · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "castShadowBlur",
+      "label": "Sombra projetada · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "castShadowOffsetY",
+      "label": "Sombra projetada · posição Y",
+      "type": "range",
+      "min": -20,
+      "max": 80,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "castShadowScaleX",
+      "label": "Sombra projetada · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "contactShadowOpacity",
+      "label": "Sombra de contato · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "contactShadowBlur",
+      "label": "Sombra de contato · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 25,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "contactShadowOffsetY",
+      "label": "Sombra de contato · posição Y",
+      "type": "range",
+      "min": -20,
+      "max": 60,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "contactShadowScaleX",
+      "label": "Sombra de contato · largura (%)",
+      "type": "range",
+      "min": 25,
+      "max": 140,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "pointerTilt",
+      "label": "Perspectiva acompanha o mouse/toque",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "pulseOnHover",
+      "label": "Pulso no hover",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "floatProjection",
+      "label": "Projeção flutua quando aberta",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "openByDefault",
+      "label": "Iniciar aberto",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "card2Enabled",
+      "label": "Exibir este card",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CardImage",
+      "label": "Imagem do card",
+      "type": "image",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CardImageAlt",
+      "label": "Texto alternativo do card",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2ProjectionImage",
+      "label": "Imagem projetada / popout",
+      "type": "image",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2ProjectionImageAlt",
+      "label": "Texto alternativo da projeção",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2Kicker",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2Title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2Subtitle",
+      "label": "Subtítulo",
+      "type": "textarea",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2TextColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2ShowCta",
+      "label": "Exibir CTA",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CtaText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CtaUrl",
+      "label": "Link do botão",
+      "type": "url",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CtaNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CtaUseProjectColors",
+      "label": "Usar cores dos botões do projeto",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2CtaColor",
+      "label": "Cor local do CTA",
+      "type": "color",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2OpenByDefault",
+      "label": "Iniciar aberto",
+      "type": "toggle",
+      "group": "Card 2"
+    },
+    {
+      "key": "card2ProjectionShadows",
+      "label": "Exibir sombras da projeção",
+      "type": "toggle",
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ProjectionShadowColor",
+      "label": "Cor das sombras",
+      "type": "color",
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ProjectionShadowOpacity",
+      "label": "Sombra do objeto · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ProjectionShadowX",
+      "label": "Sombra do objeto · deslocamento X",
+      "type": "range",
+      "min": -60,
+      "max": 60,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ProjectionShadowY",
+      "label": "Sombra do objeto · deslocamento Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ProjectionShadowBlur",
+      "label": "Sombra do objeto · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2CastShadowOpacity",
+      "label": "Sombra projetada · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2CastShadowBlur",
+      "label": "Sombra projetada · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2CastShadowOffsetY",
+      "label": "Sombra projetada · posição Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2CastShadowScaleX",
+      "label": "Sombra projetada · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ContactShadowOpacity",
+      "label": "Sombra de contato · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ContactShadowBlur",
+      "label": "Sombra de contato · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ContactShadowOffsetY",
+      "label": "Sombra de contato · posição Y",
+      "type": "range",
+      "min": -10,
+      "max": 50,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card2ContactShadowScaleX",
+      "label": "Sombra de contato · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Card 2 · Sombras"
+    },
+    {
+      "key": "card3Enabled",
+      "label": "Exibir este card",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CardImage",
+      "label": "Imagem do card",
+      "type": "image",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CardImageAlt",
+      "label": "Texto alternativo do card",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3ProjectionImage",
+      "label": "Imagem projetada / popout",
+      "type": "image",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3ProjectionImageAlt",
+      "label": "Texto alternativo da projeção",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3Kicker",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3Title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3Subtitle",
+      "label": "Subtítulo",
+      "type": "textarea",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3TextColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3ShowCta",
+      "label": "Exibir CTA",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CtaText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CtaUrl",
+      "label": "Link do botão",
+      "type": "url",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CtaNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CtaUseProjectColors",
+      "label": "Usar cores dos botões do projeto",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3CtaColor",
+      "label": "Cor local do CTA",
+      "type": "color",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3OpenByDefault",
+      "label": "Iniciar aberto",
+      "type": "toggle",
+      "group": "Card 3"
+    },
+    {
+      "key": "card3ProjectionShadows",
+      "label": "Exibir sombras da projeção",
+      "type": "toggle",
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ProjectionShadowColor",
+      "label": "Cor das sombras",
+      "type": "color",
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ProjectionShadowOpacity",
+      "label": "Sombra do objeto · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ProjectionShadowX",
+      "label": "Sombra do objeto · deslocamento X",
+      "type": "range",
+      "min": -60,
+      "max": 60,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ProjectionShadowY",
+      "label": "Sombra do objeto · deslocamento Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ProjectionShadowBlur",
+      "label": "Sombra do objeto · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3CastShadowOpacity",
+      "label": "Sombra projetada · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3CastShadowBlur",
+      "label": "Sombra projetada · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3CastShadowOffsetY",
+      "label": "Sombra projetada · posição Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3CastShadowScaleX",
+      "label": "Sombra projetada · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ContactShadowOpacity",
+      "label": "Sombra de contato · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ContactShadowBlur",
+      "label": "Sombra de contato · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ContactShadowOffsetY",
+      "label": "Sombra de contato · posição Y",
+      "type": "range",
+      "min": -10,
+      "max": 50,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card3ContactShadowScaleX",
+      "label": "Sombra de contato · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Card 3 · Sombras"
+    },
+    {
+      "key": "card4Enabled",
+      "label": "Exibir este card",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CardImage",
+      "label": "Imagem do card",
+      "type": "image",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CardImageAlt",
+      "label": "Texto alternativo do card",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4ProjectionImage",
+      "label": "Imagem projetada / popout",
+      "type": "image",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4ProjectionImageAlt",
+      "label": "Texto alternativo da projeção",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4Kicker",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4Title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4Subtitle",
+      "label": "Subtítulo",
+      "type": "textarea",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4TextColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4ShowCta",
+      "label": "Exibir CTA",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CtaText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CtaUrl",
+      "label": "Link do botão",
+      "type": "url",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CtaNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CtaUseProjectColors",
+      "label": "Usar cores dos botões do projeto",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4CtaColor",
+      "label": "Cor local do CTA",
+      "type": "color",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4OpenByDefault",
+      "label": "Iniciar aberto",
+      "type": "toggle",
+      "group": "Card 4"
+    },
+    {
+      "key": "card4ProjectionShadows",
+      "label": "Exibir sombras da projeção",
+      "type": "toggle",
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ProjectionShadowColor",
+      "label": "Cor das sombras",
+      "type": "color",
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ProjectionShadowOpacity",
+      "label": "Sombra do objeto · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ProjectionShadowX",
+      "label": "Sombra do objeto · deslocamento X",
+      "type": "range",
+      "min": -60,
+      "max": 60,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ProjectionShadowY",
+      "label": "Sombra do objeto · deslocamento Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ProjectionShadowBlur",
+      "label": "Sombra do objeto · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4CastShadowOpacity",
+      "label": "Sombra projetada · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4CastShadowBlur",
+      "label": "Sombra projetada · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4CastShadowOffsetY",
+      "label": "Sombra projetada · posição Y",
+      "type": "range",
+      "min": -10,
+      "max": 70,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4CastShadowScaleX",
+      "label": "Sombra projetada · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ContactShadowOpacity",
+      "label": "Sombra de contato · intensidade (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ContactShadowBlur",
+      "label": "Sombra de contato · desfoque",
+      "type": "range",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ContactShadowOffsetY",
+      "label": "Sombra de contato · posição Y",
+      "type": "range",
+      "min": -10,
+      "max": 50,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    },
+    {
+      "key": "card4ContactShadowScaleX",
+      "label": "Sombra de contato · largura (%)",
+      "type": "range",
+      "min": 30,
+      "max": 160,
+      "step": 1,
+      "group": "Card 4 · Sombras"
+    }
+  ]
+}

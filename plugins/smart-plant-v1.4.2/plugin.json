@@ -1,0 +1,224 @@
+{
+  "schemaVersion": 3,
+  "id": "smart-plant",
+  "name": "Smart Plant",
+  "version": "1.5.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "⌂",
+  "description": "Vitrine de plantas com CTA integrado ao Form Sender V4 ou Agendamento Sender: fecha o modal sem retornar às plantas, transfere o texto e navega para a âncora definida (ex.: #contato).",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "sectionTitle": "Plantas",
+    "sectionSubtitle": "Conheça as opções e encontre a planta que combina com você.",
+    "empreendimento": "Varandas Trend Living",
+    "cardButtonText": "Ver planta completa",
+    "actionMode": "whatsapp",
+    "actionLabelWhats": "Gostei desta! Quero mais informações",
+    "actionLabelForm": "Gostei desta planta. Quero mais informações",
+    "whatsNumber": "5551998111078",
+    "whatsMessage": "Gostei do {empreendimento}. Me identifiquei com a planta {planta}, {metragem}. Gostaria de marcar uma visita.",
+    "formAnchor": "contato",
+    "formContextMessage": "Tenho interesse no {empreendimento}. Me identifiquei com a planta {planta}, {metragem}. Gostaria de receber mais informações e marcar uma visita.",
+    "columns": 3,
+    "imageHeight": 210,
+    "localTheme": false,
+    "localAccent": "#7e686d",
+    "localSectionBg": "#f7f5ea",
+    "localCardBg": "#ffffff",
+    "localModalBg": "#ffffff",
+    "localText": "#171717",
+    "localMuted": "#595959",
+    "plants": "[{\"id\":\"planta-1\",\"title\":\"2 Dorm com Suíte + Sacada\",\"description\":\"Apartamento com dois dormitórios, sendo 1 com suíte.\",\"area\":\"55,70m²\",\"composition\":\"1 Suíte + 1 Dormitório\",\"bathrooms\":\"2 Banheiros\",\"features\":\"Churrasqueira|Sacada\",\"image\":\"assets/images/plant-1.png\",\"fullImage\":\"assets/images/plant-1-full.png\",\"positionImage\":\"assets/images/position-1.png\",\"position\":\"MEIO - Torre A - Finais 01,04,05,08 | Torre B - Finais 01,04,05,08\",\"code\":\"\"},{\"id\":\"planta-2\",\"title\":\"2 Dorm com Suíte\",\"description\":\"Apartamento com 2 dormitórios, sendo 1 com suíte, com living estendido.\",\"area\":\"67,88m²\",\"composition\":\"2 Dormitórios\",\"bathrooms\":\"2 Banheiros\",\"features\":\"Churrasqueira|Living Estendido\",\"image\":\"assets/images/plant-2.png\",\"fullImage\":\"assets/images/plant-2.png\",\"positionImage\":\"\",\"position\":\"Consulte os finais e a disponibilidade atual.\",\"code\":\"\"},{\"id\":\"planta-3\",\"title\":\"2 Dorm com Suíte\",\"description\":\"Apartamento com 2 dormitórios, sendo 1 com suíte, com living estendido.\",\"area\":\"78,14m²\",\"composition\":\"2 Dormitórios\",\"bathrooms\":\"2 Banheiros\",\"features\":\"Churrasqueira|Living Estendido|Sacada\",\"image\":\"assets/images/plant-3.png\",\"fullImage\":\"assets/images/plant-3.png\",\"positionImage\":\"\",\"position\":\"Consulte os finais e a disponibilidade atual.\",\"code\":\"\"}]",
+    "magnifierTouchToggle": true,
+    "magnifierClickPosition": true,
+    "magnifierDragPosition": true,
+    "magnifierFollowMouse": false,
+    "magnifierZoom": "3",
+    "magnifierStartHidden": true,
+    "formDestination": "auto"
+  },
+  "fields": [
+    {
+      "key": "sectionTitle",
+      "label": "Título da seção",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "sectionSubtitle",
+      "label": "Subtítulo",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "empreendimento",
+      "label": "Empreendimento",
+      "type": "text",
+      "group": "Conversão"
+    },
+    {
+      "key": "cardButtonText",
+      "label": "Texto do botão dos cards",
+      "type": "text",
+      "group": "Conversão"
+    },
+    {
+      "key": "actionMode",
+      "label": "Destino do CTA do modal",
+      "type": "select",
+      "options": [
+        {
+          "label": "WhatsApp",
+          "value": "whatsapp"
+        },
+        {
+          "label": "Form Sender",
+          "value": "form"
+        }
+      ],
+      "group": "Conversão"
+    },
+    {
+      "key": "actionLabelWhats",
+      "label": "Texto do CTA · WhatsApp",
+      "type": "text",
+      "group": "Conversão"
+    },
+    {
+      "key": "actionLabelForm",
+      "label": "Texto do CTA · Form Sender",
+      "type": "text",
+      "group": "Conversão"
+    },
+    {
+      "key": "whatsNumber",
+      "label": "WhatsApp com DDI + DDD",
+      "type": "text",
+      "group": "WhatsApp"
+    },
+    {
+      "key": "whatsMessage",
+      "label": "Mensagem do WhatsApp",
+      "type": "textarea",
+      "group": "WhatsApp",
+      "note": "Variáveis: {empreendimento}, {planta}, {metragem}."
+    },
+    {
+      "key": "formDestination",
+      "label": "Tipo de formulário de destino",
+      "type": "select",
+      "group": "Form Sender",
+      "options": [
+        {
+          "label": "Automático (pela âncora)",
+          "value": "auto"
+        },
+        {
+          "label": "Form Sender V4",
+          "value": "form-sender-v4"
+        },
+        {
+          "label": "Agendamento Sender",
+          "value": "agendamento-sender"
+        },
+        {
+          "label": "Form Sender Popup",
+          "value": "form-sender-popup"
+        }
+      ],
+      "note": "Use Automático para identificar o tipo pela âncora configurada. Com ambos os formulários na página, configure a âncora da seção correta."
+    },
+    {
+      "key": "formAnchor",
+      "label": "Âncora do Form Sender V4 ou Agendamento Sender",
+      "type": "text",
+      "group": "Form Sender",
+      "note": "Ex.: contato ou agendar-visita (sem #). O CTA envia a planta ao formulário que possui esta âncora."
+    },
+    {
+      "key": "formContextMessage",
+      "label": "Mensagem enviada ao Form Sender",
+      "type": "textarea",
+      "group": "Form Sender",
+      "note": "Variáveis: {empreendimento}, {planta}, {metragem}. Incluída no envio V4 ou no agendamento."
+    },
+    {
+      "key": "columns",
+      "label": "Colunas no desktop",
+      "type": "number",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "imageHeight",
+      "label": "Altura da imagem dos cards",
+      "type": "range",
+      "min": 160,
+      "max": 360,
+      "step": 10,
+      "group": "Aparência"
+    },
+    {
+      "key": "magnifierStartHidden",
+      "label": "Iniciar lupa oculta · pressionar e segurar para ampliar",
+      "type": "toggle",
+      "group": "Lupa · visualização detalhada",
+      "note": "Ativado por padrão: a lente surge somente enquanto o visitante mantém a planta pressionada; ao soltar desaparece. Desative para usar o comportamento clássico (lupa já visível)."
+    },
+    {
+      "key": "magnifierTouchToggle",
+      "label": "Exibir/ocultar a lente com toque",
+      "type": "toggle",
+      "group": "Lupa · visualização detalhada",
+      "note": "No modo clássico (iniciar oculta desativado): tocar alterna a visibilidade da lente."
+    },
+    {
+      "key": "magnifierClickPosition",
+      "label": "Posicionar lente ao clicar",
+      "type": "toggle",
+      "group": "Lupa · visualização detalhada",
+      "note": "No modo clássico: posiciona a lente com clique. No modo pressionar e segurar o posicionamento é automático."
+    },
+    {
+      "key": "magnifierDragPosition",
+      "label": "Posicionar lente ao arrastar",
+      "type": "toggle",
+      "group": "Lupa · visualização detalhada",
+      "note": "Permite arrastar fisicamente a lente sobre a planta."
+    },
+    {
+      "key": "magnifierFollowMouse",
+      "label": "Lente segue o mouse",
+      "type": "toggle",
+      "group": "Lupa · visualização detalhada",
+      "note": "No desktop, a lente acompanha o cursor enquanto ele se move sobre a planta."
+    },
+    {
+      "key": "magnifierZoom",
+      "label": "Fator de ampliação inicial",
+      "type": "select",
+      "options": [
+        {
+          "label": "2×",
+          "value": "2"
+        },
+        {
+          "label": "3× (padrão)",
+          "value": "3"
+        }
+      ],
+      "group": "Lupa · visualização detalhada",
+      "note": "O visitante também pode alternar 2×/3× no controle discreto da visualização detalhada."
+    }
+  ]
+}

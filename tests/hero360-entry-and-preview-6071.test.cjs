@@ -1,0 +1,17 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');const path=require('node:path');const base=path.resolve(__dirname,'..');
+const read=p=>fs.readFileSync(path.join(base,p),'utf8');
+const manifest=JSON.parse(read('plugins/hero360-tour/plugin.json'));
+const viewer=read('plugins/hero360-tour/plugin.js');const editor=read('plugins/hero360-tour/editor/app.js');
+assert.equal(manifest.version,'1.2.7');
+assert.match(editor,/this\.capturedSceneViewFor = scene\.id/);
+assert.match(editor,/this\.capturedSceneViewFor !== scene\.id/);
+assert.match(editor,/scene\.initialView = \{ yaw:this\.round\(yaw\), pitch:this\.round\(pitch\), hfov:this\.round\(hfov\) \}/);
+assert.match(editor,/syncViewer:false/);
+assert.match(viewer,/hfov=clamp\(v\.hfov\?\?root\.dataset\.heroHfov\?\?118,50,140\)/);
+assert.match(viewer,/canvas\.replaceWith\(fallback\)/);
+assert.match(viewer,/bindCanvasEvents\(\)/);
+assert.match(viewer,/image\.crossOrigin='anonymous'/);
+new (require('node:vm').Script)(viewer);
+new (require('node:vm').Script)(editor);
+console.log('Hero360Tour 6.0.71: captura, serialização, HFOV e fallback presentes.');

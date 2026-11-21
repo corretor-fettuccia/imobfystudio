@@ -1,0 +1,33 @@
+/* Integração single: uma instância corresponde a um card com vídeo.
+   Linhas e colunas são compostas pelo Segmento nativo do framework. */
+[data-plugin="flipcard-3d-video-v1"] {
+    padding-block: var(--section-space);
+    background: var(--surface);
+}
+
+[data-plugin="flipcard-3d-video-v1"] .flip-card-plugin-container {
+    width: min(320px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+[data-plugin="flipcard-3d-video-v1"] .flip-card-single {
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+[data-plugin="flipcard-3d-video-v1"] .flip-card {
+    width: 320px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+    [data-plugin="flipcard-3d-video-v1"] .flip-card-plugin-container {
+        width: min(280px, calc(100% - 28px));
+    }
+
+    [data-plugin="flipcard-3d-video-v1"] .flip-card {
+        width: min(280px, 100%);
+    }
+}

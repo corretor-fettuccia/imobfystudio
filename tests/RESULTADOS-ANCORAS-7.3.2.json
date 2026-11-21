@@ -1,0 +1,33 @@
+{
+  "version": "7.3.2",
+  "browser": "Chromium headless",
+  "cases": [
+    {
+      "viewport": "desktop 1280×780",
+      "destination": "Agendamento Sender",
+      "anchor": "#agendar",
+      "result": "passou"
+    },
+    {
+      "viewport": "desktop 1280×780",
+      "destination": "Form Sender V4",
+      "anchor": "#contato",
+      "result": "passou"
+    },
+    {
+      "viewport": "mobile 390×780",
+      "destination": "Agendamento Sender",
+      "anchor": "#agendar",
+      "result": "passou"
+    },
+    {
+      "viewport": "mobile 390×780",
+      "destination": "Form Sender V4",
+      "anchor": "#contato",
+      "result": "passou"
+    }
+  ],
+  "nodeTests": 10,
+  "nodePassed": 10,
+  "networkSubmission": "não executado"
+}

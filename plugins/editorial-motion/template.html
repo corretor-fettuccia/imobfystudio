@@ -1,0 +1,17 @@
+<div class="edm" data-layout="{{layout}}" data-reverse="{{reverse}}" data-palette="{{palette}}" data-motion="{{motion}}" data-sticky="{{sticky}}" data-threshold="{{threshold}}" style="--edm-accent:{{accent}};--edm-title:{{titleSize}}px;--edm-height:{{mediaHeight}}px;--edm-delay:{{delay}}ms;--edm-stagger:{{stagger}}ms;--edm-duration:{{duration}}ms">
+ <div class="edm-container">
+  <div class="edm-copy">
+   {{#if eyebrow}}<p class="edm-eyebrow edm-animate" data-step="0">{{eyebrow}}</p>{{/if}}
+   <h2 class="edm-headline edm-animate" data-step="1">{{headline}}</h2>
+   <p class="edm-description edm-animate" data-step="2">{{description|br}}</p>
+   {{#if ctaText}}<a class="edm-cta edm-animate" data-step="3" href="{{ctaUrl}}">{{ctaText}}<span aria-hidden="true">↗</span></a>{{/if}}
+  </div>
+  <div class="edm-media edm-animate" data-step="1">
+    <div class="edm-image edm-primary" data-source="{{imageMain}}" role="img" aria-label="Imagem principal do empreendimento"><img src="{{imageMain}}" alt="Imagem principal do empreendimento" loading="lazy" decoding="async"></div>
+    <div class="edm-image edm-secondary" data-source="{{imageSecondary}}" role="img" aria-label="Imagem secundária"><img src="{{imageSecondary}}" alt="Imagem complementar do empreendimento" loading="lazy" decoding="async"></div>
+    <div class="edm-image edm-third" data-source="{{imageThird}}" role="img" aria-label="Terceira imagem"><img src="{{imageThird}}" alt="Terceira perspectiva do empreendimento" loading="lazy" decoding="async"></div>
+    <div class="edm-media-rule" aria-hidden="true"></div>
+  </div>
+  {{#if statNumber}}<div class="edm-stat edm-animate" data-step="4"><strong>{{statNumber}}</strong><span>{{statLabel}}</span></div>{{/if}}
+ </div>
+</div>

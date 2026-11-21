@@ -1,0 +1,36 @@
+<div class="ar-popout-root"
+     data-alignment="{{alignment}}"
+     data-project-fonts="{{useProjectTypography}}"
+     data-radius-mode="{{radiusMode}}"
+     data-pointer-tilt="{{pointerTilt}}"
+     data-pulse-hover="{{pulseOnHover}}"
+     data-float-projection="{{floatProjection}}"
+     style="--ar-card-w-desktop:{{cardWidth}}px;--ar-card-h-desktop:{{cardHeight}}px;--ar-card-w-mobile:{{cardWidthMobile}}px;--ar-card-h-mobile:{{cardHeightMobile}}px;--ar-scene-w-desktop:{{sceneWidth}}px;--ar-scene-h-desktop:{{sceneHeight}}px;--ar-scene-w-mobile:{{sceneWidthMobile}}px;--ar-scene-h-mobile:{{sceneHeightMobile}}px;--ar-perspective-desktop:{{perspective}}px;--ar-perspective-mobile:{{perspectiveMobile}}px;--ar-radius-desktop:{{cardRadius}}px;--ar-radius-mobile:{{cardRadiusMobile}}px;--ar-open-rx:{{openTilt}}deg;--ar-open-y:{{openOffsetY}}px;--ar-projection-width:{{projectionWidth}}%;--ar-projection-y-desktop:{{projectionOffsetY}}px;--ar-projection-z-desktop:{{projectionDepth}}px;--ar-projection-y-mobile:{{projectionOffsetYMobile}}px;--ar-projection-z-mobile:{{projectionDepthMobile}}px;--ar-title-depth:{{textDepth}}px;">
+  <div class="ar-popout-layout">
+    <div class="ar-popout-unit" data-card-slot="1" data-project-cta="{{ctaUseProjectColors}}" data-projection-shadows="{{projectionShadows}}" data-show-cta="{{showCta}}" data-open-default="{{openByDefault}}" style="--ar-text-color:{{textColor}};--ar-cta-local:{{ctaColor}};--ar-proj-shadow-color:{{projectionShadowColor}};--ar-proj-shadow-opacity:{{projectionShadowOpacity}}%;--ar-proj-shadow-x:{{projectionShadowX}}px;--ar-proj-shadow-y:{{projectionShadowY}}px;--ar-proj-shadow-blur:{{projectionShadowBlur}}px;--ar-cast-shadow-opacity:{{castShadowOpacity}}%;--ar-cast-shadow-blur:{{castShadowBlur}}px;--ar-cast-shadow-y:{{castShadowOffsetY}}px;--ar-cast-shadow-scale-x:{{castShadowScaleX}};--ar-contact-shadow-opacity:{{contactShadowOpacity}}%;--ar-contact-shadow-blur:{{contactShadowBlur}}px;--ar-contact-shadow-y:{{contactShadowOffsetY}}px;--ar-contact-shadow-scale-x:{{contactShadowScaleX}};">
+      <div class="ar-scene">
+        <div class="ar-card" role="button" tabindex="0" aria-pressed="false" aria-label="Alternar efeito 3D do card">
+          <span class="ground-shadow" aria-hidden="true"></span>
+          <span class="card-plane">
+            <img class="card-image" src="{{cardImage}}" alt="{{cardImageAlt}}" draggable="false">
+            <span class="card-copy">
+              <span class="card-kicker depth-text depth-text-sm">{{kicker}}</span>
+              <span class="card-title depth-text depth-text-lg">{{title}}</span>
+              <span class="card-subtitle depth-text depth-text-md">{{subtitle}}</span>
+            </span>
+            <span class="card-dark" aria-hidden="true"></span>
+            <span class="card-specular" aria-hidden="true"></span>
+            <span class="card-edge" aria-hidden="true"></span>
+          </span>
+          <span class="cast-shadow" aria-hidden="true"></span>
+          <span class="contact-shadow" aria-hidden="true"></span>
+          <span class="projection-wrap" aria-hidden="true">
+            <span class="projection-motion"><span class="projection-float"><span class="projection-aura"></span><img class="projection-image" src="{{projectionImage}}" alt="{{projectionImageAlt}}" draggable="false"></span></span>
+          </span>
+          {{#if ctaNewTab}}<a class="open-cta" href="{{ctaUrl}}" target="_blank" rel="noopener noreferrer">{{ctaText}}</a>{{/if}}
+          {{#unless ctaNewTab}}<a class="open-cta" href="{{ctaUrl}}">{{ctaText}}</a>{{/unless}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

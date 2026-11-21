@@ -1,0 +1,402 @@
+{
+  "passed": 60,
+  "failed": 6,
+  "results": [
+    {
+      "file": "agendamento-sender-export.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "álogo, exporta CSS/JS/HTML e usa contrato FormSender\nok 1 - Agendamento Sender integra catálogo, exporta CSS/JS/HTML e usa contrato FormSender\n  ---\n  duration_ms: 287.277409\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 306.694877\n"
+    },
+    {
+      "file": "agentic-export-6090.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Agentic export 6.0.90: HTML, runtime, catalog and llms.txt OK\n"
+    },
+    {
+      "file": "agentic-export-71.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Exportação agêntica 7.1: llms completos, conteúdo público, diagnóstico e SEO OK\n"
+    },
+    {
+      "file": "ai-agent-71.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Agente 7.1: whitelist, diff, dados públicos e parser OK\n"
+    },
+    {
+      "file": "ai-markdown-711.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Markdown 7.1.1: anexos, classificação, seleção, orçamento, aviso e prompt OK\n"
+    },
+    {
+      "file": "benefits-core-typography-6083.test.cjs",
+      "ok": false,
+      "code": 1,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'7.1.1' !== '6.0.83'\n\n    at /mnt/data/imobify711_work/tests/benefits-core-typography-6083.test.cjs:56:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '7.1.1',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}\n"
+    },
+    {
+      "file": "benefits-fixed-background-6082.test.cjs",
+      "ok": false,
+      "code": 1,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'7.1.1' !== '6.0.83'\n\n    at /mnt/data/imobify711_work/tests/benefits-fixed-background-6082.test.cjs:47:9 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '7.1.1',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}\n"
+    },
+    {
+      "file": "benefits-showcase-6062.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Benefits Showcase 6.0.62: render, SVG, escaping, category, layout, export OK\n"
+    },
+    {
+      "file": "financial-flow-690.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "gem fixa\n  ---\n  duration_ms: 0.636558\n  type: 'test'\n  ...\n# Subtest: form-sender-v4 admite imagem fixa\nok 5 - form-sender-v4 admite imagem fixa\n  ---\n  duration_ms: 0.476637\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 26.285465\n"
+    },
+    {
+      "file": "form-sender-export-quick-complement.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "tes quick-complement defaults for legacy Form Sender sections\nok 1 - export hydrates quick-complement defaults for legacy Form Sender sections\n  ---\n  duration_ms: 292.599619\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 329.496838\n"
+    },
+    {
+      "file": "form-sender-mobile-steps-autocomplete.test.cjs",
+      "ok": false,
+      "code": 1,
+      "message": "214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 0\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 14.602856\n"
+    },
+    {
+      "file": "form-sender-popup.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "  duration_ms: 0.393433\n  type: 'test'\n  ...\n# Subtest: smart plant emits a dedicated popup event\nok 3 - smart plant emits a dedicated popup event\n  ---\n  duration_ms: 1.951682\n  type: 'test'\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 21.19396\n"
+    },
+    {
+      "file": "form-sender-quick-complement.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "m Sender 4.5.0 exposes mandatory quick complement with locked modal\nok 1 - Form Sender 4.5.0 exposes mandatory quick complement with locked modal\n  ---\n  duration_ms: 2.635397\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 13.430028\n"
+    },
+    {
+      "file": "gallery-big-four-typography.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Gallery Big Four typography attributes OK\n"
+    },
+    {
+      "file": "hero360-canvas-recovery.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360 native: WebGL + Canvas 2D + resize + texture handling OK\n"
+    },
+    {
+      "file": "hero360-copy-delay-6081.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 1.2.7: configurações 2–10 s, restauração e compatibilidade legada OK\n"
+    },
+    {
+      "file": "hero360-delay-export-6081.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour: os valores 2, 5 e 10 s são salvos, renderizados e exportados sem alterações.\n"
+    },
+    {
+      "file": "hero360-entry-and-preview-6071.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 6.0.71: captura, serialização, HFOV e fallback presentes.\n"
+    },
+    {
+      "file": "hero360-fullsphere-v1.0.6.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360 esfera: longitude e latitude equiretangular e fill viewport OK\n"
+    },
+    {
+      "file": "hero360-immersive-motion-6073.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 1.2.5: configuração e integração Immersive Motion OK\n"
+    },
+    {
+      "file": "hero360-initialization-hotfix-6074.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 1.2.1: listener initialization before binding; no TDZ; WebGL/Canvas2D preserved\n"
+    },
+    {
+      "file": "hero360-navigation-panel-export.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360 export: painel oculto preservado no HTML compilado\nHero360 export: painel ativo preservado no HTML compilado\n"
+    },
+    {
+      "file": "hero360-navigation-panel.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour: painel opcional inativo por padrão e exportação sincronizada\n"
+    },
+    {
+      "file": "hero360-npot-6072.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour NPOT WebGL 1 + primeiro quadro + recuperação Canvas 2D: OK\n"
+    },
+    {
+      "file": "hero360-public-ui-6078.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 1.2.6: UI única e calibração presentes\n"
+    },
+    {
+      "file": "hero360-regression-6048.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360 runtime: hotspots de navegação, info no Hero, observador, fallback e sem banners OK\n"
+    },
+    {
+      "file": "hero360-scroll-pass-through.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour: native wheel scroll, touch pan-y and vertical-axis cap\n"
+    },
+    {
+      "file": "hero360-sensors-6075.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 1.2.5: Android/iOS, fallback Chromium, status de permissão e preview OK\n"
+    },
+    {
+      "file": "hero360-sensors-6076.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Hero360Tour 1.2.3: frozen-orientation fallback, gyro and diagnostics available\n"
+    },
+    {
+      "file": "highlights-polish.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Destaques 1.1: legacy, variants, escaping, links, unique anchors, responsive and export OK\n"
+    },
+    {
+      "file": "immersive-360-fullbleed.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Full Bleed 360: 2 plugins, compilação, CSS, template e pacotes standalone OK\n"
+    },
+    {
+      "file": "immersive-360-plugins.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "immersive 360: manifests, imports, editor, cenas, hotspot, panorama ZIP e HTML OK\n"
+    },
+    {
+      "file": "md-export-private-711.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Exportação 7.1.1: referências privadas ausentes do ZIP e projeto de origem intacto\n"
+    },
+    {
+      "file": "mobile-zoom-accessibility.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "zoom accessível no editor e no HTML exportado: OK\n"
+    },
+    {
+      "file": "parallax-audio-multitrack.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "parallax multitrack schema/editor/runtime: ok\n"
+    },
+    {
+      "file": "parallax-cinematic-performance.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax cinematic performance behavior OK\n"
+    },
+    {
+      "file": "parallax-controls-layout.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax controls layout OK\n"
+    },
+    {
+      "file": "parallax-dual-engine-ios.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax dual engine iOS behavior OK\n"
+    },
+    {
+      "file": "parallax-export-bundle.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "ewedition/NewEd.48.parallax.mp4 Error: HTTP 404\n    at packageOne (assets/js/compiler.js:121:33)\n    at async packageStateMedia (assets/js/compiler.js:221:30)\n    at async Object.compile (assets/js/compiler.js:607:5)\n    at async /mnt/data/imobify711_work/tests/parallax-export-bundle.test.cjs:25:16\n"
+    },
+    {
+      "file": "parallax-export-remote.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "ewedition/NewEd.48.parallax.mp4 Error: HTTP 404\n    at packageOne (assets/js/compiler.js:121:33)\n    at async packageStateMedia (assets/js/compiler.js:221:30)\n    at async Object.compile (assets/js/compiler.js:607:5)\n    at async /mnt/data/imobify711_work/tests/parallax-export-remote.test.cjs:25:10\n"
+    },
+    {
+      "file": "parallax-export-typography.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax export typography OK\n"
+    },
+    {
+      "file": "parallax-key-movement-lock.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "parallax-key-movement-lock: ok\n"
+    },
+    {
+      "file": "parallax-mobile-hint-layer.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "parallax mobile hint layer ok\n"
+    },
+    {
+      "file": "parallax-mobile-start.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax mobile/start/control state machine OK\n"
+    },
+    {
+      "file": "parallax-preload-typography.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax preload/profile/typography behavior OK\n"
+    },
+    {
+      "file": "parallax-scroll-ownership.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax scroll ownership / external anchor behavior OK\n"
+    },
+    {
+      "file": "parallax-skip-release-key.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax skip -> release key OK\n"
+    },
+    {
+      "file": "parallax-typography-inheritance.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "parallax typography inheritance OK\n"
+    },
+    {
+      "file": "parallax-v2.10-release-forward.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Parallax 2.10 release + forward-only behavior OK\n"
+    },
+    {
+      "file": "plugin-play.test.cjs",
+      "ok": false,
+      "code": 1,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'1.4.0' !== '1.3.0'\n\n    at /mnt/data/imobify711_work/tests/plugin-play.test.cjs:49:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '1.4.0',\n  expected: '1.3.0',\n  operator: 'strictEqual'\n}\n"
+    },
+    {
+      "file": "project-presets.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Project Presets OK: 18 presets registrados.\n"
+    },
+    {
+      "file": "property-slider-media-package.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Property Slider media upload/package OK\n"
+    },
+    {
+      "file": "release-6.0.48.test.cjs",
+      "ok": false,
+      "code": 1,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'7.1.1' !== '6.0.83'\n\n    at /mnt/data/imobify711_work/tests/release-6.0.48.test.cjs:53:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '7.1.1',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}\n"
+    },
+    {
+      "file": "release-6.0.79.test.cjs",
+      "ok": false,
+      "code": 1,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'6.0.84' !== '6.0.83'\n\n    at /mnt/data/imobify711_work/tests/release-6.0.79.test.cjs:13:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '6.0.84',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}\n"
+    },
+    {
+      "file": "responsive-typography.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Responsive typography 6.0.44 OK: 50-plugin registry, three sizes, fluid CSS, legacy migration, opt-out and exported ZIP.\n"
+    },
+    {
+      "file": "reveal-threshold-v6.0.4.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "9 effects: threshold 10% blocked, 20% triggered, replay reset. PASS\n"
+    },
+    {
+      "file": "seo-root-media-export.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "SEO root assets: PNG/WebP, canonical URL, Twitter, JSON-LD, legacy paths, remote compatibility, UI OK\n"
+    },
+    {
+      "file": "smart-plant-core-style.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Smart Plant 1.4.4 · tokens, wizard, portal de modal, CTA, herança e aparências locais OK\n"
+    },
+    {
+      "file": "smart-plant-magnifier.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Smart Plant 1.4.4 configurable magnifier behavior OK\n"
+    },
+    {
+      "file": "text-alignment-standard.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "ependent title and narrative alignment including justify\nok 2 - Lifestyle 1.2.1 exposes independent title and narrative alignment including justify\n  ---\n  duration_ms: 2.4147\n  type: 'test'\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 31.456968\n"
+    },
+    {
+      "file": "text-optical-fit.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": " 1.3.1 expose balanced preset without iterative fitting\nok 3 - Only TEXT 1.2.1 and Magazine 1.3.1 expose balanced preset without iterative fitting\n  ---\n  duration_ms: 1.705693\n  type: 'test'\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 19.36234\n"
+    },
+    {
+      "file": "text-typography-polish.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "ent, mobile scale and cinematic presets\nok 2 - Magazine Text Pro 1.3.1 exposes complete typography, alignment, mobile scale and cinematic presets\n  ---\n  duration_ms: 2.202826\n  type: 'test'\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 12.947739\n"
+    },
+    {
+      "file": "tour360-modal-regression.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "tour360 modal regression: ok\n"
+    },
+    {
+      "file": "tour360-plugin.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "tour360-plugin.test: OK\n"
+    },
+    {
+      "file": "typography-css-cascade.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "cascade tested\n"
+    },
+    {
+      "file": "typography-wizard.test.cjs",
+      "ok": true,
+      "code": 0,
+      "message": "Typography wizard 6.0.40: roles, normalization, backward compatibility, per-section opt-out and exported CSS passed.\n"
+    }
+  ]
+}

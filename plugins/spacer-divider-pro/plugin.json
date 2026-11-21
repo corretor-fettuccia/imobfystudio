@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 3,
+  "id": "spacer-divider-pro",
+  "name": "Spacer Divider Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Layout",
+  "icon": "⌁",
+  "description": "Espaçador e transição visual responsiva entre seções.",
+  "composition": { "role": "item" },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "shape": "line",
+    "height": 64,
+    "mobileHeight": 40,
+    "thickness": 2,
+    "color": "#d7dde2",
+    "color2": "#0d63ff",
+    "backgroundColor": "transparent",
+    "flip": false
+  },
+  "fields": [
+    {
+      "key": "shape",
+      "label": "Forma",
+      "type": "select",
+      "options": [
+        {
+          "label": "Linha",
+          "value": "line"
+        },
+        {
+          "label": "Gradiente",
+          "value": "gradient"
+        },
+        {
+          "label": "Onda",
+          "value": "wave"
+        },
+        {
+          "label": "Curva",
+          "value": "curve"
+        },
+        {
+          "label": "Diagonal",
+          "value": "diagonal"
+        },
+        {
+          "label": "Somente espaço",
+          "value": "space"
+        }
+      ],
+      "group": "Divisor"
+    },
+    {
+      "key": "height",
+      "label": "Altura desktop (px)",
+      "type": "range",
+      "min": 8,
+      "max": 240,
+      "step": 4,
+      "group": "Divisor"
+    },
+    {
+      "key": "mobileHeight",
+      "label": "Altura mobile (px)",
+      "type": "range",
+      "min": 8,
+      "max": 160,
+      "step": 4,
+      "group": "Divisor"
+    },
+    {
+      "key": "thickness",
+      "label": "Espessura (px)",
+      "type": "range",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "group": "Divisor"
+    },
+    {
+      "key": "color",
+      "label": "Cor principal",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "color2",
+      "label": "Cor secundária",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Fundo",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "flip",
+      "label": "Inverter forma",
+      "type": "toggle",
+      "group": "Divisor"
+    }
+  ]
+}

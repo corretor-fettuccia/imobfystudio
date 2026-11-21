@@ -1,0 +1,25 @@
+<nav class="imobify-menu-pro"
+  aria-label="Navegação principal"
+  data-position="{{position}}"
+  data-scroll-effect="{{scrollEffect}}"
+  data-hover-effect="{{hoverEffect}}"
+  data-scroll-threshold="{{scrollThreshold}}"
+  data-mobile-breakpoint="{{mobileBreakpoint}}"
+  data-smooth-scroll="{{smoothScroll}}"
+  data-close-on-click="{{closeOnClick}}"
+  data-cta-last="{{ctaLastItem}}"
+  style="--imp-bg:{{backgroundColor}};--imp-bg-scroll:{{backgroundScrolled}};--imp-mobile-bg:{{mobileBackground}};--imp-text:{{textColor}};--imp-accent:{{accentColor}};--imp-border:{{borderColor}};--imp-opacity:{{overlayOpacity}}%;--imp-scroll-opacity:{{scrolledOpacity}}%;--imp-blur:{{blur}}px;--imp-radius:{{borderRadius}}px;--imp-shadow-strength:{{shadowStrength}};--imp-height:{{menuHeight}}px;--imp-height-scroll:{{menuHeightScrolled}}px;--imp-edge:{{topOffset}}px;--imp-side:{{horizontalMargin}}px;--imp-container:{{maxWidth}}px;--imp-brand-size:{{brandSize}}px;--imp-link-size:{{linkSize}}px;--imp-weight:{{fontWeight}};--imp-gap:{{linkGap}}px;">
+  <div class="imobify-menu-pro__container">
+    <a class="imobify-menu-pro__brand" href="{{brandLink}}">
+      <span>{{brandText}}</span><strong>{{brandHighlight}}</strong>
+    </a>
+    <button class="imobify-menu-pro__toggle" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="imobify-menu-pro__panel">
+      <ul class="imobify-menu-pro__links"></ul>
+    </div>
+  </div>
+  <textarea class="imobify-menu-pro__source" hidden>{{menuItems}}</textarea>
+  <span class="imobify-menu-pro__font" hidden data-font="{{fontFamily}}" data-custom-font="{{customFont}}"></span>
+</nav>

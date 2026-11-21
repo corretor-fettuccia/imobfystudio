@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "investidor-retorno",
+  "name": "Foco no retorno do investimento",
+  "description": "Modelo para investidor com foco em retorno, renda e valorização.",
+  "category": "Investidor",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco no retorno do investimento",
+    "templateMeta": {
+      "presetId": "investidor-retorno",
+      "category": "Investidor",
+      "subcategory": ""
+    }
+  }
+}

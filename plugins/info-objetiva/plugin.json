@@ -1,0 +1,9 @@
+{
+  "id": "info-objetiva",
+  "name": "Informações objetivas",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "interest",
+  "css": "plugin.css",
+  "js": "plugin.js"
+}

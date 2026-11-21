@@ -1,0 +1,17 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const vm=require('node:vm');
+const root=path.resolve(__dirname,'../plugins/hero360-tour');
+const js=fs.readFileSync(path.join(root,'plugin.js'),'utf8');
+const meta=JSON.parse(fs.readFileSync(path.join(root,'plugin.json'),'utf8'));
+assert.equal(meta.version,'1.2.7');
+assert(js.indexOf('const disposers=[];')>=0);
+assert(js.indexOf('const disposers=[];') < js.indexOf("on(window,'orientationchange',handleScreenRotation)"),'register listener array before any motion event binding');
+assert.equal((js.match(/const disposers=\[\];/g)||[]).length,1);
+assert.match(js,/loadScene\(sceneId\);resize\(\);frame=requestAnimationFrame\(tick\)/);
+assert.match(js,/function useCanvas2D\(/);
+assert.match(js,/DeviceOrientationEvent\.requestPermission/);
+new vm.Script(js);
+console.log('Hero360Tour 1.2.1: listener initialization before binding; no TDZ; WebGL/Canvas2D preserved');

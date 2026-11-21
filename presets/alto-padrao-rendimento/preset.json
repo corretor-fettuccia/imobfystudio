@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "alto-padrao-rendimento",
+  "name": "Foco no rendimento",
+  "description": "Modelo de alto padrão orientado a renda, valorização e performance patrimonial.",
+  "category": "Alto padrão",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco no rendimento",
+    "templateMeta": {
+      "presetId": "alto-padrao-rendimento",
+      "category": "Alto padrão",
+      "subcategory": ""
+    }
+  }
+}

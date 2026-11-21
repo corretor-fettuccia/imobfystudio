@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "name": "V4 e Popup simultâneos: V4 usado",
+      "passed": true
+    },
+    {
+      "name": "Planta com mensagem oculta é enviada no V4",
+      "passed": true
+    },
+    {
+      "name": "Nova planta substitui contexto antigo",
+      "passed": true
+    },
+    {
+      "name": "Popup exclusivo abre",
+      "passed": true
+    },
+    {
+      "name": "Popup mantém contexto uma única vez e não altera mensagem digitável",
+      "passed": true
+    },
+    {
+      "name": "Âncora explícita Popup prevalece sobre V4",
+      "passed": true
+    },
+    {
+      "name": "Duas instâncias de V4: usa apenas a segunda pela âncora",
+      "passed": true
+    },
+    {
+      "name": "Sem Form Sender compatível: erro visível e modal permanece",
+      "passed": true
+    },
+    {
+      "name": "Sem exceções JS",
+      "passed": true
+    }
+  ],
+  "total": 9,
+  "passed": 9,
+  "browserErrors": [],
+  "method": "Chromium 144, conteúdo exportado do compiler e scripts inline (navegação localhost bloqueada no ambiente)"
+}

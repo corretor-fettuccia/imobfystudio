@@ -1,0 +1,9 @@
+<div class="benefits-modal-pro" data-benefits-id="{{benefitsId}}" data-showcase-profile="{{showcaseProfile}}" data-modal-profile="{{modalProfile}}" data-modal-contrast="{{modalContrastMode}}" data-hover-motion="{{hoverMotion}}" data-icon-depth="{{iconDepth}}" data-close-backdrop="{{closeOnBackdrop}}" data-modal-animation="{{modalAnimation}}" style="--bmp-cols-desktop:{{desktopColumns}};--bmp-cols-mobile:{{mobileColumns}};--bmp-gap:{{gridGap}}px;--bmp-item-min-height:{{itemMinHeight}}px;--bmp-title-size:{{titleSize}}px;--bmp-title-color:{{titleColor}};--bmp-icon-size:{{iconSize}}px;--bmp-icon-box:{{iconBoxSize}}px;--bmp-icon-color:{{iconColor}};--bmp-icon-surface:{{iconSurfaceColor}};--bmp-icon-border:{{iconBorderColor}};--bmp-icon-border-width:{{iconBorderWidth}}px;--bmp-icon-radius:{{iconRadius}}px;--bmp-icon-shadow:{{iconShadowStrength}}%;--bmp-modal-bg:{{modalBackground}};--bmp-modal-title:{{modalTitleColor}};--bmp-modal-text:{{modalTextColor}};--bmp-modal-icon:{{modalIconColor}};--bmp-modal-icon-surface:{{modalIconSurfaceColor}};--bmp-modal-accent:{{modalAccentColor}};--bmp-modal-border:{{modalBorderColor}};--bmp-modal-border-width:{{modalBorderWidth}}px;--bmp-modal-radius:{{modalRadius}}px;--bmp-modal-width:{{modalWidth}}px;--bmp-modal-icon-size:{{modalIconSize}}px;--bmp-modal-icon-box:{{modalIconBoxSize}}px;--bmp-modal-font:{{modalFontFamily}};--bmp-modal-title-size:{{modalTitleSize}}px;--bmp-modal-text-size:{{modalTextSize}}px;--bmp-modal-align-desktop:{{modalTextAlignDesktop}};--bmp-modal-align-mobile:{{modalTextAlignMobile}};--bmp-backdrop-opacity:{{modalBackdropOpacity}}%;--bmp-modal-duration:{{modalAnimationDuration}}ms;">
+  {{#if showHeading}}
+  <header class="bmp-heading" data-align="{{headingAlign}}">
+    {{#if eyebrow}}<p class="bmp-eyebrow">{{eyebrow}}</p>{{/if}}
+    <h2>{{title}}</h2>
+  </header>
+  {{/if}}
+  <div class="bmp-rendered-items">{{items|benefits}}</div>
+</div>

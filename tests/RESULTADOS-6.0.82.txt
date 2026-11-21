@@ -1,0 +1,2 @@
+Testes: 58/58 aprovados.
+Sem falhas.

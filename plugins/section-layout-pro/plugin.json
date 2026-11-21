@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 3,
+  "id": "section-layout-pro",
+  "name": "Section Layout Pro",
+  "version": "1.0.1",
+  "type": "section",
+  "category": "Layout",
+  "icon": "▦",
+  "description": "Container de composição que organiza os próximos blocos/plugins em grid responsivo sem perder os controles individuais.",
+  "layout": {
+    "mode": "next-sections",
+    "slot": "<!--IMOBIFY_LAYOUT_CHILDREN-->",
+    "maxChildren": 8
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "itemCount": 2,
+    "columns": 2,
+    "tabletColumns": 2,
+    "gap": 24,
+    "padding": 24,
+    "minHeight": 0,
+    "widthMode": "container",
+    "verticalAlign": "stretch",
+    "horizontalAlign": "stretch",
+    "childMode": "compact",
+    "backgroundColor": "#f5f7f8",
+    "backgroundImage": "",
+    "overlayOpacity": 0,
+    "title": "",
+    "subtitle": "",
+    "backgroundEnabled": false
+  },
+  "fields": [
+    {
+      "key": "itemCount",
+      "label": "Quantidade de blocos dentro do layout",
+      "type": "range",
+      "min": 0,
+      "max": 8,
+      "step": 1,
+      "group": "Composição"
+    },
+    {
+      "key": "columns",
+      "label": "Colunas no desktop",
+      "type": "range",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "group": "Composição"
+    },
+    {
+      "key": "tabletColumns",
+      "label": "Colunas no tablet",
+      "type": "range",
+      "min": 1,
+      "max": 2,
+      "step": 1,
+      "group": "Composição"
+    },
+    {
+      "key": "gap",
+      "label": "Espaço entre blocos (px)",
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 2,
+      "group": "Composição"
+    },
+    {
+      "key": "padding",
+      "label": "Padding interno (px)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "group": "Composição"
+    },
+    {
+      "key": "widthMode",
+      "label": "Largura",
+      "type": "select",
+      "options": [
+        {
+          "label": "Container do projeto",
+          "value": "container"
+        },
+        {
+          "label": "Largura total",
+          "value": "full"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "verticalAlign",
+      "label": "Alinhamento vertical",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esticar",
+          "value": "stretch"
+        },
+        {
+          "label": "Topo",
+          "value": "start"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Base",
+          "value": "end"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "horizontalAlign",
+      "label": "Alinhamento horizontal",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esticar",
+          "value": "stretch"
+        },
+        {
+          "label": "Esquerda",
+          "value": "start"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "end"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "childMode",
+      "label": "Espaçamento dos plugins filhos",
+      "type": "select",
+      "options": [
+        {
+          "label": "Compacto para composição",
+          "value": "compact"
+        },
+        {
+          "label": "Manter espaçamento original",
+          "value": "original"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "minHeight",
+      "label": "Altura mínima (px; 0 = automática)",
+      "type": "range",
+      "min": 0,
+      "max": 1000,
+      "step": 20,
+      "group": "Seção"
+    },
+    {
+      "key": "backgroundEnabled",
+      "label": "Usar cor de fundo",
+      "type": "toggle",
+      "group": "Seção"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Cor de fundo",
+      "type": "color",
+      "group": "Seção"
+    },
+    {
+      "key": "backgroundImage",
+      "label": "Imagem de fundo",
+      "type": "image",
+      "group": "Seção"
+    },
+    {
+      "key": "overlayOpacity",
+      "label": "Overlay da imagem (%)",
+      "type": "range",
+      "min": 0,
+      "max": 90,
+      "step": 5,
+      "group": "Seção"
+    },
+    {
+      "key": "title",
+      "label": "Título opcional",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "subtitle",
+      "label": "Texto opcional",
+      "type": "textarea",
+      "group": "Cabeçalho"
+    }
+  ]
+}

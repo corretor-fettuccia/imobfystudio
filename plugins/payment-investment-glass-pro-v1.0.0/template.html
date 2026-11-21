@@ -1,0 +1,53 @@
+<div class="pit-section" style="--pit-accent:{{accentColor}}" data-animate="{{animateOnScroll}}">
+  <div class="pit-container">
+    <header class="pit-heading pit-animate">
+      <h2>{{title}}</h2>
+      <p class="pit-lead">{{lead|br}}</p>
+      {{#if showPremiumText}}<p class="pit-premium">{{premiumText|br}}</p>{{/if}}
+    </header>
+
+    <div class="pit-table-shell pit-animate" role="region" aria-label="{{title}}" tabindex="0">
+      <table class="pit-table">
+        <thead>
+          <tr>
+            <th scope="col">{{headerType}}</th>
+            <th scope="col">{{headerFlow}}</th>
+            <th scope="col">{{headerTerm}}</th>
+            <th scope="col">{{headerConditions}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#if row1Enabled}}<tr><td class="pit-type">{{row1Type}}</td><td>{{row1Flow}}</td><td>{{row1Term}}</td><td>{{row1Conditions}}</td></tr>{{/if}}
+          {{#if row2Enabled}}<tr><td class="pit-type">{{row2Type}}</td><td>{{row2Flow}}</td><td>{{row2Term}}</td><td>{{row2Conditions}}</td></tr>{{/if}}
+          {{#if row3Enabled}}<tr><td class="pit-type">{{row3Type}}</td><td>{{row3Flow}}</td><td>{{row3Term}}</td><td>{{row3Conditions}}</td></tr>{{/if}}
+          {{#if row4Enabled}}<tr><td class="pit-type">{{row4Type}}</td><td>{{row4Flow}}</td><td>{{row4Term}}</td><td>{{row4Conditions}}</td></tr>{{/if}}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="pit-mobile-hint" aria-hidden="true">Deslize a tabela para o lado →</div>
+
+    <div class="pit-cta-wrap pit-animate">
+      <a href="{{ctaLink}}" class="glassButton glassButton--premium pit-glass-cta" data-new-tab="{{ctaNewTab}}" style="--mouse-x:50%;--mouse-y:50%;">
+        <div class="glassButton__lens-curvature"></div>
+        <div class="glassButton__refraction-primary"></div>
+        <div class="glassButton__refraction-secondary"></div>
+        <div class="glassButton__specular-highlight"></div>
+        <div class="glassButton__edge-reflection"></div>
+        <div class="glassButton__chromatic-diffraction"></div>
+        <div class="glassButton__inner-shadow"></div>
+        <div class="glassButton__liquid-glow"></div>
+        <div class="glassButton__dew-drop"></div>
+        <div class="glassButton__dew-drop glassButton__dew-drop--second"></div>
+        <div class="glassButton__dew-drop glassButton__dew-drop--third"></div>
+        <div class="glassButton__diamond-facet"></div>
+        <div class="glassButton__sapphire-glow"></div>
+        <div class="glassButton__golden-rim"></div>
+        <div class="glassButton__etched-glass"></div>
+        <i class="{{ctaIcon}} glassButton__icon" aria-hidden="true"></i>
+        <span class="glassButton__text">{{ctaText}}</span>
+        <div class="glassButton__cursor-light" style="opacity:0"></div>
+      </a>
+    </div>
+  </div>
+</div>

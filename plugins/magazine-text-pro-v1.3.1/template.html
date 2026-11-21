@@ -1,0 +1,49 @@
+<div class="mtp-root"
+  data-use-project-profile="{{useProjectProfile}}"
+  data-layout="{{layoutStyle}}"
+  data-image-side="{{imageSide}}"
+  data-drop-cap="{{dropCap}}"
+  data-show-rule="{{showRule}}"
+  data-show-caption="{{showCaption}}"
+  data-paper="{{paperTexture}}"
+  data-mobile-image-order="{{mobileImageOrder}}"
+  data-columns="{{desktopColumns}}"
+  data-heading-typeface="{{headingTypeface}}"
+  data-body-typeface="{{bodyTypeface}}"
+  data-header-align="{{headerAlign}}"
+  data-body-align="{{bodyAlign}}"
+  data-line-fit="{{lineFit}}"
+  data-container-align="{{containerAlign}}"
+  data-motion="{{motionPreset}}"
+  style="--mtp-max:{{maxWidth}}px;--mtp-section-py:{{sectionPaddingY}}px;--mtp-desktop-px:{{desktopPaddingX}}px;--mtp-columns:{{desktopColumns}};--mtp-column-gap:{{columnGap}}px;--mtp-image-width:{{imageWidth}}%;--mtp-image-ratio:{{imageRatio}};--mtp-image-fit:{{imageFit}};--mtp-image-x:{{imagePositionX}}%;--mtp-image-y:{{imagePositionY}}%;--mtp-image-radius:{{imageRadius}}px;--mtp-eyebrow-size:{{eyebrowSize}}px;--mtp-eyebrow-tracking:{{eyebrowTracking}}em;--mtp-title-size:{{titleSize}}px;--mtp-title-weight:{{titleWeight}};--mtp-title-line:{{titleLineHeight}};--mtp-title-tracking:{{titleTracking}}em;--mtp-subtitle-size:{{subtitleSize}}px;--mtp-subtitle-weight:{{subtitleWeight}};--mtp-subtitle-line:{{subtitleLineHeight}};--mtp-subtitle-tracking:{{subtitleTracking}}em;--mtp-lead-size:{{leadSize}}px;--mtp-lead-weight:{{leadWeight}};--mtp-lead-line:{{leadLineHeight}};--mtp-lead-tracking:{{leadTracking}}em;--mtp-body-size:{{bodyFontSize}}px;--mtp-body-weight:{{bodyWeight}};--mtp-body-line:{{bodyLineHeight}};--mtp-body-tracking:{{bodyTracking}}em;--mtp-quote-size:{{quoteSize}}px;--mtp-quote-weight:{{quoteWeight}};--mtp-quote-line:{{quoteLineHeight}};--mtp-mobile-type-scale:{{mobileTypographyScale}};--mtp-mobile-px:{{mobilePaddingX}}px;--mtp-mobile-py:{{mobilePaddingY}}px;--mtp-local-bg:{{backgroundColor}};--mtp-local-text:{{textColor}};--mtp-local-title:{{titleColor}};--mtp-local-accent:{{accentColor}};">
+  <div class="mtp-paper">
+    <div class="mtp-container">
+      <header class="mtp-header">
+        <p class="mtp-eyebrow">{{eyebrow}}</p>
+        <h2 class="mtp-title">{{title}}</h2>
+        <p class="mtp-subtitle">{{subtitle|br}}</p>
+        <div class="mtp-rule" aria-hidden="true"></div>
+      </header>
+
+      <div class="mtp-layout-grid">
+        <figure class="mtp-media" data-image="{{image}}">
+          <div class="mtp-image-frame"><img class="mtp-image" src="{{image}}" alt="{{imageAlt}}" loading="lazy" decoding="async"></div>
+          <figcaption class="mtp-caption">{{caption}}</figcaption>
+        </figure>
+
+        <article class="mtp-story">
+          <p class="mtp-lead">{{lead|br}}</p>
+          <div class="mtp-body">{{body|br}}</div>
+          <aside class="mtp-quote" data-quote="{{quote}}">
+            <blockquote>{{quote|br}}</blockquote>
+            <cite>{{quoteAuthor}}</cite>
+          </aside>
+          <footer class="mtp-byline" data-author="{{author}}" data-role="{{authorRole}}">
+            <strong>{{author}}</strong>
+            <span>{{authorRole}}</span>
+          </footer>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>

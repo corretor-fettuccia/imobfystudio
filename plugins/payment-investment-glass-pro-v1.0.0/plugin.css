@@ -1,0 +1,102 @@
+/* Payment Investment Glass Pro — integração Imobify */
+[data-plugin="payment-investment-glass-pro"] .pit-section{
+  color:var(--body-color,#4b5563);
+  font-family:var(--font-body,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif);
+}
+[data-plugin="payment-investment-glass-pro"] .pit-container{
+  width:min(var(--container,1150px),calc(100% - 32px));
+  margin-inline:auto;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-heading{
+  text-align:center;
+  margin:0 auto clamp(28px,4vw,48px);
+  max-width:900px;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-heading h2{
+  margin:0 0 14px;
+  color:var(--heading-color,#1f2937);
+  font-family:var(--font-heading,var(--font-body,inherit));
+  font-size:clamp(2rem,4vw,var(--h2-max,48px));
+  line-height:1.1;
+  letter-spacing:var(--heading-letter-spacing,-.02em);
+}
+[data-plugin="payment-investment-glass-pro"] .pit-lead{
+  margin:0;
+  color:var(--body-color,#4b5563);
+  font-size:clamp(1rem,2vw,1.125rem);
+  line-height:1.65;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-premium{
+  margin:8px 0 0;
+  color:var(--muted-color,#6b7280);
+  font-size:.9rem;
+  line-height:1.55;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-table-shell{
+  max-width:896px;
+  margin-inline:auto;
+  overflow-x:auto;
+  border-radius:var(--radius,16px);
+  box-shadow:0 18px 45px rgba(15,23,42,.12);
+  background:var(--surface,#fff);
+  scrollbar-width:thin;
+  -webkit-overflow-scrolling:touch;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-table{
+  width:100%;
+  min-width:680px;
+  border-collapse:collapse;
+  background:var(--surface,#fff);
+  color:var(--body-color,#4b5563);
+}
+[data-plugin="payment-investment-glass-pro"] .pit-table thead tr{
+  background:var(--pit-accent,var(--primary,#16a34a));
+  color:#fff;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-table th,
+[data-plugin="payment-investment-glass-pro"] .pit-table td{
+  padding:16px;
+  text-align:left;
+  vertical-align:middle;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-table th{font-weight:650;white-space:nowrap}
+[data-plugin="payment-investment-glass-pro"] .pit-table tbody tr{border-top:1px solid rgba(148,163,184,.28);transition:background-color .25s ease}
+[data-plugin="payment-investment-glass-pro"] .pit-table tbody tr:first-child{border-top:0}
+[data-plugin="payment-investment-glass-pro"] .pit-table tbody tr:hover{background:rgba(148,163,184,.08)}
+[data-plugin="payment-investment-glass-pro"] .pit-type{font-weight:650;color:var(--pit-accent,var(--primary,#16a34a))}
+[data-plugin="payment-investment-glass-pro"] .pit-cta-wrap{text-align:center;margin-top:clamp(30px,5vw,48px)}
+[data-plugin="payment-investment-glass-pro"] .pit-mobile-hint{display:none;text-align:center;margin-top:9px;font-size:.78rem;color:var(--muted-color,#6b7280)}
+
+/* Ponte com o Perfil Visual sem alterar o efeito óptico original */
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta{
+  --glass-border-radius:var(--radius,10px);
+  color:var(--action-button-text,#1a3b2f);
+}
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta:hover{color:var(--action-button-text,#1a3b2f)}
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta .glassButton__lens-curvature{
+  background:var(--pit-accent,var(--action-button-bg,#22c55e));
+}
+
+[data-plugin="payment-investment-glass-pro"] .pit-animate{opacity:1;transform:none}
+[data-plugin="payment-investment-glass-pro"] .pit-section[data-animate="true"] .pit-animate:not(.pit-visible){opacity:0;transform:translateY(18px)}
+[data-plugin="payment-investment-glass-pro"] .pit-section[data-animate="true"] .pit-animate{transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
+
+@media(max-width:720px){
+  [data-plugin="payment-investment-glass-pro"] .pit-container{width:min(100% - 24px,var(--container,1150px))}
+  [data-plugin="payment-investment-glass-pro"] .pit-heading{margin-bottom:26px}
+  [data-plugin="payment-investment-glass-pro"] .pit-table-shell{border-radius:var(--radius,14px)}
+  [data-plugin="payment-investment-glass-pro"] .pit-table th,
+  [data-plugin="payment-investment-glass-pro"] .pit-table td{padding:14px 13px;font-size:.92rem}
+  [data-plugin="payment-investment-glass-pro"] .pit-mobile-hint{display:block}
+  [data-plugin="payment-investment-glass-pro"] .pit-cta-wrap{margin-top:32px}
+  [data-plugin="payment-investment-glass-pro"] .pit-glass-cta{width:min(100%,520px);max-width:calc(100vw - 36px)}
+}
+@media(max-width:480px){
+  [data-plugin="payment-investment-glass-pro"] .pit-lead{font-size:.98rem}
+  [data-plugin="payment-investment-glass-pro"] .pit-premium{font-size:.84rem}
+  [data-plugin="payment-investment-glass-pro"] .pit-table{min-width:620px}
+}
+@media(prefers-reduced-motion:reduce){
+  [data-plugin="payment-investment-glass-pro"] .pit-animate{opacity:1!important;transform:none!important;transition:none!important}
+  [data-plugin="payment-investment-glass-pro"] .glassButton{animation:none!important;transition:none!important}
+}

@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 3,
+  "id": "timeline-process-pro",
+  "name": "Timeline Process Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Conteúdo",
+  "icon": "⇢",
+  "description": "Linha do tempo responsiva para explicar processos, compra, financiamento ou etapas de obra.",
+  "composition": { "role": "both" },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "COMO FUNCIONA",
+    "title": "Do planejamento à realização, passo a passo.",
+    "intro": "Um processo claro reduz incertezas e ajuda você a decidir com mais segurança.",
+    "step1Enabled": true,
+    "step1Label": "Análise",
+    "step1Title": "Entendemos o objetivo",
+    "step1Text": "Perfil financeiro, prazo e necessidades.",
+    "step2Enabled": true,
+    "step2Label": "Escolha",
+    "step2Title": "Definimos a melhor opção",
+    "step2Text": "Terreno, unidade ou produto compatível.",
+    "step3Enabled": true,
+    "step3Label": "Projeto",
+    "step3Title": "Estruturamos a solução",
+    "step3Text": "Projeto, documentação e aprovações necessárias.",
+    "step4Enabled": true,
+    "step4Label": "Crédito",
+    "step4Title": "Encaminhamos o financiamento",
+    "step4Text": "Organização da proposta e análise bancária.",
+    "step5Enabled": true,
+    "step5Label": "Execução",
+    "step5Title": "Acompanhamos as etapas",
+    "step5Text": "Evolução do processo com marcos claros.",
+    "step6Enabled": false,
+    "step6Label": "Entrega",
+    "step6Title": "Conclusão e próximos passos",
+    "step6Text": "Formalização final e orientação para a entrega."
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "intro",
+      "label": "Introdução",
+      "type": "textarea",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "step1Enabled",
+      "label": "Exibir etapa",
+      "type": "toggle",
+      "group": "Etapa 1"
+    },
+    {
+      "key": "step1Label",
+      "label": "Rótulo curto",
+      "type": "text",
+      "group": "Etapa 1"
+    },
+    {
+      "key": "step1Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Etapa 1"
+    },
+    {
+      "key": "step1Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Etapa 1"
+    },
+    {
+      "key": "step2Enabled",
+      "label": "Exibir etapa",
+      "type": "toggle",
+      "group": "Etapa 2"
+    },
+    {
+      "key": "step2Label",
+      "label": "Rótulo curto",
+      "type": "text",
+      "group": "Etapa 2"
+    },
+    {
+      "key": "step2Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Etapa 2"
+    },
+    {
+      "key": "step2Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Etapa 2"
+    },
+    {
+      "key": "step3Enabled",
+      "label": "Exibir etapa",
+      "type": "toggle",
+      "group": "Etapa 3"
+    },
+    {
+      "key": "step3Label",
+      "label": "Rótulo curto",
+      "type": "text",
+      "group": "Etapa 3"
+    },
+    {
+      "key": "step3Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Etapa 3"
+    },
+    {
+      "key": "step3Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Etapa 3"
+    },
+    {
+      "key": "step4Enabled",
+      "label": "Exibir etapa",
+      "type": "toggle",
+      "group": "Etapa 4"
+    },
+    {
+      "key": "step4Label",
+      "label": "Rótulo curto",
+      "type": "text",
+      "group": "Etapa 4"
+    },
+    {
+      "key": "step4Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Etapa 4"
+    },
+    {
+      "key": "step4Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Etapa 4"
+    },
+    {
+      "key": "step5Enabled",
+      "label": "Exibir etapa",
+      "type": "toggle",
+      "group": "Etapa 5"
+    },
+    {
+      "key": "step5Label",
+      "label": "Rótulo curto",
+      "type": "text",
+      "group": "Etapa 5"
+    },
+    {
+      "key": "step5Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Etapa 5"
+    },
+    {
+      "key": "step5Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Etapa 5"
+    },
+    {
+      "key": "step6Enabled",
+      "label": "Exibir etapa",
+      "type": "toggle",
+      "group": "Etapa 6"
+    },
+    {
+      "key": "step6Label",
+      "label": "Rótulo curto",
+      "type": "text",
+      "group": "Etapa 6"
+    },
+    {
+      "key": "step6Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Etapa 6"
+    },
+    {
+      "key": "step6Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Etapa 6"
+    }
+  ]
+}

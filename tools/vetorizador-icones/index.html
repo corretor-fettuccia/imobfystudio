@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vetorizador de Ícones</title>
+<meta name="description" content="Converta PNG ou JPG em SVG para usar como ícone no seu site.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Vetorizador<span class="node"></span>de Ícones</h1>
+      <p class="sub">Envie um PNG ou JPG do ícone e receba o SVG pronto para colar no site. Funciona melhor com desenhos chapados de poucas cores.</p>
+    </div>
+    <div class="drop">
+      <label class="btn primary" for="file">Escolher imagem</label>
+      <input id="file" type="file" accept="image/*" hidden>
+      <span class="hint">ou arraste, ou cole (Ctrl+V)</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <aside class="controls">
+      <div>
+        <div class="lbl"><span>Tipo de imagem</span></div>
+        <select id="preset">
+          <option value="icon">Ícone simples (1–2 cores)</option>
+          <option value="logo" selected>Logo / ilustração chapada</option>
+          <option value="detail">Detalhado (arquivo maior)</option>
+        </select>
+      </div>
+      <div>
+        <div class="lbl"><span>Cores</span><output id="o-colors">4</output></div>
+        <input id="colors" type="range" min="2" max="32" value="4">
+      </div>
+      <div>
+        <div class="lbl"><span>Suavizar curvas</span><output id="o-smooth">1.0</output></div>
+        <input id="smooth" type="range" min="0.1" max="5" step="0.1" value="1">
+      </div>
+      <div>
+        <div class="lbl"><span>Ignorar manchas até</span><output id="o-omit">8 px</output></div>
+        <input id="omit" type="range" min="0" max="64" value="8">
+      </div>
+      <hr>
+      <label class="check"><input id="nobg" type="checkbox" checked><span>Remover fundo<small>Torna transparente a cor do canto da imagem.</small></span></label>
+      <label class="check"><input id="mono" type="checkbox"><span>Cor única (currentColor)<small>O ícone herda a cor do texto pelo CSS. Ideal para ícones de menu e botões.</small></span></label>
+    </aside>
+
+    <section class="stage">
+      <div class="zoomrow">
+        <span class="hint">Zoom</span>
+        <input id="zoom" type="range" min="1" max="8" step="0.5" value="1">
+        <output id="o-zoom" class="hint">1×</output>
+      </div>
+      <div class="compare">
+        <div class="pane">
+          <div class="pane-h"><span>Original (pixels)</span><span id="dim">—</span></div>
+          <div class="view"><img id="orig" alt="Imagem original"></div>
+        </div>
+        <div class="pane">
+          <div class="pane-h"><span>SVG (vetor)</span><span id="status" class="status">—</span></div>
+          <div class="view"><div id="out" class="svgbox"></div></div>
+        </div>
+      </div>
+      <div class="stats" id="stats"></div>
+      <div class="code">
+        <div class="code-h">
+          <span class="pane-h" style="margin:0"><span>Código SVG</span></span>
+          <div class="drop">
+            <span id="copied" class="status"></span>
+            <button class="btn" id="copyImg" type="button">Copiar &lt;img&gt; data URI</button>
+            <button class="btn" id="copy" type="button">Copiar SVG</button>
+            <button class="btn primary" id="applyProject" type="button">Usar este SVG no projeto</button>
+            <button class="btn" id="download" type="button">Baixar .svg</button>
+          </div>
+        </div>
+        <textarea id="code" readonly spellcheck="false"></textarea>
+        <span class="hint">Use “Baixar .svg” para salvar o arquivo, ou cole o código direto no HTML do site.</span>
+      </div>
+    </section>
+  </div>
+
+  <div class="note"><strong>Exemplo carregado:</strong> o ícone de folha acima foi desenhado aqui mesmo só para demonstrar. Troque pela sua imagem. Fotos e imagens com sombra e degradê viram SVGs pesados e não ficam bons; para esses casos, use PNG ou WebP.</div>
+</div>
+
+<script src="vendor/imagetracer_v1.2.6.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

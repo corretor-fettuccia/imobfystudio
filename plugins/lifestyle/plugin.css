@@ -1,0 +1,31 @@
+.lifestyle-section{display:grid;grid-template-columns:1.05fr .95fr;min-height:720px;background:var(--surface)}.lifestyle-image{min-height:600px;overflow:hidden}.lifestyle-image img{width:100%;height:100%;object-fit:cover}.lifestyle-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(3rem,8vw,8rem)}.lifestyle-copy>p:not(.eyebrow){color:#646d70;margin:1.6rem 0 3rem;max-width:560px}.lifestyle-copy blockquote{margin:0;padding-left:1.5rem;border-left:3px solid var(--primary);font:600 clamp(1.2rem,2.4vw,2rem)/1.35 var(--heading)}@media(max-width:800px){.lifestyle-section{grid-template-columns:1fr}.lifestyle-image{min-height:420px}.lifestyle-copy{padding:4rem 1.3rem}}
+
+.lifestyle-section[data-copy-align="left"] .lifestyle-copy>p:not(.eyebrow){text-align:left}.lifestyle-section[data-copy-align="center"] .lifestyle-copy>p:not(.eyebrow){text-align:center}.lifestyle-section[data-copy-align="right"] .lifestyle-copy>p:not(.eyebrow){text-align:right}.lifestyle-section[data-copy-align="justify"] .lifestyle-copy>p:not(.eyebrow){text-align:justify;text-justify:inter-word;hyphens:none;-webkit-hyphens:none;word-break:normal;overflow-wrap:normal;text-align-last:start}
+
+
+/* 1.1.1 — alinhamento independente do título */
+.lifestyle-section[data-title-align="left"] .lifestyle-copy>h2{text-align:left}
+.lifestyle-section[data-title-align="center"] .lifestyle-copy>h2{text-align:center}
+.lifestyle-section[data-title-align="right"] .lifestyle-copy>h2{text-align:right}
+.lifestyle-section[data-title-align="justify"] .lifestyle-copy>h2{text-align:justify;text-justify:inter-word;hyphens:none;-webkit-hyphens:none;word-break:normal;overflow-wrap:normal;text-align-last:start}
+@media(max-width:800px){
+  .lifestyle-section[data-title-align-mobile="left"] .lifestyle-copy>h2{text-align:left}
+  .lifestyle-section[data-title-align-mobile="center"] .lifestyle-copy>h2{text-align:center}
+  .lifestyle-section[data-title-align-mobile="right"] .lifestyle-copy>h2{text-align:right}
+  .lifestyle-section[data-title-align-mobile="justify"] .lifestyle-copy>h2{text-align:justify;text-justify:inter-word;hyphens:none;-webkit-hyphens:none;word-break:normal;overflow-wrap:normal;text-align-last:start}
+}
+
+
+
+/* 1.2.1 — composição balanceada: sem hífen e sem esticar espaços entre palavras */
+.lifestyle-section[data-line-fit="editorial"] .lifestyle-copy>p:not(.eyebrow),
+.lifestyle-section[data-line-fit="balanced"] .lifestyle-copy>p:not(.eyebrow),
+.lifestyle-section[data-line-fit="optical"] .lifestyle-copy>p:not(.eyebrow){hyphens:none!important;-webkit-hyphens:none!important;word-break:normal!important;overflow-wrap:normal!important;font-kerning:normal;font-optical-sizing:auto;word-spacing:normal!important}
+.lifestyle-section[data-line-fit="editorial"] .lifestyle-copy>p:not(.eyebrow){text-wrap:pretty}
+.lifestyle-section[data-line-fit="balanced"] .lifestyle-copy>p:not(.eyebrow),
+.lifestyle-section[data-line-fit="optical"] .lifestyle-copy>p:not(.eyebrow){text-wrap:balance;letter-spacing:-.004em}
+/* 6.0.41 — balanced image/copy rhythm, without overriding intentional align controls. */
+.lifestyle-copy{min-width:0}
+.lifestyle-copy>p:not(.eyebrow){max-width:65ch;line-height:1.7;color:var(--muted-color,#59646b)}
+.lifestyle-image img{display:block;object-position:center}
+@media(max-width:800px){.lifestyle-image{min-height:clamp(260px,64vw,420px)}.lifestyle-copy{padding-block:clamp(2.25rem,8vw,4rem)}}

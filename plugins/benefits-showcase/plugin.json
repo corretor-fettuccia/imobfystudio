@@ -1,0 +1,9 @@
+{
+  "id": "benefits-showcase",
+  "name": "Benefits Showcase",
+  "version": "1.2.1",
+  "type": "section",
+  "category": "interest",
+  "css": "plugin.css",
+  "js": "plugin.js"
+}

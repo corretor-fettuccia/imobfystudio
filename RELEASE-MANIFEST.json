@@ -1,0 +1,63 @@
+{
+  "product": "Imobify Studio",
+  "version": "7.5.1",
+  "releaseDate": "2026-11-14",
+  "basedOnVersion": "7.5.0",
+  "architecture": "Web/JavaScript, exportação ZIP estático, WebMCP progressivo na landing page",
+  "changedFiles": [
+    "index.html",
+    "project.json",
+    "assets/js/app.js",
+    "assets/js/compiler.js",
+    "plugins/registry.json",
+    "plugin-packs/README.md",
+    "tests/plugin-play.test.cjs",
+    "docs/IMOBSTUDIO-GUIA-IA-LANDING-PAGES.md",
+    "RELEASE-MANIFEST.json"
+  ],
+  "removedFiles": [],
+  "addedFiles": [
+    "CHANGELOG-7.5.1.md",
+    "plugins/ar-card-popout-3d-stage-v1.0.0/",
+    "plugin-packs/ar-card-popout-3d-stage-v1.0.0.zip",
+    "tests/ar-card-popout-stage-100.test.cjs"
+  ],
+  "features": [
+    "Novo plugin AR Card Popout 3D Stage 1.0.0: section ampla, cartão pulsante, sem botão, frase principal e 3 blocos que saem do cartão",
+    "Layout por container query: órbita no desktop, linha no tablet, pilha no celular",
+    "AR Card Popout 3D Single 1.2.0 mantido sem alterações"
+  ],
+  "tests": {
+    "anchorComponentsVerified": 51,
+    "chromiumIntegrationChecks": 9,
+    "chromiumIntegrationPassed": 9,
+    "nodeTargetedTests": "11/11 aprovados",
+    "networkSubmission": "não executado (endpoint externo)",
+    "browserMethod": "Chromium em fixture compilada, desktop 1280×780 e mobile 390×780",
+    "chromiumAnchorCases": 4,
+    "chromiumAnchorPassed": 4,
+    "version": "7.3.3",
+    "chromiumExportCases": 4,
+    "chromiumExportPassed": 4,
+    "chromiumEditorBridgeIsolatedCases": 4,
+    "chromiumEditorBridgeIsolatedPassed": 4,
+    "chromiumEditorFullIframeRun": "não concluído por timeout",
+    "arCardStage": "tests/ar-card-popout-stage-100.test.cjs aprovado; Chromium 1920/1440/1024/768/390/360"
+  },
+  "knownLimitations": [
+    "É necessário reexportar e republicar páginas já produzidas",
+    "Plugins document-tag não produzem âncora pública (não produzem seção visível)",
+    "WebMCP, Search Console e comportamento em servidor publicado precisam de validação externa",
+    "Testes históricos de números de versão mantidos para compatibilidade",
+    "Envio efetivo ao Google Apps Script não executado, pois depende de endpoint comercial externo e credenciais reais",
+    "Prévia com lógica de editor testada em página isolada; aplicação inteira do editor não foi concluída em Chromium por timeout"
+  ],
+  "revision": "7.5.0",
+  "basedOnArchive": "Imobify-Studio-7.4.2.zip",
+  "verification": {
+    "scope": "Alinhamento de texto em 24 componentes, 4 modos, desktop 1280 e mobile 390",
+    "browser": "Chromium",
+    "cases": "1484 medições: falhas 23% → 13% (restantes documentadas)",
+    "networkSubmission": "não aplicável"
+  }
+}

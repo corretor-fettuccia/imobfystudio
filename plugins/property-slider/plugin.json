@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 3,
+  "id": "property-slider",
+  "name": "Slider imobiliário",
+  "version": "1.4.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "⇆",
+  "description": "Slider imobiliário com slides ilimitados, imagem por URL ou upload local empacotável, tipografia, enquadramento, transições, área segura, navegação e controles responsivos configuráveis",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "image1": "assets/images/hero-placeholder.jpg",
+    "eyebrow1": "LANÇAMENTO EM CANOAS",
+    "title1": "Um novo jeito de viver bem.",
+    "copy1": "Arquitetura contemporânea, lazer e localização para uma decisão segura.",
+    "cta1": "Quero conhecer",
+    "link1": "#contato",
+    "image2": "assets/images/gallery-1.jpg",
+    "eyebrow2": "ESPAÇOS QUE ACOLHEM",
+    "title2": "Mais conforto para a sua rotina.",
+    "copy2": "Plantas inteligentes para aproveitar cada metro e cada momento.",
+    "cta2": "Ver diferenciais",
+    "link2": "#destaques",
+    "image3": "assets/images/gallery-2.jpg",
+    "eyebrow3": "CONDIÇÃO ESPECIAL",
+    "title3": "A oportunidade certa para avançar.",
+    "copy3": "Receba valores, disponibilidade e uma análise personalizada.",
+    "cta3": "Consultar agora",
+    "link3": "#contato",
+    "autoplay": true,
+    "interval": 5500,
+    "height": 720,
+    "overlay": 62,
+    "showDots": true,
+    "showArrows": true,
+    "textPadding": 72,
+    "mobileTextPadding": 24,
+    "fillHorizontal": false,
+    "controlShape": "round",
+    "controlPosition": "middle",
+    "mobileHeight": 720,
+    "contentWidth": 1180,
+    "contentAlign": "left",
+    "contentPosition": "bottom",
+    "eyebrowSize": 14,
+    "titleSize": 108,
+    "textSize": 20,
+    "imageFit": "cover",
+    "imagePositionX": 50,
+    "imagePositionY": 50,
+    "imageZoom": 1.0,
+    "transition": "fadeZoom",
+    "transitionDuration": 900,
+    "pauseOnHover": true,
+    "loop": true,
+    "swipe": true,
+    "arrowSize": 48,
+    "arrowIconSize": 24,
+    "mobileTitleSize": 44,
+    "mobileTextSize": 16,
+    "mobileEyebrowSize": 12
+  },
+  "fields": [
+    {
+      "key": "autoplay",
+      "label": "Reprodução automática",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "interval",
+      "label": "Intervalo",
+      "type": "number",
+      "min": 2500,
+      "max": 15000,
+      "step": 500,
+      "group": "Comportamento"
+    },
+    {
+      "key": "height",
+      "label": "Altura",
+      "type": "range",
+      "min": 500,
+      "max": 920,
+      "step": 10,
+      "group": "Aparência"
+    },
+    {
+      "key": "fillHorizontal",
+      "label": "Preencher na horizontal",
+      "type": "toggle",
+      "group": "Aparência"
+    },
+    {
+      "key": "overlay",
+      "label": "Escurecimento",
+      "type": "range",
+      "min": 20,
+      "max": 90,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "textPadding",
+      "label": "Margem interna do conteúdo",
+      "type": "range",
+      "min": 20,
+      "max": 220,
+      "step": 4,
+      "group": "Aparência"
+    },
+    {
+      "key": "mobileTextPadding",
+      "label": "Margem interna do conteúdo · mobile",
+      "type": "range",
+      "min": 16,
+      "max": 100,
+      "step": 2,
+      "group": "Aparência"
+    },
+    {
+      "key": "showDots",
+      "label": "Exibir indicadores",
+      "type": "toggle",
+      "group": "Navegação"
+    },
+    {
+      "key": "showArrows",
+      "label": "Exibir setas",
+      "type": "toggle",
+      "group": "Navegação"
+    },
+    {
+      "key": "controlShape",
+      "label": "Formato dos controles",
+      "type": "select",
+      "options": [
+        {
+          "label": "Redondo",
+          "value": "round"
+        },
+        {
+          "label": "Quadrado",
+          "value": "square"
+        }
+      ],
+      "group": "Navegação"
+    },
+    {
+      "key": "controlPosition",
+      "label": "Posição dos controles",
+      "type": "select",
+      "options": [
+        {
+          "label": "Meio",
+          "value": "middle"
+        },
+        {
+          "label": "Rodapé",
+          "value": "footer"
+        }
+      ],
+      "group": "Navegação"
+    },
+    {
+      "key": "mobileHeight",
+      "label": "Altura · mobile",
+      "type": "range",
+      "min": 420,
+      "max": 900,
+      "step": 10,
+      "group": "Aparência"
+    },
+    {
+      "key": "contentWidth",
+      "label": "Largura máxima do conteúdo",
+      "type": "range",
+      "min": 320,
+      "max": 1180,
+      "step": 20,
+      "group": "Conteúdo"
+    },
+    {
+      "key": "contentAlign",
+      "label": "Alinhamento do conteúdo",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Conteúdo"
+    },
+    {
+      "key": "contentPosition",
+      "label": "Posição vertical do conteúdo",
+      "type": "select",
+      "options": [
+        {
+          "label": "Topo",
+          "value": "top"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Rodapé",
+          "value": "bottom"
+        }
+      ],
+      "group": "Conteúdo"
+    },
+    {
+      "key": "eyebrowSize",
+      "label": "Tamanho Hero / chamada",
+      "type": "range",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleSize",
+      "label": "Tamanho do título",
+      "type": "range",
+      "min": 28,
+      "max": 112,
+      "step": 2,
+      "group": "Tipografia"
+    },
+    {
+      "key": "textSize",
+      "label": "Tamanho do texto",
+      "type": "range",
+      "min": 12,
+      "max": 34,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "imageFit",
+      "label": "Ajuste da imagem",
+      "type": "select",
+      "options": [
+        {
+          "label": "Preencher · cover",
+          "value": "cover"
+        },
+        {
+          "label": "Conter · contain",
+          "value": "contain"
+        }
+      ],
+      "group": "Imagem"
+    },
+    {
+      "key": "imagePositionX",
+      "label": "Posição horizontal da imagem",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Imagem"
+    },
+    {
+      "key": "imagePositionY",
+      "label": "Posição vertical da imagem",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Imagem"
+    },
+    {
+      "key": "imageZoom",
+      "label": "Zoom da imagem",
+      "type": "range",
+      "min": 1,
+      "max": 1.35,
+      "step": 0.01,
+      "group": "Imagem"
+    },
+    {
+      "key": "transition",
+      "label": "Transição",
+      "type": "select",
+      "options": [
+        {
+          "label": "Fade",
+          "value": "fade"
+        },
+        {
+          "label": "Fade + zoom",
+          "value": "fadeZoom"
+        },
+        {
+          "label": "Deslize suave",
+          "value": "slide"
+        }
+      ],
+      "group": "Comportamento"
+    },
+    {
+      "key": "transitionDuration",
+      "label": "Duração da transição",
+      "type": "range",
+      "min": 250,
+      "max": 1800,
+      "step": 50,
+      "group": "Comportamento"
+    },
+    {
+      "key": "pauseOnHover",
+      "label": "Pausar no hover",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "loop",
+      "label": "Repetir em loop",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "swipe",
+      "label": "Swipe no mobile",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "arrowSize",
+      "label": "Tamanho do botão das setas",
+      "type": "range",
+      "min": 34,
+      "max": 72,
+      "step": 2,
+      "group": "Navegação"
+    },
+    {
+      "key": "arrowIconSize",
+      "label": "Tamanho da seta",
+      "type": "range",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "group": "Navegação"
+    },
+    {
+      "key": "mobileEyebrowSize",
+      "label": "Hero / chamada · mobile",
+      "type": "range",
+      "min": 9,
+      "max": 22,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "mobileTitleSize",
+      "label": "Título · mobile",
+      "type": "range",
+      "min": 24,
+      "max": 72,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "mobileTextSize",
+      "label": "Texto · mobile",
+      "type": "range",
+      "min": 11,
+      "max": 26,
+      "step": 1,
+      "group": "Tipografia"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "mcmv-imovel-na-planta",
+  "name": "Minha Casa Minha Vida — imóvel na planta",
+  "description": "Modelo de financiamento MCMV para imóvel adquirido na planta.",
+  "category": "Financiamento",
+  "baseBlueprint": "mcmvHome",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Minha Casa Minha Vida — imóvel na planta",
+    "templateMeta": {
+      "presetId": "mcmv-imovel-na-planta",
+      "category": "Financiamento",
+      "subcategory": "Minha Casa Minha Vida"
+    }
+  }
+}

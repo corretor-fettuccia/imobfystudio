@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "alto-padrao-seguranca-comodidade",
+  "name": "Foco na segurança e comodidade",
+  "description": "Modelo de alto padrão orientado a segurança, conforto e conveniência.",
+  "category": "Alto padrão",
+  "baseBlueprint": "launch",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco na segurança e comodidade",
+    "templateMeta": {
+      "presetId": "alto-padrao-seguranca-comodidade",
+      "category": "Alto padrão",
+      "subcategory": ""
+    }
+  }
+}

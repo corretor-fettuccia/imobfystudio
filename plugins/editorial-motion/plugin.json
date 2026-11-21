@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 3,
+  "id": "editorial-motion",
+  "name": "Editorial Motion",
+  "version": "1.0.1",
+  "type": "section",
+  "category": "Editorial",
+  "icon": "◫",
+  "description": "Composição arquitetônica editorial com três layouts, imagens editáveis e coreografias sincronizadas; preview no editor e animações no export.",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "layout": "split",
+    "reverse": false,
+    "eyebrow": "ARQUITETURA / CONCEITO",
+    "headline": "Uma nova perspectiva de viver.",
+    "description": "Uma arquitetura pensada para valorizar o espaço, a luz e a experiência de morar. Apresente aqui os diferenciais reais do empreendimento.",
+    "ctaText": "Explorar o empreendimento",
+    "ctaUrl": "#contato",
+    "imageMain": "",
+    "imageSecondary": "",
+    "imageThird": "",
+    "statNumber": "",
+    "statLabel": "",
+    "palette": "light",
+    "accent": "#9d8062",
+    "titleSize": 64,
+    "mediaHeight": 580,
+    "motion": "editorial",
+    "delay": 200,
+    "stagger": 175,
+    "duration": 900,
+    "threshold": 20,
+    "sticky": false
+  },
+  "fields": [
+    {
+      "key": "layout",
+      "label": "Composição visual",
+      "type": "select",
+      "group": "Composição",
+      "options": [
+        {
+          "label": "Editorial Split",
+          "value": "split"
+        },
+        {
+          "label": "Cinematic Reveal",
+          "value": "cinematic"
+        },
+        {
+          "label": "Architectural Mosaic",
+          "value": "mosaic"
+        }
+      ]
+    },
+    {
+      "key": "reverse",
+      "label": "Inverter imagem e texto",
+      "type": "toggle",
+      "group": "Composição"
+    },
+    {
+      "key": "eyebrow",
+      "label": "Identificação editorial",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "headline",
+      "label": "Título principal",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "description",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do botão",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "ctaUrl",
+      "label": "Destino do botão",
+      "type": "url",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "imageMain",
+      "label": "Imagem principal",
+      "type": "image",
+      "group": "Imagens"
+    },
+    {
+      "key": "imageSecondary",
+      "label": "Imagem secundária (mosaico)",
+      "type": "image",
+      "group": "Imagens"
+    },
+    {
+      "key": "imageThird",
+      "label": "Terceira imagem (mosaico)",
+      "type": "image",
+      "group": "Imagens"
+    },
+    {
+      "key": "statNumber",
+      "label": "Número de destaque",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "statLabel",
+      "label": "Legenda do número",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "palette",
+      "label": "Paleta visual",
+      "type": "select",
+      "group": "Estilo",
+      "options": [
+        {
+          "label": "Mineral claro",
+          "value": "light"
+        },
+        {
+          "label": "Noturno editorial",
+          "value": "dark"
+        },
+        {
+          "label": "Neutro quente",
+          "value": "warm"
+        }
+      ]
+    },
+    {
+      "key": "accent",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Estilo"
+    },
+    {
+      "key": "titleSize",
+      "label": "Tamanho do título (px)",
+      "type": "range",
+      "group": "Tipografia",
+      "min": 34,
+      "max": 100,
+      "step": 2
+    },
+    {
+      "key": "mediaHeight",
+      "label": "Altura da composição (px)",
+      "type": "range",
+      "group": "Composição",
+      "min": 380,
+      "max": 800,
+      "step": 20
+    },
+    {
+      "key": "motion",
+      "label": "Coreografia",
+      "type": "select",
+      "group": "Movimento",
+      "options": [
+        {
+          "label": "Editorial encadeado",
+          "value": "editorial"
+        },
+        {
+          "label": "Revelação cinematográfica",
+          "value": "cinema"
+        },
+        {
+          "label": "Arquitetônica 3D",
+          "value": "depth"
+        },
+        {
+          "label": "Sem animação",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "key": "delay",
+      "label": "Atraso inicial (ms)",
+      "type": "range",
+      "group": "Movimento",
+      "min": 0,
+      "max": 1600,
+      "step": 50
+    },
+    {
+      "key": "stagger",
+      "label": "Intervalo entre elementos (ms)",
+      "type": "range",
+      "group": "Movimento",
+      "min": 50,
+      "max": 550,
+      "step": 25
+    },
+    {
+      "key": "duration",
+      "label": "Duração do movimento (ms)",
+      "type": "range",
+      "group": "Movimento",
+      "min": 300,
+      "max": 1800,
+      "step": 50
+    },
+    {
+      "key": "threshold",
+      "label": "Visibilidade para iniciar (%)",
+      "type": "range",
+      "group": "Movimento",
+      "min": 5,
+      "max": 70,
+      "step": 5
+    },
+    {
+      "key": "sticky",
+      "label": "Fixar mídia durante leitura (desktop)",
+      "type": "toggle",
+      "group": "Comportamento"
+    }
+  ]
+}

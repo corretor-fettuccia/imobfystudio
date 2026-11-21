@@ -1,0 +1,36 @@
+{
+  "version": "7.3.0",
+  "testDate": "2026-11-02",
+  "executed": 6,
+  "passed": 6,
+  "failed": 0,
+  "sectionComponentsVerified": 51,
+  "browserE2E": "blocked_by_environment",
+  "tests": [
+    {
+      "name": "anchors-start-730.test.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "agentic-export-71.test.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "md-export-private-711.test.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "hero-plus-export-712.test.cjs",
+      "status": "pass"
+    },
+    {
+      "name": "export-quality-720.test.cjs",
+      "status": "pass",
+      "note": "fixture inclui mídia externa 404: aviso esperado"
+    },
+    {
+      "name": "canonical-regression-720.test.cjs",
+      "status": "pass"
+    }
+  ]
+}

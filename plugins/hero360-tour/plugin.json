@@ -1,0 +1,257 @@
+{
+  "schemaVersion": 3,
+  "id": "hero360-tour",
+  "name": "Hero360Tour",
+  "version": "1.2.7",
+  "type": "section",
+  "category": "Experiência",
+  "icon": "◎",
+  "description": "Hero 360° WebGL/Canvas2D com navegação imersiva, sensor opcional e controle de 2 a 10 segundos para ocultar o texto do Hero após interação; retorno após inatividade.",
+  "composition": {
+    "role": "section"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "tourConfig": "{\"format\":\"ImobStudioTour360\",\"version\":7,\"project\":{\"id\":\"tour360-section\",\"name\":\"Novo tour imersivo\",\"createdAt\":\"\",\"updatedAt\":\"\"},\"settings\":{\"firstSceneId\":null,\"preloadAdjacent\":true,\"showCompass\":false,\"showZoomControls\":true,\"showFullscreenControl\":true,\"autoLoad\":true,\"defaultHfov\":100,\"minHfov\":50,\"maxHfov\":120,\"authoringGrid\":false},\"branding\":{\"enabled\":false,\"banner\":\"\",\"bannerName\":\"\",\"position\":\"bottom-right\",\"floatingEnabled\":false,\"floatingText\":\"\",\"floatingLink\":\"\"},\"sceneOrder\":[],\"scenes\":{}}",
+    "eyebrow": "EXPERIÊNCIA IMERSIVA",
+    "headline": "Entre em uma nova perspectiva",
+    "subheadline": "Explore o espaço em 360°, toque nos pontos e descubra seus diferenciais.",
+    "ctaLabel": "Quero conhecer",
+    "ctaUrl": "",
+    "heightDesktop": 760,
+    "heightMobile": 630,
+    "overlayOpacity": 42,
+    "accentColor": "#dec49b",
+    "textColor": "#ffffff",
+    "idleSeconds": 10,
+    "swayYaw": 7,
+    "swayPitch": 0.8,
+    "swayCycleSeconds": 19,
+    "showSceneMenu": false,
+    "heroHfov": 118,
+    "fullSphere": true,
+    "normalizeSphere": true,
+    "showNavigationPanel": false,
+    "motionEnabled": true,
+    "motionActivation": "button",
+    "motionSensitivity": 50,
+    "motionSmoothing": 50,
+    "motionTouchFallback": true,
+    "heroHideDelay": 5
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Eyebrow",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "headline",
+      "label": "Headline",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "subheadline",
+      "label": "Subheadline",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "ctaLabel",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "Conversão"
+    },
+    {
+      "key": "ctaUrl",
+      "label": "URL do CTA",
+      "type": "url",
+      "group": "Conversão"
+    },
+    {
+      "key": "heroHfov",
+      "label": "Visão ampla da esfera — HFOV (°)",
+      "type": "range",
+      "group": "Panorama 360",
+      "min": 75,
+      "max": 140,
+      "step": 1
+    },
+    {
+      "key": "fullSphere",
+      "label": "Projetar como esfera completa (360° × 180°)",
+      "type": "toggle",
+      "group": "Panorama 360"
+    },
+    {
+      "key": "normalizeSphere",
+      "label": "Normalizar imagens não 2:1 para esfera completa",
+      "type": "toggle",
+      "group": "Panorama 360"
+    },
+    {
+      "key": "heightDesktop",
+      "label": "Altura desktop (px)",
+      "type": "range",
+      "group": "Layout",
+      "min": 440,
+      "max": 1080,
+      "step": 20
+    },
+    {
+      "key": "heightMobile",
+      "label": "Altura mobile (px)",
+      "type": "range",
+      "group": "Layout",
+      "min": 420,
+      "max": 920,
+      "step": 20
+    },
+    {
+      "key": "overlayOpacity",
+      "label": "Escurecimento do panorama (%)",
+      "type": "range",
+      "group": "Aparência",
+      "min": 0,
+      "max": 75,
+      "step": 5
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "heroHideDelay",
+      "label": "Ocultar texto do Hero após interação",
+      "type": "range",
+      "group": "Comportamento do Hero",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "showValue": true,
+      "description": "Tempo entre o início da interação (arrastar, hotspot ou sensor) e a ocultação do texto. Padrão: 5 segundos. O texto retorna após 10 segundos sem interação."
+    },
+    {
+      "key": "idleSeconds",
+      "label": "Inatividade para observador (segundos)",
+      "type": "range",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "group": "Observador natural"
+    },
+    {
+      "key": "swayYaw",
+      "label": "Amplitude horizontal (graus)",
+      "type": "range",
+      "min": 1,
+      "max": 16,
+      "step": 1,
+      "group": "Observador natural"
+    },
+    {
+      "key": "swayPitch",
+      "label": "Amplitude vertical (graus)",
+      "type": "range",
+      "min": 0,
+      "max": 3,
+      "step": 0.1,
+      "group": "Observador natural"
+    },
+    {
+      "key": "swayCycleSeconds",
+      "label": "Ciclo de olhar (segundos)",
+      "type": "range",
+      "min": 8,
+      "max": 35,
+      "step": 1,
+      "group": "Observador natural"
+    },
+    {
+      "key": "showNavigationPanel",
+      "label": "Habilitar painel de navegação",
+      "type": "toggle",
+      "group": "Navegação",
+      "description": "Desativado por padrão. Exibe os controles de aproximar, afastar e tela cheia sobre a cena. Não altera os hotspots nem a rolagem da página."
+    },
+    {
+      "key": "showSceneMenu",
+      "label": "Mostrar navegador de ambientes",
+      "type": "toggle",
+      "group": "Navegação"
+    },
+    {
+      "key": "motionEnabled",
+      "label": "Habilitar navegação por movimento em mobile e tablet",
+      "type": "toggle",
+      "group": "Modo imersivo — sensores",
+      "description": "Não ativa automaticamente o sensor; o visitante pode conceder a permissão pelo botão na panorâmica. Em navegadores sem sensor, permanece navegação manual."
+    },
+    {
+      "key": "motionActivation",
+      "label": "Como iniciar a navegação por movimento",
+      "type": "select",
+      "group": "Modo imersivo — sensores",
+      "options": [
+        {
+          "label": "Botão Explorar em 360° (recomendado)",
+          "value": "button"
+        },
+        {
+          "label": "Automático quando o navegador autorizar sem permissão",
+          "value": "auto"
+        }
+      ]
+    },
+    {
+      "key": "motionSensitivity",
+      "label": "Sensibilidade do sensor (%)",
+      "type": "range",
+      "group": "Modo imersivo — sensores",
+      "min": 10,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "key": "motionSmoothing",
+      "label": "Suavização do movimento (%)",
+      "type": "range",
+      "group": "Modo imersivo — sensores",
+      "min": 0,
+      "max": 100,
+      "step": 5
+    },
+    {
+      "key": "motionTouchFallback",
+      "label": "Permitir arrastar a cena mesmo com sensor ativo",
+      "type": "toggle",
+      "group": "Modo imersivo — sensores",
+      "description": "A página continua permitindo scroll vertical; arrastar horizontalmente o panorama ajusta a referência do sensor."
+    }
+  ],
+  "editor": {
+    "mode": "modal",
+    "label": "Configurar cenas e hotspots 360",
+    "title": "Hero360Tour Studio",
+    "description": "Hotspot de informação atualiza Eyebrow, título e descrição do Hero; hotspot de navegação abre imediatamente a próxima cena.",
+    "template": "editor/index.html",
+    "style": "editor/styles.css",
+    "script": "editor/app.js",
+    "field": "tourConfig"
+  }
+}

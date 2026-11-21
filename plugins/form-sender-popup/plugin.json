@@ -1,0 +1,923 @@
+{
+  "schemaVersion": 3,
+  "id": "form-sender-popup",
+  "name": "Form Sender Popup",
+  "version": "1.4.1",
+  "type": "section",
+  "category": "Captação",
+  "icon": "message-square-more",
+  "description": "Modal de captação com Button Kit e tipografia herdados do motor global, quatro modelos de composição, recall ajustável e integração Smart Plant.",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "styles": [
+      "financial-flow.css",
+      "plugin.css"
+    ],
+    "scripts": [
+      "financial-flow.js",
+      "plugin.js"
+    ]
+  },
+  "defaults": {
+    "title": "Vamos encontrar seu próximo imóvel?",
+    "copy": "Deixe seu contato e escolha quando prefere conversar ou visitar o empreendimento.",
+    "product": "Nome do empreendimento",
+    "endpoint": "https://script.google.com/macros/s/AKfycbxxA_8OOrK8oSJk6dFSC4bSvIHxICKLYG6ZpalORyFnM5fe-I4eLil-KGsKyoD31NMWlg/exec",
+    "buttonText": "Enviar",
+    "successMessage": "Recebemos sua solicitação! Nossa equipe entrará em contato para confirmar.",
+    "triggerType": "time",
+    "triggerSeconds": 12,
+    "scrollPercent": 55,
+    "recallMinutes": 60,
+    "showMessage": true,
+    "messagePlaceholder": "Como podemos ajudar?",
+    "requireEmail": true,
+    "leadDays": 1,
+    "horizonDays": 30,
+    "visibleDays": 6,
+    "blockedDates": "",
+    "timeZone": "America/Sao_Paulo",
+    "turns": "Manhã|Tarde|Noite",
+    "allowSunday": false,
+    "allowMonday": true,
+    "allowTuesday": true,
+    "allowWednesday": true,
+    "allowThursday": true,
+    "allowFriday": true,
+    "allowSaturday": false,
+    "sundayTurns": "all",
+    "mondayTurns": "all",
+    "tuesdayTurns": "all",
+    "wednesdayTurns": "all",
+    "thursdayTurns": "all",
+    "fridayTurns": "all",
+    "saturdayTurns": "all",
+    "appointmentPrompt": "Que tal conhecer pessoalmente?",
+    "scheduleMode": "both",
+    "scheduleCta": "Visitar o plantão de vendas",
+    "contactCta": "Prefiro apenas receber contato",
+    "enableQuestions": true,
+    "quickTitle": "Mais alguns detalhes para personalizar seu atendimento",
+    "accentColor": "#1c6254",
+    "surfaceColor": "#ffffff",
+    "textColor": "#182a28",
+    "radius": 18,
+    "useGlobalStyle": true,
+    "smartPlantIntegration": true,
+    "enableEditorPreview": true,
+    "quickQ1Enabled": true,
+    "quickQ1Label": "Qual é o seu objetivo?",
+    "quickQ1Type": "single",
+    "quickQ1Options": "Moradia|Investimento|Construção",
+    "quickQ1Required": true,
+    "quickQ2Enabled": true,
+    "quickQ2Label": "Em qual momento está a sua procura?",
+    "quickQ2Type": "single",
+    "quickQ2Options": "Imediata|Já tenho decisão tomada|Próximos meses|Só pesquisando",
+    "quickQ2Required": true,
+    "quickQ3Enabled": true,
+    "quickQ3Label": "O que é mais importante para você agora?",
+    "quickQ3Type": "single",
+    "quickQ3Options": "Valores e condições|Localização|Projeto e diferenciais|Potencial de investimento",
+    "quickQ3Required": true,
+    "quickQ4Enabled": true,
+    "quickQ4Label": "Prefere o contato em qual período?",
+    "quickQ4Type": "single",
+    "quickQ4Options": "Manhã|Almoço|Tarde|Noite",
+    "quickQ4Required": true,
+    "layoutModel": "essential",
+    "recallEnabled": true,
+    "recallInterval": 60,
+    "recallUnit": "minutes",
+    "financialEnabled": false,
+    "financialTitle": "Para entender suas condições",
+    "financialCopy": "Responda algumas perguntas para personalizar seu atendimento.",
+    "financialQuestions": "[\n  {\n    \"id\": \"renda\",\n    \"label\": \"Qual é a renda familiar mensal aproximada?\",\n    \"type\": \"select\",\n    \"options\": [\n      \"Até R$ 3.000\",\n      \"R$ 3.001 a R$ 5.000\",\n      \"R$ 5.001 a R$ 7.000\",\n      \"R$ 7.001 a R$ 10.000\",\n      \"Acima de R$ 10.000\"\n    ],\n    \"required\": true\n  },\n  {\n    \"id\": \"imovel\",\n    \"label\": \"Possui imóvel em seu nome?\",\n    \"type\": \"yesno\",\n    \"required\": true\n  },\n  {\n    \"id\": \"carteira\",\n    \"label\": \"Possui pelo menos 3 anos de carteira assinada?\",\n    \"type\": \"yesno\",\n    \"required\": true\n  },\n  {\n    \"id\": \"fgts\",\n    \"label\": \"Possui FGTS disponível ou recursos para entrada?\",\n    \"type\": \"select\",\n    \"options\": [\n      \"Tenho FGTS\",\n      \"Tenho recursos para entrada\",\n      \"Tenho ambos\",\n      \"Ainda não tenho\"\n    ],\n    \"showIf\": {\n      \"id\": \"carteira\",\n      \"equals\": \"Sim\"\n    },\n    \"required\": true\n  },\n  {\n    \"id\": \"nascimento\",\n    \"label\": \"Qual sua data de nascimento?\",\n    \"type\": \"date\",\n    \"required\": false\n  },\n  {\n    \"id\": \"dependentes\",\n    \"label\": \"Possui dependentes?\",\n    \"type\": \"yesno\",\n    \"required\": true\n  }\n]"
+  },
+  "fields": [
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "copy",
+      "label": "Texto de apoio",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "product",
+      "label": "Empreendimento",
+      "type": "text",
+      "group": "Integração"
+    },
+    {
+      "key": "endpoint",
+      "label": "URL do endpoint HTTPS",
+      "type": "url",
+      "group": "Integração"
+    },
+    {
+      "key": "buttonText",
+      "label": "CTA primeira etapa",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "successMessage",
+      "label": "Mensagem de confirmação",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "triggerType",
+      "label": "Gatilho de abertura",
+      "type": "select",
+      "group": "Comportamento",
+      "options": [
+        {
+          "value": "time",
+          "label": "Tempo na página"
+        },
+        {
+          "value": "scroll",
+          "label": "Posição do scroll"
+        }
+      ]
+    },
+    {
+      "key": "triggerSeconds",
+      "label": "Abertura após (segundos)",
+      "type": "number",
+      "group": "Comportamento",
+      "min": 0,
+      "max": 600
+    },
+    {
+      "key": "scrollPercent",
+      "label": "Abertura com scroll (%)",
+      "type": "number",
+      "group": "Comportamento",
+      "min": 1,
+      "max": 100
+    },
+    {
+      "key": "recallEnabled",
+      "label": "Reabrir após fechar sem enviar",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "recallInterval",
+      "label": "Intervalo para reabrir",
+      "type": "number",
+      "group": "Comportamento",
+      "min": 1,
+      "max": 365
+    },
+    {
+      "key": "recallUnit",
+      "label": "Unidade do intervalo",
+      "type": "select",
+      "group": "Comportamento",
+      "options": [
+        {
+          "value": "minutes",
+          "label": "Minutos"
+        },
+        {
+          "value": "hours",
+          "label": "Horas"
+        },
+        {
+          "value": "days",
+          "label": "Dias"
+        }
+      ]
+    },
+    {
+      "key": "recallMinutes",
+      "label": "Recall legado (minutos; compatibilidade)",
+      "type": "number",
+      "group": "Avançado",
+      "min": 0,
+      "max": 10080
+    },
+    {
+      "key": "showMessage",
+      "label": "Exibir mensagem",
+      "type": "toggle",
+      "group": "Campos"
+    },
+    {
+      "key": "messagePlaceholder",
+      "label": "Placeholder mensagem",
+      "type": "text",
+      "group": "Campos"
+    },
+    {
+      "key": "requireEmail",
+      "label": "Exigir e-mail",
+      "type": "toggle",
+      "group": "Campos"
+    },
+    {
+      "key": "leadDays",
+      "label": "Antecedência mínima (dias)",
+      "type": "number",
+      "group": "Agenda",
+      "min": 0,
+      "max": 90
+    },
+    {
+      "key": "horizonDays",
+      "label": "Horizonte de dias",
+      "type": "number",
+      "group": "Agenda",
+      "min": 1,
+      "max": 365
+    },
+    {
+      "key": "visibleDays",
+      "label": "Datas exibidas por vez",
+      "type": "number",
+      "group": "Agenda",
+      "min": 3,
+      "max": 14
+    },
+    {
+      "key": "blockedDates",
+      "label": "Datas bloqueadas (AAAA-MM-DD, separadas por vírgula)",
+      "type": "textarea",
+      "group": "Agenda"
+    },
+    {
+      "key": "timeZone",
+      "label": "Fuso horário",
+      "type": "text",
+      "group": "Agenda"
+    },
+    {
+      "key": "turns",
+      "label": "Turnos separados por |",
+      "type": "text",
+      "group": "Agenda"
+    },
+    {
+      "key": "appointmentPrompt",
+      "label": "Chamada para agendamento",
+      "type": "text",
+      "group": "Agenda"
+    },
+    {
+      "key": "scheduleMode",
+      "label": "Modalidade de agendamento",
+      "type": "select",
+      "group": "Agenda",
+      "options": [
+        {
+          "value": "both",
+          "label": "Visita ou contato"
+        },
+        {
+          "value": "visit",
+          "label": "Somente visita"
+        },
+        {
+          "value": "contact",
+          "label": "Somente contato"
+        }
+      ]
+    },
+    {
+      "key": "scheduleCta",
+      "label": "CTA visitar plantão",
+      "type": "text",
+      "group": "Agenda"
+    },
+    {
+      "key": "contactCta",
+      "label": "CTA receber contato",
+      "type": "text",
+      "group": "Agenda"
+    },
+    {
+      "key": "enableQuestions",
+      "label": "Ativar perguntas finais",
+      "type": "toggle",
+      "group": "Perguntas"
+    },
+    {
+      "key": "quickTitle",
+      "label": "Título das perguntas",
+      "type": "text",
+      "group": "Perguntas"
+    },
+    {
+      "key": "smartPlantIntegration",
+      "label": "Receber planta do Smart Plant",
+      "type": "toggle",
+      "group": "Integração"
+    },
+    {
+      "key": "useGlobalStyle",
+      "label": "Herdar estilo global",
+      "type": "toggle",
+      "group": "Aparência"
+    },
+    {
+      "key": "layoutModel",
+      "label": "Modelo visual do popup",
+      "type": "select",
+      "group": "Aparência",
+      "options": [
+        {
+          "value": "essential",
+          "label": "Essencial · minimalista"
+        },
+        {
+          "value": "editorial",
+          "label": "Editorial · sofisticado"
+        },
+        {
+          "value": "soft",
+          "label": "Acolhedor · suave"
+        },
+        {
+          "value": "bold",
+          "label": "Impacto · arrojado"
+        }
+      ]
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor principal",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "surfaceColor",
+      "label": "Fundo do modal",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "radius",
+      "label": "Raio do modal (px)",
+      "type": "number",
+      "group": "Aparência",
+      "min": 0,
+      "max": 32
+    },
+    {
+      "key": "allowSunday",
+      "label": "Permitir Sunday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "sundayTurns",
+      "label": "Turnos Sunday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "allowMonday",
+      "label": "Permitir Monday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "mondayTurns",
+      "label": "Turnos Monday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "allowTuesday",
+      "label": "Permitir Tuesday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "tuesdayTurns",
+      "label": "Turnos Tuesday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "allowWednesday",
+      "label": "Permitir Wednesday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "wednesdayTurns",
+      "label": "Turnos Wednesday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "allowThursday",
+      "label": "Permitir Thursday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "thursdayTurns",
+      "label": "Turnos Thursday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "allowFriday",
+      "label": "Permitir Friday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "fridayTurns",
+      "label": "Turnos Friday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "allowSaturday",
+      "label": "Permitir Saturday",
+      "type": "toggle",
+      "group": "Agenda · dias"
+    },
+    {
+      "key": "saturdayTurns",
+      "label": "Turnos Saturday",
+      "type": "select",
+      "group": "Agenda · turnos",
+      "options": [
+        {
+          "value": "all",
+          "label": "Todos"
+        },
+        {
+          "value": "none",
+          "label": "Nenhum"
+        },
+        {
+          "value": "1",
+          "label": "Primeiro"
+        },
+        {
+          "value": "2",
+          "label": "Segundo"
+        },
+        {
+          "value": "3",
+          "label": "Terceiro"
+        },
+        {
+          "value": "1,2",
+          "label": "1 e 2"
+        },
+        {
+          "value": "1,3",
+          "label": "1 e 3"
+        },
+        {
+          "value": "2,3",
+          "label": "2 e 3"
+        }
+      ]
+    },
+    {
+      "key": "quickQ1Enabled",
+      "label": "Pergunta 1 ativa",
+      "type": "toggle",
+      "group": "Pergunta 1"
+    },
+    {
+      "key": "quickQ1Label",
+      "label": "Enunciado",
+      "type": "text",
+      "group": "Pergunta 1"
+    },
+    {
+      "key": "quickQ1Type",
+      "label": "Tipo",
+      "type": "select",
+      "group": "Pergunta 1",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ]
+    },
+    {
+      "key": "quickQ1Options",
+      "label": "Opções separadas por |",
+      "type": "text",
+      "group": "Pergunta 1"
+    },
+    {
+      "key": "quickQ1Required",
+      "label": "Obrigatória",
+      "type": "toggle",
+      "group": "Pergunta 1"
+    },
+    {
+      "key": "quickQ2Enabled",
+      "label": "Pergunta 2 ativa",
+      "type": "toggle",
+      "group": "Pergunta 2"
+    },
+    {
+      "key": "quickQ2Label",
+      "label": "Enunciado",
+      "type": "text",
+      "group": "Pergunta 2"
+    },
+    {
+      "key": "quickQ2Type",
+      "label": "Tipo",
+      "type": "select",
+      "group": "Pergunta 2",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ]
+    },
+    {
+      "key": "quickQ2Options",
+      "label": "Opções separadas por |",
+      "type": "text",
+      "group": "Pergunta 2"
+    },
+    {
+      "key": "quickQ2Required",
+      "label": "Obrigatória",
+      "type": "toggle",
+      "group": "Pergunta 2"
+    },
+    {
+      "key": "quickQ3Enabled",
+      "label": "Pergunta 3 ativa",
+      "type": "toggle",
+      "group": "Pergunta 3"
+    },
+    {
+      "key": "quickQ3Label",
+      "label": "Enunciado",
+      "type": "text",
+      "group": "Pergunta 3"
+    },
+    {
+      "key": "quickQ3Type",
+      "label": "Tipo",
+      "type": "select",
+      "group": "Pergunta 3",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ]
+    },
+    {
+      "key": "quickQ3Options",
+      "label": "Opções separadas por |",
+      "type": "text",
+      "group": "Pergunta 3"
+    },
+    {
+      "key": "quickQ3Required",
+      "label": "Obrigatória",
+      "type": "toggle",
+      "group": "Pergunta 3"
+    },
+    {
+      "key": "quickQ4Enabled",
+      "label": "Pergunta 4 ativa",
+      "type": "toggle",
+      "group": "Pergunta 4"
+    },
+    {
+      "key": "quickQ4Label",
+      "label": "Enunciado",
+      "type": "text",
+      "group": "Pergunta 4"
+    },
+    {
+      "key": "quickQ4Type",
+      "label": "Tipo",
+      "type": "select",
+      "group": "Pergunta 4",
+      "options": [
+        {
+          "value": "single",
+          "label": "Escolha única"
+        },
+        {
+          "value": "multiple",
+          "label": "Múltipla escolha"
+        },
+        {
+          "value": "yesno",
+          "label": "Sim / Não"
+        },
+        {
+          "value": "truefalse",
+          "label": "Verdadeiro / Falso"
+        }
+      ]
+    },
+    {
+      "key": "quickQ4Options",
+      "label": "Opções separadas por |",
+      "type": "text",
+      "group": "Pergunta 4"
+    },
+    {
+      "key": "quickQ4Required",
+      "label": "Obrigatória",
+      "type": "toggle",
+      "group": "Pergunta 4"
+    },
+    {
+      "key": "financialEnabled",
+      "label": "Habilitar condições financeiras",
+      "type": "toggle",
+      "group": "Condições financeiras"
+    },
+    {
+      "key": "financialTitle",
+      "label": "Título do questionário financeiro",
+      "type": "text",
+      "group": "Condições financeiras"
+    },
+    {
+      "key": "financialCopy",
+      "label": "Texto introdutório financeiro",
+      "type": "textarea",
+      "group": "Condições financeiras"
+    },
+    {
+      "key": "financialQuestions",
+      "label": "Árvore de perguntas (JSON): adicione/remova perguntas e use showIf para ramificar",
+      "type": "textarea",
+      "group": "Condições financeiras",
+      "note": "Cada pergunta possui id, label, type, required, options e showIf opcional: {\"id\":\"carteira\",\"equals\":\"Sim\"}. Suporta select, yesno, text, date, number, multiple. Máximo 30 perguntas."
+    }
+  ]
+}

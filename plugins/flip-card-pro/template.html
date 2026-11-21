@@ -1,0 +1,27 @@
+<div class="pp-flip-layout">
+  <div class="pp-flip-intro">
+    <p class="eyebrow">{{eyebrow}}</p>
+    <h2>{{title}}</h2>
+    <p>{{copy}}</p>
+  </div>
+  <div class="pp-flip-card" tabindex="0" role="button" aria-label="Virar cartão: {{frontTitle}}" data-mode="{{flipMode}}" style="--pp-card-width:{{cardWidth}}px;--pp-card-height:{{cardHeight}}px">
+    <div class="pp-flip-face pp-flip-front" style="--pp-face-image:url('{{frontImage}}')">
+      <div class="pp-flip-content">
+        <span class="pp-flip-icon">{{frontIcon|icon}}</span>
+        <h3>{{frontTitle}}</h3>
+        <p>{{frontDescription}}</p>
+        <ul>{{frontItems|list}}</ul>
+        <small>Toque para ver mais →</small>
+      </div>
+    </div>
+    <div class="pp-flip-face pp-flip-back" style="--pp-face-image:url('{{backImage}}')">
+      <div class="pp-flip-content">
+        <span class="pp-flip-icon">{{backIcon|icon}}</span>
+        <h3>{{backTitle}}</h3>
+        <p>{{backDescription}}</p>
+        <ul>{{backItems|list}}</ul>
+        <a class="pp-flip-cta" href="{{ctaLink}}">{{ctaText}}</a>
+      </div>
+    </div>
+  </div>
+</div>

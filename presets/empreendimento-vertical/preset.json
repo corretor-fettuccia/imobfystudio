@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "empreendimento-vertical",
+  "name": "Empreendimento vertical",
+  "description": "Modelo para edifícios, lançamentos e unidades em torre.",
+  "category": "Empreendimento vertical",
+  "baseBlueprint": "launch",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Empreendimento vertical",
+    "templateMeta": {
+      "presetId": "empreendimento-vertical",
+      "category": "Empreendimento vertical",
+      "subcategory": ""
+    }
+  }
+}

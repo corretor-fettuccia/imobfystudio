@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "loteamento",
+  "name": "Loteamento",
+  "description": "Modelo para apresentação e comercialização de loteamentos.",
+  "category": "Loteamento",
+  "baseBlueprint": "launch",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Loteamento",
+    "templateMeta": {
+      "presetId": "loteamento",
+      "category": "Loteamento",
+      "subcategory": ""
+    }
+  }
+}

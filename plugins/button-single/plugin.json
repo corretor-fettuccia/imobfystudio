@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 3,
+  "id": "button-single",
+  "name": "Botão",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Ação",
+  "icon": "↗",
+  "description": "Botão único para CTA, navegação ou abertura de Floating Container, integrado ao Button Kit global.",
+  "composition": {
+    "role": "both",
+    "cardinality": "single"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "label": "Quero saber mais",
+    "href": "#contato",
+    "ariaLabel": "Quero saber mais",
+    "icon": "fa-solid fa-arrow-right",
+    "iconPosition": "end",
+    "openNewTab": false,
+    "alignment": "center",
+    "widthMode": "auto",
+    "size": "medium",
+    "paddingY": 20
+  },
+  "fields": [
+    { "key": "label", "label": "Texto do botão", "type": "text", "group": "Conteúdo" },
+    { "key": "href", "label": "HREF / destino", "type": "text", "group": "Ação", "note": "Aceita #âncora, URL HTTP/HTTPS, telefone ou e-mail. Para Floating Container, use somente #ID." },
+    { "key": "ariaLabel", "label": "Descrição acessível", "type": "text", "group": "Acessibilidade" },
+    { "key": "icon", "label": "Ícone", "type": "icon", "group": "Conteúdo" },
+    { "key": "iconPosition", "label": "Posição do ícone", "type": "select", "options": [
+      { "label": "Antes do texto", "value": "start" },
+      { "label": "Depois do texto", "value": "end" }
+    ], "group": "Conteúdo" },
+    { "key": "openNewTab", "label": "Abrir em nova aba", "type": "toggle", "group": "Ação" },
+    { "key": "alignment", "label": "Alinhamento", "type": "select", "options": [
+      { "label": "Esquerda", "value": "left" },
+      { "label": "Centro", "value": "center" },
+      { "label": "Direita", "value": "right" }
+    ], "group": "Composição" },
+    { "key": "widthMode", "label": "Largura", "type": "select", "options": [
+      { "label": "Automática", "value": "auto" },
+      { "label": "Largura total", "value": "full" }
+    ], "group": "Composição" },
+    { "key": "size", "label": "Tamanho", "type": "select", "options": [
+      { "label": "Pequeno", "value": "small" },
+      { "label": "Médio", "value": "medium" },
+      { "label": "Grande", "value": "large" }
+    ], "group": "Composição" },
+    { "key": "paddingY", "label": "Respiro vertical do componente (px)", "type": "range", "min": 0, "max": 120, "step": 2, "group": "Composição" }
+  ]
+}

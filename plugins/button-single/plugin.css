@@ -1,0 +1,14 @@
+.ibs-wrap{display:flex;width:100%;padding-block:var(--ibs-padding-y,20px)}
+.ibs-wrap[data-align="left"]{justify-content:flex-start}
+.ibs-wrap[data-align="center"]{justify-content:center}
+.ibs-wrap[data-align="right"]{justify-content:flex-end}
+.ibs-button{display:inline-flex;align-items:center;justify-content:center;gap:.65em;min-height:50px;padding:0 1.35rem;border:1px solid transparent;border-radius:calc(var(--radius)*.7);font-weight:800;line-height:1.1;text-align:center;text-decoration:none;cursor:pointer}
+.ibs-button[data-size="small"]{min-height:42px;padding-inline:1rem;font-size:.78rem}
+.ibs-button[data-size="medium"]{min-height:50px;font-size:.88rem}
+.ibs-button[data-size="large"]{min-height:60px;padding-inline:1.8rem;font-size:1rem}
+.ibs-button[data-icon-position="end"] .ibs-button__icon{order:2}
+.ibs-button__icon{display:grid;place-items:center;flex:0 0 auto;line-height:1}
+.ibs-wrap[data-width="full"] .ibs-button{width:100%}
+.ibs-button:focus-visible{outline:3px solid color-mix(in srgb,var(--action-button-bg) 55%,#fff);outline-offset:3px}
+@media(max-width:720px){.ibs-wrap .ibs-button{max-width:100%}.ibs-wrap[data-width="full"] .ibs-button{width:100%}}
+@media(prefers-reduced-motion:reduce){.ibs-button{transition:none!important}}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "mcmv-pela-parcela",
+  "name": "Minha Casa Minha Vida — pela parcela (atender dor)",
+  "description": "Modelo orientado à dor do cliente, começando pela parcela possível e pela viabilidade financeira.",
+  "category": "Financiamento",
+  "baseBlueprint": "mcmvHome",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Minha Casa Minha Vida — pela parcela (atender dor)",
+    "templateMeta": {
+      "presetId": "mcmv-pela-parcela",
+      "category": "Financiamento",
+      "subcategory": "Minha Casa Minha Vida"
+    }
+  }
+}

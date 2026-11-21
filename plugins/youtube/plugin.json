@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "id": "youtube",
+  "name": "YouTube",
+  "version": "1.0.1",
+  "type": "section",
+  "category": "Vídeo",
+  "icon": "▶",
+  "description": "Player responsivo do YouTube por ID ou URL, com autoplay, controles e opções de reprodução e aparência.",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "videoId": "M7lc1UVf-VE",
+    "playerTitle": "Vídeo incorporado do YouTube",
+    "autoplay": false,
+    "controls": true,
+    "muted": false,
+    "loop": false,
+    "startSeconds": 0,
+    "endSeconds": 0,
+    "fullscreen": true,
+    "keyboardControls": true,
+    "playsInline": true,
+    "captions": false,
+    "captionsLanguage": "pt",
+    "interfaceLanguage": "pt-BR",
+    "relatedVideos": true,
+    "privacyEnhanced": true,
+    "lazyLoad": true,
+    "aspectRatio": "16 / 9",
+    "maxWidth": 1120,
+    "alignment": "center",
+    "paddingY": 48,
+    "borderRadius": 16,
+    "shadowStyle": "soft",
+    "backgroundColor": "#000000"
+  },
+  "fields": [
+    { "key": "videoId", "label": "ID ou URL do vídeo", "type": "text", "group": "Vídeo", "note": "Aceita o ID de 11 caracteres ou links youtube.com, youtu.be, Shorts e Live." },
+    { "key": "playerTitle", "label": "Título acessível do frame", "type": "text", "group": "Vídeo", "note": "Descreva o vídeo para leitores de tela." },
+
+    { "key": "autoplay", "label": "Autoplay", "type": "toggle", "group": "Reprodução", "note": "A reprodução automática pode ser bloqueada pelo navegador. Ative também “Sem som” para maior compatibilidade." },
+    { "key": "controls", "label": "Exibir controles do player", "type": "toggle", "group": "Reprodução" },
+    { "key": "muted", "label": "Iniciar sem som", "type": "toggle", "group": "Reprodução" },
+    { "key": "loop", "label": "Repetir continuamente", "type": "toggle", "group": "Reprodução" },
+    { "key": "startSeconds", "label": "Iniciar em (segundos)", "type": "number", "min": 0, "max": 86400, "step": 1, "group": "Reprodução" },
+    { "key": "endSeconds", "label": "Encerrar em (segundos; 0 = até o fim)", "type": "number", "min": 0, "max": 86400, "step": 1, "group": "Reprodução" },
+    { "key": "fullscreen", "label": "Permitir tela cheia", "type": "toggle", "group": "Controles" },
+    { "key": "keyboardControls", "label": "Permitir atalhos de teclado", "type": "toggle", "group": "Controles" },
+    { "key": "playsInline", "label": "Reproduzir inline no mobile", "type": "toggle", "group": "Controles" },
+    { "key": "captions", "label": "Forçar legendas quando disponíveis", "type": "toggle", "group": "Controles" },
+    { "key": "captionsLanguage", "label": "Idioma preferido das legendas", "type": "select", "options": [
+      { "label": "Português", "value": "pt" },
+      { "label": "English", "value": "en" },
+      { "label": "Español", "value": "es" }
+    ], "group": "Controles" },
+    { "key": "interfaceLanguage", "label": "Idioma da interface", "type": "select", "options": [
+      { "label": "Português (Brasil)", "value": "pt-BR" },
+      { "label": "English", "value": "en" },
+      { "label": "Español", "value": "es" }
+    ], "group": "Controles" },
+    { "key": "relatedVideos", "label": "Exibir vídeos relacionados", "type": "toggle", "group": "Controles", "note": "Quando desativado, o YouTube ainda pode mostrar relacionados do mesmo canal." },
+
+    { "key": "privacyEnhanced", "label": "Modo de privacidade aprimorada", "type": "toggle", "group": "Privacidade e desempenho", "note": "Usa o domínio youtube-nocookie.com para a incorporação." },
+    { "key": "lazyLoad", "label": "Carregamento tardio", "type": "toggle", "group": "Privacidade e desempenho", "note": "Com autoplay ativo, o player é carregado imediatamente." },
+
+    { "key": "aspectRatio", "label": "Proporção do frame", "type": "select", "options": [
+      { "label": "Horizontal 16:9", "value": "16 / 9" },
+      { "label": "Horizontal 4:3", "value": "4 / 3" },
+      { "label": "Quadrado 1:1", "value": "1 / 1" },
+      { "label": "Vertical 9:16", "value": "9 / 16" }
+    ], "group": "Aparência" },
+    { "key": "maxWidth", "label": "Largura máxima (px)", "type": "range", "min": 240, "max": 1600, "step": 20, "group": "Aparência" },
+    { "key": "alignment", "label": "Alinhamento do frame", "type": "select", "options": [
+      { "label": "Esquerda", "value": "left" },
+      { "label": "Centro", "value": "center" },
+      { "label": "Direita", "value": "right" }
+    ], "group": "Aparência" },
+    { "key": "paddingY", "label": "Respiro vertical (px)", "type": "range", "min": 0, "max": 160, "step": 4, "group": "Aparência" },
+    { "key": "borderRadius", "label": "Arredondamento (px)", "type": "range", "min": 0, "max": 48, "step": 2, "group": "Aparência" },
+    { "key": "shadowStyle", "label": "Sombra do frame", "type": "select", "options": [
+      { "label": "Sem sombra", "value": "none" },
+      { "label": "Suave", "value": "soft" },
+      { "label": "Elevada", "value": "raised" },
+      { "label": "Cinematográfica", "value": "cinematic" }
+    ], "group": "Aparência" },
+    { "key": "backgroundColor", "label": "Cor de fundo do frame", "type": "color", "group": "Aparência" }
+  ]
+}

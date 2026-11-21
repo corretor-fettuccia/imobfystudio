@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Hero360Tour Studio v1.1.3</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="styles.css" />
+<style>html.imobify-embed .top-actions{display:none!important}html.imobify-embed .topbar{min-height:54px}</style><script>if(new URLSearchParams(location.search).get("embed")==="1")document.documentElement.classList.add("imobify-embed")</script>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark">360°</div>
+        <div>
+          <strong>Hero360Tour Studio <span class="version-chip">v1.1.3</span></strong>
+          <small id="projectStatus">Projeto novo</small>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="newProjectBtn" class="btn ghost" title="Novo projeto">Novo</button>
+        <label class="btn ghost file-btn" title="Importar JSON">
+          Importar JSON
+          <input id="importJsonInput" type="file" accept="application/json,.json" hidden />
+        </label>
+        <button id="exportJsonBtn" class="btn ghost">Exportar JSON</button>
+        <button id="exportHtmlBtn" class="btn primary">Exportar pacote ZIP</button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="panel scenes-panel">
+        <div class="panel-header">
+          <div>
+            <h2>Cenas</h2>
+            <small id="sceneCount">0 cenas</small>
+          </div>
+          <button id="addSceneBtn" class="icon-btn" aria-label="Adicionar cena" title="Adicionar cena">＋</button>
+        </div>
+
+        <div class="scene-filter-row">
+          <input id="sceneFilter" class="input" type="search" placeholder="Filtrar cenas..." autocomplete="off" />
+        </div>
+
+        <div id="sceneList" class="scene-list" role="listbox" aria-label="Lista de cenas"></div>
+
+        <div class="panel-footer vertical-actions">
+          <button id="validateBtn" class="btn secondary full">Validar projeto</button>
+          <button id="connectionsBtn" class="btn ghost full">Mapa de conexões</button>
+        </div>
+      </aside>
+
+      <section class="viewer-column">
+        <div class="viewer-toolbar">
+          <div class="toolbar-group">
+            <button id="undoBtn" class="icon-btn" title="Desfazer (Ctrl+Z)" disabled>↶</button>
+            <button id="redoBtn" class="icon-btn" title="Refazer (Ctrl+Y)" disabled>↷</button>
+          </div>
+          <div class="toolbar-group grow">
+            <span id="activeSceneTitle" class="active-scene-title">Nenhuma cena selecionada</span>
+          </div>
+          <div class="toolbar-group">
+            <button id="captureViewBtn" class="btn ghost compact" disabled>Capturar visão</button>
+            <button id="addHotspotModeBtn" class="btn secondary compact" disabled>＋ Hotspot</button>
+          </div>
+        </div>
+
+        <div class="viewer-wrap">
+          <div id="viewer" class="viewer" aria-label="Visualizador 360"></div>
+          <div id="emptyViewer" class="empty-state">
+            <div class="empty-icon">◉</div>
+            <h3>Adicione uma cena panorâmica</h3>
+            <p>Use uma URL de imagem equiretangular ou escolha um arquivo local.</p>
+            <button id="emptyAddSceneBtn" class="btn primary">Adicionar primeira cena</button>
+          </div>
+          <div id="modeBadge" class="mode-badge hidden">Clique no panorama para posicionar o hotspot · Esc cancela</div>
+        </div>
+
+        <div id="validationBar" class="validation-bar hidden" aria-live="polite"></div>
+      </section>
+
+      <aside class="panel properties-panel">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="scene" role="tab">Cena</button>
+          <button class="tab" data-tab="hotspot" role="tab">Hotspot</button>
+          <button class="tab" data-tab="project" role="tab">Projeto</button>
+        </div>
+
+        <div id="sceneTab" class="tab-panel active"></div>
+        <div id="hotspotTab" class="tab-panel"></div>
+        <div id="projectTab" class="tab-panel"></div>
+      </aside>
+    </main>
+  </div>
+
+  <dialog id="sceneDialog" class="modal">
+    <form method="dialog" id="sceneForm" class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2>Adicionar cena</h2>
+          <p>Informe uma URL ou carregue uma imagem panorâmica local.</p>
+        </div>
+        <button value="cancel" class="icon-btn" aria-label="Fechar">×</button>
+      </div>
+      <div class="form-grid">
+        <label class="field span-2">
+          <span>Nome da cena</span>
+          <input id="newSceneTitle" class="input" required maxlength="80" placeholder="Ex.: Sala principal" />
+        </label>
+        <label class="field span-2">
+          <span>URL da panorâmica</span>
+          <input id="newSceneUrl" class="input" type="url" placeholder="https://.../panorama.jpg" />
+        </label>
+        <div class="or-divider span-2"><span>ou</span></div>
+        <label class="field span-2 file-drop">
+          <span>Arquivo local</span>
+          <input id="newSceneFile" type="file" accept="image/jpeg,image/png,image/webp" />
+          <small>Arquivos locais são usados no editor e exportados como arquivos físicos na pasta 360/.</small>
+        </label>
+      </div>
+      <div class="modal-actions">
+        <button value="cancel" class="btn ghost">Cancelar</button>
+        <button id="confirmAddSceneBtn" value="default" class="btn primary">Adicionar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="validationDialog" class="modal wide">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2>Validação do projeto</h2>
+          <p id="validationSummary"></p>
+        </div>
+        <button class="icon-btn" data-close-dialog="validationDialog" aria-label="Fechar">×</button>
+      </div>
+      <div id="validationResults" class="validation-results"></div>
+      <div class="modal-actions">
+        <button class="btn primary" data-close-dialog="validationDialog">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="connectionsDialog" class="modal wide">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <h2>Mapa de conexões</h2>
+          <p>Visão geral da navegação entre os ambientes.</p>
+        </div>
+        <button class="icon-btn" data-close-dialog="connectionsDialog" aria-label="Fechar">×</button>
+      </div>
+      <div id="connectionsMap" class="connections-map"></div>
+      <div class="modal-actions">
+        <button class="btn primary" data-close-dialog="connectionsDialog">Fechar</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="confirmDialog" class="modal">
+    <div class="modal-card small">
+      <div class="modal-header">
+        <div>
+          <h2 id="confirmTitle">Confirmar</h2>
+          <p id="confirmText"></p>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button id="confirmCancelBtn" class="btn ghost">Cancelar</button>
+        <button id="confirmOkBtn" class="btn danger">Confirmar</button>
+      </div>
+    </div>
+  </dialog>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

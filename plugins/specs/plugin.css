@@ -1,0 +1,24 @@
+/* Ficha do imóvel v1.1.0 — objective technical sheet, distinct from editorial sections. */
+[data-plugin="specs"].specs-section { padding-block:var(--section-space); background:var(--surface,#f8f9f9);color:var(--body-color); }
+[data-plugin="specs"] .specs-sheet { border-block:1px solid color-mix(in srgb,var(--heading-color,#19212b) 19%,transparent); }
+[data-plugin="specs"] .specs-sheet-head { display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:end;gap:clamp(18px,4vw,52px);padding-block:clamp(20px,3vw,32px);border-bottom:1px solid color-mix(in srgb,var(--heading-color,#19212b) 15%,transparent); }
+[data-plugin="specs"] .specs-sheet-ident { min-width:0; }
+[data-plugin="specs"] .specs-sheet-ident .eyebrow { margin:0 0 9px;color:var(--primary-on-surface,var(--primary)); }
+[data-plugin="specs"] .specs-sheet-ident h2 { margin:0;max-width:none;font-family:var(--heading);font-size:clamp(25px,3vw,45px);line-height:1.12;letter-spacing:var(--heading-tracking);font-weight:var(--heading-weight);color:var(--heading-color); }
+[data-plugin="specs"] .specs-sheet-summary { max-width:54ch;min-width:0;margin:0;color:var(--muted-color,var(--body-color));font-family:var(--body);font-size:var(--body-size,16px);line-height:var(--body-line,1.6); }
+[data-plugin="specs"] .specs-grid { display:grid;grid-template-columns:repeat(var(--specs-cols,3),minmax(0,1fr));margin:0;padding:0;min-width:0; }
+[data-plugin="specs"] .specs-fact { min-width:0;display:flex;flex-direction:column;gap:7px;padding:clamp(16px,2vw,26px) clamp(14px,2.2vw,28px);border-bottom:1px solid color-mix(in srgb,var(--heading-color,#19212b) 13%,transparent); }
+[data-plugin="specs"] .specs-fact:not(:nth-child(1)) { border-left:0; }
+[data-plugin="specs"][data-specs-cols="3"] .specs-fact:nth-child(3n + 1) { padding-left:0; }
+[data-plugin="specs"] .specs-fact dt { color:var(--muted-color,var(--body-color));font-family:var(--body);font-size:clamp(12px,.92vw,14px);font-weight:600;letter-spacing:.012em;line-height:1.35;overflow-wrap:anywhere; }
+[data-plugin="specs"] .specs-fact dd { margin:0;min-width:0;font-family:var(--body);font-weight:700;font-size:clamp(19px,2vw,28px);letter-spacing:-.02em;line-height:1.2;color:var(--heading-color);overflow-wrap:anywhere; }
+[data-plugin="specs"] .specs-fact:last-child { border-bottom:0; }
+[data-plugin="specs"] .specs-fact:focus-within { outline:2px solid var(--primary);outline-offset:-2px; }
+[data-plugin="specs"] .specs-grid { container-type:inline-size; }
+/* All column variants receive correct leading-edge padding. */
+[data-plugin="specs"][data-specs-cols="2"] .specs-fact:nth-child(2n+1),
+[data-plugin="specs"][data-specs-cols="4"] .specs-fact:nth-child(4n+1) { padding-left:0; }
+@media(max-width:850px){[data-plugin="specs"] .specs-sheet-head {grid-template-columns:1fr;align-items:start;gap:12px;}[data-plugin="specs"] .specs-grid{grid-template-columns:repeat(2,minmax(0,1fr));}[data-plugin="specs"] .specs-fact:nth-child(odd){padding-left:0;}[data-plugin="specs"] .specs-fact:nth-child(even){padding-left:clamp(12px,2vw,26px);}}
+@media(max-width:480px){[data-plugin="specs"] .specs-sheet-head{padding-block:18px 20px;}[data-plugin="specs"] .specs-fact{padding-block:16px;gap:6px;}[data-plugin="specs"] .specs-fact dd{font-size:clamp(17px,4.7vw,22px);}[data-plugin="specs"] .specs-fact dt{font-size:12px;}}
+/* The global typography Wizard remains authoritative for family and role styles. */
+[data-plugin="specs"]:not([data-ib-type-mode="local"]) .specs-sheet-ident h2{font-family:var(--ib-headline-font,var(--heading));font-weight:var(--ib-headline-weight,var(--heading-weight));letter-spacing:var(--ib-headline-tracking,var(--heading-tracking));}

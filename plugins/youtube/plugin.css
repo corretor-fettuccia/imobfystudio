@@ -1,0 +1,23 @@
+[data-plugin="youtube"]{width:100%!important;max-width:100%!important;padding:0!important;background:transparent!important;overflow:visible!important}
+[data-plugin="youtube"] .ytp-root{box-sizing:border-box;width:100%;min-width:0;padding:var(--ytp-py) clamp(12px,3vw,32px)}
+[data-plugin="youtube"] .ytp-container{display:block;width:100%;min-width:0;max-width:none!important}
+[data-plugin="youtube"] .ytp-frame-shell{position:relative;width:min(100%,var(--ytp-max));max-width:100%;aspect-ratio:var(--ytp-ratio);border-radius:var(--ytp-radius);overflow:hidden;background:var(--ytp-bg);isolation:isolate;margin-inline:auto}
+[data-plugin="youtube"] .ytp-root[data-alignment="left"] .ytp-frame-shell{margin-left:0;margin-right:auto}
+[data-plugin="youtube"] .ytp-root[data-alignment="center"] .ytp-frame-shell{margin-left:auto;margin-right:auto}
+[data-plugin="youtube"] .ytp-root[data-alignment="right"] .ytp-frame-shell{margin-left:auto;margin-right:0}
+[data-plugin="youtube"] .ytp-frame{display:block;width:100%;height:100%;border:0;background:var(--ytp-bg)}
+[data-plugin="youtube"] .ytp-placeholder{position:absolute;inset:0;display:none;place-content:center;gap:8px;padding:28px;background:linear-gradient(135deg,#181b20,#090a0d);color:#fff;text-align:center;font-family:var(--body,system-ui,sans-serif)}
+[data-plugin="youtube"] .ytp-placeholder strong{font:700 clamp(18px,3vw,28px)/1.15 var(--heading,system-ui,sans-serif)}
+[data-plugin="youtube"] .ytp-placeholder span{max-width:560px;color:#d4d8de;font-size:15px;line-height:1.5}
+[data-plugin="youtube"] .ytp-root[data-player-state="invalid"] .ytp-frame{display:none}
+[data-plugin="youtube"] .ytp-root[data-player-state="invalid"] .ytp-placeholder{display:grid}
+[data-plugin="youtube"] .ytp-root[data-shadow="soft"] .ytp-frame-shell{box-shadow:0 14px 38px rgba(8,12,18,.16)}
+[data-plugin="youtube"] .ytp-root[data-shadow="raised"] .ytp-frame-shell{box-shadow:0 24px 64px rgba(8,12,18,.26),0 3px 12px rgba(8,12,18,.16)}
+[data-plugin="youtube"] .ytp-root[data-shadow="cinematic"] .ytp-frame-shell{box-shadow:0 30px 90px rgba(0,0,0,.38),0 0 0 1px rgba(255,255,255,.08)}
+/* Dentro de Segmentos, o próprio slot pode alinhar os filhos com width:auto.
+   O YouTube precisa manter a largura do slot para que o alinhamento interno do frame
+   (esquerda/centro/direita) tenha espaço real para atuar. */
+[data-plugin="segment-layout"] .ims-segment-slot>[data-plugin="youtube"],
+[data-plugin="segment-layout"] .ims-segment-slot>.imobify-editor-block:has(>[data-plugin="youtube"]),
+[data-plugin="segment-layout"] .ims-segment-slot>.imobify-editor-block>[data-plugin="youtube"]{width:100%!important;max-width:100%!important;align-self:stretch}
+@media(max-width:720px){[data-plugin="youtube"] .ytp-root{padding-top:clamp(16px,var(--ytp-py),56px);padding-bottom:clamp(16px,var(--ytp-py),56px);padding-left:12px;padding-right:12px}}

@@ -1,0 +1,51 @@
+﻿Plugin,Tipo,CSS próprio identificado,Regra responsiva no CSS original,Font-size rígido encontrado,Tratamento na versão 6.0.44,Observações
+hero,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+hero-plus,core,Sim,Sim,Não,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados
+highlights,core,Sim,Sim,Sim,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+specs,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+gallery,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+lifestyle,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+payment,core,Sim,Sim,Não,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+testimonials,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+faq,core,Sim,Sim,Sim,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+lead-form,core,Sim,Sim,Não,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+footer,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+reveal,core,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+lightbox,core,Sim,Não,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+segment-layout,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+only-text-context,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+youtube,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+button-single,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+image-single,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+gallery-big-four-video,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+implantacao-tiles-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+ar-card-popout-3d,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+scheduled-popup-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+payment-investment-glass-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+location,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+flip-card-pro,Plugin Play,Não,Não,Não,Camada compartilhada + regras específicas,Sem componente tipográfico específico; apenas herança quando aplicável
+flipcard-3d-video-v1,Plugin Play,Não,Não,Não,Camada compartilhada + tipografia nativa existente,Sem componente tipográfico específico; apenas herança quando aplicável
+gallery-big-four,Plugin Play,Sim,Sim,Não,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados
+form-sender-v4,Plugin Play,Não,Não,Não,Camada compartilhada + tipografia nativa existente,Sem componente tipográfico específico; apenas herança quando aplicável
+property-slider,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+beneficios-modal,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados
+content-protection,Plugin Play,Sim,Não,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+whatsapp-flutuante-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+anti-ia-copy-policy,Plugin Play,Sim,Não,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+menu-fixo-adaptavel-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+magazine-text-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+parallax,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados
+section-layout-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+spacer-divider-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+smart-plant,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados
+offer-price-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+timeline-process-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+hotspot-plant-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+financing-simulator-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+professional-branding-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+possibility-path-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+tag-installer-pro,Plugin Play,Sim,Não,Sim,Camada compartilhada + tipografia nativa existente,Revisão estática; uso real depende da configuração
+floating-container-pro,Plugin Play,Sim,Sim,Não,Camada compartilhada + tipografia nativa existente,Controles de tamanho próprios preservados
+tour360-pro,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Revisão estática; uso real depende da configuração
+parallax360-tour,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados
+hero360-tour,Plugin Play,Sim,Sim,Sim,Camada compartilhada + regras específicas,Controles de tamanho próprios preservados

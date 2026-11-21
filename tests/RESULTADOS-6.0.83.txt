@@ -1,0 +1,3 @@
+Testes de regressão: 59/59 aprovados.
+Teste isolado de compilação dos plugins: concluído (avisos não bloqueantes de mídias de mapas existentes).
+Chromium: margens, fontes e scroll de fundo fotográfico conferidos em desktop/mobile simulados.

@@ -1,0 +1,56 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const vm = require('node:vm');
+const root = path.resolve(__dirname, '..');
+const JSZip = require(path.join(root,'vendor/jszip.min.js'));
+function script(ctx, file) {vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx,{filename:file});}
+test('Agendamento Sender integra catálogo, exporta CSS/JS/HTML e usa contrato FormSender',async()=>{
+ const ctx=vm.createContext({console,setTimeout,clearTimeout,URL,Blob,FormData,JSZip,fetch:async url=>{
+  const p=path.resolve(root,String(url));
+  if(!p.startsWith(root)||!fs.existsSync(p))return{ok:false,status:404,text:async()=>'',json:async()=>({}),arrayBuffer:async()=>new ArrayBuffer(0),headers:{get:()=>null}};
+  const b=fs.readFileSync(p);return{ok:true,status:200,text:async()=>b.toString('utf8'),json:async()=>JSON.parse(b.toString('utf8')),arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength),headers:{get:()=>null}};
+ },window:{},document:{createElement(){return{innerHTML:'',content:{cloneNode(){return{}}}}}},location:{href:'http://localhost/'}});
+ ctx.window=ctx;ctx.window.location=ctx.location;ctx.window.JSZip=JSZip;
+ ['assets/js/util.js','assets/js/catalog.js','assets/js/plugin-loader.js'].forEach(p=>script(ctx,p));
+ await ctx.ImobifyPluginLoader.ready;
+ const p=ctx.ImobifyCatalog.plugins['agendamento-sender'];assert.ok(p);assert.equal(p.pluginSource,'bundled');
+ assert.equal(p.manifest.version,'1.4.1');
+ const legacy=p.render({title:'Visita',skipSunday:false,skipSaturday:true,accentColor:'#dd2211'}, {strategy:{profile:'popular'}}, 'legacy-1');
+ assert.match(legacy,/data-ags-theme="custom"/);
+ assert.match(legacy,/data-allow-sunday="true"/);
+ assert.match(legacy,/data-allow-saturday="false"/);
+ assert.match(legacy,/data-ags-project-profile="popular"/);
+ const modern=p.render({themeMode:'global',visualPreset:'sophisticated'}, {strategy:{profile:'investment'}}, 'modern-1');
+ assert.match(modern,/data-ags-theme="global"/);
+ assert.match(modern,/data-ags-preset="sophisticated"/);
+
+ const inst=ctx.ImobifyCatalog.createSection('agendamento-sender');
+ const state=ctx.ImobifyCatalog.defaultState();state.sections=[inst];state.behaviorPlugins=[];
+ script(ctx,'assets/js/renderer.js');script(ctx,'assets/js/compiler.js');
+ const result=await ctx.ImobifyCompiler.compile(state);
+ const z=await JSZip.loadAsync(await result.blob.arrayBuffer());
+ const index=await z.file('index.html').async('text'),siteJS=await z.file('assets/js/site.js').async('text'),siteCSS=await z.file('assets/css/site.css').async('text');
+ assert.match(index,/data-plugin="agendamento-sender"/);
+ assert.match(index,/data-product="Nome do empreendimento"/);
+ assert.match(index,/data-lead-days="1"/);
+ assert.match(index,/data-ags-theme="global"/);
+ assert.match(index,/data-ags-preset="auto"/);
+ assert.match(index,/data-ags-send/);assert.doesNotMatch(index,/data-ags-jump/);
+ assert.match(index,/data-allow-sunday="false"/);
+ assert.match(index,/data-allow-monday="true"/);
+ assert.match(index,/data-ags-project-profile="consultive"/);
+ assert.match(siteJS,/agendamentoTurno/);assert.match(siteJS,/agendamentoDataISO/);
+ assert.match(siteJS,/payload\.append\('msg',summary\)/);
+ assert.match(siteCSS,/\.ags-day\.is-active/);
+ assert.match(siteCSS,/\.ags-day\.is-disabled/);
+ assert.match(siteCSS,/\-\-action-button-bg/);
+ assert.match(siteJS,/eligibleDate/);
+ assert.match(siteCSS,/\.ags-notification-container/);
+ assert.match(siteJS,/notify_Send_notification/);
+ assert.match(siteJS,/Solicitação enviada!/);
+ const project=JSON.parse(await z.file('content/project.json').async('text'));
+ assert.equal(project.sections[0].type,'agendamento-sender');
+ console.log('Agendamento Sender ZIP/Export OK');
+});

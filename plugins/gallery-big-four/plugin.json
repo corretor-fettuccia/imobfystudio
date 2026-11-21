@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 2,
+  "id": "gallery-big-four",
+  "name": "Galeria Big Four",
+  "version": "2.3.0",
+  "type": "section",
+  "category": "Galeria",
+  "icon": "▥",
+  "description": "Galeria cinematográfica expansível com cinco painéis",
+  "origin": "Adaptado do pacote galeriaBigFour.zip enviado pelo usuário",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "EXPERIÊNCIAS DO EMPREENDIMENTO",
+    "title": "Cinco ambientes. Uma nova forma de viver.",
+    "height": 620,
+    "image1": "assets/images/gallery-1.jpg",
+    "title1": "Living integrado",
+    "vertical1": "CONVÍVIO",
+    "image2": "assets/images/gallery-2.jpg",
+    "title2": "Rooftop ao pôr do sol",
+    "vertical2": "ROOFTOP",
+    "image3": "assets/images/gallery-3.jpg",
+    "title3": "Piscina e lazer",
+    "vertical3": "LAZER",
+    "image4": "assets/images/lifestyle.jpg",
+    "title4": "Paisagismo autoral",
+    "vertical4": "NATUREZA",
+    "image5": "assets/images/hero-placeholder.jpg",
+    "title5": "Arquitetura contemporânea",
+    "vertical5": "DESIGN",
+    "eyebrowSize": 14,
+    "sectionTitleSize": 42,
+    "panelTitleSize": 20,
+    "verticalTextSize": 12,
+    "mobileTextScale": 85
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Seção"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Seção"
+    },
+    {
+      "key": "height",
+      "label": "Altura da galeria",
+      "type": "range",
+      "min": 380,
+      "max": 820,
+      "step": 10,
+      "group": "Seção"
+    },
+    {
+      "key": "eyebrowSize",
+      "label": "Tamanho da chamada superior",
+      "type": "range",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "suffix": "px",
+      "group": "Tipografia"
+    },
+    {
+      "key": "sectionTitleSize",
+      "label": "Tamanho do título da seção",
+      "type": "range",
+      "min": 22,
+      "max": 72,
+      "step": 1,
+      "suffix": "px",
+      "group": "Tipografia"
+    },
+    {
+      "key": "panelTitleSize",
+      "label": "Tamanho do título dos painéis",
+      "type": "range",
+      "min": 12,
+      "max": 36,
+      "step": 1,
+      "suffix": "px",
+      "group": "Tipografia"
+    },
+    {
+      "key": "verticalTextSize",
+      "label": "Tamanho do texto vertical",
+      "type": "range",
+      "min": 9,
+      "max": 22,
+      "step": 1,
+      "suffix": "px",
+      "group": "Tipografia"
+    },
+    {
+      "key": "mobileTextScale",
+      "label": "Escala dos textos no mobile",
+      "type": "range",
+      "min": 60,
+      "max": 110,
+      "step": 5,
+      "suffix": "%",
+      "group": "Tipografia"
+    },
+    {
+      "key": "image1",
+      "label": "Imagem 1",
+      "type": "image",
+      "group": "Painel 1"
+    },
+    {
+      "key": "title1",
+      "label": "Título 1",
+      "type": "text",
+      "group": "Painel 1"
+    },
+    {
+      "key": "vertical1",
+      "label": "Texto vertical 1",
+      "type": "text",
+      "group": "Painel 1"
+    },
+    {
+      "key": "image2",
+      "label": "Imagem 2",
+      "type": "image",
+      "group": "Painel 2"
+    },
+    {
+      "key": "title2",
+      "label": "Título 2",
+      "type": "text",
+      "group": "Painel 2"
+    },
+    {
+      "key": "vertical2",
+      "label": "Texto vertical 2",
+      "type": "text",
+      "group": "Painel 2"
+    },
+    {
+      "key": "image3",
+      "label": "Imagem 3",
+      "type": "image",
+      "group": "Painel 3"
+    },
+    {
+      "key": "title3",
+      "label": "Título 3",
+      "type": "text",
+      "group": "Painel 3"
+    },
+    {
+      "key": "vertical3",
+      "label": "Texto vertical 3",
+      "type": "text",
+      "group": "Painel 3"
+    },
+    {
+      "key": "image4",
+      "label": "Imagem 4",
+      "type": "image",
+      "group": "Painel 4"
+    },
+    {
+      "key": "title4",
+      "label": "Título 4",
+      "type": "text",
+      "group": "Painel 4"
+    },
+    {
+      "key": "vertical4",
+      "label": "Texto vertical 4",
+      "type": "text",
+      "group": "Painel 4"
+    },
+    {
+      "key": "image5",
+      "label": "Imagem 5",
+      "type": "image",
+      "group": "Painel 5"
+    },
+    {
+      "key": "title5",
+      "label": "Título 5",
+      "type": "text",
+      "group": "Painel 5"
+    },
+    {
+      "key": "vertical5",
+      "label": "Texto vertical 5",
+      "type": "text",
+      "group": "Painel 5"
+    }
+  ]
+}

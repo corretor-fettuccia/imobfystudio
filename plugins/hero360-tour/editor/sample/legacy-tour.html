@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><meta charset="UTF-8"><title>Tour 360°</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+<script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+<style>
+body{margin:0;overflow:hidden}#viewer{width:100vw;height:100vh}
+.streetview-arrow{width:48px;height:48px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='22' fill='white' stroke='%23333' stroke-width='2'/%3E%3Cpath fill='%234285F4' d='M24 8 L30 20 L26 20 L26 32 L22 32 L22 20 L18 20 Z'/%3E%3C/svg%3E");background-size:contain;background-repeat:no-repeat;cursor:pointer;filter:drop-shadow(0 2px 3px rgba(0,0,0,0.3))}
+.streetview-arrow:hover{transform:scale(1.1)}
+</style>
+</head>
+<body><div id="viewer"></div>
+<script>
+const tourData={"firstScene":"sala","scenes":{"sala":{"title":"Sala Principal","panorama":"https://raw.githubusercontent.com/corretor-fettuccia/360/refs/heads/main/MT-Laureana.Imagem-1.jpg","hotspots":[{"yaw":151,"pitch":-19,"text":"Ir para o Corredor","sceneId":"corredor","rotation":45}]},"corredor":{"title":"Corredor","panorama":"https://raw.githubusercontent.com/corretor-fettuccia/360/refs/heads/main/MT-Laureana.Imagem-10.jpg","hotspots":[{"yaw":-90,"pitch":5,"text":"Voltar à Sala","sceneId":"sala","rotation":225}]}}};
+let viewer=null;
+function loadScene(id){
+    const s=tourData.scenes[id];
+    if(!s)return;
+    const hs=(s.hotspots||[]).filter(h=>tourData.scenes[h.sceneId]).map(h=>({
+        pitch:h.pitch,yaw:h.yaw,text:h.text,
+        clickHandler:()=>loadScene(h.sceneId),
+        cssClass:"streetview-arrow"
+    }));
+    const cfg={type:"equirectangular",panorama:s.panorama,autoLoad:true,showZoomCtrl:true,showFullscreenCtrl:true,compass:true,hotSpots:hs,title:s.title||id};
+    if(viewer)viewer.destroy();
+    viewer=pannellum.viewer('viewer',cfg);
+    setTimeout(()=>{
+        s.hotspots.forEach((h,i)=>{
+            const rot=h.rotation||0;
+            const el=document.querySelectorAll('.streetview-arrow')[i];
+            if(el) el.style.transform=`rotate(${rot}deg) scale(1.05)`;
+        });
+    },500);
+}
+if(tourData.firstScene) loadScene(tourData.firstScene);
+</script>
+</body></html>

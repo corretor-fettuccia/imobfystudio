@@ -1,0 +1,25 @@
+.iis-figure{display:grid;width:min(100%,var(--iis-max-width,1120px));gap:.7rem;margin:0;padding-block:var(--iis-padding-y,24px);background:transparent}
+.iis-figure[data-align="left"]{margin-right:auto}
+.iis-figure[data-align="center"]{margin-inline:auto}
+.iis-figure[data-align="right"]{margin-left:auto}
+.iis-link{display:block;border-radius:var(--iis-radius);text-decoration:none}
+.iis-image{display:block;width:100%;height:auto;border-radius:var(--iis-radius);background:var(--iis-background,transparent);object-fit:var(--iis-object-fit,cover)}
+.iis-figure[data-fit="contain"]{--iis-object-fit:contain}
+.iis-figure[data-fit="cover"]{--iis-object-fit:cover}
+.iis-figure[data-ratio="16-9"] .iis-image{aspect-ratio:16/9}
+.iis-figure[data-ratio="4-3"] .iis-image{aspect-ratio:4/3}
+.iis-figure[data-ratio="1-1"] .iis-image{aspect-ratio:1/1}
+.iis-figure[data-ratio="4-5"] .iis-image{aspect-ratio:4/5}
+.iis-figure[data-ratio="9-16"] .iis-image{aspect-ratio:9/16}
+.iis-figure[data-shadow="soft"] .iis-image{box-shadow:0 12px 32px rgba(15,24,38,.14)}
+.iis-figure[data-shadow="raised"] .iis-image{box-shadow:0 22px 55px rgba(15,24,38,.22)}
+.iis-figure[data-shadow="cinematic"] .iis-image{box-shadow:0 32px 80px rgba(7,12,20,.34)}
+.iis-figure figcaption{color:var(--muted-color,var(--body-color));font:500 .78rem/1.55 var(--body);text-align:var(--iis-caption-align,left)}
+.iis-figure[data-caption-align="left"]{--iis-caption-align:left}
+.iis-figure[data-caption-align="center"]{--iis-caption-align:center}
+.iis-figure[data-caption-align="right"]{--iis-caption-align:right}
+.iis-link:focus-visible{outline:3px solid var(--primary);outline-offset:4px}
+.iis-figure.is-image-error{min-height:160px;place-items:center;padding:2rem;border:1px dashed currentColor;border-radius:var(--iis-radius);color:var(--muted-color,var(--body-color))}
+.iis-figure.is-image-error:before{content:'Não foi possível carregar a imagem.';font:600 .82rem/1.4 var(--body)}
+.iis-figure.is-image-error .iis-image,.iis-figure.is-image-error figcaption{display:none}
+@media(max-width:720px){.iis-figure{width:100%}}

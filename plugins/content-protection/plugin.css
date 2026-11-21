@@ -1,0 +1,18 @@
+html.imobify-content-protection,
+html.imobify-content-protection body,
+html.imobify-content-protection body * {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+html.imobify-content-protection input,
+html.imobify-content-protection textarea,
+html.imobify-content-protection select,
+html.imobify-content-protection [contenteditable="true"] {
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+  user-select: text !important;
+}

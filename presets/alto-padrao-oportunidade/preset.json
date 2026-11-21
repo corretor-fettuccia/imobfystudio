@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "alto-padrao-oportunidade",
+  "name": "Foco na oportunidade",
+  "description": "Modelo de alto padrão orientado à oportunidade e condição de aquisição.",
+  "category": "Alto padrão",
+  "baseBlueprint": "quick",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco na oportunidade",
+    "templateMeta": {
+      "presetId": "alto-padrao-oportunidade",
+      "category": "Alto padrão",
+      "subcategory": ""
+    }
+  }
+}

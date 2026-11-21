@@ -1,0 +1,93 @@
+/* Imobify immersive 360 v1.0.1 — isolated styles, responsive and accessible */
+section.plugin-play-section[data-plugin="parallax360-tour"],section.plugin-play-section:is(#__ims360_full_bleed_priority__,[data-plugin="parallax360-tour"]){width:100%!important;max-width:none!important;min-width:0;padding:0!important;margin-block:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;overflow:visible!important;content-visibility:visible!important;contain:none!important}
+[data-plugin="parallax360-tour"] .ims360{position:relative;left:50%;width:100vw;max-width:none;margin-left:-50vw;margin-right:0;padding:0;min-width:0;font-family:inherit;box-sizing:border-box}
+[data-plugin="parallax360-tour"] .ims360 *,[data-plugin="parallax360-tour"] .ims360 *::before,[data-plugin="parallax360-tour"] .ims360 *::after{box-sizing:border-box}
+[data-plugin="parallax360-tour"] .ims360-frame{position:relative;width:100%;max-width:none;height:var(--ims360-height,760px);min-height:440px;margin:0;overflow:hidden;isolation:isolate;border:0;border-radius:0;box-shadow:none;color:var(--ims360-text,#fff);background:#111821}
+[data-plugin="parallax360-tour"] .ims360-viewer{position:absolute;inset:0;width:100%;height:100%;touch-action:none}
+[data-plugin="parallax360-tour"] .ims360-vignette{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(90deg,rgba(3,8,15,.76),rgba(3,8,15,.33) 55%,transparent 86%),linear-gradient(0deg,rgba(1,6,12,.8),transparent 32%),linear-gradient(0deg,rgba(0,0,0,var(--ims360-opacity,.42)),rgba(0,0,0,var(--ims360-opacity,.42)))}
+[data-plugin="parallax360-tour"] .ims360-topline{position:absolute;z-index:5;left:clamp(20px,5.4vw,92px);right:clamp(20px,5.4vw,92px);top:clamp(20px,5vw,48px);display:flex;justify-content:space-between;align-items:center;gap:18px;pointer-events:none}
+[data-plugin="parallax360-tour"] .ims360-brand{font:700 11px/1.4 system-ui,sans-serif;letter-spacing:.22em;color:var(--ims360-text,#fff);opacity:.83}
+[data-plugin="parallax360-tour"] .ims360-scene-name{font:500 12px/1.4 system-ui,sans-serif;letter-spacing:.05em;text-align:right;opacity:.85;max-width:50%}
+[data-plugin="parallax360-tour"] .ims360-copy{position:absolute;left:clamp(20px,5.4vw,92px);right:clamp(20px,5.4vw,92px);bottom:clamp(104px,15vh,170px);z-index:5;max-width:min(720px,85%);pointer-events:none;text-shadow:0 1px 16px rgba(0,0,0,.19);transition:opacity .3s ease,transform .4s ease}
+[data-plugin="parallax360-tour"] .ims360-eyebrow{font-size:var(--ib-eyebrow-size,12px);font-weight:var(--ib-eyebrow-weight,750);font-family:var(--ib-eyebrow-font,inherit);letter-spacing:.17em;line-height:1.4;text-transform:uppercase;color:var(--ims360-accent,#dec49b);margin:0 0 16px}
+[data-plugin="parallax360-tour"] .ims360-headline{font-size:clamp(34px,5.5vw,84px);font-family:var(--ib-headline-font,inherit);font-weight:var(--ib-headline-weight,750);letter-spacing:-.045em;line-height:1.07;margin:0 0 20px;color:var(--ims360-text,#fff);overflow-wrap:break-word;text-wrap:balance}
+[data-plugin="parallax360-tour"] .ims360-subheadline{max-width:580px;font:400 clamp(15px,1.4vw,20px)/1.5 var(--ib-subheadline-font,inherit);margin:0 0 28px;opacity:.93;white-space:pre-wrap}
+[data-plugin="parallax360-tour"] .ims360-cta{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:48px;max-width:100%;padding:14px 24px;background:var(--ims360-accent,#dec49b);border-radius:6px;color:#12171c;text-decoration:none;text-shadow:none;font:700 14px/1.2 var(--ib-cta-font,inherit);transition:transform .2s ease,filter .2s ease;pointer-events:auto}
+[data-plugin="parallax360-tour"] .ims360-cta:hover{transform:translateY(-2px);filter:brightness(1.04)}
+[data-plugin="parallax360-tour"] .ims360-cta[hidden]{display:none}
+[data-plugin="parallax360-tour"] .ims360-banner{position:absolute;z-index:12;right:clamp(20px,5.4vw,92px);bottom:clamp(104px,10vh,144px);width:min(420px,calc(100% - 40px));max-height:min(72%,540px);overflow:auto;padding:clamp(22px,2.7vw,36px);color:#eaf0f2;border:1px solid rgba(255,255,255,.2);border-radius:14px;background:rgba(12,18,25,.9);box-shadow:0 18px 80px rgba(0,0,0,.44);backdrop-filter:blur(18px);animation:ims360Card .38s cubic-bezier(.22,1,.36,1) both}
+[data-plugin="parallax360-tour"] .ims360-banner[hidden]{display:none}
+@keyframes ims360Card{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+[data-plugin="parallax360-tour"] .ims360-banner-kicker{display:block;margin-bottom:12px;font:700 10px/1.4 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--ims360-accent,#dec49b)}
+[data-plugin="parallax360-tour"] .ims360-banner-title{font-size:clamp(24px,2.2vw,34px);font-weight:700;line-height:1.14;letter-spacing:-.035em;margin:0 26px 14px 0;color:#fff;overflow-wrap:anywhere}
+[data-plugin="parallax360-tour"] .ims360-banner-body{font-size:15px;line-height:1.58;opacity:.88;margin:0 0 16px;white-space:pre-wrap}
+[data-plugin="parallax360-tour"] .ims360-banner-close{position:absolute;top:12px;right:12px;width:42px;height:42px;background:rgba(255,255,255,.07);border:0;border-radius:50%;color:#fff;font:26px/1 system-ui;cursor:pointer}
+[data-plugin="parallax360-tour"] .ims360-banner-action,[data-plugin="parallax360-tour"] .ims360-banner-link{display:inline-flex;gap:10px;align-items:center;min-height:44px;padding:10px 14px;color:#15191c;background:var(--ims360-accent,#dec49b);text-decoration:none;border:0;border-radius:5px;font:700 13px/1.3 system-ui;cursor:pointer;margin:8px 7px 0 0}
+[data-plugin="parallax360-tour"] .ims360-banner-action[hidden],[data-plugin="parallax360-tour"] .ims360-banner-link[hidden]{display:none}
+[data-plugin="parallax360-tour"] .ims360-navigation{position:absolute;z-index:12;left:clamp(20px,5.4vw,92px);bottom:clamp(24px,3.5vw,52px);display:flex;gap:12px;align-items:center;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px;background:rgba(10,14,20,.65);backdrop-filter:blur(12px)}
+[data-plugin="parallax360-tour"] .ims360-navigation[hidden]{display:none}
+[data-plugin="parallax360-tour"] .ims360-navigation button{width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.12);border:0;color:white;font:20px system-ui;cursor:pointer}
+[data-plugin="parallax360-tour"] .ims360-navigation button:disabled{opacity:.3;cursor:not-allowed}
+[data-plugin="parallax360-tour"] .ims360-counter{font:700 12px/1.3 system-ui;letter-spacing:.05em;min-width:60px;text-align:center}
+[data-plugin="parallax360-tour"] .ims360-scene-toggle{position:absolute;z-index:11;right:clamp(20px,5.4vw,92px);bottom:clamp(26px,3.5vw,54px);min-height:46px;padding:8px 16px;color:white;font:600 13px system-ui;background:rgba(8,16,24,.77);border:1px solid rgba(255,255,255,.4);border-radius:999px;cursor:pointer}
+[data-plugin="parallax360-tour"] .ims360-scene-toggle[hidden]{display:none}
+[data-plugin="parallax360-tour"] .ims360-scene-list{position:absolute;z-index:12;right:clamp(20px,5.4vw,92px);bottom:clamp(80px,9vw,112px);width:min(275px,80%);max-height:50%;overflow:auto;border-radius:12px;padding:7px;border:1px solid rgba(255,255,255,.16);background:rgba(10,17,25,.93);backdrop-filter:blur(14px)}
+[data-plugin="parallax360-tour"] .ims360-scene-list[hidden]{display:none}
+[data-plugin="parallax360-tour"] .ims360-scene-list button{display:block;width:100%;text-align:left;padding:13px 16px;background:transparent;color:white;font:500 13px system-ui;border:0;border-radius:8px;cursor:pointer}
+[data-plugin="parallax360-tour"] .ims360-scene-list button:hover{background:rgba(255,255,255,.1)}
+[data-plugin="parallax360-tour"] .ims360-tip{position:absolute;z-index:6;bottom:clamp(33px,4vw,59px);right:clamp(20px,5.4vw,92px);color:white;opacity:.7;font:500 11px/1.5 system-ui;pointer-events:none}
+[data-plugin="parallax360-tour"] .ims360[data-mode="hero"] .ims360-tip{right:auto;left:clamp(20px,5.4vw,92px)}
+[data-plugin="parallax360-tour"] .ims360[data-mode="sequence"] .ims360-tip{bottom:clamp(40px,4vw,56px)}
+[data-plugin="parallax360-tour"] .ims360-error,[data-plugin="parallax360-tour"] .ims360-empty{position:absolute;z-index:15;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:30px;background:linear-gradient(140deg,#0d1b29,#2d3e49);color:white;text-align:center;font:15px/1.5 system-ui}
+[data-plugin="parallax360-tour"] .ims360-error[hidden],[data-plugin="parallax360-tour"] .ims360-empty[hidden]{display:none}
+[data-plugin="parallax360-tour"] .ims360-empty strong{font-size:22px}
+/* Pannellum positions hotspot container at (yaw,pitch); internal marker is centered. */
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell{cursor:pointer;width:0;height:0;outline:0;z-index:4}
+[data-plugin="parallax360-tour"] .ims360-hotspot-marker{position:absolute;left:-23px;top:-23px;width:46px;height:46px;display:grid;place-items:center;background:rgba(239,234,221,.95);border:2px solid rgba(255,255,255,.9);border-radius:50%;color:#17202a;box-shadow:0 7px 22px rgba(0,0,0,.3);font:500 27px/1 system-ui;transition:transform .2s ease,box-shadow .2s ease}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell:hover .ims360-hotspot-marker,[data-plugin="parallax360-tour"] .ims360-hotspot-shell:focus-visible .ims360-hotspot-marker{transform:scale(1.1);box-shadow:0 0 0 5px rgba(255,255,255,.16),0 10px 26px rgba(0,0,0,.35)}
+[data-plugin="parallax360-tour"] .ims360-hotspot-tooltip{position:absolute;top:30px;left:50%;transform:translateX(-50%);max-width:200px;min-width:max-content;padding:7px 12px;border-radius:999px;background:rgba(10,14,20,.83);color:#fff;font:600 12px system-ui;text-align:center;pointer-events:none}
+[data-plugin="parallax360-tour"] .ims360 :is(a,button,[role="button"]):focus-visible{outline:3px solid #ffdb92;outline-offset:3px}
+[data-plugin="parallax360-tour"] .ims360-frame.ims360-has-banner .ims360-copy{opacity:.36;transform:translateY(-6px)}
+@media(max-width:760px){
+  [data-plugin="parallax360-tour"] .ims360-frame{height:var(--ims360-height-mobile,630px);min-height:420px;border-radius:0}
+  [data-plugin="parallax360-tour"] .ims360-vignette{background:linear-gradient(0deg,rgba(1,5,10,.85),rgba(1,5,10,.2) 80%),linear-gradient(90deg,rgba(0,0,0,.22),transparent)}
+  [data-plugin="parallax360-tour"] .ims360-copy{bottom:112px;left:22px;right:22px;max-width:calc(100% - 44px)}
+  [data-plugin="parallax360-tour"] .ims360-headline{font-size:clamp(32px,8vw,52px);line-height:1.08}
+  [data-plugin="parallax360-tour"] .ims360-subheadline{font-size:16px;line-height:1.48;max-width:94%}
+  [data-plugin="parallax360-tour"] .ims360-topline{left:22px;right:22px;top:22px}
+  [data-plugin="parallax360-tour"] .ims360-banner{left:14px;right:14px;bottom:90px;width:auto;max-height:67%;padding:26px 22px}
+  [data-plugin="parallax360-tour"] .ims360-has-banner .ims360-copy{opacity:0;pointer-events:none}
+  [data-plugin="parallax360-tour"] .ims360-navigation{left:18px;bottom:22px}
+  [data-plugin="parallax360-tour"] .ims360-scene-toggle{right:18px;bottom:22px}
+  [data-plugin="parallax360-tour"] .ims360-tip{display:none}
+  [data-plugin="parallax360-tour"] .ims360[data-mode="hero"] .ims360-copy{bottom:90px}
+  [data-plugin="parallax360-tour"] .ims360[data-mode="sequence"] .ims360-copy{bottom:99px}
+}
+@media(prefers-reduced-motion:reduce){[data-plugin="parallax360-tour"] .ims360 *,[data-plugin="parallax360-tour"] .ims360 *::before{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
+
+
+[data-plugin="parallax360-tour"] .ims360-frame .pnlm-container,
+[data-plugin="parallax360-tour"] .ims360-frame .pnlm-ui,
+[data-plugin="parallax360-tour"] .ims360-frame .pnlm-render-container,
+[data-plugin="parallax360-tour"] .ims360-frame canvas,
+[data-plugin="parallax360-tour"] .ims360-frame .pnlm-panorama-info,
+[data-plugin="parallax360-tour"] .ims360-frame .pnlm-dragfix{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important}
+[data-plugin="parallax360-tour"] .ims360-frame .pnlm-container{background:#05080d!important}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell{width:0;height:0;cursor:pointer;touch-action:manipulation;user-select:none;overflow:visible}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell:focus-visible{outline:none}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-scale{position:absolute;left:-26px;top:-26px;width:52px;height:52px;transition:transform .14s ease;will-change:translate,transform}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell:hover .hotspot-scale,[data-plugin="parallax360-tour"] .ims360-hotspot-shell:focus-visible .hotspot-scale{transform:scale(1.08)}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-perspective{position:relative;width:52px;height:52px;display:grid;place-items:center;transform-origin:50% 78%;will-change:transform}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-rotate{width:52px;height:52px;display:grid;place-items:center}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-icon,[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-icon svg{width:52px;height:52px;overflow:visible}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-icon svg{filter:drop-shadow(0 4px 5px rgba(0,0,0,.38))}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hotspot-pulse{position:absolute;inset:4px;border:2px solid rgba(255,255,255,.82);border-radius:50%;opacity:0;animation:ims360Ripple 1.8s ease-out infinite;pointer-events:none}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hs-arrow{fill:#fff;stroke:#20252b;stroke-width:3.2;stroke-linejoin:round;paint-order:stroke fill}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hs-highlight{fill:rgba(255,255,255,.45)}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hs-shadow{fill:rgba(0,0,0,.25)}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hs-disc{fill:rgba(255,255,255,.96);stroke:#27313d;stroke-width:2}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hs-stroke{fill:none;stroke:#20252b;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .hs-fill{fill:#20252b}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell .ims360-hotspot-tooltip{position:absolute;left:50%;bottom:-12px;transform:translate(-50%,100%);padding:6px 10px;border-radius:999px;background:rgba(10,14,22,.82);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(10px);box-shadow:0 12px 24px rgba(0,0,0,.24);font:600 12px/1.1 system-ui,sans-serif;color:#f6f8fa;letter-spacing:.01em;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+[data-plugin="parallax360-tour"] .ims360-hotspot-shell:hover .ims360-hotspot-tooltip,[data-plugin="parallax360-tour"] .ims360-hotspot-shell:focus-visible .ims360-hotspot-tooltip{opacity:1;transform:translate(-50%,calc(100% + 2px))}
+@keyframes ims360Ripple{0%{transform:scale(.62);opacity:.72}70%{opacity:.16}100%{transform:scale(1.65);opacity:0}}

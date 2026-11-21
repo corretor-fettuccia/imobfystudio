@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 3,
+  "id": "content-protection",
+  "name": "Proteção de conteúdo",
+  "version": "1.0.0",
+  "type": "behavior",
+  "category": "Segurança",
+  "icon": "🛡",
+  "description": "Bloqueia seleção, cópia, botão direito e atalhos comuns das ferramentas de desenvolvimento.",
+  "entry": {
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {},
+  "fields": []
+}

@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 3,
+  "id": "payment-investment-glass-pro",
+  "name": "Tabela Investimento + Glass CTA",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "▦",
+  "description": "Tabela premium de condições de pagamento com CTA GlassButton do projeto The Garden New Edition.",
+  "origin": "Convertido do trecho Payment Section do projeto TheGardenNewEdition. O CSS e JS originais do GlassButton são incluídos no pacote.",
+  "entry": {
+    "template": "template.html",
+    "styles": [
+      "css/glassButton.css",
+      "plugin.css"
+    ],
+    "scripts": [
+      "js/glassButton.original.js",
+      "plugin.js"
+    ]
+  },
+  "defaults": {
+    "title": "Condições de Pagamento",
+    "lead": "Mais do que planos de pagamento, oferecemos soluções de investimento.\nEscolha a configuração que melhor se alinha ao seu portfólio",
+    "premiumText": "Foco em rentabilidade\nEquilíbrio entre entrada facilitada e parcelas mensais.",
+    "headerType": "Tipo",
+    "headerFlow": "Fluxo",
+    "headerTerm": "Prazo",
+    "headerConditions": "Condições",
+    "row1Enabled": true,
+    "row1Type": "À vista",
+    "row1Flow": "-",
+    "row1Term": "1x",
+    "row1Conditions": "10% Off",
+    "row2Enabled": true,
+    "row2Type": "-",
+    "row2Flow": "Ato 3x + mensal",
+    "row2Term": "27x",
+    "row2Conditions": "Fluxo durante obra",
+    "row3Enabled": true,
+    "row3Type": "Ato 15%",
+    "row3Flow": "Ato 3x + mensal",
+    "row3Term": "48x",
+    "row3Conditions": "Fluxo estendido",
+    "row4Enabled": true,
+    "row4Type": "Ato 20%",
+    "row4Flow": "Ato + mensal",
+    "row4Term": "60x",
+    "row4Conditions": "Maior prazo",
+    "ctaText": "Entrar na pré-seleção",
+    "ctaLink": "https://wa.me/5551998111078?text=Gostaria%20de%20saber%20mais%20sobre%20o%20The%20Garden%20-%20New%20Edition%20quero%20entrar%20na%20selecao%20de%20unidades.",
+    "ctaIcon": "fas fa-key",
+    "ctaNewTab": true,
+    "accentColor": "#16a34a",
+    "showPremiumText": true,
+    "animateOnScroll": true
+  },
+  "fields": [
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "lead",
+      "label": "Texto principal",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "showPremiumText",
+      "label": "Exibir texto premium",
+      "type": "toggle",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "premiumText",
+      "label": "Texto premium",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "headerType",
+      "label": "Cabeçalho 1",
+      "type": "text",
+      "group": "Tabela"
+    },
+    {
+      "key": "headerFlow",
+      "label": "Cabeçalho 2",
+      "type": "text",
+      "group": "Tabela"
+    },
+    {
+      "key": "headerTerm",
+      "label": "Cabeçalho 3",
+      "type": "text",
+      "group": "Tabela"
+    },
+    {
+      "key": "headerConditions",
+      "label": "Cabeçalho 4",
+      "type": "text",
+      "group": "Tabela"
+    },
+    {
+      "key": "row1Enabled",
+      "label": "Exibir linha 1",
+      "type": "toggle",
+      "group": "Linha 1"
+    },
+    {
+      "key": "row1Type",
+      "label": "Tipo",
+      "type": "text",
+      "group": "Linha 1"
+    },
+    {
+      "key": "row1Flow",
+      "label": "Fluxo",
+      "type": "text",
+      "group": "Linha 1"
+    },
+    {
+      "key": "row1Term",
+      "label": "Prazo",
+      "type": "text",
+      "group": "Linha 1"
+    },
+    {
+      "key": "row1Conditions",
+      "label": "Condições",
+      "type": "text",
+      "group": "Linha 1"
+    },
+    {
+      "key": "row2Enabled",
+      "label": "Exibir linha 2",
+      "type": "toggle",
+      "group": "Linha 2"
+    },
+    {
+      "key": "row2Type",
+      "label": "Tipo",
+      "type": "text",
+      "group": "Linha 2"
+    },
+    {
+      "key": "row2Flow",
+      "label": "Fluxo",
+      "type": "text",
+      "group": "Linha 2"
+    },
+    {
+      "key": "row2Term",
+      "label": "Prazo",
+      "type": "text",
+      "group": "Linha 2"
+    },
+    {
+      "key": "row2Conditions",
+      "label": "Condições",
+      "type": "text",
+      "group": "Linha 2"
+    },
+    {
+      "key": "row3Enabled",
+      "label": "Exibir linha 3",
+      "type": "toggle",
+      "group": "Linha 3"
+    },
+    {
+      "key": "row3Type",
+      "label": "Tipo",
+      "type": "text",
+      "group": "Linha 3"
+    },
+    {
+      "key": "row3Flow",
+      "label": "Fluxo",
+      "type": "text",
+      "group": "Linha 3"
+    },
+    {
+      "key": "row3Term",
+      "label": "Prazo",
+      "type": "text",
+      "group": "Linha 3"
+    },
+    {
+      "key": "row3Conditions",
+      "label": "Condições",
+      "type": "text",
+      "group": "Linha 3"
+    },
+    {
+      "key": "row4Enabled",
+      "label": "Exibir linha 4",
+      "type": "toggle",
+      "group": "Linha 4"
+    },
+    {
+      "key": "row4Type",
+      "label": "Tipo",
+      "type": "text",
+      "group": "Linha 4"
+    },
+    {
+      "key": "row4Flow",
+      "label": "Fluxo",
+      "type": "text",
+      "group": "Linha 4"
+    },
+    {
+      "key": "row4Term",
+      "label": "Prazo",
+      "type": "text",
+      "group": "Linha 4"
+    },
+    {
+      "key": "row4Conditions",
+      "label": "Condições",
+      "type": "text",
+      "group": "Linha 4"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaLink",
+      "label": "Link do CTA",
+      "type": "url",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaIcon",
+      "label": "Ícone Font Awesome",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaNewTab",
+      "label": "Abrir em nova aba",
+      "type": "toggle",
+      "group": "CTA"
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Visual"
+    },
+    {
+      "key": "animateOnScroll",
+      "label": "Animar ao entrar na tela",
+      "type": "toggle",
+      "group": "Visual"
+    }
+  ]
+}

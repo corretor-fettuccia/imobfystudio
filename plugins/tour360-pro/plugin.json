@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 3,
+  "id": "tour360-pro",
+  "name": "Tour 360",
+  "version": "3.2.6",
+  "type": "section",
+  "category": "Experiência",
+  "icon": "◉",
+  "description": "Tour virtual 360° como section, com edição completa em modal no ImobStudio, hotspots, visão de chegada, branding, mobile e navegação por toque.",
+  "composition": {
+    "role": "section"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "tourConfig": "{\"format\":\"ImobStudioTour360\",\"version\":7,\"project\":{\"id\":\"tour360-section\",\"name\":\"Tour 360\",\"createdAt\":\"\",\"updatedAt\":\"\"},\"settings\":{\"firstSceneId\":null,\"preloadAdjacent\":true,\"showCompass\":false,\"showZoomControls\":true,\"showFullscreenControl\":true,\"autoLoad\":true,\"defaultHfov\":100,\"minHfov\":50,\"maxHfov\":120,\"authoringGrid\":false},\"branding\":{\"enabled\":false,\"banner\":\"\",\"bannerName\":\"\",\"position\":\"bottom-right\",\"floatingEnabled\":false,\"floatingText\":\"\",\"floatingLink\":\"\"},\"sceneOrder\":[],\"scenes\":{}}",
+    "heightDesktop": 640,
+    "heightMobile": 520,
+    "radius": 18,
+    "maxWidth": 1120,
+    "alignment": "center",
+    "paddingY": 48,
+    "shadowStyle": "soft",
+    "backgroundColor": "#050608"
+  },
+  "fields": [
+    {
+      "key": "heightDesktop",
+      "label": "Altura do frame no desktop",
+      "type": "range",
+      "min": 420,
+      "max": 1000,
+      "step": 20,
+      "group": "Exibição"
+    },
+    {
+      "key": "heightMobile",
+      "label": "Altura do frame no mobile",
+      "type": "range",
+      "min": 360,
+      "max": 900,
+      "step": 20,
+      "group": "Exibição"
+    },
+    {
+      "key": "maxWidth",
+      "label": "Largura máxima (px)",
+      "type": "range",
+      "min": 320,
+      "max": 1600,
+      "step": 20,
+      "group": "Aparência"
+    },
+    {
+      "key": "alignment",
+      "label": "Alinhamento do frame",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Aparência"
+    },
+    {
+      "key": "paddingY",
+      "label": "Respiro vertical (px)",
+      "type": "range",
+      "min": 0,
+      "max": 160,
+      "step": 4,
+      "group": "Aparência"
+    },
+    {
+      "key": "radius",
+      "label": "Arredondamento (px)",
+      "type": "range",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "group": "Aparência"
+    },
+    {
+      "key": "shadowStyle",
+      "label": "Sombra do frame",
+      "type": "select",
+      "options": [
+        {
+          "label": "Sem sombra",
+          "value": "none"
+        },
+        {
+          "label": "Suave",
+          "value": "soft"
+        },
+        {
+          "label": "Elevada",
+          "value": "raised"
+        },
+        {
+          "label": "Cinematográfica",
+          "value": "cinematic"
+        }
+      ],
+      "group": "Aparência"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Cor de fundo do frame",
+      "type": "color",
+      "group": "Aparência"
+    }
+  ],
+  "editor": {
+    "mode": "modal",
+    "label": "Abrir Tour 360 Studio",
+    "title": "Tour 360 Studio",
+    "description": "Cenas, hotspots, perspectiva, visão de chegada, zoom, bússola e branding.",
+    "template": "editor/index.html",
+    "style": "editor/styles.css",
+    "script": "editor/app.js",
+    "field": "tourConfig"
+  }
+}

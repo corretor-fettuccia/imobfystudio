@@ -1,0 +1,84 @@
+<div class="ppp-root" data-ppp data-use-global-theme="{{useGlobalTheme}}" data-show-progress="{{showProgress}}" data-cta-mode="{{ctaMode}}" data-form-target="{{formTarget}}" data-whatsapp-phone="{{whatsappPhone}}" data-whatsapp-message="{{whatsappMessage}}" data-analytics-prefix="{{analyticsPrefix}}" style="--ppp-local-primary:{{primaryColor}};--ppp-local-surface:{{surfaceColor}};--ppp-local-text:{{textColor}};--ppp-local-card:{{cardColor}}">
+  <div class="ppp-shell">
+    <header class="ppp-intro">
+      <p class="ppp-eyebrow">{{eyebrow}}</p>
+      <h2>{{title}}</h2>
+      <p>{{intro}}</p>
+    </header>
+
+    <div class="ppp-progress" data-ppp-progress aria-label="Progresso do diagnóstico">
+      <div class="ppp-progress-line"><span data-ppp-progress-fill></span></div>
+      <ol><li class="is-active"><b>1</b><span>Barreira</span></li><li><b>2</b><span>Reenquadrar</span></li><li><b>3</b><span>Cenário</span></li><li><b>4</b><span>Desejo</span></li><li><b>5</b><span>Resultado</span></li></ol>
+    </div>
+
+    <div class="ppp-card" data-ppp-card aria-live="polite">
+      <section class="ppp-step is-active" data-step="1">
+        <div class="ppp-step-head"><span class="ppp-step-kicker">1 · ESCOLHA SUA BARREIRA</span><h3>{{barrierQuestion}}</h3></div>
+        <div class="ppp-choice-list ppp-barriers">
+          <button type="button" data-barrier="1"><span class="ppp-choice-icon">{{barrier1Icon|icon}}</span><span>{{barrier1Label}}</span></button>
+          <button type="button" data-barrier="2"><span class="ppp-choice-icon">{{barrier2Icon|icon}}</span><span>{{barrier2Label}}</span></button>
+          <button type="button" data-barrier="3"><span class="ppp-choice-icon">{{barrier3Icon|icon}}</span><span>{{barrier3Label}}</span></button>
+          <button type="button" data-barrier="4"><span class="ppp-choice-icon">{{barrier4Icon|icon}}</span><span>{{barrier4Label}}</span></button>
+          <button type="button" data-barrier="5"><span class="ppp-choice-icon">{{barrier5Icon|icon}}</span><span>{{barrier5Label}}</span></button>
+          <button type="button" data-barrier="6"><span class="ppp-choice-icon">{{barrier6Icon|icon}}</span><span>{{barrier6Label}}</span></button>
+        </div>
+        <p class="ppp-privacy"><i class="fa-solid fa-lock" aria-hidden="true"></i>{{privacyText}}</p>
+      </section>
+
+      <section class="ppp-step" data-step="2">
+        <button type="button" class="ppp-back" data-back><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+        <div class="ppp-reframe-icon"><i class="fa-regular fa-lightbulb"></i></div>
+        <div class="ppp-step-head ppp-centered"><span class="ppp-step-kicker">2 · REENQUADRAMENTO</span><h3>{{reframeTitle}}</h3><p data-reframe-text></p></div>
+        <button type="button" class="ppp-primary" data-next-scenario data-design-role="cta">{{reframeContinue}} <i class="fa-solid fa-arrow-right"></i></button>
+      </section>
+
+      <section class="ppp-step" data-step="3">
+        <button type="button" class="ppp-back" data-back><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+        <div class="ppp-step-head"><span class="ppp-step-kicker">3 · {{scenarioTitle}}</span><h3 data-scenario-question></h3><p>{{scenarioIntro}}</p></div>
+        <div class="ppp-choice-list" data-scenario-options></div>
+        <div class="ppp-subprogress"><span data-scenario-position>1 de 4</span><div><i data-scenario-fill></i></div></div>
+      </section>
+
+      <section class="ppp-step" data-step="4">
+        <button type="button" class="ppp-back" data-back><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+        <div class="ppp-step-head"><span class="ppp-step-kicker">4 · SEU DESEJO</span><h3>{{desireQuestion}}</h3><p>{{desireIntro}}</p></div>
+        <div class="ppp-desire-grid">
+          <button type="button" data-desire="1"><span>{{desire1Icon|icon}}</span><b>{{desire1Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+          <button type="button" data-desire="2"><span>{{desire2Icon|icon}}</span><b>{{desire2Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+          <button type="button" data-desire="3"><span>{{desire3Icon|icon}}</span><b>{{desire3Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+          <button type="button" data-desire="4"><span>{{desire4Icon|icon}}</span><b>{{desire4Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+          <button type="button" data-desire="5"><span>{{desire5Icon|icon}}</span><b>{{desire5Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+          <button type="button" data-desire="6"><span>{{desire6Icon|icon}}</span><b>{{desire6Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+          <button type="button" data-desire="7" class="ppp-wide"><span>{{desire7Icon|icon}}</span><b>{{desire7Label}}</b><i class="fa-solid fa-circle-check ppp-selected-mark"></i></button>
+        </div>
+        <button type="button" class="ppp-primary" data-show-result data-design-role="cta">Continuar <i class="fa-solid fa-arrow-right"></i></button>
+      </section>
+
+      <section class="ppp-step" data-step="5">
+        <button type="button" class="ppp-back" data-back><i class="fa-solid fa-arrow-left"></i> Voltar</button>
+        <div class="ppp-result-icon">{{resultIcon|icon}}</div>
+        <div class="ppp-step-head ppp-centered"><span class="ppp-step-kicker">5 · RESULTADO</span><h3>{{resultTitle}}</h3><p>{{resultIntro}}</p><p class="ppp-objection-result" data-objection-result></p></div>
+        <div class="ppp-factors" data-result-factors="{{resultFactors}}"></div>
+        <p class="ppp-result-note">{{resultNote}}</p>
+        <div class="ppp-result-summary" data-result-summary></div>
+        <div class="ppp-actions">
+          <button type="button" class="ppp-primary" data-submit-analysis data-design-role="cta">{{ctaText}} <i class="fa-solid fa-arrow-right"></i></button>
+          <button type="button" class="ppp-whatsapp" data-submit-whatsapp data-design-role="cta"><i class="fa-brands fa-whatsapp"></i> {{whatsappText}}</button>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="ppp-config" hidden
+    data-barrier-1-label="{{barrier1Label}}" data-barrier-1-reframe="{{barrier1Reframe}}" data-barrier-1-result="{{barrier1Result}}"
+    data-barrier-2-label="{{barrier2Label}}" data-barrier-2-reframe="{{barrier2Reframe}}" data-barrier-2-result="{{barrier2Result}}"
+    data-barrier-3-label="{{barrier3Label}}" data-barrier-3-reframe="{{barrier3Reframe}}" data-barrier-3-result="{{barrier3Result}}"
+    data-barrier-4-label="{{barrier4Label}}" data-barrier-4-reframe="{{barrier4Reframe}}" data-barrier-4-result="{{barrier4Result}}"
+    data-barrier-5-label="{{barrier5Label}}" data-barrier-5-reframe="{{barrier5Reframe}}" data-barrier-5-result="{{barrier5Result}}"
+    data-barrier-6-label="{{barrier6Label}}" data-barrier-6-reframe="{{barrier6Reframe}}" data-barrier-6-result="{{barrier6Result}}"
+    data-income-question="{{incomeQuestion}}" data-income-options="{{incomeOptions}}"
+    data-fgts-question="{{fgtsQuestion}}" data-fgts-options="{{fgtsOptions}}"
+    data-entry-question="{{entryQuestion}}" data-entry-options="{{entryOptions}}"
+    data-land-question="{{landQuestion}}" data-land-options="{{landOptions}}"
+    data-desires="{{desire1Label}}|{{desire2Label}}|{{desire3Label}}|{{desire4Label}}|{{desire5Label}}|{{desire6Label}}|{{desire7Label}}"></div>
+</div>

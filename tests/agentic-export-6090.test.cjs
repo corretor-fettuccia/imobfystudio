@@ -1,0 +1,26 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const JSZip=require(path.join(root,'vendor/jszip.min.js'));global.JSZip=JSZip;
+global.window={JSZip,indexedDB:null,location:{href:'https://localhost/'}};
+global.fetch=async url=>{const f=path.resolve(root,String(url).split(/[?#]/)[0]);if(!f.startsWith(root+path.sep)||!fs.existsSync(f))return {ok:false,status:404};const b=fs.readFileSync(f);return {ok:true,status:200,headers:{get:()=>null},text:async()=>b.toString(),json:async()=>JSON.parse(b),arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)}};
+const load=file=>vm.runInThisContext(fs.readFileSync(path.join(root,file),'utf8'),{filename:file});
+(async()=>{
+for(const p of ['assets/js/util.js','assets/js/catalog.js','assets/js/plugin-loader.js'])load(p);
+await window.ImobifyPluginLoader.ready;
+for(const p of ['assets/js/typography-system.js','assets/js/renderer.js','assets/js/compiler.js'])load(p);
+const state=window.ImobifyCatalog.defaultState();
+state.seo.canonical='https://empreendimento.example/';
+state.seo.sitemapEnabled='no';
+state.sections=[window.ImobifyCatalog.createSection('hero')];
+const output=await window.ImobifyCompiler.compile(state);
+const zip=await JSZip.loadAsync(await output.blob.arrayBuffer());
+const html=await zip.file('index.html').async('text');
+assert.match(html,/assets\/js\/agentic\.js/);
+const runtime=await zip.file('assets/js/agentic.js').async('text');
+assert.match(runtime,/registerTool/);assert.match(runtime,/toolname/);
+const catalog=JSON.parse(await zip.file('.well-known/ai-catalog.json').async('text'));
+assert.equal(catalog.specVersion,'1.0');assert.deepEqual(catalog.entries,[]);
+assert.match(await zip.file('llms.txt').async('text'),/https:\/\/empreendimento.example\//);
+console.log('Agentic export 6.0.90: HTML, runtime, catalog and llms.txt OK');
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,0 +1,59 @@
+<div class="smart-plant"
+  data-plants="{{plants}}"
+  data-empreendimento="{{empreendimento}}"
+  data-card-button-text="{{cardButtonText}}"
+  data-action-mode="{{actionMode}}"
+  data-action-label-whats="{{actionLabelWhats}}"
+  data-action-label-form="{{actionLabelForm}}"
+  data-whats-number="{{whatsNumber}}"
+  data-whats-message="{{whatsMessage}}"
+  data-form-anchor="{{formAnchor}}"
+  data-form-destination="{{formDestination}}"
+  data-form-context-message="{{formContextMessage}}"
+  data-magnifier-start-hidden="{{magnifierStartHidden}}"
+  data-magnifier-touch-toggle="{{magnifierTouchToggle}}"
+  data-magnifier-click-position="{{magnifierClickPosition}}"
+  data-magnifier-drag-position="{{magnifierDragPosition}}"
+  data-magnifier-follow-mouse="{{magnifierFollowMouse}}"
+  data-magnifier-zoom="{{magnifierZoom}}"
+  data-local-theme="{{localTheme}}"
+  style="--sp-columns:{{columns}};--sp-image-height:{{imageHeight}}px;--sp-local-accent:{{localAccent}};--sp-local-section:{{localSectionBg}};--sp-local-card:{{localCardBg}};--sp-local-modal:{{localModalBg}};--sp-local-text:{{localText}};--sp-local-muted:{{localMuted}};">
+  <div class="smart-plant__container">
+    <header class="smart-plant__head">
+      <h2 data-design-role="title">{{sectionTitle}}</h2>
+      {{#if sectionSubtitle}}<p class="smart-plant__subtitle" data-design-role="subtitle">{{sectionSubtitle}}</p>{{/if}}
+    </header>
+    <div class="smart-plant__grid" data-smart-plant-grid></div>
+  </div>
+  <div class="smart-plant__modal" data-smart-plant-modal aria-hidden="true">
+    <div class="smart-plant__backdrop" data-smart-plant-close></div>
+    <article class="smart-plant__dialog" role="dialog" aria-modal="true" aria-labelledby="smart-plant-modal-title">
+      <button class="smart-plant__close" type="button" data-smart-plant-close aria-label="Fechar">×</button>
+      <div class="smart-plant__modal-image-wrap" data-smart-plant-magnifier-stage tabindex="0" aria-label="Planta detalhada. Pressione e segure para ampliar">
+        <img class="smart-plant__modal-image" data-smart-plant-modal-image draggable="false" alt="">
+        <button class="smart-plant__magnifier-settings-toggle" type="button" data-smart-plant-magnifier-settings-toggle aria-label="Configurar ampliação" title="Configurar ampliação">＋</button>
+        <div class="smart-plant__magnifier-settings" data-smart-plant-magnifier-settings aria-hidden="true">
+          <span>Ampliação</span>
+          <button type="button" data-smart-plant-zoom="2">2×</button>
+          <button type="button" data-smart-plant-zoom="3">3×</button>
+        </div>
+        <span class="smart-plant__magnifier-hint" data-smart-plant-magnifier-hint>Pressione e segure a planta para ampliar</span>
+        <div class="smart-plant__magnifier" data-smart-plant-magnifier role="img" aria-label="Lupa" title="Lupa de ampliação"></div>
+      </div>
+      <div class="smart-plant__modal-content">
+        <h3 id="smart-plant-modal-title" data-smart-plant-modal-title></h3>
+        <section class="smart-plant__detail-block">
+          <h4>▣ Detalhes da unidade</h4>
+          <div class="smart-plant__badges" data-smart-plant-modal-badges></div>
+        </section>
+        <section class="smart-plant__detail-block smart-plant__position-block" data-smart-plant-position-block>
+          <h4>⌖ Posição na torre</h4>
+          <img class="smart-plant__position-image" data-smart-plant-position-image alt="Posição da planta na torre">
+          <p data-smart-plant-position></p>
+        </section>
+        <button class="smart-plant__action" type="button" data-smart-plant-action data-design-role="cta"></button>
+        <p class="smart-plant__action-status" data-smart-plant-action-status role="status" aria-live="polite"></p>
+      </div>
+    </article>
+  </div>
+</div>

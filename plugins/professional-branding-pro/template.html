@@ -1,0 +1,106 @@
+<div class="bbp" data-bbp-root
+  data-layout="{{layout}}"
+  data-autoplay="{{autoplay}}"
+  data-autoplay-ms="{{autoplayMs}}"
+  data-pause-hover="{{pauseOnHover}}"
+  data-transition-ms="{{transitionMs}}"
+  data-transition-effect="{{transitionEffect}}"
+  data-typewriter="{{typewriterEnabled}}"
+  data-typing-speed="{{typingSpeed}}"
+  data-identity="{{identityLine}}"
+  data-reveal="{{revealOnScroll}}"
+  data-reveal-distance="{{revealDistance}}"
+  data-cta-new-tab="{{ctaNewTab}}"
+  data-bg-fit="{{backgroundFit}}"
+  data-project-profile="{{useProjectProfile}}"
+  style="--bbp-local-accent:{{accentColor}};--bbp-local-heading:{{headingColor}};--bbp-local-text:{{textColor}};--bbp-local-muted:{{mutedColor}};--bbp-local-bg:{{backgroundColor}};--bbp-overlay:{{overlayColor}};--bbp-overlay-opacity:{{overlayOpacity}}%;--bbp-local-card:{{cardColor}};--bbp-card-opacity:{{cardOpacity}}%;--bbp-border-opacity:{{cardBorderOpacity}}%;--bbp-blur:{{cardBlur}}px;--bbp-local-radius:{{cardRadius}}px;--bbp-local-container:{{contentWidth}}px;--bbp-min-height:{{sectionMinHeight}}px;--bbp-local-pad-top:{{paddingTop}}px;--bbp-local-pad-bottom:{{paddingBottom}}px;--bbp-local-gap:{{columnGap}}px;--bbp-local-headline-size:{{headlineSize}}px;--bbp-local-quote-size:{{quoteSize}}px;--bbp-bg-x:{{backgroundPositionX}}%;--bbp-bg-y:{{backgroundPositionY}}%;--bbp-bg-scale:{{backgroundZoom}};--bbp-bg-mobile-x:{{backgroundMobilePositionX}}%;--bbp-bg-mobile-y:{{backgroundMobilePositionY}}%;--bbp-bg-mobile-scale:{{backgroundMobileZoom}};">
+
+  <div class="bbp__media" aria-hidden="true">
+    {{#if backgroundImage}}<img class="bbp__background" src="{{backgroundImage}}" alt="" loading="lazy" decoding="async">{{/if}}
+    <div class="bbp__overlay"></div>
+    {{#if grain}}<div class="bbp__grain"></div>{{/if}}
+  </div>
+
+  <div class="bbp__quote-mark bbp__quote-mark--open" aria-hidden="true">“</div>
+  <div class="bbp__quote-mark bbp__quote-mark--close" aria-hidden="true">”</div>
+
+  <div class="bbp__container">
+    <div class="bbp__grid">
+      <div class="bbp__manifesto">
+        {{#if showTopNavigation}}
+        <div class="bbp__nav bbp__nav--top">
+          <button class="bbp__arrow bbp__prev" type="button" aria-label="Manifesto anterior">←</button>
+          <span class="bbp__nav-label">{{navigationLabel}}</span>
+          <button class="bbp__arrow bbp__next" type="button" aria-label="Próximo manifesto">→</button>
+        </div>
+        {{/if}}
+
+        <div class="bbp__slider" role="region" aria-label="Manifesto profissional" aria-roledescription="carousel">
+          <div class="bbp__viewport">
+            <div class="bbp__track">
+              {{#if quote1Enabled}}
+              <article class="bbp__slide" data-bbp-slide>
+                <div class="bbp__card">
+                  <p class="bbp__quote">{{quote1|br}}</p>
+                  <div class="bbp__author">{{quote1Author}}</div>
+                </div>
+              </article>
+              {{/if}}
+              {{#if quote2Enabled}}
+              <article class="bbp__slide" data-bbp-slide>
+                <div class="bbp__card">
+                  <p class="bbp__quote">{{quote2|br}}</p>
+                  <div class="bbp__author">{{quote2Author}}</div>
+                </div>
+              </article>
+              {{/if}}
+              {{#if quote3Enabled}}
+              <article class="bbp__slide" data-bbp-slide>
+                <div class="bbp__card">
+                  <p class="bbp__quote">{{quote3|br}}</p>
+                  <div class="bbp__author">{{quote3Author}}</div>
+                </div>
+              </article>
+              {{/if}}
+              {{#if quote4Enabled}}
+              <article class="bbp__slide" data-bbp-slide>
+                <div class="bbp__card">
+                  <p class="bbp__quote">{{quote4|br}}</p>
+                  <div class="bbp__author">{{quote4Author}}</div>
+                </div>
+              </article>
+              {{/if}}
+            </div>
+          </div>
+
+          <div class="bbp__footer">
+            <div class="bbp__footer-left">
+              {{#if showBottomNavigation}}
+              <div class="bbp__nav bbp__nav--bottom">
+                <button class="bbp__circle bbp__prev" type="button" aria-label="Manifesto anterior">←</button>
+                <button class="bbp__circle bbp__next" type="button" aria-label="Próximo manifesto">→</button>
+              </div>
+              {{/if}}
+              {{#if showDots}}<div class="bbp__dots" aria-label="Selecionar manifesto"></div>{{/if}}
+            </div>
+            {{#if ctaEnabled}}<a class="bbp__cta" href="{{ctaUrl}}">{{ctaText}} <span aria-hidden="true">→</span></a>{{/if}}
+          </div>
+        </div>
+      </div>
+
+      <header class="bbp__brand">
+        <div class="bbp__kicker"><span></span>{{kicker}}</div>
+        <h2 class="bbp__headline">
+          <small>{{introWord}}</small>
+          <span>{{headline|br}}</span>
+          <em>{{headlineAccent|br}}</em>
+        </h2>
+        <div class="bbp__identity" aria-label="{{identityLine}}">
+          <span class="bbp__identity-line" aria-hidden="true"></span>
+          <span class="bbp__typing" data-bbp-typing>{{identityLine}}</span>
+        </div>
+        {{#if showSpecialty}}<p class="bbp__specialty">{{specialty|br}}</p>{{/if}}
+      </header>
+    </div>
+  </div>
+</div>

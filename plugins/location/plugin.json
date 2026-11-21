@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 3,
+  "id": "location",
+  "name": "Localização",
+  "version": "1.1.0",
+  "type": "section",
+  "category": "Prova",
+  "icon": "⌖",
+  "description": "Google Maps, endereço e proximidades em um único campo multilinha.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "TUDO AO SEU REDOR",
+    "title": "No centro das suas escolhas.",
+    "address": "Av. Getúlio Vargas, 2450 — Canoas/RS",
+    "places": "2 min | ParkShopping Canoas\n4 min | Parque Getúlio Vargas\n6 min | Centro de Canoas\n12 min | Porto Alegre",
+    "mapLink": "https://maps.google.com"
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "address",
+      "label": "Endereço completo",
+      "type": "text",
+      "group": "Localização"
+    },
+    {
+      "key": "mapLink",
+      "label": "URL ou iframe do Google Maps",
+      "type": "textarea",
+      "group": "Localização"
+    },
+    {
+      "key": "places",
+      "label": "Proximidades — uma por linha: tempo | ponto",
+      "type": "textarea",
+      "group": "Proximidades"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+/* Imobify Studio — Otimizador de Nota SEO 1.0.0 */
+.seo-opt { margin: 4px 0 18px; padding: 14px; border: 1px solid rgba(255, 184, 77, .55); border-radius: var(--radius, 12px); background: rgba(255, 184, 77, .06); display: grid; gap: 10px; }
+.seo-opt.is-done { border-color: rgba(86, 214, 135, .55); background: rgba(86, 214, 135, .06); }
+.seo-opt-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.seo-opt-head strong { font-size: 13px; color: var(--text, #f4f6f8); }
+.seo-opt-head span { font-size: 11px; color: var(--muted, #8d98a8); }
+.seo-opt-head em { font-style: normal; opacity: .75; }
+.seo-opt-sub, .seo-opt-ok { margin: 0; font-size: 11px; color: var(--muted, #8d98a8); line-height: 1.45; }
+.seo-opt-ok { color: #56d687; }
+.seo-opt-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.seo-opt-item { display: grid; gap: 4px; padding: 9px 10px; border-radius: 9px; background: var(--panel-2, #171c25); border-left: 3px solid #ffb84d; cursor: pointer; font-size: 11px; line-height: 1.45; color: var(--muted, #8d98a8); }
+.seo-opt-item.is-qualidade { border-left-color: var(--blue, #5b8cff); }
+.seo-opt-item:hover, .seo-opt-item:focus-visible { outline: 1px solid rgba(255, 255, 255, .18); }
+.seo-opt-item b { color: var(--text, #f4f6f8); font-weight: 600; }
+.seo-opt-sug { color: #ffd59a; word-break: break-word; }
+.seo-opt-apply { justify-self: start; margin-top: 2px; padding: 5px 10px; font-size: 11px; }
+#tab-seo label.seo-opt-flag > .control, #tab-project label.seo-opt-flag > .control { border-color: #ffb84d !important; box-shadow: 0 0 0 2px rgba(255, 184, 77, .22); }
+.seo-opt-hint { display: block; margin-top: 5px; font-size: 10.5px; line-height: 1.4; color: #ffc66e; font-weight: 500; }
+@keyframes seoOptPulse { 0%, 100% { background: transparent; } 35% { background: rgba(255, 184, 77, .16); } }
+.seo-opt-pulse { animation: seoOptPulse 1.2s ease 2; border-radius: 8px; }

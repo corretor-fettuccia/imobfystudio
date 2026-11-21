@@ -1,0 +1,1 @@
+(function(){const hero=document.querySelector('[data-plugin="hero"]');if(!hero)return;hero.querySelectorAll('.button').forEach(button=>button.addEventListener('click',()=>window.Imobify&&Imobify.track('hero_cta',{label:button.textContent.trim()})));})();

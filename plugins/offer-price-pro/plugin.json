@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 3,
+  "id": "offer-price-pro",
+  "name": "Offer Price Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "R$",
+  "description": "Bloco comercial para preço, economia, condição, CTA e contagem regressiva opcional.",
+  "composition": { "role": "item" },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "CONDIÇÃO ESPECIAL",
+    "title": "Uma oportunidade que merece atenção agora.",
+    "oldPrice": "R$ 550.000",
+    "newPrice": "R$ 500.000",
+    "economy": "Economia de R$ 50 mil",
+    "condition": "Condição por unidade no combo. Consulte disponibilidade.",
+    "badge": "OFERTA",
+    "ctaText": "Quero saber quais unidades",
+    "ctaLink": "https://wa.me/5551998111078",
+    "countdownEnabled": false,
+    "countdownEnd": "2026-12-31T23:59:59-03:00",
+    "countdownLabel": "Condição prevista para encerrar em",
+    "darkMode": true
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "badge",
+      "label": "Selo",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "oldPrice",
+      "label": "Preço anterior",
+      "type": "text",
+      "group": "Oferta"
+    },
+    {
+      "key": "newPrice",
+      "label": "Preço atual",
+      "type": "text",
+      "group": "Oferta"
+    },
+    {
+      "key": "economy",
+      "label": "Economia / destaque",
+      "type": "text",
+      "group": "Oferta"
+    },
+    {
+      "key": "condition",
+      "label": "Condição complementar",
+      "type": "textarea",
+      "group": "Oferta"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaLink",
+      "label": "Link do CTA",
+      "type": "url",
+      "group": "CTA"
+    },
+    {
+      "key": "countdownEnabled",
+      "label": "Exibir contagem regressiva",
+      "type": "toggle",
+      "group": "Urgência"
+    },
+    {
+      "key": "countdownEnd",
+      "label": "Data/hora final (ISO)",
+      "type": "text",
+      "group": "Urgência"
+    },
+    {
+      "key": "countdownLabel",
+      "label": "Texto da contagem",
+      "type": "text",
+      "group": "Urgência"
+    },
+    {
+      "key": "darkMode",
+      "label": "Fundo escuro",
+      "type": "toggle",
+      "group": "Visual"
+    }
+  ]
+}

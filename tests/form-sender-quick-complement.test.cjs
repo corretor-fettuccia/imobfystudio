@@ -1,0 +1,52 @@
+const test = require('node:test');
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const ROOT = path.resolve(__dirname, '..');
+
+test('Form Sender 4.5.0 exposes mandatory quick complement with locked modal', () => {
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT,'plugins/form-sender-v4/plugin.json'),'utf8'));
+  assert.equal(manifest.version, '4.5.0');
+  assert.equal(manifest.defaults.quickComplement, true);
+  assert.equal(manifest.defaults.quickQ1Options, 'Moradia|Investimento|Construção');
+  assert.equal(manifest.defaults.quickShowSkip, undefined);
+  assert.equal(manifest.defaults.quickSkipText, undefined);
+  assert.equal(manifest.defaults.quickQ1Required, true);
+  assert.equal(manifest.defaults.quickQ2Required, true);
+  assert.equal(manifest.defaults.quickQ3Required, true);
+  assert.equal(manifest.defaults.quickQ4Enabled, true);
+  assert.equal(manifest.defaults.quickQ4Label, 'Prefere o contato em qual período?');
+  assert.equal(manifest.defaults.quickQ4Options, 'Manhã|Almoço|Tarde|Noite');
+  assert.equal(manifest.defaults.quickQ4Required, true);
+  const keys = new Set(manifest.fields.map(f => f.key));
+  ['quickComplement','quickTitle','quickQ1Label','quickQ1Type','quickQ2Label','quickQ3Label','quickQ4Label','quickQ4Type','quickQ4Options','fieldAutocomplete'].forEach(k => assert.ok(keys.has(k), k));
+  ['quickShowSkip','quickSkipText','quickQ1Required','quickQ2Required','quickQ3Required'].forEach(k => assert.equal(keys.has(k), false, k));
+
+  const template = fs.readFileSync(path.join(ROOT,'plugins/form-sender-v4/template.html'),'utf8');
+  assert.match(template, /data-quick-complement/);
+  assert.match(template, /data-quick-q3-options/);
+  assert.match(template, /data-quick-q4-enabled/);
+  assert.match(template, /data-quick-q4-label/);
+  assert.match(template, /data-quick-q4-options/);
+
+  const runtime = fs.readFileSync(path.join(ROOT,'plugins/form-sender-v4/adapter.js'),'utf8');
+  assert.match(runtime, /openQuickComplement/);
+  assert.match(runtime, /quickQuestion\(mount, 4\)/);
+  assert.match(runtime, /Informações complementares:/);
+  assert.match(runtime, /qualificacao_/);
+  assert.doesNotMatch(runtime, /Pular e enviar/);
+  assert.doesNotMatch(runtime, /formsenderCSS_quick-close/);
+  assert.doesNotMatch(runtime, /formsenderCSS_quick-skip/);
+  assert.match(runtime, /required: true/);
+  assert.match(runtime, /if \(!answer\) \{ valid = false/);
+  assert.match(runtime, /item\.answer \+ ';'/);
+  assert.equal(manifest.defaults.quickQ2Label, 'Em qual momento está a sua procura?');
+  assert.equal(manifest.defaults.quickQ3Options, 'Valores e condições|Localização|Projeto e diferenciais|Potencial de investimento');
+  assert.equal(manifest.defaults.fieldAutocomplete, true);
+  assert.match(runtime, /configureAutocomplete/);
+  assert.match(runtime, /autocomplete/);
+  const css = fs.readFileSync(path.join(ROOT,'plugins/form-sender-v4/adapter.css'),'utf8');
+  assert.match(css, /formsenderQuickFadeIn/);
+  assert.match(runtime, /showStep/);
+  assert.match(runtime, /data-quick-current/);
+});

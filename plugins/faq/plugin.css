@@ -1,0 +1,7 @@
+.faq-section{padding-block:var(--section-space);background:#fff}.faq-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(3rem,8vw,8rem)}.faq-list{border-top:1px solid #dfe3e4}.faq-list details{border-bottom:1px solid #dfe3e4}.faq-list summary{display:flex;justify-content:space-between;gap:1rem;padding:1.3rem 0;cursor:pointer;list-style:none;font:600 1rem var(--heading)}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary span{font-size:1.4rem;color:var(--primary);transition:rotate .2s}.faq-list details[open] summary span{rotate:45deg}.faq-list details p{padding:0 2rem 1.5rem 0;color:#687176;font-size:.92rem}@media(max-width:800px){.faq-layout{grid-template-columns:1fr}}
+/* 6.0.41 — quiet disclosure feedback and accessible keyboard focus. */
+.faq-list summary{min-height:48px;align-items:center;outline-offset:4px}
+.faq-list summary:focus-visible{outline:3px solid var(--ib-focus-ring,#2855b9)}
+.faq-list details[open] summary{padding-bottom:1rem}
+.faq-list details[open] p{max-width:75ch;line-height:1.7}
+@media(prefers-reduced-motion:reduce){.faq-list summary span{transition:none}}

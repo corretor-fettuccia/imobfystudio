@@ -1,0 +1,31 @@
+{
+  "firstScene": "sala",
+  "scenes": {
+    "sala": {
+      "title": "Sala Principal",
+      "panorama": "https://raw.githubusercontent.com/corretor-fettuccia/360/refs/heads/main/MT-Laureana.Imagem-1.jpg",
+      "hotspots": [
+        {
+          "yaw": 151,
+          "pitch": -19,
+          "text": "Ir para o Corredor",
+          "sceneId": "corredor",
+          "rotation": 45
+        }
+      ]
+    },
+    "corredor": {
+      "title": "Corredor",
+      "panorama": "https://raw.githubusercontent.com/corretor-fettuccia/360/refs/heads/main/MT-Laureana.Imagem-10.jpg",
+      "hotspots": [
+        {
+          "yaw": -90,
+          "pitch": 5,
+          "text": "Voltar à Sala",
+          "sceneId": "sala",
+          "rotation": 225
+        }
+      ]
+    }
+  }
+}

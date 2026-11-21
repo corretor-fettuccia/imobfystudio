@@ -1,0 +1,11 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const path = require('node:path');
+const ROOT = path.resolve(__dirname,'..');
+const manifest = JSON.parse(fs.readFileSync(path.join(ROOT,'plugins/parallax/plugin.json'),'utf8'));
+const css = fs.readFileSync(path.join(ROOT,'plugins/parallax/plugin.css'),'utf8');
+assert.equal(manifest.version,'2.10.3');
+assert.match(css,/svp-is-mobile \.svp-scroll-hint-label[\s\S]*z-index:2/);
+assert.match(css,/svp-is-mobile \.svp-scroll-hint-icon[\s\S]*position:absolute[\s\S]*z-index:1/);
+assert.match(css,/svp-is-mobile\.svp-card-standby \.svp-scroll-hint[\s\S]*background:transparent/);
+console.log('parallax mobile hint layer ok');

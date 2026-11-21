@@ -1,0 +1,320 @@
+{
+  "schemaVersion": 3,
+  "id": "implantacao-tiles-pro",
+  "name": "Implantação Tiles Pro",
+  "version": "1.0.1",
+  "type": "section",
+  "category": "Implantação",
+  "icon": "▦",
+  "description": "Implantação interativa por tiles com configuração automática lida de tiles/tiles.xml, caminho editável e controles responsivos.",
+  "origin": "Convertido do projeto implantacao.zip enviado pelo usuário, preservando Leaflet local e o sistema CRS.Simple.",
+  "entry": {
+    "template": "template.html",
+    "styles": [
+      "leaflet/leaflet.css",
+      "plugin.css"
+    ],
+    "scripts": [
+      "leaflet/leaflet.js",
+      "plugin.js"
+    ]
+  },
+  "defaults": {
+    "showHeader": true,
+    "eyebrow": "IMPLANTAÇÃO INTERATIVA",
+    "title": "Explore a implantação",
+    "subtitle": "Aproxime, afaste e navegue pelo mapa do empreendimento.",
+    "tilesPath": "tiles",
+    "tilesXml": "tiles.xml",
+    "tilePattern": "{z}/{x}/{y}.webp",
+    "fallbackTileSize": 256,
+    "fallbackOriginalWidth": 5938,
+    "fallbackOriginalHeight": 3677,
+    "fallbackMinZoom": 0,
+    "fallbackMaxZoom": 3,
+    "zoomSnap": 0.25,
+    "fullWidth": true,
+    "heightDesktop": 720,
+    "heightMobile": 540,
+    "showZoomControls": true,
+    "showFitControl": true,
+    "controlPosition": "center-left",
+    "controlSize": 46,
+    "controlSizeMobile": 54,
+    "controlGap": 8,
+    "controlOffsetX": 18,
+    "controlOffsetY": 18,
+    "mobileGuard": true,
+    "mobileGuardText": "Toque para explorar a implantação",
+    "scrollWheelZoom": false,
+    "doubleClickZoom": true,
+    "lockBounds": true,
+    "backgroundColor": "#0b0d10"
+  },
+  "fields": [
+    {
+      "key": "showHeader",
+      "label": "Exibir cabeçalho",
+      "type": "toggle",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "subtitle",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "tilesPath",
+      "label": "Caminho da pasta dos tiles",
+      "type": "text",
+      "group": "Tiles / XML"
+    },
+    {
+      "key": "tilesXml",
+      "label": "Arquivo de configuração XML",
+      "type": "text",
+      "group": "Tiles / XML"
+    },
+    {
+      "key": "tilePattern",
+      "label": "Padrão dos arquivos de tile",
+      "type": "text",
+      "group": "Tiles / XML"
+    },
+    {
+      "key": "zoomSnap",
+      "label": "Passo do zoom (fallback / se XML não definir)",
+      "type": "select",
+      "options": [
+        {
+          "label": "Suave · 0,25",
+          "value": "0.25"
+        },
+        {
+          "label": "Médio · 0,5",
+          "value": "0.5"
+        },
+        {
+          "label": "Inteiro · 1",
+          "value": "1"
+        }
+      ],
+      "group": "Tiles / XML"
+    },
+    {
+      "key": "fallbackTileSize",
+      "label": "Fallback · tamanho do tile",
+      "type": "number",
+      "min": 64,
+      "max": 2048,
+      "step": 1,
+      "group": "Fallback do XML"
+    },
+    {
+      "key": "fallbackOriginalWidth",
+      "label": "Fallback · largura original",
+      "type": "number",
+      "min": 1,
+      "max": 100000,
+      "step": 1,
+      "group": "Fallback do XML"
+    },
+    {
+      "key": "fallbackOriginalHeight",
+      "label": "Fallback · altura original",
+      "type": "number",
+      "min": 1,
+      "max": 100000,
+      "step": 1,
+      "group": "Fallback do XML"
+    },
+    {
+      "key": "fallbackMinZoom",
+      "label": "Fallback · zoom mínimo",
+      "type": "number",
+      "min": -5,
+      "max": 20,
+      "step": 1,
+      "group": "Fallback do XML"
+    },
+    {
+      "key": "fallbackMaxZoom",
+      "label": "Fallback · zoom máximo",
+      "type": "number",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "group": "Fallback do XML"
+    },
+    {
+      "key": "fullWidth",
+      "label": "Usar largura total",
+      "type": "toggle",
+      "group": "Frame"
+    },
+    {
+      "key": "heightDesktop",
+      "label": "Altura desktop (px)",
+      "type": "range",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "group": "Frame"
+    },
+    {
+      "key": "heightMobile",
+      "label": "Altura mobile (px)",
+      "type": "range",
+      "min": 300,
+      "max": 900,
+      "step": 10,
+      "group": "Frame"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Fundo enquanto carrega",
+      "type": "color",
+      "group": "Frame"
+    },
+    {
+      "key": "lockBounds",
+      "label": "Limitar navegação à implantação",
+      "type": "toggle",
+      "group": "Frame"
+    },
+    {
+      "key": "showZoomControls",
+      "label": "Exibir + / −",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "showFitControl",
+      "label": "Exibir botão enquadrar",
+      "type": "toggle",
+      "group": "Controles"
+    },
+    {
+      "key": "controlPosition",
+      "label": "Posição dos controles",
+      "type": "select",
+      "options": [
+        {
+          "label": "Topo esquerdo",
+          "value": "top-left"
+        },
+        {
+          "label": "Topo centro",
+          "value": "top-center"
+        },
+        {
+          "label": "Topo direito",
+          "value": "top-right"
+        },
+        {
+          "label": "Centro esquerdo",
+          "value": "center-left"
+        },
+        {
+          "label": "Centro direito",
+          "value": "center-right"
+        },
+        {
+          "label": "Base esquerda",
+          "value": "bottom-left"
+        },
+        {
+          "label": "Base centro",
+          "value": "bottom-center"
+        },
+        {
+          "label": "Base direita",
+          "value": "bottom-right"
+        }
+      ],
+      "group": "Controles"
+    },
+    {
+      "key": "controlSize",
+      "label": "Tamanho desktop (px)",
+      "type": "range",
+      "min": 32,
+      "max": 80,
+      "step": 1,
+      "group": "Controles"
+    },
+    {
+      "key": "controlSizeMobile",
+      "label": "Tamanho mobile (px)",
+      "type": "range",
+      "min": 40,
+      "max": 88,
+      "step": 1,
+      "group": "Controles"
+    },
+    {
+      "key": "controlGap",
+      "label": "Espaço entre controles (px)",
+      "type": "range",
+      "min": 0,
+      "max": 24,
+      "step": 1,
+      "group": "Controles"
+    },
+    {
+      "key": "controlOffsetX",
+      "label": "Margem horizontal (px)",
+      "type": "range",
+      "min": 0,
+      "max": 64,
+      "step": 1,
+      "group": "Controles"
+    },
+    {
+      "key": "controlOffsetY",
+      "label": "Margem vertical (px)",
+      "type": "range",
+      "min": 0,
+      "max": 64,
+      "step": 1,
+      "group": "Controles"
+    },
+    {
+      "key": "mobileGuard",
+      "label": "Mobile: toque para ativar mapa",
+      "type": "toggle",
+      "group": "Mobile"
+    },
+    {
+      "key": "mobileGuardText",
+      "label": "Texto de ativação",
+      "type": "text",
+      "group": "Mobile"
+    },
+    {
+      "key": "scrollWheelZoom",
+      "label": "Zoom pela roda do mouse",
+      "type": "toggle",
+      "group": "Interação"
+    },
+    {
+      "key": "doubleClickZoom",
+      "label": "Zoom com duplo clique/toque",
+      "type": "toggle",
+      "group": "Interação"
+    }
+  ]
+}

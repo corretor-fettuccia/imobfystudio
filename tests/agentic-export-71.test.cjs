@@ -1,0 +1,34 @@
+'use strict';
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=path.resolve(__dirname,'..'),JSZip=require(path.join(root,'vendor/jszip.min.js'));
+global.JSZip=JSZip;
+global.window={JSZip,indexedDB:null,location:{href:'http://localhost:8765/'}};
+global.fetch=async url=>{const full=path.resolve(root,String(url).split(/[?#]/)[0]);if(!full.startsWith(root+path.sep)||!fs.existsSync(full))return{ok:false,status:404};const b=fs.readFileSync(full);return{ok:true,headers:{get:()=>null},text:async()=>b.toString(),json:async()=>JSON.parse(b.toString()),arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)}};
+const load=f=>vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
+(async()=>{
+  for(const x of ['assets/js/util.js','assets/js/catalog.js','assets/js/plugin-loader.js'])load(x);
+  await window.ImobifyPluginLoader.ready;
+  for(const x of ['assets/js/typography-system.js','assets/js/renderer.js','assets/js/compiler.js'])load(x);
+  const s=window.ImobifyCatalog.defaultState();
+  s.projectName='Jardins do Sol';s.seo.propertyName='Jardins do Sol';s.seo.title='Jardins do Sol em Canoas';s.seo.description='Apartamento com infraestrutura descrita no memorial.';s.seo.canonical='https://imoveis.example/lancamentos/jardins/';s.seo.city='Canoas';s.seo.region='RS';s.seo.address='Rua pública, 100';s.seo.sitemapEnabled='yes';
+  const hero=window.ImobifyCatalog.createSection('hero');hero.props.title='More perto do parque';hero.props.subtitle='Conheça a planta com dois dormitórios';
+  const hidden=window.ImobifyCatalog.createSection('hero');hidden.props.title='CONTEÚDO INTERNO CONFIDENCIAL';hidden.settings.visible=false;
+  s.sections=[hero,hidden];
+  const result=await window.ImobifyCompiler.compile(s);
+  const zip=await JSZip.loadAsync(await result.blob.arrayBuffer());
+  assert.equal(result.outputState.version,'7.3.3');assert.ok(zip.file('.nojekyll'),'GitHub Pages precisa de .nojekyll');
+  const llms=await zip.file('llms.txt').async('text'),full=await zip.file('llms-full.txt').async('text');
+  assert.match(llms,/Jardins do Sol/);assert.match(llms,/llms-full\.txt/);assert.match(full,/More perto do parque/);assert.doesNotMatch(full,/CONTEÚDO INTERNO CONFIDENCIAL/);
+  assert.match(await zip.file('index.html').async('text'),/href="\.well-known\/ai-catalog\.json"/);
+  const diagnostic=JSON.parse(await zip.file('content/agentic-audit.json').async('text'));
+  assert.equal(diagnostic.version,'7.3.3');assert.equal(diagnostic.warnings.length,1); // imagem social ausente
+  const catalog=JSON.parse(await zip.file('ai-catalog.json').async('text'));assert.deepEqual(catalog.entries,[]);
+  const script=await zip.file('assets/js/agentic.js').async('text');assert.match(script,/toolautosubmit/);
+  const missing=window.ImobifyCatalog.defaultState();missing.seo.canonical='';missing.seo.sitemapEnabled='no';missing.sections=[];
+  const noCanonical=await JSZip.loadAsync(await (await window.ImobifyCompiler.compile(missing)).blob.arrayBuffer());
+  assert.ok(noCanonical.file('llms.txt'),'llms.txt presente sem canonical');
+  const html=await noCanonical.file('index.html').async('text');
+  assert.doesNotMatch(html,/<link rel="canonical" href="">/,'não publicar canonical vazio');
+  assert.doesNotMatch(html,/<meta property="og:image" content="">/,'não publicar imagem vazia');
+  console.log('Exportação agêntica 7.1: llms completos, conteúdo público, diagnóstico e SEO OK');
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,0 +1,212 @@
+{
+  "schemaVersion": 3,
+  "id": "scheduled-popup-pro",
+  "name": "Popup Pro",
+  "version": "1.3.4",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "◫",
+  "description": "Popup independente por instância, com modos completo ou imagem + CTA, escala exclusiva no desktop, gatilhos próprios e controle por dispositivo.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "campaignName": "Popup especial",
+    "openAlways": true,
+    "dateRangeEnabled": false,
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "reopenEnabled": false,
+    "reopenSeconds": 30,
+    "delaySeconds": 3,
+    "scrollEnabled": false,
+    "scrollPercent": 50,
+    "eyebrow": "OPORTUNIDADE",
+    "title": "Uma condição especial para você.",
+    "copy": "Confira os detalhes desta oportunidade e fale comigo para confirmar disponibilidade e condições.",
+    "image": "",
+    "imageAlt": "Imagem do popup",
+    "ctaText": "Quero saber mais",
+    "ctaLink": "https://wa.me/5551998111078",
+    "showImageMobile": true,
+    "closeOnBackdrop": true,
+    "showOncePerSession": true,
+    "layoutMode": "complete",
+    "desktopScale": 130
+  },
+  "fields": [
+    {
+      "key": "campaignName",
+      "label": "Identificação do popup",
+      "type": "text",
+      "group": "Popup"
+    },
+    {
+      "key": "layoutMode",
+      "label": "Modo do banner",
+      "type": "select",
+      "group": "Popup",
+      "options": [
+        {
+          "label": "Completo · paisagem com layout atual",
+          "value": "complete"
+        },
+        {
+          "label": "Apenas imagem + CTA · retrato",
+          "value": "image-cta"
+        }
+      ],
+      "note": "No modo imagem + CTA o popup mostra a arte promocional em retrato e mantém apenas o botão de ação."
+    },
+    {
+      "key": "desktopScale",
+      "label": "Tamanho do banner no desktop (%)",
+      "type": "number",
+      "min": 80,
+      "max": 200,
+      "step": 5,
+      "group": "Popup",
+      "note": "Aplica somente no desktop ao modo imagem + CTA. 100% = largura base; aumente para 130%, 150%, 180% etc. O mobile permanece no tamanho atual."
+    },
+    {
+      "key": "openAlways",
+      "label": "Abrir sempre",
+      "type": "toggle",
+      "group": "Gatilho"
+    },
+    {
+      "key": "dateRangeEnabled",
+      "label": "Abrir em intervalo de datas",
+      "type": "toggle",
+      "group": "Gatilho"
+    },
+    {
+      "key": "startDate",
+      "label": "Data início (AAAA-MM-DD ou DD/MM/AAAA)",
+      "type": "text",
+      "group": "Gatilho"
+    },
+    {
+      "key": "endDate",
+      "label": "Data fim (AAAA-MM-DD ou DD/MM/AAAA)",
+      "type": "text",
+      "group": "Gatilho"
+    },
+    {
+      "key": "reopenEnabled",
+      "label": "Re-exibir após fechado",
+      "type": "toggle",
+      "group": "Sub gatilho"
+    },
+    {
+      "key": "reopenSeconds",
+      "label": "Re-exibir depois de (segundos)",
+      "type": "number",
+      "min": 1,
+      "max": 86400,
+      "step": 1,
+      "group": "Sub gatilho"
+    },
+    {
+      "key": "delaySeconds",
+      "label": "Atraso para abrir (segundos)",
+      "type": "number",
+      "min": 0,
+      "max": 3600,
+      "step": 1,
+      "group": "Sub gatilho"
+    },
+    {
+      "key": "scrollEnabled",
+      "label": "Ativar posição de scroll",
+      "type": "toggle",
+      "group": "Sub gatilho"
+    },
+    {
+      "key": "scrollPercent",
+      "label": "Scroll da página (% da altura)",
+      "type": "number",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sub gatilho"
+    },
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Conteúdo",
+      "disabledWhen": {
+        "field": "layoutMode",
+        "equals": "image-cta"
+      },
+      "note": "No modo imagem + CTA, este campo não é exibido."
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "disabledWhen": {
+        "field": "layoutMode",
+        "equals": "image-cta"
+      },
+      "note": "No modo imagem + CTA, este campo fica desabilitado e não é exibido."
+    },
+    {
+      "key": "copy",
+      "label": "Texto",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "disabledWhen": {
+        "field": "layoutMode",
+        "equals": "image-cta"
+      },
+      "note": "No modo imagem + CTA, este campo fica desabilitado e não é exibido."
+    },
+    {
+      "key": "image",
+      "label": "Imagem",
+      "type": "image",
+      "group": "Imagem"
+    },
+    {
+      "key": "imageAlt",
+      "label": "Texto alternativo da imagem",
+      "type": "text",
+      "group": "Imagem"
+    },
+    {
+      "key": "showImageMobile",
+      "label": "Exibir imagem no mobile",
+      "type": "toggle",
+      "group": "Imagem"
+    },
+    {
+      "key": "ctaText",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "CTA"
+    },
+    {
+      "key": "ctaLink",
+      "label": "Link do CTA",
+      "type": "url",
+      "group": "CTA"
+    },
+    {
+      "key": "closeOnBackdrop",
+      "label": "Fechar ao tocar fora",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "showOncePerSession",
+      "label": "Exibir uma vez por sessão",
+      "type": "toggle",
+      "group": "Comportamento"
+    }
+  ]
+}

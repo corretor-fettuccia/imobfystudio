@@ -1,0 +1,42 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs'); const path=require('node:path'); const vm=require('node:vm');
+const ROOT=path.resolve(__dirname,'..'); const JSZip=require(path.join(ROOT,'vendor/jszip.min.js'));
+global.JSZip=JSZip; global.window={JSZip,indexedDB:null,confirm:()=>true,location:{href:'http://localhost/'}};
+const localFetch=async(resource)=>{
+  const source=String(resource);
+  if(/^https?:\/\//.test(source)) return {ok:false,status:404,headers:{get:()=>null},text:async()=>'',json:async()=>({}),arrayBuffer:async()=>new ArrayBuffer(0)};
+  const full=path.resolve(ROOT,source.replace(/^\.\//,''));
+  if(!full.startsWith(ROOT)||!fs.existsSync(full)) return {ok:false,status:404,headers:{get:()=>null},text:async()=>'',json:async()=>({}),arrayBuffer:async()=>new ArrayBuffer(0)};
+  const b=fs.readFileSync(full);
+  return {ok:true,status:200,headers:{get:(k)=>k.toLowerCase()==='content-type'?({'.jpg':'image/jpeg','.css':'text/css','.js':'text/javascript','.json':'application/json'}[path.extname(full)]||'application/octet-stream'):null},text:async()=>b.toString('utf8'),json:async()=>JSON.parse(b.toString('utf8')),arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)};
+};
+global.fetch=localFetch;
+function load(p){vm.runInThisContext(fs.readFileSync(path.join(ROOT,p),'utf8'),{filename:p});}
+(async()=>{
+  for(const p of ['assets/js/util.js','assets/js/catalog.js','assets/js/icon-library.js','assets/js/plugin-loader.js']) load(p);
+  await window.ImobifyPluginLoader.ready;
+  for(const p of ['assets/js/renderer.js','assets/js/compiler.js']) load(p);
+  const catalog=window.ImobifyCatalog;
+  const state=catalog.defaultState(); state.seo.sitemapEnabled=false; state.behaviorPlugins=['reveal','lightbox']; state.sections=[catalog.createSection('parallax')];
+  const section=state.sections[0];
+  section.props.videoSrc='https://github.com/corretor-fettuccia/media/raw/refs/heads/main/newedition/NewEd.48.parallax.mp4';
+  section.props.heroPoints=JSON.stringify([{id:'hero-export',startTime:2,endTime:6,position:'center',title:'Banner presente na exportação',text:'Teste',enabled:true,cinematicStop:true}]);
+  section.props.videoDuration=48.7; section.props.endTime=37.16; section.props.endTimeAuto=false;
+  const result=await window.ImobifyCompiler.compile(state);
+  const zip=await JSZip.loadAsync(await result.blob.arrayBuffer());
+  assert.ok(zip.file('assets/plugins/parallax/plugin.css'),'CSS isolado do Parallax deve estar no ZIP');
+  assert.ok(zip.file('assets/plugins/parallax/plugin.js'),'runtime isolado do Parallax deve estar no ZIP');
+  const html=await zip.file('index.html').async('text');
+  const css=await zip.file('assets/css/site.css').async('text');
+  const js=await zip.file('assets/js/site.js').async('text');
+  assert.match(html,/data-plugin="parallax"/);
+  assert.match(html,/data-hero-points="\[\{&quot;id&quot;:&quot;hero-export&quot;/,'banners devem estar materializados no HTML');
+  assert.match(html,/assets\/plugins\/parallax\/plugin\.css/);
+  assert.match(html,/assets\/plugins\/parallax\/plugin\.js/);
+  assert.match(css,/\.svp-root/);
+  assert.match(js,/\[data-plugin="parallax"\] \.svp-root/);
+  assert.doesNotMatch(css,/\.reveal-ready \.section-shell>\*\{opacity:0/,'Reveal não pode ocultar genericamente o root do Parallax');
+  const baseCss=fs.readFileSync(path.join(ROOT,'core/base.css'),'utf8');
+  assert.match(baseCss,/:not\(\[data-plugin="parallax"\]\).*content-visibility:auto/);
+  console.log('Parallax export bundle OK');
+})().catch(e=>{console.error(e);process.exitCode=1});

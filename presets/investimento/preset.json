@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "investimento",
+  "name": "Investimento",
+  "description": "Modelo imobiliário orientado à apresentação da oportunidade de investimento.",
+  "category": "Investimento",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Investimento",
+    "templateMeta": {
+      "presetId": "investimento",
+      "category": "Investimento",
+      "subcategory": ""
+    }
+  }
+}

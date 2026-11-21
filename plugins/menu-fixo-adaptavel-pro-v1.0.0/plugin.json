@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 3,
+  "id": "menu-fixo-adaptavel-pro",
+  "name": "Menu fixo adaptável Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Navegação",
+  "icon": "☰",
+  "description": "Menu fixo responsivo com cores, fontes, posição e efeitos de scroll configuráveis.",
+  "origin": "Adaptado do Menu.v3 fornecido pelo usuário",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "brandText": "Seu Empreendimento",
+    "brandHighlight": "Imobify",
+    "brandLink": "#inicio",
+    "menuItems": "Início|#inicio\nDestaques|#destaques\nGaleria|#galeria\nLocalização|#localizacao\nContato|#contato",
+    "ctaLastItem": true,
+    "position": "topo",
+    "topOffset": 0,
+    "horizontalMargin": 0,
+    "maxWidth": 1280,
+    "menuHeight": 76,
+    "menuHeightScrolled": 64,
+    "mobileBreakpoint": 768,
+    "backgroundColor": "#0a1628",
+    "backgroundScrolled": "#060f1c",
+    "mobileBackground": "#0a1628",
+    "textColor": "#ffffff",
+    "accentColor": "#d4af37",
+    "borderColor": "#d4af37",
+    "overlayOpacity": 82,
+    "scrolledOpacity": 98,
+    "blur": 16,
+    "borderRadius": 0,
+    "shadowStrength": 30,
+    "fontFamily": "Perfil do projeto",
+    "customFont": "",
+    "brandSize": 26,
+    "linkSize": 15,
+    "fontWeight": "600",
+    "linkGap": 38,
+    "scrollEffect": "compactar e solidificar",
+    "scrollThreshold": 30,
+    "hoverEffect": "linha e elevação",
+    "smoothScroll": true,
+    "closeOnClick": true
+  },
+  "fields": [
+    {
+      "key": "brandText",
+      "label": "Nome principal",
+      "type": "text",
+      "group": "Marca"
+    },
+    {
+      "key": "brandHighlight",
+      "label": "Texto em destaque",
+      "type": "text",
+      "group": "Marca"
+    },
+    {
+      "key": "brandLink",
+      "label": "Destino da marca",
+      "type": "url",
+      "group": "Marca"
+    },
+    {
+      "key": "menuItems",
+      "label": "Itens — Texto|destino, um por linha",
+      "type": "textarea",
+      "group": "Links"
+    },
+    {
+      "key": "ctaLastItem",
+      "label": "Destacar último item como CTA",
+      "type": "toggle",
+      "group": "Links"
+    },
+    {
+      "key": "position",
+      "label": "Posição fixa",
+      "type": "select",
+      "options": [
+        "topo",
+        "base"
+      ],
+      "group": "Posição"
+    },
+    {
+      "key": "topOffset",
+      "label": "Afastamento da borda",
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "group": "Posição"
+    },
+    {
+      "key": "horizontalMargin",
+      "label": "Margem lateral flutuante",
+      "type": "range",
+      "min": 0,
+      "max": 80,
+      "step": 1,
+      "group": "Posição"
+    },
+    {
+      "key": "maxWidth",
+      "label": "Largura máxima do conteúdo",
+      "type": "range",
+      "min": 760,
+      "max": 1800,
+      "step": 20,
+      "group": "Posição"
+    },
+    {
+      "key": "menuHeight",
+      "label": "Altura inicial",
+      "type": "range",
+      "min": 54,
+      "max": 110,
+      "step": 1,
+      "group": "Dimensões"
+    },
+    {
+      "key": "menuHeightScrolled",
+      "label": "Altura após scroll",
+      "type": "range",
+      "min": 48,
+      "max": 100,
+      "step": 1,
+      "group": "Dimensões"
+    },
+    {
+      "key": "mobileBreakpoint",
+      "label": "Breakpoint mobile",
+      "type": "number",
+      "min": 520,
+      "max": 1100,
+      "step": 1,
+      "group": "Dimensões"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Fundo inicial",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "backgroundScrolled",
+      "label": "Fundo após scroll",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "mobileBackground",
+      "label": "Fundo do menu mobile",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "borderColor",
+      "label": "Cor de borda",
+      "type": "color",
+      "group": "Cores"
+    },
+    {
+      "key": "overlayOpacity",
+      "label": "Opacidade inicial (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "scrolledOpacity",
+      "label": "Opacidade após scroll (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "blur",
+      "label": "Desfoque do fundo",
+      "type": "range",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "borderRadius",
+      "label": "Arredondamento",
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "shadowStrength",
+      "label": "Intensidade da sombra",
+      "type": "range",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "group": "Aparência"
+    },
+    {
+      "key": "fontFamily",
+      "label": "Fonte",
+      "type": "select",
+      "options": [
+        "Perfil do projeto",
+        "Inter",
+        "Montserrat",
+        "Poppins",
+        "Manrope",
+        "Josefin Sans",
+        "Raleway",
+        "Roboto",
+        "Lato",
+        "Oswald",
+        "Playfair Display",
+        "Sistema",
+        "Personalizada"
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "customFont",
+      "label": "Fonte personalizada / fallback CSS",
+      "type": "text",
+      "group": "Tipografia"
+    },
+    {
+      "key": "brandSize",
+      "label": "Tamanho da marca",
+      "type": "range",
+      "min": 16,
+      "max": 44,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "linkSize",
+      "label": "Tamanho dos links",
+      "type": "range",
+      "min": 11,
+      "max": 24,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "fontWeight",
+      "label": "Peso dos links",
+      "type": "select",
+      "options": [
+        "400",
+        "500",
+        "600",
+        "700",
+        "800"
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "linkGap",
+      "label": "Espaço entre links",
+      "type": "range",
+      "min": 8,
+      "max": 64,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "scrollEffect",
+      "label": "Efeito ao rolar",
+      "type": "select",
+      "options": [
+        "nenhum",
+        "solidificar",
+        "compactar",
+        "compactar e solidificar",
+        "sombra e elevação",
+        "ocultar ao descer"
+      ],
+      "group": "Scroll"
+    },
+    {
+      "key": "scrollThreshold",
+      "label": "Ativar efeito após (px)",
+      "type": "range",
+      "min": 0,
+      "max": 500,
+      "step": 5,
+      "group": "Scroll"
+    },
+    {
+      "key": "hoverEffect",
+      "label": "Efeito dos links",
+      "type": "select",
+      "options": [
+        "nenhum",
+        "linha",
+        "elevação",
+        "linha e elevação",
+        "glow"
+      ],
+      "group": "Interação"
+    },
+    {
+      "key": "smoothScroll",
+      "label": "Rolagem suave para âncoras",
+      "type": "toggle",
+      "group": "Interação"
+    },
+    {
+      "key": "closeOnClick",
+      "label": "Fechar menu mobile ao clicar",
+      "type": "toggle",
+      "group": "Interação"
+    }
+  ]
+}

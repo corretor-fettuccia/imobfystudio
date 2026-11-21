@@ -1,0 +1,789 @@
+{
+  "schemaVersion": 3,
+  "id": "magazine-text-pro",
+  "name": "Magazine Text Pro",
+  "version": "1.3.1",
+  "type": "section",
+  "category": "Conteúdo",
+  "icon": "▤",
+  "description": "Editorial de revista com tipografia avançada, justificação sem hífen, ajuste óptico de linha e motion cinematográfico.",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "useProjectProfile": true,
+    "eyebrow": "EDITORIAL",
+    "title": "Uma história que merece ser lida com calma.",
+    "subtitle": "Uma seção de conteúdo com hierarquia de revista, imagem editorial e leitura confortável em qualquer tela.",
+    "lead": "Use esta abertura para resumir a ideia principal da matéria e conduzir o leitor para o conteúdo.",
+    "body": "O corpo principal pode receber textos longos e se organiza automaticamente em colunas no desktop.\n\nNo celular, o conteúdo volta para uma única coluna para preservar conforto, ritmo e legibilidade.\n\nA composição foi pensada para apresentar conceito, arquitetura, localização, marca, produto ou qualquer narrativa que precise de mais profundidade do que um bloco convencional.",
+    "image": "assets/images/editorial-placeholder.svg",
+    "imageAlt": "Imagem editorial ilustrativa",
+    "caption": "Imagem editorial · substitua pelo arquivo do projeto.",
+    "quote": "Boa apresentação não é enfeite. É a forma de tornar uma ideia mais fácil de compreender.",
+    "quoteAuthor": "Destaque editorial",
+    "author": "",
+    "authorRole": "",
+    "layoutStyle": "classic",
+    "imageSide": "right",
+    "desktopColumns": "2",
+    "columnGap": 42,
+    "maxWidth": 1320,
+    "sectionPaddingY": 88,
+    "imageWidth": 40,
+    "imageRatio": "4 / 5",
+    "imageFit": "cover",
+    "imagePositionX": 50,
+    "imagePositionY": 50,
+    "imageRadius": 10,
+    "dropCap": true,
+    "showRule": true,
+    "showCaption": true,
+    "paperTexture": true,
+    "bodyFontSize": 18,
+    "bodyLineHeight": 1.75,
+    "titleScale": 1,
+    "mobileImageOrder": "before-text",
+    "mobilePaddingX": 18,
+    "mobilePaddingY": 54,
+    "backgroundColor": "#f6f2e8",
+    "textColor": "#28251f",
+    "titleColor": "#171510",
+    "accentColor": "#8b2e3c",
+    "headingTypeface": "project",
+    "bodyTypeface": "project",
+    "headerAlign": "left",
+    "bodyAlign": "left",
+    "containerAlign": "center",
+    "desktopPaddingX": 20,
+    "eyebrowSize": 12,
+    "eyebrowTracking": 0.18,
+    "titleSize": 109,
+    "titleWeight": 800,
+    "titleLineHeight": 0.94,
+    "titleTracking": -0.045,
+    "subtitleSize": 21,
+    "subtitleWeight": 400,
+    "subtitleLineHeight": 1.55,
+    "subtitleTracking": 0,
+    "leadSize": 34,
+    "leadWeight": 500,
+    "leadLineHeight": 1.25,
+    "leadTracking": -0.022,
+    "bodyWeight": 400,
+    "bodyTracking": 0,
+    "quoteSize": 42,
+    "quoteWeight": 600,
+    "quoteLineHeight": 1.08,
+    "mobileTypographyScale": 0.9,
+    "motionPreset": "cinema-soft",
+    "lineFit": "balanced"
+  },
+  "fields": [
+    {
+      "key": "useProjectProfile",
+      "label": "Seguir perfil visual do projeto",
+      "type": "toggle",
+      "group": "Perfil visual"
+    },
+    {
+      "key": "eyebrow",
+      "label": "Olho editorial",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "subtitle",
+      "label": "Linha fina / subtítulo",
+      "type": "textarea",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "lead",
+      "label": "Abertura / lead",
+      "type": "textarea",
+      "group": "Texto"
+    },
+    {
+      "key": "body",
+      "label": "Corpo da matéria",
+      "type": "textarea",
+      "group": "Texto"
+    },
+    {
+      "key": "quote",
+      "label": "Citação de destaque",
+      "type": "textarea",
+      "group": "Texto"
+    },
+    {
+      "key": "quoteAuthor",
+      "label": "Crédito da citação",
+      "type": "text",
+      "group": "Texto"
+    },
+    {
+      "key": "author",
+      "label": "Autor",
+      "type": "text",
+      "group": "Assinatura"
+    },
+    {
+      "key": "authorRole",
+      "label": "Cargo / assinatura",
+      "type": "text",
+      "group": "Assinatura"
+    },
+    {
+      "key": "image",
+      "label": "Imagem editorial",
+      "type": "image",
+      "group": "Imagem"
+    },
+    {
+      "key": "imageAlt",
+      "label": "Texto alternativo",
+      "type": "text",
+      "group": "Imagem"
+    },
+    {
+      "key": "caption",
+      "label": "Legenda",
+      "type": "text",
+      "group": "Imagem"
+    },
+    {
+      "key": "showCaption",
+      "label": "Exibir legenda",
+      "type": "toggle",
+      "group": "Imagem"
+    },
+    {
+      "key": "imageSide",
+      "label": "Posição no desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "Direita",
+          "value": "right"
+        },
+        {
+          "label": "Esquerda",
+          "value": "left"
+        }
+      ],
+      "group": "Imagem"
+    },
+    {
+      "key": "imageWidth",
+      "label": "Largura da imagem (%)",
+      "type": "range",
+      "min": 28,
+      "max": 52,
+      "step": 1,
+      "group": "Imagem"
+    },
+    {
+      "key": "imageRatio",
+      "label": "Proporção da imagem",
+      "type": "select",
+      "options": [
+        {
+          "label": "Vertical 4:5",
+          "value": "4 / 5"
+        },
+        {
+          "label": "Vertical 3:4",
+          "value": "3 / 4"
+        },
+        {
+          "label": "Quadrada 1:1",
+          "value": "1 / 1"
+        },
+        {
+          "label": "Horizontal 4:3",
+          "value": "4 / 3"
+        },
+        {
+          "label": "Horizontal 16:9",
+          "value": "16 / 9"
+        }
+      ],
+      "group": "Imagem"
+    },
+    {
+      "key": "imageFit",
+      "label": "Enquadramento",
+      "type": "select",
+      "options": [
+        {
+          "label": "Preencher",
+          "value": "cover"
+        },
+        {
+          "label": "Conter",
+          "value": "contain"
+        }
+      ],
+      "group": "Imagem"
+    },
+    {
+      "key": "imagePositionX",
+      "label": "Enquadramento horizontal (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Imagem"
+    },
+    {
+      "key": "imagePositionY",
+      "label": "Enquadramento vertical (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Imagem"
+    },
+    {
+      "key": "imageRadius",
+      "label": "Arredondamento (px)",
+      "type": "range",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "group": "Imagem"
+    },
+    {
+      "key": "layoutStyle",
+      "label": "Estilo editorial",
+      "type": "select",
+      "options": [
+        {
+          "label": "Revista clássica",
+          "value": "classic"
+        },
+        {
+          "label": "Feature / impacto",
+          "value": "feature"
+        },
+        {
+          "label": "Minimalista",
+          "value": "minimal"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "desktopColumns",
+      "label": "Colunas de texto no desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "1 coluna",
+          "value": "1"
+        },
+        {
+          "label": "2 colunas",
+          "value": "2"
+        },
+        {
+          "label": "3 colunas",
+          "value": "3"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "columnGap",
+      "label": "Espaço entre colunas (px)",
+      "type": "range",
+      "min": 18,
+      "max": 72,
+      "step": 0.25,
+      "group": "Composição"
+    },
+    {
+      "key": "dropCap",
+      "label": "Capitular na abertura",
+      "type": "toggle",
+      "group": "Composição"
+    },
+    {
+      "key": "showRule",
+      "label": "Linha editorial",
+      "type": "toggle",
+      "group": "Composição"
+    },
+    {
+      "key": "paperTexture",
+      "label": "Textura sutil de papel",
+      "type": "toggle",
+      "group": "Composição"
+    },
+    {
+      "key": "maxWidth",
+      "label": "Largura máxima do conteúdo (px)",
+      "type": "range",
+      "min": 820,
+      "max": 1600,
+      "step": 20,
+      "group": "Composição"
+    },
+    {
+      "key": "containerAlign",
+      "label": "Alinhamento do bloco",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "desktopPaddingX",
+      "label": "Margem lateral desktop (px · precisão 0,25)",
+      "type": "range",
+      "min": 0,
+      "max": 120,
+      "step": 0.25,
+      "group": "Composição"
+    },
+    {
+      "key": "sectionPaddingY",
+      "label": "Respiro vertical desktop (px)",
+      "type": "range",
+      "min": 36,
+      "max": 160,
+      "step": 0.25,
+      "group": "Composição"
+    },
+    {
+      "key": "headingTypeface",
+      "label": "Família dos títulos",
+      "type": "select",
+      "options": [
+        {
+          "label": "Perfil do projeto",
+          "value": "project"
+        },
+        {
+          "label": "Display editorial",
+          "value": "display"
+        },
+        {
+          "label": "Sans-serif",
+          "value": "sans"
+        },
+        {
+          "label": "Serif editorial",
+          "value": "serif"
+        },
+        {
+          "label": "Monoespaçada",
+          "value": "mono"
+        }
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyTypeface",
+      "label": "Família do texto",
+      "type": "select",
+      "options": [
+        {
+          "label": "Perfil do projeto",
+          "value": "project"
+        },
+        {
+          "label": "Sans-serif",
+          "value": "sans"
+        },
+        {
+          "label": "Serif editorial",
+          "value": "serif"
+        },
+        {
+          "label": "Monoespaçada",
+          "value": "mono"
+        }
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "headerAlign",
+      "label": "Alinhamento do cabeçalho",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyAlign",
+      "label": "Alinhamento do texto",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        },
+        {
+          "label": "Justificado",
+          "value": "justify"
+        }
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "lineFit",
+      "label": "Quebra e ajuste de linha",
+      "type": "select",
+      "options": [
+        {
+          "label": "Normal",
+          "value": "normal"
+        },
+        {
+          "label": "Editorial · sem hífen",
+          "value": "editorial"
+        },
+        {
+          "label": "Balanceado · recomendado",
+          "value": "balanced"
+        }
+      ],
+      "group": "Tipografia",
+      "note": "Equilibra as linhas sem justificar os espaços entre palavras. Preserva palavras inteiras e evita hifenização automática."
+    },
+    {
+      "key": "eyebrowSize",
+      "label": "Tamanho do olho editorial (px)",
+      "type": "range",
+      "min": 9,
+      "max": 22,
+      "step": 0.25,
+      "group": "Tipografia"
+    },
+    {
+      "key": "eyebrowTracking",
+      "label": "Tracking do olho (em)",
+      "type": "range",
+      "min": 0,
+      "max": 0.35,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleSize",
+      "label": "Tamanho máximo do título (px)",
+      "type": "range",
+      "min": 42,
+      "max": 160,
+      "step": 0.5,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleWeight",
+      "label": "Peso do título",
+      "type": "range",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleLineHeight",
+      "label": "Entrelinha do título",
+      "type": "range",
+      "min": 0.82,
+      "max": 1.4,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleTracking",
+      "label": "Tracking do título (em)",
+      "type": "range",
+      "min": -0.09,
+      "max": 0.12,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleSize",
+      "label": "Tamanho do subtítulo (px)",
+      "type": "range",
+      "min": 14,
+      "max": 38,
+      "step": 0.25,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleWeight",
+      "label": "Peso do subtítulo",
+      "type": "range",
+      "min": 300,
+      "max": 800,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleLineHeight",
+      "label": "Entrelinha do subtítulo",
+      "type": "range",
+      "min": 1.1,
+      "max": 2.0,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleTracking",
+      "label": "Tracking do subtítulo (em)",
+      "type": "range",
+      "min": -0.05,
+      "max": 0.16,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadSize",
+      "label": "Tamanho da abertura (px)",
+      "type": "range",
+      "min": 18,
+      "max": 52,
+      "step": 0.25,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadWeight",
+      "label": "Peso da abertura",
+      "type": "range",
+      "min": 300,
+      "max": 800,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadLineHeight",
+      "label": "Entrelinha da abertura",
+      "type": "range",
+      "min": 1.0,
+      "max": 1.8,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadTracking",
+      "label": "Tracking da abertura (em)",
+      "type": "range",
+      "min": -0.06,
+      "max": 0.12,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyFontSize",
+      "label": "Tamanho do corpo (px)",
+      "type": "range",
+      "min": 14,
+      "max": 28,
+      "step": 0.25,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyWeight",
+      "label": "Peso do corpo",
+      "type": "range",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyLineHeight",
+      "label": "Entrelinha do corpo",
+      "type": "range",
+      "min": 1.3,
+      "max": 2.2,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyTracking",
+      "label": "Tracking do corpo (em)",
+      "type": "range",
+      "min": -0.04,
+      "max": 0.12,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "quoteSize",
+      "label": "Tamanho da citação (px)",
+      "type": "range",
+      "min": 20,
+      "max": 58,
+      "step": 0.25,
+      "group": "Tipografia"
+    },
+    {
+      "key": "quoteWeight",
+      "label": "Peso da citação",
+      "type": "range",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "quoteLineHeight",
+      "label": "Entrelinha da citação",
+      "type": "range",
+      "min": 0.95,
+      "max": 1.6,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "motionPreset",
+      "label": "Entrada cinematográfica",
+      "type": "select",
+      "options": [
+        {
+          "label": "Sem animação",
+          "value": "none"
+        },
+        {
+          "label": "Cinema suave",
+          "value": "cinema-soft"
+        },
+        {
+          "label": "Foco / blur",
+          "value": "blur-focus"
+        },
+        {
+          "label": "Subida elegante",
+          "value": "rise-soft"
+        },
+        {
+          "label": "Reveal por máscara",
+          "value": "mask-reveal"
+        },
+        {
+          "label": "Profundidade editorial",
+          "value": "editorial-depth"
+        }
+      ],
+      "group": "Efeitos",
+      "note": "Preset de animação leve, com timing e stagger já lapidados."
+    },
+    {
+      "key": "mobileImageOrder",
+      "label": "Imagem no mobile",
+      "type": "select",
+      "options": [
+        {
+          "label": "Antes do texto",
+          "value": "before-text"
+        },
+        {
+          "label": "Depois do texto",
+          "value": "after-text"
+        }
+      ],
+      "group": "Mobile"
+    },
+    {
+      "key": "mobilePaddingX",
+      "label": "Margem lateral mobile (px)",
+      "type": "range",
+      "min": 12,
+      "max": 34,
+      "step": 0.25,
+      "group": "Mobile"
+    },
+    {
+      "key": "mobilePaddingY",
+      "label": "Respiro vertical mobile (px)",
+      "type": "range",
+      "min": 28,
+      "max": 96,
+      "step": 0.25,
+      "group": "Mobile"
+    },
+    {
+      "key": "mobileTypographyScale",
+      "label": "Escala tipográfica mobile",
+      "type": "range",
+      "min": 0.7,
+      "max": 1.1,
+      "step": 0.01,
+      "group": "Mobile"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Fundo local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "textColor",
+      "label": "Texto local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "titleColor",
+      "label": "Título local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "accentColor",
+      "label": "Destaque local",
+      "type": "color",
+      "group": "Cores locais"
+    }
+  ]
+}

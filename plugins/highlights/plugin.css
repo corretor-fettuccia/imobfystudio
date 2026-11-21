@@ -1,0 +1,31 @@
+/* Destaques 1.1 — styles are shared by editor preview and exported HTML. */
+.highlights-section{padding-block:var(--section-space);background:var(--surface);color:var(--body-color);--highlight-stroke:color-mix(in srgb,var(--ink) 14%,transparent)}
+.highlights-intro{max-width:850px;margin-bottom:clamp(2rem,5vw,4rem)}
+.highlights-intro h2{max-width:18ch}
+.highlights-subtitle{margin-top:clamp(.75rem,1.7vw,1.25rem);max-width:64ch;color:var(--component-muted-color,var(--muted-color));line-height:1.65}
+.highlight-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;min-width:0}
+.highlights-section[data-highlight-columns="2"] .highlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.highlights-section[data-highlight-columns="4"] .highlight-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.highlight-item{min-width:0;display:flex;align-items:flex-start;flex-direction:column;gap:clamp(.9rem,2vw,1.6rem);padding:clamp(1.4rem,2.5vw,2.3rem);overflow-wrap:anywhere}
+.highlight-item-copy{min-width:0;display:grid;gap:.7rem}
+.highlight-item h3{font-size:clamp(1.1rem,1.8vw,1.45rem);line-height:1.25;letter-spacing:-.025em;max-width:26ch}
+.highlight-item p{max-width:42ch;color:var(--component-muted-color,var(--muted-color));font-size:clamp(.92rem,1.08vw,1rem);line-height:1.6}
+.highlight-marker{display:inline-flex;align-items:center;justify-content:center;min-width:1.75rem;min-height:1.75rem;font:700 .72rem/1 var(--heading);letter-spacing:.08em;color:var(--primary-on-surface,var(--primary))}
+/* Editorial: restrained gridlines, with intentional row rhythm. */
+[data-highlight-layout="editorial"] .highlight-grid{border-top:1px solid var(--highlight-stroke);border-left:1px solid var(--highlight-stroke)}
+[data-highlight-layout="editorial"] .highlight-item{border-right:1px solid var(--highlight-stroke);border-bottom:1px solid var(--highlight-stroke)}
+/* Cards: individual surfaces rather than forced hover effects. */
+[data-highlight-layout="cards"] .highlight-grid{gap:clamp(.75rem,1.6vw,1.3rem)}
+[data-highlight-layout="cards"] .highlight-item{border:1px solid var(--highlight-stroke);border-radius:var(--radius);background:color-mix(in srgb,var(--component-surface,var(--surface)) 68%,#ffffff);box-shadow:0 9px 30px rgba(15,25,33,.045)}
+/* Compact: less ornament, no artificial blank space. */
+[data-highlight-layout="compact"] .highlight-item{padding:clamp(1rem,2vw,1.6rem) 0;gap:.45rem;border-bottom:1px solid var(--highlight-stroke)}
+[data-highlight-layout="compact"] .highlight-grid{column-gap:clamp(1.5rem,4vw,3.5rem)}
+[data-highlight-layout="compact"] .highlight-item-copy{gap:.4rem}
+[data-highlight-marker="dot"] .highlight-marker{justify-content:flex-start;font-size:1.65rem;line-height:.8}
+[data-highlight-align="center"] .highlight-item{text-align:center;align-items:center}
+[data-highlight-align="center"] .highlight-item h3,[data-highlight-align="center"] .highlight-item p{margin-inline:auto}
+.highlights-action{margin-top:clamp(1.75rem,4vw,3rem);display:flex;justify-content:flex-start}
+[data-highlight-align="center"] .highlights-action{justify-content:center}
+@media(max-width:1024px){.highlights-section[data-highlight-columns="4"] .highlight-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:720px){.highlights-section .highlight-grid{grid-template-columns:1fr!important}.highlight-item{padding:1.4rem 1rem}.highlights-intro{margin-bottom:2rem}[data-highlight-layout="compact"] .highlight-item{padding:1.2rem 0}.highlights-action .button{width:100%}}
+@media(prefers-reduced-motion:reduce){.highlights-section .highlight-item{scroll-behavior:auto}}

@@ -1,0 +1,15 @@
+const fs = require('fs');
+const path = require('path');
+const assert = require('assert');
+const root = path.join(__dirname, '..');
+const app = fs.readFileSync(path.join(root, 'assets/js/app.js'), 'utf8');
+const css = fs.readFileSync(path.join(root, 'assets/css/editor.css'), 'utf8');
+assert(app.includes('movementLocked:true'), 'new parallax keys should default to movement locked');
+assert(app.includes("return point?.movementLocked !== false"), 'legacy points should be treated as locked until explicitly unlocked');
+assert(app.includes('data-parallax-toggle-movement-lock'), 'key editor must expose movement lock next to key actions');
+assert(app.includes("if (key === 'startTime' && parallaxMovementLocked(currentPoint))"), 'locked keys must block numeric frame editing');
+assert(app.includes('if (parallaxMovementLocked(point))'), 'locked marker pointerdown must not arm drag');
+assert(app.includes("items[index].movementLocked = !parallaxMovementLocked(items[index])"), 'lock button must persist per-key state');
+assert(css.includes('.parallax-marker.banner.is-movement-locked'), 'timeline marker must visually expose locked state');
+assert(css.includes('.parallax-point-card-actions'), 'lock must sit in the selected key action group');
+console.log('parallax-key-movement-lock: ok');

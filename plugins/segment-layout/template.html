@@ -1,0 +1,7 @@
+<div class="ims-segment" data-direction="{{direction}}" data-tracks="{{tracks}}" data-width="{{widthMode}}" data-v-align="{{verticalAlign}}" data-h-align="{{horizontalAlign}}" data-mobile="{{mobileMode}}" data-bg-enabled="{{backgroundEnabled}}" style="--ims-tracks:{{tracks}};--ims-gap:{{gap}}px;--ims-item-gap:{{itemGap}}px;--ims-padding:{{padding}}px;--ims-min-height:{{minHeight}}px;--ims-bg:{{backgroundColor}};--ims-bg-image:url('{{backgroundImage}}');--ims-overlay:{{overlayOpacity}}%;">
+  <div class="ims-segment__overlay" aria-hidden="true"></div>
+  <div class="ims-segment__inner">
+    <header class="ims-segment__heading">{{#if title}}<h2>{{title}}</h2>{{/if}}{{#if subtitle}}<p>{{subtitle|br}}</p>{{/if}}</header>
+    <div class="ims-segment__grid"><!--IMOBIFY_SEGMENT_SLOTS--></div>
+  </div>
+</div>

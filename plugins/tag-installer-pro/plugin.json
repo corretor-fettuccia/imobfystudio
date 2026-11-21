@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 3,
+  "id": "tag-installer-pro",
+  "name": "Tag Installer Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "SEO / Integrações",
+  "icon": "</>",
+  "description": "Instala uma tag HTML independente no documento publicado. Cada instância possui ID próprio no projeto e pode ser inserida no HEAD, início ou fim do BODY.",
+  "output": "document-tag",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "label": "Nova tag",
+    "service": "custom",
+    "placement": "head",
+    "code": "",
+    "runInPreview": false,
+    "notes": ""
+  },
+  "fields": [
+    {
+      "key": "label",
+      "label": "Nome da tag",
+      "type": "text",
+      "group": "Identificação"
+    },
+    {
+      "key": "service",
+      "label": "Serviço / finalidade",
+      "type": "select",
+      "group": "Identificação",
+      "options": [
+        {
+          "label": "Google Search Console",
+          "value": "google-search-console"
+        },
+        {
+          "label": "Google Analytics",
+          "value": "google-analytics"
+        },
+        {
+          "label": "Google Tag Manager",
+          "value": "google-tag-manager"
+        },
+        {
+          "label": "Meta Pixel",
+          "value": "meta-pixel"
+        },
+        {
+          "label": "TikTok Pixel",
+          "value": "tiktok-pixel"
+        },
+        {
+          "label": "Microsoft Clarity",
+          "value": "microsoft-clarity"
+        },
+        {
+          "label": "Verificação de domínio",
+          "value": "domain-verification"
+        },
+        {
+          "label": "HTML / Script personalizado",
+          "value": "custom"
+        }
+      ]
+    },
+    {
+      "key": "placement",
+      "label": "Posição no documento",
+      "type": "select",
+      "group": "Instalação",
+      "options": [
+        {
+          "label": "HEAD",
+          "value": "head"
+        },
+        {
+          "label": "Início do BODY",
+          "value": "body-start"
+        },
+        {
+          "label": "Fim do BODY",
+          "value": "body-end"
+        }
+      ]
+    },
+    {
+      "key": "code",
+      "label": "Tag / código HTML",
+      "type": "textarea",
+      "group": "Instalação",
+      "rows": 10
+    },
+    {
+      "key": "runInPreview",
+      "label": "Executar também na prévia do editor",
+      "type": "toggle",
+      "group": "Instalação"
+    },
+    {
+      "key": "notes",
+      "label": "Observações",
+      "type": "textarea",
+      "group": "Documentação"
+    }
+  ]
+}

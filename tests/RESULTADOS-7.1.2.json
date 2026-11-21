@@ -1,0 +1,347 @@
+{
+  "total": 68,
+  "passed": 62,
+  "failed": 6,
+  "details": [
+    {
+      "name": "agendamento-sender-export.test.cjs",
+      "passed": true,
+      "message": "TAP version 13\nAgendamento Sender ZIP/Export OK\n# Subtest: Agendamento Sender integra catálogo, exporta CSS/JS/HTML e usa contrato FormSender\nok 1 - Agendamento Sender integra catálogo, exporta CSS/JS/HTML e usa contrato FormSender\n  ---\n  duration_ms: 1867.465669\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 2066.075806"
+    },
+    {
+      "name": "agentic-export-6090.test.cjs",
+      "passed": true,
+      "message": "Agentic export 6.0.90: HTML, runtime, catalog and llms.txt OK"
+    },
+    {
+      "name": "agentic-export-71.test.cjs",
+      "passed": true,
+      "message": "Exportação agêntica 7.1: llms completos, conteúdo público, diagnóstico e SEO OK"
+    },
+    {
+      "name": "ai-agent-71.test.cjs",
+      "passed": true,
+      "message": "Agente 7.1: whitelist, diff, dados públicos e parser OK"
+    },
+    {
+      "name": "ai-markdown-711.test.cjs",
+      "passed": true,
+      "message": "Markdown 7.1.1: anexos, classificação, seleção, orçamento, aviso e prompt OK"
+    },
+    {
+      "name": "benefits-core-typography-6083.test.cjs",
+      "passed": false,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'7.1.2' !== '6.0.83'\n\n    at /mnt/data/imobify7112_work/tests/benefits-core-typography-6083.test.cjs:56:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '7.1.2',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}"
+    },
+    {
+      "name": "benefits-fixed-background-6082.test.cjs",
+      "passed": false,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'7.1.2' !== '6.0.83'\n\n    at /mnt/data/imobify7112_work/tests/benefits-fixed-background-6082.test.cjs:47:9 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '7.1.2',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}"
+    },
+    {
+      "name": "benefits-showcase-6062.test.cjs",
+      "passed": true,
+      "message": "Benefits Showcase 6.0.62: render, SVG, escaping, category, layout, export OK"
+    },
+    {
+      "name": "financial-flow-690.test.cjs",
+      "passed": true,
+      "message": "re condicional\n  ---\n  duration_ms: 0.864412\n  type: 'test'\n  ...\n# Subtest: agendamento-sender admite imagem fixa\nok 4 - agendamento-sender admite imagem fixa\n  ---\n  duration_ms: 0.775307\n  type: 'test'\n  ...\n# Subtest: form-sender-v4 admite imagem fixa\nok 5 - form-sender-v4 admite imagem fixa\n  ---\n  duration_ms: 0.420009\n  type: 'test'\n  ...\n1..5\n# tests 5\n# suites 0\n# pass 5\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 59.614816"
+    },
+    {
+      "name": "form-sender-export-quick-complement.test.cjs",
+      "passed": true,
+      "message": "TAP version 13\n# Subtest: export hydrates quick-complement defaults for legacy Form Sender sections\nok 1 - export hydrates quick-complement defaults for legacy Form Sender sections\n  ---\n  duration_ms: 1547.681652\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1636.379586"
+    },
+    {
+      "name": "form-sender-mobile-steps-autocomplete.test.cjs",
+      "passed": false,
+      "message": "Context.<anonymous> (/mnt/data/imobify7112_work/tests/form-sender-mobile-steps-autocomplete.test.cjs:13:10)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 0\n# fail 1\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 69.761009"
+    },
+    {
+      "name": "form-sender-popup.test.cjs",
+      "passed": true,
+      "message": "intment policy, smart plant and four questions exist\nok 2 - time/scroll, persistence, appointment policy, smart plant and four questions exist\n  ---\n  duration_ms: 0.503325\n  type: 'test'\n  ...\n# Subtest: smart plant emits a dedicated popup event\nok 3 - smart plant emits a dedicated popup event\n  ---\n  duration_ms: 15.997145\n  type: 'test'\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 74.940051"
+    },
+    {
+      "name": "form-sender-quick-complement.test.cjs",
+      "passed": true,
+      "message": "TAP version 13\n# Subtest: Form Sender 4.5.0 exposes mandatory quick complement with locked modal\nok 1 - Form Sender 4.5.0 exposes mandatory quick complement with locked modal\n  ---\n  duration_ms: 4.767725\n  type: 'test'\n  ...\n1..1\n# tests 1\n# suites 0\n# pass 1\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 27.281704"
+    },
+    {
+      "name": "gallery-big-four-typography.test.cjs",
+      "passed": true,
+      "message": "Gallery Big Four typography attributes OK"
+    },
+    {
+      "name": "hero-plus-712.test.cjs",
+      "passed": true,
+      "message": "Hero Plus 1.1.0 / Imobify 7.1.2: estrutura, controles, cobertura, tipografia e compatibilidade OK"
+    },
+    {
+      "name": "hero-plus-export-712.test.cjs",
+      "passed": true,
+      "message": "Exportação Hero Plus 7.1.2: CSS, JS, controles e tipografia presentes no ZIP público."
+    },
+    {
+      "name": "hero360-canvas-recovery.test.cjs",
+      "passed": true,
+      "message": "Hero360 native: WebGL + Canvas 2D + resize + texture handling OK"
+    },
+    {
+      "name": "hero360-copy-delay-6081.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 1.2.7: configurações 2–10 s, restauração e compatibilidade legada OK"
+    },
+    {
+      "name": "hero360-delay-export-6081.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour: os valores 2, 5 e 10 s são salvos, renderizados e exportados sem alterações."
+    },
+    {
+      "name": "hero360-entry-and-preview-6071.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 6.0.71: captura, serialização, HFOV e fallback presentes."
+    },
+    {
+      "name": "hero360-fullsphere-v1.0.6.test.cjs",
+      "passed": true,
+      "message": "Hero360 esfera: longitude e latitude equiretangular e fill viewport OK"
+    },
+    {
+      "name": "hero360-immersive-motion-6073.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 1.2.5: configuração e integração Immersive Motion OK"
+    },
+    {
+      "name": "hero360-initialization-hotfix-6074.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 1.2.1: listener initialization before binding; no TDZ; WebGL/Canvas2D preserved"
+    },
+    {
+      "name": "hero360-navigation-panel-export.test.cjs",
+      "passed": true,
+      "message": "Hero360 export: painel oculto preservado no HTML compilado\nHero360 export: painel ativo preservado no HTML compilado"
+    },
+    {
+      "name": "hero360-navigation-panel.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour: painel opcional inativo por padrão e exportação sincronizada"
+    },
+    {
+      "name": "hero360-npot-6072.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour NPOT WebGL 1 + primeiro quadro + recuperação Canvas 2D: OK"
+    },
+    {
+      "name": "hero360-public-ui-6078.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 1.2.6: UI única e calibração presentes"
+    },
+    {
+      "name": "hero360-regression-6048.test.cjs",
+      "passed": true,
+      "message": "Hero360 runtime: hotspots de navegação, info no Hero, observador, fallback e sem banners OK"
+    },
+    {
+      "name": "hero360-scroll-pass-through.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour: native wheel scroll, touch pan-y and vertical-axis cap"
+    },
+    {
+      "name": "hero360-sensors-6075.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 1.2.5: Android/iOS, fallback Chromium, status de permissão e preview OK"
+    },
+    {
+      "name": "hero360-sensors-6076.test.cjs",
+      "passed": true,
+      "message": "Hero360Tour 1.2.3: frozen-orientation fallback, gyro and diagnostics available"
+    },
+    {
+      "name": "highlights-polish.test.cjs",
+      "passed": true,
+      "message": "Destaques 1.1: legacy, variants, escaping, links, unique anchors, responsive and export OK"
+    },
+    {
+      "name": "immersive-360-fullbleed.test.cjs",
+      "passed": true,
+      "message": "Full Bleed 360: 2 plugins, compilação, CSS, template e pacotes standalone OK"
+    },
+    {
+      "name": "immersive-360-plugins.test.cjs",
+      "passed": true,
+      "message": "immersive 360: manifests, imports, editor, cenas, hotspot, panorama ZIP e HTML OK"
+    },
+    {
+      "name": "md-export-private-711.test.cjs",
+      "passed": true,
+      "message": "Exportação 7.1.1: referências privadas ausentes do ZIP e projeto de origem intacto"
+    },
+    {
+      "name": "mobile-zoom-accessibility.test.cjs",
+      "passed": true,
+      "message": "zoom accessível no editor e no HTML exportado: OK"
+    },
+    {
+      "name": "parallax-audio-multitrack.test.cjs",
+      "passed": true,
+      "message": "parallax multitrack schema/editor/runtime: ok"
+    },
+    {
+      "name": "parallax-cinematic-performance.test.cjs",
+      "passed": true,
+      "message": "Parallax cinematic performance behavior OK"
+    },
+    {
+      "name": "parallax-controls-layout.test.cjs",
+      "passed": true,
+      "message": "Parallax controls layout OK"
+    },
+    {
+      "name": "parallax-dual-engine-ios.test.cjs",
+      "passed": true,
+      "message": "Parallax dual engine iOS behavior OK"
+    },
+    {
+      "name": "parallax-export-bundle.test.cjs",
+      "passed": true,
+      "message": "Mídia não incluída: https://raw.githubusercontent.com/corretor-fettuccia/media/refs/heads/main/newedition/NewEd.48.parallax.mp4 Error: HTTP 404\n    at packageOne (assets/js/compiler.js:121:33)\n    at async packageStateMedia (assets/js/compiler.js:221:30)\n    at async Object.compile (assets/js/compiler.js:607:5)\n    at async /mnt/data/imobify7112_work/tests/parallax-export-bundle.test.cjs:25:16\nParallax export bundle OK"
+    },
+    {
+      "name": "parallax-export-remote.test.cjs",
+      "passed": true,
+      "message": "Mídia não incluída: https://raw.githubusercontent.com/corretor-fettuccia/media/refs/heads/main/newedition/NewEd.48.parallax.mp4 Error: HTTP 404\n    at packageOne (assets/js/compiler.js:121:33)\n    at async packageStateMedia (assets/js/compiler.js:221:30)\n    at async Object.compile (assets/js/compiler.js:607:5)\n    at async /mnt/data/imobify7112_work/tests/parallax-export-remote.test.cjs:25:10\nParallax remote export OK"
+    },
+    {
+      "name": "parallax-export-typography.test.cjs",
+      "passed": true,
+      "message": "Parallax export typography OK"
+    },
+    {
+      "name": "parallax-key-movement-lock.test.cjs",
+      "passed": true,
+      "message": "parallax-key-movement-lock: ok"
+    },
+    {
+      "name": "parallax-mobile-hint-layer.test.cjs",
+      "passed": true,
+      "message": "parallax mobile hint layer ok"
+    },
+    {
+      "name": "parallax-mobile-start.test.cjs",
+      "passed": true,
+      "message": "Parallax mobile/start/control state machine OK"
+    },
+    {
+      "name": "parallax-preload-typography.test.cjs",
+      "passed": true,
+      "message": "Parallax preload/profile/typography behavior OK"
+    },
+    {
+      "name": "parallax-scroll-ownership.test.cjs",
+      "passed": true,
+      "message": "Parallax scroll ownership / external anchor behavior OK"
+    },
+    {
+      "name": "parallax-skip-release-key.test.cjs",
+      "passed": true,
+      "message": "Parallax skip -> release key OK"
+    },
+    {
+      "name": "parallax-typography-inheritance.test.cjs",
+      "passed": true,
+      "message": "parallax typography inheritance OK"
+    },
+    {
+      "name": "parallax-v2.10-release-forward.test.cjs",
+      "passed": true,
+      "message": "Parallax 2.10 release + forward-only behavior OK"
+    },
+    {
+      "name": "plugin-play.test.cjs",
+      "passed": false,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'1.4.0' !== '1.3.0'\n\n    at /mnt/data/imobify7112_work/tests/plugin-play.test.cjs:49:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '1.4.0',\n  expected: '1.3.0',\n  operator: 'strictEqual'\n}"
+    },
+    {
+      "name": "project-presets.test.cjs",
+      "passed": true,
+      "message": "Project Presets OK: 18 presets registrados."
+    },
+    {
+      "name": "property-slider-media-package.test.cjs",
+      "passed": true,
+      "message": "Property Slider media upload/package OK"
+    },
+    {
+      "name": "release-6.0.48.test.cjs",
+      "passed": false,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'7.1.2' !== '6.0.83'\n\n    at /mnt/data/imobify7112_work/tests/release-6.0.48.test.cjs:53:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '7.1.2',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}"
+    },
+    {
+      "name": "release-6.0.79.test.cjs",
+      "passed": false,
+      "message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'6.0.84' !== '6.0.83'\n\n    at /mnt/data/imobify7112_work/tests/release-6.0.79.test.cjs:13:10 {\n  generatedMessage: true,\n  code: 'ERR_ASSERTION',\n  actual: '6.0.84',\n  expected: '6.0.83',\n  operator: 'strictEqual'\n}"
+    },
+    {
+      "name": "responsive-typography.test.cjs",
+      "passed": true,
+      "message": "Responsive typography 6.0.44 OK: 50-plugin registry, three sizes, fluid CSS, legacy migration, opt-out and exported ZIP."
+    },
+    {
+      "name": "reveal-threshold-v6.0.4.test.cjs",
+      "passed": true,
+      "message": "9 effects: threshold 10% blocked, 20% triggered, replay reset. PASS"
+    },
+    {
+      "name": "seo-root-media-export.test.cjs",
+      "passed": true,
+      "message": "SEO root assets: PNG/WebP, canonical URL, Twitter, JSON-LD, legacy paths, remote compatibility, UI OK"
+    },
+    {
+      "name": "smart-plant-core-style.test.cjs",
+      "passed": true,
+      "message": "Smart Plant 1.4.4 · tokens, wizard, portal de modal, CTA, herança e aparências locais OK"
+    },
+    {
+      "name": "smart-plant-magnifier.test.cjs",
+      "passed": true,
+      "message": "Smart Plant 1.4.4 configurable magnifier behavior OK"
+    },
+    {
+      "name": "text-alignment-standard.test.cjs",
+      "passed": true,
+      "message": "title/body alignment including justify and mobile overrides\n  ---\n  duration_ms: 10.828858\n  type: 'test'\n  ...\n# Subtest: Lifestyle 1.2.1 exposes independent title and narrative alignment including justify\nok 2 - Lifestyle 1.2.1 exposes independent title and narrative alignment including justify\n  ---\n  duration_ms: 2.13768\n  type: 'test'\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 52.975003"
+    },
+    {
+      "name": "text-optical-fit.test.cjs",
+      "passed": true,
+      "message": " Lifestyle 1.2.1 defaults to left + balanced, not justified\n  ---\n  duration_ms: 9.463612\n  type: 'test'\n  ...\n# Subtest: Only TEXT 1.2.1 and Magazine 1.3.1 expose balanced preset without iterative fitting\nok 3 - Only TEXT 1.2.1 and Magazine 1.3.1 expose balanced preset without iterative fitting\n  ---\n  duration_ms: 7.415949\n  type: 'test'\n  ...\n1..3\n# tests 3\n# suites 0\n# pass 3\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 73.197899"
+    },
+    {
+      "name": "text-typography-polish.test.cjs",
+      "passed": true,
+      "message": "spacing and cinematic presets\n  ---\n  duration_ms: 3.986095\n  type: 'test'\n  ...\n# Subtest: Magazine Text Pro 1.3.1 exposes complete typography, alignment, mobile scale and cinematic presets\nok 2 - Magazine Text Pro 1.3.1 exposes complete typography, alignment, mobile scale and cinematic presets\n  ---\n  duration_ms: 4.132136\n  type: 'test'\n  ...\n1..2\n# tests 2\n# suites 0\n# pass 2\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 24.594264"
+    },
+    {
+      "name": "tour360-modal-regression.test.cjs",
+      "passed": true,
+      "message": "tour360 modal regression: ok"
+    },
+    {
+      "name": "tour360-plugin.test.cjs",
+      "passed": true,
+      "message": "tour360-plugin.test: OK"
+    },
+    {
+      "name": "typography-css-cascade.test.cjs",
+      "passed": true,
+      "message": "cascade tested"
+    },
+    {
+      "name": "typography-wizard.test.cjs",
+      "passed": true,
+      "message": "Typography wizard 6.0.40: roles, normalization, backward compatibility, per-section opt-out and exported CSS passed."
+    }
+  ]
+}

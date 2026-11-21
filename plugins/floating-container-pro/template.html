@@ -1,0 +1,8 @@
+<div class="ifcp-layer" id="{{panelId}}" data-ifcp-id="{{panelId}}" data-ifcp-section="{{__sectionId}}" data-mode="{{displayMode}}" data-mobile-mode="{{mobileMode}}" data-overlay="{{overlayEnabled}}" data-close-backdrop="{{closeOnBackdrop}}" data-close-escape="{{closeOnEscape}}" data-lock-scroll="{{lockScroll}}" data-open-hash="{{openOnHash}}" data-animation="{{animation}}" data-shadow="{{shadow}}" style="--ifcp-width:{{width}}px;--ifcp-max-height:{{maxHeight}}vh;--ifcp-radius:{{borderRadius}}px;--ifcp-padding:{{padding}}px;--ifcp-gap:{{gap}}px;--ifcp-cols:{{columns}};--ifcp-tablet-cols:{{tabletColumns}};--ifcp-mobile-cols:{{mobileColumns}};--ifcp-bg:{{backgroundColor}};--ifcp-text:{{textColor}};--ifcp-border:{{borderColor}};--ifcp-border-width:{{borderWidth}}px;--ifcp-overlay:{{overlayColor}};--ifcp-overlay-opacity:{{overlayOpacity}};--ifcp-speed:{{animationSpeed}}ms;--ifcp-close-size:{{closeSize}}px;--ifcp-close-bg:{{closeBackground}};--ifcp-close-color:{{closeColor}};" aria-hidden="true">
+  <div class="ifcp-backdrop" data-ifcp-backdrop aria-hidden="true"></div>
+  <div class="ifcp-panel" role="dialog" aria-modal="true" aria-label="{{title}}" tabindex="-1">
+    {{#if closeEnabled}}<button class="ifcp-close" type="button" data-ifcp-close data-position="{{closePosition}}" aria-label="{{closeText}}">{{closeIcon|icon}}<span>{{closeText}}</span></button>{{/if}}
+    {{#if showHeader}}<header class="ifcp-header">{{#if title}}<h2>{{title}}</h2>{{/if}}{{#if subtitle}}<p>{{subtitle|br}}</p>{{/if}}</header>{{/if}}
+    <div class="ifcp-grid" data-child-mode="{{childMode}}"><!--IMOBIFY_LAYOUT_CHILDREN--></div>
+  </div>
+</div>

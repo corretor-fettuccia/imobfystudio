@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "investidor-demanda",
+  "name": "Foco na demanda",
+  "description": "Modelo para investidor com foco na demanda real, absorção e liquidez.",
+  "category": "Investidor",
+  "baseBlueprint": "investment",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Foco na demanda",
+    "templateMeta": {
+      "presetId": "investidor-demanda",
+      "category": "Investidor",
+      "subcategory": ""
+    }
+  }
+}

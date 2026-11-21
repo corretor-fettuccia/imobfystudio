@@ -1,0 +1,356 @@
+/* =========================================================
+   AR CARD POPOUT 3D SINGLE — Plugin Play 1.2.0
+   Adaptado do AR Card V9 — Texto 3D + CTA
+   ========================================================= */
+
+.ar-popout-root{
+  --card-w:var(--ar-card-w-desktop,220px);
+  --card-h:var(--ar-card-h-desktop,330px);
+  --scene-w:var(--ar-scene-w-desktop,360px);
+  --scene-h:var(--ar-scene-h-desktop,430px);
+  --perspective:var(--ar-perspective-desktop,720px);
+  --card-radius:var(--ar-radius-desktop,22px);
+  --open-card-x:var(--ar-open-rx,68deg);
+  --open-card-z:-2.5deg;
+  --open-card-y:var(--ar-open-y,50px);
+  --open-card-scale:.94;
+  --projection-width:var(--ar-projection-width,103%);
+  --projection-y:var(--ar-projection-y-desktop,-34px);
+  --projection-z:var(--ar-projection-z-desktop,92px);
+  --projection-scale:.98;
+  --copy-left:20px;
+  --copy-right:20px;
+  --copy-bottom:22px;
+  --cta-bottom:28px;
+  --cta-z:122px;
+  --float-distance:7px;
+  --float-rotate:1.4deg;
+  --float-duration:3.6s;
+  --time-card:720ms;
+  --time-pop:720ms;
+  --ease:cubic-bezier(.16,1,.3,1);
+  width:100%;
+  min-width:0;
+  color:var(--ar-text-color,#fff);
+}
+
+.ar-popout-root[data-radius-mode="project"]{--card-radius:var(--radius,22px)}
+.ar-popout-root *{box-sizing:border-box}
+.ar-popout-root a,.ar-popout-root img,.ar-popout-root .ar-card{-webkit-tap-highlight-color:transparent}
+
+.ar-popout-layout{
+  width:min(100%,var(--container,1200px));
+  margin-inline:auto;
+  display:flex;
+  justify-content:center;
+  min-width:0;
+}
+.ar-popout-root[data-alignment="left"] .ar-popout-layout{justify-content:flex-start}
+.ar-popout-root[data-alignment="right"] .ar-popout-layout{justify-content:flex-end}
+
+.ar-popout-root .ar-scene{
+  --base-rx:0deg;
+  --base-ry:0deg;
+  --proj-rx:0deg;
+  --proj-ry:0deg;
+  --proj-x:0px;
+  --proj-y:0px;
+  --light-x:50%;
+  --light-y:28%;
+  --shadow-x:0px;
+  --pulse-scale:1;
+  --pulse-y:0px;
+  --pulse-shadow:1;
+  position:relative;
+  width:min(var(--scene-w),100%);
+  height:var(--scene-h);
+  display:grid;
+  place-items:center;
+  perspective:var(--perspective);
+  perspective-origin:50% 35%;
+  isolation:isolate;
+}
+
+.ar-popout-root .ar-card{
+  position:relative;
+  width:var(--card-w);
+  height:var(--card-h);
+  max-width:100%;
+  outline:0;
+  cursor:pointer;
+  user-select:none;
+  touch-action:manipulation;
+  transform-style:preserve-3d;
+  transform-origin:50% 90%;
+  transform:translateY(var(--pulse-y)) rotateX(var(--base-rx)) rotateY(var(--base-ry)) scale(var(--pulse-scale));
+  will-change:transform;
+  backface-visibility:hidden;
+}
+.ar-popout-root .ar-card:focus-visible{filter:drop-shadow(0 0 .7rem rgba(64,102,255,.55))}
+
+.ar-popout-root .card-plane{
+  position:absolute;
+  inset:0;
+  z-index:3;
+  border-radius:var(--card-radius);
+  overflow:hidden;
+  background:#fff;
+  transform-style:preserve-3d;
+  transform-origin:50% 90%;
+  transform:translate3d(0,0,0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+  transition:transform var(--time-card) var(--ease),filter var(--time-card) ease,border-radius var(--time-card) ease;
+  backface-visibility:hidden;
+  filter:drop-shadow(0 13px 13px rgba(0,0,0,.24)) drop-shadow(0 3px 4px rgba(0,0,0,.16));
+  will-change:transform,filter;
+}
+.ar-popout-root .card-image{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;pointer-events:none}
+
+/* Texto 3D */
+.ar-popout-root .card-copy{
+  position:absolute;
+  left:var(--copy-left);
+  right:var(--copy-right);
+  bottom:var(--copy-bottom);
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+  text-align:left;
+  color:var(--ar-text-color,#fff);
+  pointer-events:none;
+  transform-style:preserve-3d;
+  transform:translateZ(16px) rotateX(0deg);
+  transition:opacity var(--time-card) ease,transform var(--time-card) var(--ease);
+}
+.ar-popout-root[data-project-fonts="true"] .card-copy{font-family:var(--body,Inter,Arial,sans-serif)}
+.ar-popout-root[data-project-fonts="false"] .card-copy{font-family:Inter,Arial,Helvetica,sans-serif}
+.ar-popout-root .card-copy::before{
+  content:"";
+  position:absolute;
+  inset:-18px -18px -16px;
+  z-index:-10;
+  background:linear-gradient(to top,rgba(0,0,0,.65),rgba(0,0,0,.20) 58%,transparent);
+  filter:blur(5px);
+}
+.ar-popout-root .depth-text{
+  position:relative;
+  display:block;
+  width:max-content;
+  max-width:100%;
+  color:var(--ar-text-color,#fff)!important;
+  text-shadow:0 2px 5px rgba(0,0,0,.48),0 10px 28px rgba(0,0,0,.26);
+  transform-style:preserve-3d;
+  transform:translateZ(18px);
+  white-space:pre-line;
+}
+.ar-popout-root .depth-text::before,.ar-popout-root .depth-text::after{
+  content:attr(data-text);
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  white-space:pre-line;
+}
+.ar-popout-root .depth-text::before{
+  color:rgba(0,0,0,.62);
+  z-index:-2;
+  transform:translate3d(2px,3px,-14px);
+  filter:blur(.2px);
+  text-shadow:0 2px 2px rgba(0,0,0,.22),0 7px 18px rgba(0,0,0,.16);
+}
+.ar-popout-root .depth-text::after{
+  color:rgba(255,255,255,.28);
+  z-index:1;
+  transform:translate3d(-.6px,-.8px,10px);
+  mix-blend-mode:screen;
+}
+.ar-popout-root .depth-text-sm{
+  font-size:10px!important;
+  font-weight:800!important;
+  letter-spacing:.16em!important;
+  line-height:1.2!important;
+  opacity:.92;
+  transform:translateZ(16px);
+}
+.ar-popout-root .depth-text-md{
+  max-width:22ch;
+  font-size:11px!important;
+  line-height:1.35!important;
+  font-weight:600!important;
+  letter-spacing:normal!important;
+  opacity:.92;
+  transform:translateZ(17px);
+}
+.ar-popout-root .depth-text-lg{
+  font-size:22px!important;
+  line-height:1.02!important;
+  font-weight:900!important;
+  letter-spacing:-.025em!important;
+  transform:translateZ(var(--ar-title-depth,22px));
+}
+.ar-popout-root[data-project-fonts="true"] .depth-text-lg{font-family:var(--heading,Inter,Arial,sans-serif)!important}
+.ar-popout-root[data-project-fonts="false"] .depth-text-lg{font-family:Inter,Arial,Helvetica,sans-serif!important}
+.ar-popout-root .depth-text-sm::before{transform:translate3d(1.3px,2px,-10px)}
+.ar-popout-root .depth-text-sm::after{transform:translate3d(-.4px,-.5px,7px)}
+.ar-popout-root .depth-text-md::before{transform:translate3d(1.5px,2px,-12px)}
+.ar-popout-root .depth-text-md::after{transform:translate3d(-.4px,-.5px,8px)}
+.ar-popout-root .depth-text-lg::before{transform:translate3d(2px,3px,-18px)}
+.ar-popout-root .depth-text-lg::after{transform:translate3d(-.7px,-.8px,12px)}
+
+.ar-popout-root .card-dark{position:absolute;inset:0;z-index:5;opacity:0;pointer-events:none;background:linear-gradient(180deg,rgba(3,4,8,.12) 0%,rgba(4,5,9,.32) 44%,rgba(0,0,0,.70) 100%);transition:opacity var(--time-card) ease}
+.ar-popout-root .card-specular{position:absolute;inset:0;z-index:6;pointer-events:none;opacity:.20;mix-blend-mode:screen;background:radial-gradient(circle at var(--light-x) var(--light-y),rgba(255,255,255,.62) 0%,rgba(255,255,255,.14) 18%,rgba(255,255,255,.035) 34%,transparent 50%);transition:opacity 260ms ease}
+.ar-popout-root .card-edge{position:absolute;inset:0;z-index:7;border-radius:inherit;pointer-events:none;box-shadow:inset 1px 1px 0 rgba(255,255,255,.74),inset -1px -1px 0 rgba(0,0,0,.20);opacity:.42}
+
+.ar-popout-root .ground-shadow{
+  position:absolute;left:50%;bottom:-30px;width:88%;height:36px;z-index:0;border-radius:50%;pointer-events:none;
+  opacity:calc(.58 * var(--pulse-shadow));filter:blur(7px);
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.42) 0%,rgba(0,0,0,.23) 42%,rgba(0,0,0,.06) 64%,transparent 78%);
+  transform:translateX(-50%) scaleX(calc(.84 * var(--pulse-shadow))) scaleY(.72);
+  transition:bottom var(--time-card) var(--ease),transform var(--time-card) var(--ease),opacity 180ms ease-out,filter var(--time-card) ease;
+}
+.ar-popout-root .cast-shadow{
+  position:absolute;left:50%;bottom:70px;width:64%;height:26px;z-index:5;border-radius:50%;pointer-events:none;opacity:0;filter:blur(var(--ar-cast-shadow-blur,7px));
+  background:radial-gradient(ellipse at center,color-mix(in srgb,var(--ar-proj-shadow-color,#000) 58%,transparent) 0%,color-mix(in srgb,var(--ar-proj-shadow-color,#000) 34%,transparent) 38%,color-mix(in srgb,var(--ar-proj-shadow-color,#000) 10%,transparent) 62%,transparent 76%);
+  transform:translateX(-50%) translateY(10px) rotateZ(-5deg) scale(.34);
+  transition:opacity 260ms ease,transform var(--time-pop) var(--ease);
+}
+.ar-popout-root .contact-shadow{
+  position:absolute;left:50%;bottom:92px;width:31%;height:11px;z-index:6;border-radius:50%;pointer-events:none;opacity:0;filter:blur(var(--ar-contact-shadow-blur,4px));background:color-mix(in srgb,var(--ar-proj-shadow-color,#000) 46%,transparent);
+  transform:translateX(-50%) scale(.45);transition:opacity 250ms ease,transform var(--time-pop) var(--ease);
+}
+
+.ar-popout-root .projection-wrap{
+  position:absolute;left:50%;bottom:0;width:var(--projection-width);height:auto;z-index:8;pointer-events:none;transform-style:preserve-3d;transform-origin:50% 92%;opacity:0;
+  transform:translateX(-50%) translateY(26px) translateZ(-24px) scale(.80);
+  transition:transform var(--time-pop) var(--ease),opacity 220ms ease;will-change:transform,opacity;
+  backface-visibility:hidden;
+}
+.ar-popout-root .projection-motion{
+  position:relative;display:block;transform-style:preserve-3d;
+  transform:translate3d(var(--proj-x),var(--proj-y),0) rotateX(var(--proj-rx)) rotateY(var(--proj-ry));
+  transform-origin:50% 92%;will-change:transform;backface-visibility:hidden;
+}
+.ar-popout-root .projection-float{position:relative;display:block;transform-origin:50% 88%;will-change:transform;backface-visibility:hidden}
+.ar-popout-root .projection-image{position:relative;z-index:2;width:100%;height:auto;display:block;pointer-events:none;filter:drop-shadow(0 7px 7px rgba(0,0,0,.16)) saturate(1.03);transition:filter var(--time-pop) ease}
+.ar-popout-root .projection-aura{position:absolute;left:50%;top:20%;width:72%;aspect-ratio:1;z-index:0;border-radius:50%;opacity:0;filter:blur(17px);background:radial-gradient(circle,rgba(66,94,180,.13),rgba(66,94,180,.04) 42%,transparent 70%);transform:translateX(-50%) scale(.68);transition:opacity 480ms ease,transform var(--time-pop) var(--ease)}
+
+.ar-popout-root .open-cta{
+  position:absolute;left:50%;bottom:var(--cta-bottom);z-index:12;display:inline-flex;align-items:center;justify-content:center;min-width:118px;height:36px;padding:0 18px;
+  border-radius:999px;color:#fff!important;background:linear-gradient(180deg,var(--ar-cta-local,#2c66ff),color-mix(in srgb,var(--ar-cta-local,#2c66ff) 72%,#000));border:1px solid rgba(255,255,255,.34);
+  box-shadow:0 10px 22px rgba(18,65,190,.28),inset 0 1px 0 rgba(255,255,255,.32);font:800 11px/1 var(--body,Inter,Arial,sans-serif);letter-spacing:.06em;text-decoration:none;
+  opacity:0;pointer-events:none;transform:translateX(-50%) translateY(24px) translateZ(0) scale(.90);
+  transition:opacity 260ms ease,transform 620ms var(--ease),box-shadow 220ms ease,background 220ms ease;
+}
+.ar-popout-unit[data-show-cta="false"] .open-cta{display:none!important}
+.ar-popout-unit[data-project-cta="true"] .open-cta{background:var(--action-button-bg,#2c66ff);color:var(--action-button-text,#fff)!important;border-radius:calc(var(--radius,22px) * .7)}
+.ar-popout-root .open-cta:hover{filter:brightness(1.08);box-shadow:0 14px 28px rgba(18,65,190,.34),inset 0 1px 0 rgba(255,255,255,.38)}
+.ar-popout-root .open-cta:active{transform:translateX(-50%) translateY(-1px) translateZ(var(--cta-z)) scale(.98)}
+
+/* Estado aberto */
+.ar-popout-root .ar-card.is-open .card-plane{
+  transform:translate3d(0,var(--open-card-y),0) rotateX(var(--open-card-x)) rotateY(0deg) rotateZ(var(--open-card-z)) scale(var(--open-card-scale));
+  transition:transform var(--time-card) var(--ease),filter var(--time-card) ease;
+  filter:drop-shadow(0 34px 22px rgba(0,0,0,.42)) drop-shadow(0 10px 8px rgba(0,0,0,.26)) brightness(.64) saturate(.80);
+}
+.ar-popout-root .ar-card.is-open .card-copy{opacity:.58;transform:translateZ(22px) rotateX(-7deg) translateY(3px)}
+.ar-popout-root .ar-card.is-open .depth-text-sm{transform:translateZ(18px)}
+.ar-popout-root .ar-card.is-open .depth-text-md{transform:translateZ(19px)}
+.ar-popout-root .ar-card.is-open .depth-text-lg{transform:translateZ(calc(var(--ar-title-depth,22px) + 4px))}
+.ar-popout-root .ar-card.is-open .depth-text::before{color:rgba(0,0,0,.70)}
+.ar-popout-root .ar-card.is-open .depth-text::after{color:rgba(255,255,255,.18)}
+.ar-popout-root .ar-card.is-open .card-dark{opacity:.64}
+.ar-popout-root .ar-card.is-open .card-specular{opacity:.055}
+.ar-popout-root .ar-card.is-open .card-edge{opacity:.18}
+.ar-popout-root .ar-card.is-open .ground-shadow{bottom:-72px;opacity:.88;filter:blur(10px);transform:translateX(-50%) translateX(8px) scaleX(1.24) scaleY(.44)}
+.ar-popout-root .ar-card.is-open .projection-wrap{opacity:1;transform:translateX(-50%) translateY(var(--projection-y)) translateZ(var(--projection-z)) scale(var(--projection-scale));transition-delay:0ms,0ms}
+.ar-popout-root[data-float-projection="true"] .ar-card.is-open .projection-float{animation:arPopoutFloat var(--float-duration) ease-in-out var(--time-pop) infinite both}
+.ar-popout-root .ar-card.is-open .projection-image{filter:drop-shadow(var(--ar-proj-shadow-x,0px) var(--ar-proj-shadow-y,20px) var(--ar-proj-shadow-blur,13px) color-mix(in srgb,var(--ar-proj-shadow-color,#000) var(--ar-proj-shadow-opacity,28%),transparent)) saturate(1.05) contrast(1.02)}
+.ar-popout-root .ar-card.is-open .projection-aura{opacity:.52;transform:translateX(-50%) scale(.92)}
+.ar-popout-root .ar-card.is-open .cast-shadow{opacity:var(--ar-cast-shadow-opacity,90%);transform:translateX(-50%) translateY(var(--ar-cast-shadow-y,24px)) rotateZ(-6deg) scaleX(calc(var(--ar-cast-shadow-scale-x,94) / 100)) scaleY(.52)}
+.ar-popout-root .ar-card.is-open .contact-shadow{opacity:var(--ar-contact-shadow-opacity,76%);transform:translateX(-50%) translateY(var(--ar-contact-shadow-y,14px)) scaleX(calc(var(--ar-contact-shadow-scale-x,86) / 100)) scaleY(.70)}
+
+.ar-popout-unit[data-projection-shadows="false"] .projection-image{filter:saturate(1.05) contrast(1.02)!important}
+.ar-popout-unit[data-projection-shadows="false"] .cast-shadow,
+.ar-popout-unit[data-projection-shadows="false"] .contact-shadow{display:none!important}
+
+.ar-popout-root .ar-card.is-open .open-cta{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0) translateZ(var(--cta-z)) scale(1);transition-delay:300ms,250ms,0ms,0ms}
+
+/* Movimento suave: as transições de abertura ficam separadas do tilt em tempo real. */
+.ar-popout-root .ar-card,
+.ar-popout-root .card-plane,
+.ar-popout-root .projection-wrap,
+.ar-popout-root .projection-motion,
+.ar-popout-root .projection-float{
+  transform-style:preserve-3d;
+}
+.ar-popout-root .card-image,
+.ar-popout-root .projection-image{
+  transform:translateZ(0);
+  backface-visibility:hidden;
+}
+
+@media (hover:hover) and (pointer:fine){
+  .ar-popout-root .ar-card:not(.is-open):hover .card-plane{filter:drop-shadow(0 20px 18px rgba(0,0,0,.30)) drop-shadow(0 5px 5px rgba(0,0,0,.18))}
+  .ar-popout-root .ar-card:not(.is-open):hover .card-specular{opacity:.27}
+  .ar-popout-root .ar-card:not(.is-open):hover .card-copy{transform:translateZ(20px) rotateX(-2deg)}
+  .ar-popout-root .ar-card:not(.is-open):hover .depth-text-lg{transform:translateZ(calc(var(--ar-title-depth,22px) + 4px))}
+}
+
+@keyframes arPopoutFloat{
+  0%{transform:translateY(0) rotateZ(0deg) scale(1)}
+  25%{transform:translateY(calc(var(--float-distance) * -.55)) rotateZ(calc(var(--float-rotate) * .5)) scale(1.006)}
+  50%{transform:translateY(calc(var(--float-distance) * -1)) rotateZ(0deg) scale(1.01)}
+  75%{transform:translateY(calc(var(--float-distance) * -.4)) rotateZ(calc(var(--float-rotate) * -.55)) scale(1.005)}
+  100%{transform:translateY(0) rotateZ(0deg) scale(1)}
+}
+
+@media(max-width:720px){
+  .ar-popout-root{
+    --card-w:var(--ar-card-w-mobile,190px);
+    --card-h:var(--ar-card-h-mobile,285px);
+    --scene-w:var(--ar-scene-w-mobile,300px);
+    --scene-h:var(--ar-scene-h-mobile,365px);
+    --perspective:var(--ar-perspective-mobile,660px);
+    --card-radius:var(--ar-radius-mobile,19px);
+    --open-card-y:clamp(30px,12vw,var(--ar-open-y,50px));
+    --projection-y:var(--ar-projection-y-mobile,-25px);
+    --projection-z:var(--ar-projection-z-mobile,75px);
+    --projection-scale:.97;
+    --copy-left:16px;
+    --copy-right:16px;
+    --copy-bottom:17px;
+    --cta-bottom:22px;
+    --cta-z:95px;
+    --float-distance:5px;
+    --float-duration:3.2s;
+  }
+  .ar-popout-root[data-radius-mode="project"]{--card-radius:var(--radius,19px)}
+  .ar-popout-layout{padding-inline:4px}
+  .ar-popout-root .ar-scene{max-width:100%;overflow:visible}
+  .ar-popout-root .ar-card{max-width:calc(100vw - 48px)}
+  .ar-popout-root .depth-text-lg{font-size:18px!important}
+  .ar-popout-root .depth-text-md{font-size:10px!important}
+  .ar-popout-root .open-cta{min-width:108px;height:34px;padding:0 15px;font-size:10px}
+}
+
+@media(max-width:360px){
+  .ar-popout-root .ar-scene{transform:scale(.94);transform-origin:50% 50%}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .ar-popout-root *,.ar-popout-root *::before,.ar-popout-root *::after{transition-duration:1ms!important;animation-duration:1ms!important;animation-iteration-count:1!important}
+}
+
+
+/* Uma instância corresponde a um cartão. A grade pertence ao Segmento nativo. */
+.ar-popout-root .ar-popout-unit{
+  min-width:0;
+  width:min(100%,var(--scene-w));
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+.ar-popout-root .ar-popout-unit .ar-scene{width:min(var(--scene-w),100%)}
+
+@media(max-width:720px){
+  .ar-popout-root .ar-popout-unit{width:100%;justify-content:center}
+}

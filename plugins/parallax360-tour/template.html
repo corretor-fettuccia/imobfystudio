@@ -1,0 +1,14 @@
+<div class="ims360" data-mode="sequence" style="--ims360-height:{{heightDesktop}}px;--ims360-height-mobile:{{heightMobile}}px;--ims360-overlay:{{overlayOpacity}}%;--ims360-accent:{{accentColor}};--ims360-text:{{textColor}};" data-idle="{{idleSeconds}}" data-sway-yaw="{{swayYaw}}" data-sway-pitch="{{swayPitch}}" data-sway-cycle="{{swayCycleSeconds}}" data-scroll="{{scrollNavigation}}" data-progress="{{showProgress}}" data-scenes-menu="{{showSceneMenu}}">
+  <textarea class="ims360-config" hidden>{{tourConfig}}</textarea>
+  <div class="ims360-frame"><div class="ims360-viewer" aria-label="Panorama interativo de 360 graus"></div>
+    <div class="ims360-vignette" aria-hidden="true"></div>
+    <div class="ims360-topline"><span class="ims360-brand">TOUR 360°</span><span class="ims360-scene-name" aria-live="polite"></span></div>
+    <div class="ims360-copy"><p class="ims360-eyebrow">{{eyebrow}}</p><h2 class="ims360-headline">{{headline}}</h2><p class="ims360-subheadline">{{subheadline}}</p>{{#if ctaLabel}}<a class="ims360-cta" href="{{ctaUrl}}" data-hero-cta>{{ctaLabel}} <span aria-hidden="true">↗</span></a>{{/if}}</div>
+    <aside class="ims360-banner" hidden role="region" aria-label="Apresentação do ponto"><button type="button" class="ims360-banner-close" aria-label="Fechar apresentação">×</button><span class="ims360-banner-kicker">DESCUBRA O AMBIENTE</span><h3 class="ims360-banner-title"></h3><p class="ims360-banner-body"></p><button type="button" class="ims360-banner-action" hidden>Explorar ambiente <span aria-hidden="true">↗</span></button><a class="ims360-banner-link" hidden target="_blank" rel="noopener noreferrer">Saiba mais ↗</a></aside>
+    <nav class="ims360-navigation" aria-label="Navegação de experiência"><button class="ims360-prev" type="button" aria-label="Anterior">←</button><span class="ims360-counter" aria-live="polite"></span><button class="ims360-next" type="button" aria-label="Próximo">→</button></nav>
+    <button class="ims360-scene-toggle" type="button" aria-controls="ims360-scene-list" aria-expanded="false">Ambientes <span aria-hidden="true">⌄</span></button><nav class="ims360-scene-list" hidden aria-label="Selecionar ambiente"></nav>
+    <div class="ims360-tip">Arraste para olhar ao redor <span aria-hidden="true">·</span> Toque nos pontos</div>
+    <div class="ims360-empty" hidden><strong>Tour 360 ainda não configurado</strong><span>Abra o Studio deste plugin e adicione uma cena panorâmica e hotspots.</span></div>
+    <div class="ims360-error" hidden role="status"></div>
+  </div>
+</div>

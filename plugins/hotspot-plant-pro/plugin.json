@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 3,
+  "id": "hotspot-plant-pro",
+  "name": "Hotspot Plant Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Interação",
+  "icon": "⊙",
+  "description": "Imagem de implantação/planta com pontos clicáveis e painel de detalhes adaptado ao mobile.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "IMPLANTAÇÃO INTERATIVA",
+    "title": "Explore os pontos do projeto.",
+    "image": "assets/images/plant-placeholder.jpg",
+    "panelLabel": "Selecione um ponto para ver os detalhes.",
+    "spot1Enabled": true,
+    "spot1X": 28,
+    "spot1Y": 34,
+    "spot1Label": "01",
+    "spot1Title": "Quadra A",
+    "spot1Text": "Posição estratégica próxima ao acesso principal.",
+    "spot1Link": "",
+    "spot2Enabled": true,
+    "spot2X": 62,
+    "spot2Y": 28,
+    "spot2Label": "02",
+    "spot2Title": "Área de lazer",
+    "spot2Text": "Concentra os principais espaços de convivência.",
+    "spot2Link": "",
+    "spot3Enabled": true,
+    "spot3X": 72,
+    "spot3Y": 65,
+    "spot3Label": "03",
+    "spot3Title": "Quadra B",
+    "spot3Text": "Setor com boa relação entre privacidade e acesso.",
+    "spot3Link": "",
+    "spot4Enabled": true,
+    "spot4X": 42,
+    "spot4Y": 72,
+    "spot4Label": "04",
+    "spot4Title": "Acesso",
+    "spot4Text": "Entrada e circulação principal do empreendimento.",
+    "spot4Link": "",
+    "spot5Enabled": false,
+    "spot5X": 18,
+    "spot5Y": 65,
+    "spot5Label": "05",
+    "spot5Title": "Área verde",
+    "spot5Text": "Faixa paisagística e de respiro visual.",
+    "spot5Link": "",
+    "spot6Enabled": false,
+    "spot6X": 84,
+    "spot6Y": 45,
+    "spot6Label": "06",
+    "spot6Title": "Ponto de interesse",
+    "spot6Text": "Configure este ponto conforme a implantação.",
+    "spot6Link": ""
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "text",
+      "group": "Cabeçalho"
+    },
+    {
+      "key": "image",
+      "label": "Imagem / implantação",
+      "type": "image",
+      "group": "Imagem"
+    },
+    {
+      "key": "panelLabel",
+      "label": "Texto inicial do painel",
+      "type": "text",
+      "group": "Imagem"
+    },
+    {
+      "key": "spot1Enabled",
+      "label": "Exibir ponto",
+      "type": "toggle",
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot1X",
+      "label": "Posição X (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot1Y",
+      "label": "Posição Y (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot1Label",
+      "label": "Marcador",
+      "type": "text",
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot1Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot1Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot1Link",
+      "label": "Link opcional",
+      "type": "url",
+      "group": "Ponto 1"
+    },
+    {
+      "key": "spot2Enabled",
+      "label": "Exibir ponto",
+      "type": "toggle",
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot2X",
+      "label": "Posição X (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot2Y",
+      "label": "Posição Y (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot2Label",
+      "label": "Marcador",
+      "type": "text",
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot2Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot2Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot2Link",
+      "label": "Link opcional",
+      "type": "url",
+      "group": "Ponto 2"
+    },
+    {
+      "key": "spot3Enabled",
+      "label": "Exibir ponto",
+      "type": "toggle",
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot3X",
+      "label": "Posição X (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot3Y",
+      "label": "Posição Y (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot3Label",
+      "label": "Marcador",
+      "type": "text",
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot3Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot3Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot3Link",
+      "label": "Link opcional",
+      "type": "url",
+      "group": "Ponto 3"
+    },
+    {
+      "key": "spot4Enabled",
+      "label": "Exibir ponto",
+      "type": "toggle",
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot4X",
+      "label": "Posição X (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot4Y",
+      "label": "Posição Y (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot4Label",
+      "label": "Marcador",
+      "type": "text",
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot4Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot4Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot4Link",
+      "label": "Link opcional",
+      "type": "url",
+      "group": "Ponto 4"
+    },
+    {
+      "key": "spot5Enabled",
+      "label": "Exibir ponto",
+      "type": "toggle",
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot5X",
+      "label": "Posição X (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot5Y",
+      "label": "Posição Y (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot5Label",
+      "label": "Marcador",
+      "type": "text",
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot5Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot5Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot5Link",
+      "label": "Link opcional",
+      "type": "url",
+      "group": "Ponto 5"
+    },
+    {
+      "key": "spot6Enabled",
+      "label": "Exibir ponto",
+      "type": "toggle",
+      "group": "Ponto 6"
+    },
+    {
+      "key": "spot6X",
+      "label": "Posição X (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 6"
+    },
+    {
+      "key": "spot6Y",
+      "label": "Posição Y (%)",
+      "type": "range",
+      "min": 2,
+      "max": 98,
+      "step": 1,
+      "group": "Ponto 6"
+    },
+    {
+      "key": "spot6Label",
+      "label": "Marcador",
+      "type": "text",
+      "group": "Ponto 6"
+    },
+    {
+      "key": "spot6Title",
+      "label": "Título",
+      "type": "text",
+      "group": "Ponto 6"
+    },
+    {
+      "key": "spot6Text",
+      "label": "Descrição",
+      "type": "textarea",
+      "group": "Ponto 6"
+    },
+    {
+      "key": "spot6Link",
+      "label": "Link opcional",
+      "type": "url",
+      "group": "Ponto 6"
+    }
+  ]
+}

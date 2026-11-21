@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 3,
+  "id": "possibility-path-pro",
+  "name": "Possibility Path Pro",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Conversão",
+  "icon": "✦",
+  "description": "Diagnóstico guiado de possibilidade: objeção → reenquadramento → cenário → desejo → próximo passo, sem simulação bancária.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "eyebrow": "DIAGNÓSTICO DE POSSIBILIDADE",
+    "title": "Não desista antes de descobrir o que é possível.",
+    "intro": "Responda poucas perguntas. Não é uma aprovação nem uma simulação bancária — é um caminho para entender o que vale analisar.",
+    "showProgress": true,
+    "privacyText": "Suas respostas só são enviadas quando você escolhe continuar para análise.",
+    "barrierQuestion": "O que faz você pensar que talvez não consiga?",
+    "barrier1Label": "Não tenho entrada",
+    "barrier1Icon": "fa-solid fa-wallet",
+    "barrier1Reframe": "Talvez você esteja tentando responder uma pergunta antes da hora. Antes de concluir que falta entrada, precisamos descobrir quanto realmente seria necessário colocar do bolso.",
+    "barrier1Result": "Antes de concluir que falta entrada, vale analisar renda, FGTS, terreno e projeto juntos para descobrir qual aporte realmente seria necessário.",
+    "barrier2Label": "Minha renda parece baixa",
+    "barrier2Icon": "fa-solid fa-chart-column",
+    "barrier2Reframe": "A renda isolada não responde quanto você consegue estruturar. Composição familiar, FGTS, entrada, terreno e projeto mudam a leitura do cenário.",
+    "barrier2Result": "A renda sozinha não encerra a análise. O próximo passo é verificar composição, FGTS e a estrutura possível da operação.",
+    "barrier3Label": "Sou autônomo",
+    "barrier3Icon": "fa-solid fa-briefcase",
+    "barrier3Reframe": "Ser autônomo não responde sozinho se a operação é possível. Primeiro precisamos entender como a renda pode ser demonstrada e documentada.",
+    "barrier3Result": "O próximo passo é entender como sua renda pode ser comprovada e como ela se relaciona com terreno, projeto e crédito.",
+    "barrier4Label": "Acho que não consigo financiar",
+    "barrier4Icon": "fa-solid fa-building-columns",
+    "barrier4Reframe": "Antes de transformar uma impressão em resposta definitiva, vale organizar as variáveis que realmente entram na análise de crédito e do projeto.",
+    "barrier4Result": "Ainda existem variáveis objetivas para verificar antes de descartar financiamento: renda, documentação, terreno, projeto e enquadramento.",
+    "barrier5Label": "Casa com pátio está muito cara",
+    "barrier5Icon": "fa-solid fa-house",
+    "barrier5Reframe": "O preço da casa pronta não é necessariamente a mesma conta de terreno + construção. Mudar a forma de chegar à casa pode mudar o cenário.",
+    "barrier5Result": "Antes de abandonar o pátio, vale comparar a lógica da casa pronta com terreno + construção e descobrir qual projeto pode fazer sentido.",
+    "barrier6Label": "Não sei por onde começar",
+    "barrier6Icon": "fa-solid fa-compass",
+    "barrier6Reframe": "Você não precisa dominar financiamento, terreno e projeto para começar. O primeiro passo é organizar seu cenário e descobrir o que precisa ser analisado.",
+    "barrier6Result": "Seu próximo passo não é escolher uma casa às cegas. É organizar o cenário e descobrir quais caminhos merecem análise.",
+    "reframeTitle": "Talvez você esteja respondendo antes da hora.",
+    "reframeContinue": "Vamos descobrir um pouco mais",
+    "scenarioTitle": "Seu cenário",
+    "scenarioIntro": "Uma pergunta por vez. Você pode voltar sem perder as respostas.",
+    "incomeQuestion": "Qual é aproximadamente a renda familiar?",
+    "incomeOptions": "Até R$ 3 mil|Até R$ 3 mil\nR$ 3 a 5 mil|R$ 3 a 5 mil\nR$ 5 a 7 mil|R$ 5 a 7 mil\nR$ 7 a 9 mil|R$ 7 a 9 mil\nAcima de R$ 9 mil|Acima de R$ 9 mil",
+    "fgtsQuestion": "Você possui FGTS?",
+    "fgtsOptions": "Sim|Sim\nNão|Não\nNão sei quanto tenho|Não sei quanto tenho",
+    "entryQuestion": "Hoje, quanto conseguiria usar como entrada?",
+    "entryOptions": "Não tenho entrada|Não tenho entrada\nAté R$ 5 mil|Até R$ 5 mil\nR$ 5 a 15 mil|R$ 5 a 15 mil\nAcima de R$ 15 mil|Acima de R$ 15 mil",
+    "landQuestion": "Você já possui terreno?",
+    "landOptions": "Sim|Sim\nNão|Não\nEstou procurando|Estou procurando\nAinda não pensei nisso|Ainda não pensei nisso",
+    "desireQuestion": "O que você gostaria de ter na sua casa?",
+    "desireIntro": "Selecione tudo o que for importante para você.",
+    "desire1Label": "Pátio",
+    "desire1Icon": "fa-solid fa-tree",
+    "desire2Label": "2 dormitórios",
+    "desire2Icon": "fa-solid fa-bed",
+    "desire3Label": "3 dormitórios",
+    "desire3Icon": "fa-solid fa-bed",
+    "desire4Label": "Suíte",
+    "desire4Icon": "fa-solid fa-bath",
+    "desire5Label": "Churrasqueira",
+    "desire5Icon": "fa-solid fa-fire-burner",
+    "desire6Label": "Espaço para pet",
+    "desire6Icon": "fa-solid fa-paw",
+    "desire7Label": "Possibilidade de ampliar",
+    "desire7Icon": "fa-solid fa-up-right-and-down-left-from-center",
+    "resultIcon": "fa-solid fa-house-circle-check",
+    "resultTitle": "Você ainda não tem motivo para descartar essa possibilidade.",
+    "resultIntro": "Pelo que você informou, existem variáveis que precisam ser analisadas em conjunto antes de concluir quanto você precisaria colocar do bolso.",
+    "resultFactors": "Renda|fa-solid fa-user-group\nFGTS|fa-solid fa-file-invoice-dollar\nTerreno|fa-solid fa-map-location-dot\nProjeto|fa-solid fa-drafting-compass\nOperação|fa-solid fa-gears",
+    "resultNote": "Esses fatores dizem mais do que olhar apenas para uma entrada isoladamente.",
+    "ctaText": "QUERO DESCOBRIR MINHA POSSIBILIDADE",
+    "ctaMode": "form-whatsapp",
+    "formTarget": "#contato",
+    "whatsappText": "FALAR PELO WHATSAPP",
+    "whatsappPhone": "5551998111078",
+    "whatsappMessage": "Olá! Fiz o Diagnóstico de Possibilidade e gostaria que analisassem meu cenário.",
+    "analyticsPrefix": "possibility_path",
+    "useGlobalTheme": true,
+    "primaryColor": "#315b2b",
+    "surfaceColor": "#f8f4eb",
+    "textColor": "#17211c",
+    "cardColor": "#ffffff"
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Selo",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "title",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "intro",
+      "label": "Texto de abertura",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "showProgress",
+      "label": "Exibir progresso",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "privacyText",
+      "label": "Texto de privacidade",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "barrierQuestion",
+      "label": "Pergunta principal",
+      "type": "textarea",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier1Label",
+      "label": "Barreira 1 — texto",
+      "type": "text",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier1Icon",
+      "label": "Barreira 1 — ícone",
+      "type": "icon",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier1Reframe",
+      "label": "Barreira 1 — reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "barrier1Result",
+      "label": "Barreira 1 — resultado",
+      "type": "textarea",
+      "group": "Resultados por objeção"
+    },
+    {
+      "key": "barrier2Label",
+      "label": "Barreira 2 — texto",
+      "type": "text",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier2Icon",
+      "label": "Barreira 2 — ícone",
+      "type": "icon",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier2Reframe",
+      "label": "Barreira 2 — reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "barrier2Result",
+      "label": "Barreira 2 — resultado",
+      "type": "textarea",
+      "group": "Resultados por objeção"
+    },
+    {
+      "key": "barrier3Label",
+      "label": "Barreira 3 — texto",
+      "type": "text",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier3Icon",
+      "label": "Barreira 3 — ícone",
+      "type": "icon",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier3Reframe",
+      "label": "Barreira 3 — reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "barrier3Result",
+      "label": "Barreira 3 — resultado",
+      "type": "textarea",
+      "group": "Resultados por objeção"
+    },
+    {
+      "key": "barrier4Label",
+      "label": "Barreira 4 — texto",
+      "type": "text",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier4Icon",
+      "label": "Barreira 4 — ícone",
+      "type": "icon",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier4Reframe",
+      "label": "Barreira 4 — reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "barrier4Result",
+      "label": "Barreira 4 — resultado",
+      "type": "textarea",
+      "group": "Resultados por objeção"
+    },
+    {
+      "key": "barrier5Label",
+      "label": "Barreira 5 — texto",
+      "type": "text",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier5Icon",
+      "label": "Barreira 5 — ícone",
+      "type": "icon",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier5Reframe",
+      "label": "Barreira 5 — reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "barrier5Result",
+      "label": "Barreira 5 — resultado",
+      "type": "textarea",
+      "group": "Resultados por objeção"
+    },
+    {
+      "key": "barrier6Label",
+      "label": "Barreira 6 — texto",
+      "type": "text",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier6Icon",
+      "label": "Barreira 6 — ícone",
+      "type": "icon",
+      "group": "Barreiras"
+    },
+    {
+      "key": "barrier6Reframe",
+      "label": "Barreira 6 — reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "barrier6Result",
+      "label": "Barreira 6 — resultado",
+      "type": "textarea",
+      "group": "Resultados por objeção"
+    },
+    {
+      "key": "reframeTitle",
+      "label": "Título do reenquadramento",
+      "type": "textarea",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "reframeContinue",
+      "label": "Botão continuar",
+      "type": "text",
+      "group": "Reenquadramentos"
+    },
+    {
+      "key": "scenarioTitle",
+      "label": "Título",
+      "type": "text",
+      "group": "Cenário"
+    },
+    {
+      "key": "scenarioIntro",
+      "label": "Apoio",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "incomeQuestion",
+      "label": "Renda familiar — pergunta",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "incomeOptions",
+      "label": "Renda familiar — opções (rótulo|valor)",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "fgtsQuestion",
+      "label": "FGTS — pergunta",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "fgtsOptions",
+      "label": "FGTS — opções (rótulo|valor)",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "entryQuestion",
+      "label": "Entrada — pergunta",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "entryOptions",
+      "label": "Entrada — opções (rótulo|valor)",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "landQuestion",
+      "label": "Terreno — pergunta",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "landOptions",
+      "label": "Terreno — opções (rótulo|valor)",
+      "type": "textarea",
+      "group": "Cenário"
+    },
+    {
+      "key": "desireQuestion",
+      "label": "Pergunta",
+      "type": "textarea",
+      "group": "Desejo"
+    },
+    {
+      "key": "desireIntro",
+      "label": "Texto de apoio",
+      "type": "textarea",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire1Label",
+      "label": "Desejo 1 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire1Icon",
+      "label": "Desejo 1 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire2Label",
+      "label": "Desejo 2 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire2Icon",
+      "label": "Desejo 2 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire3Label",
+      "label": "Desejo 3 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire3Icon",
+      "label": "Desejo 3 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire4Label",
+      "label": "Desejo 4 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire4Icon",
+      "label": "Desejo 4 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire5Label",
+      "label": "Desejo 5 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire5Icon",
+      "label": "Desejo 5 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire6Label",
+      "label": "Desejo 6 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire6Icon",
+      "label": "Desejo 6 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire7Label",
+      "label": "Desejo 7 — texto",
+      "type": "text",
+      "group": "Desejo"
+    },
+    {
+      "key": "desire7Icon",
+      "label": "Desejo 7 — ícone",
+      "type": "icon",
+      "group": "Desejo"
+    },
+    {
+      "key": "resultIcon",
+      "label": "Ícone do resultado",
+      "type": "icon",
+      "group": "Resultado"
+    },
+    {
+      "key": "resultTitle",
+      "label": "Título",
+      "type": "textarea",
+      "group": "Resultado"
+    },
+    {
+      "key": "resultIntro",
+      "label": "Texto",
+      "type": "textarea",
+      "group": "Resultado"
+    },
+    {
+      "key": "resultFactors",
+      "label": "Fatores (rótulo|classe do ícone)",
+      "type": "textarea",
+      "group": "Resultado"
+    },
+    {
+      "key": "resultNote",
+      "label": "Nota final",
+      "type": "textarea",
+      "group": "Resultado"
+    },
+    {
+      "key": "ctaText",
+      "label": "CTA principal",
+      "type": "text",
+      "group": "Ação"
+    },
+    {
+      "key": "ctaMode",
+      "label": "Destino do CTA",
+      "type": "select",
+      "group": "Ação",
+      "options": [
+        {
+          "label": "Formulário",
+          "value": "form"
+        },
+        {
+          "label": "WhatsApp",
+          "value": "whatsapp"
+        },
+        {
+          "label": "Formulário + WhatsApp",
+          "value": "form-whatsapp"
+        }
+      ]
+    },
+    {
+      "key": "formTarget",
+      "label": "Âncora/seletor do formulário",
+      "type": "text",
+      "group": "Ação"
+    },
+    {
+      "key": "whatsappText",
+      "label": "Texto do botão WhatsApp",
+      "type": "text",
+      "group": "Ação"
+    },
+    {
+      "key": "whatsappPhone",
+      "label": "WhatsApp com DDI",
+      "type": "text",
+      "group": "Ação"
+    },
+    {
+      "key": "whatsappMessage",
+      "label": "Mensagem inicial",
+      "type": "textarea",
+      "group": "Ação"
+    },
+    {
+      "key": "analyticsPrefix",
+      "label": "Prefixo de analytics",
+      "type": "text",
+      "group": "Ação"
+    },
+    {
+      "key": "useGlobalTheme",
+      "label": "Herdar Perfil Visual",
+      "type": "toggle",
+      "group": "Visual"
+    },
+    {
+      "key": "primaryColor",
+      "label": "Cor principal local",
+      "type": "color",
+      "group": "Visual"
+    },
+    {
+      "key": "surfaceColor",
+      "label": "Fundo local",
+      "type": "color",
+      "group": "Visual"
+    },
+    {
+      "key": "textColor",
+      "label": "Texto local",
+      "type": "color",
+      "group": "Visual"
+    },
+    {
+      "key": "cardColor",
+      "label": "Card local",
+      "type": "color",
+      "group": "Visual"
+    }
+  ]
+}

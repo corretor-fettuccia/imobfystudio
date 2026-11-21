@@ -1,0 +1,727 @@
+/* Imobify Design System 5.0.0 — compatibility layer loaded after plugin CSS */
+[data-plugin]{font-family:var(--body);font-size:var(--body-size);line-height:var(--body-line);color:var(--body-color);--component-title-color:var(--heading-color);--component-text-color:var(--body-color);--component-muted-color:var(--muted-color);--component-surface:var(--surface)}
+[data-plugin] :where(h1,h2,h3,h4,h5,h6){font-family:var(--heading);font-weight:var(--heading-weight);line-height:var(--heading-line);letter-spacing:var(--heading-tracking);color:var(--component-title-color);text-wrap:balance}
+[data-plugin] :where(h1){font-size:clamp(2.35rem,6.5vw,var(--h1-max));max-width:18ch}
+[data-plugin] :where(h2){font-size:clamp(1.9rem,4.4vw,var(--h2-max));max-width:22ch}
+[data-plugin] :where(h3){font-size:clamp(1.18rem,2.4vw,var(--h3-max));max-width:30ch}
+[data-plugin] :where(p,li,label,input,textarea,select,button){font-family:var(--body)}
+[data-plugin] :where(p){text-wrap:pretty}
+[data-plugin] :where(.section-intro p:not(.eyebrow),.hero-copy,.lifestyle-copy>p:not(.eyebrow),.lead-layout>div>p:not(.eyebrow),.formsenderV4_intro>p:last-child,.pp-flip-intro>p:last-child){max-width:var(--text-measure)}
+[data-plugin] :where(.eyebrow,[class$="__eyebrow"],[class$="-eyebrow"],[class$="_eyebrow"]){color:var(--primary-on-surface,var(--primary));font-family:var(--body);letter-spacing:var(--eyebrow-tracking);font-weight:700}
+[data-plugin] :where([class$="__title"],[class$="-title"],[class$="_title"],[class~="title"],[class$="__heading"],[class$="-heading"]):not(h1):not(h2){font-family:var(--heading);font-weight:var(--heading-weight);letter-spacing:var(--heading-tracking);color:var(--component-title-color);font-size:clamp(1.1rem,2vw,var(--h3-max))}
+[data-plugin] :where([class$="__copy"],[class$="-copy"],[class$="_copy"],[class$="__description"],[class$="-description"],[class$="_description"]){font-family:var(--body);color:var(--component-text-color)}
+
+/* Dark/inverse composition contexts */
+:where(.hero-section,.payment-section,.lead-section,.site-footer,.gallery-section,[data-plugin="gallery-big-four"],[data-plugin="property-slider"],:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])){--component-title-color:var(--inverse-heading-color);--component-text-color:var(--inverse-body-color);--component-muted-color:var(--inverse-body-color);color:var(--component-text-color)}
+:where(.hero-section,.payment-section,.lead-section,.site-footer,.gallery-section,[data-plugin="gallery-big-four"],[data-plugin="property-slider"],:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])) :where(h1,h2,h3,h4,h5,h6){color:var(--component-title-color)}
+
+/* Typography bridge for current native / bundled plugins */
+.hero-copy,.lead-layout>div>p:not(.eyebrow),.payment-card .legal,.price-block>span,.price-block small,.property-slide-content>p:not(.eyebrow),.svp-hero-text,.svp-loading-label{color:var(--component-muted-color)}
+.highlight-grid p,.specs-layout>div:first-child>p:last-child,.specs-grid span,.faq-list details p,.location-layout .address,.location-layout li span,.testimonial-grid blockquote>p,.testimonial-grid footer small,.lifestyle-copy>p:not(.eyebrow),.formsenderV4_intro>p:last-child,.pp-flip-intro>p:last-child{color:var(--muted-color)}
+.svp-root{font-family:var(--body)}.svp-hero-title{font-family:var(--heading);font-weight:var(--heading-weight);letter-spacing:var(--heading-tracking);color:var(--inverse-heading-color);font-size:clamp(2rem,5vw,var(--h1-max))}.svp-hero-subtitle{font-family:var(--heading);color:var(--inverse-heading-color)}
+.pp-flip-face{--component-title-color:var(--inverse-heading-color);--component-text-color:var(--inverse-body-color)}.pp-flip-face h3{color:var(--inverse-heading-color)}.pp-flip-content p,.pp-flip-content li,.pp-flip-content small{color:var(--inverse-body-color)}
+.footer-brand strong{color:var(--inverse-heading-color)}
+
+
+/* Global action button bridge. Project profile defines the default; plugins with explicit local appearance controls remain exceptions. */
+[data-plugin] .button-primary,
+[data-plugin="offer-price-pro"] .opp-cta,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta],
+[data-plugin="form-sender-v4"] .formsenderCSS_button,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake),
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake){background:var(--action-button-bg);color:var(--action-button-text)}
+[data-plugin] .button-primary:hover,
+[data-plugin="offer-price-pro"] .opp-cta:hover,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button:hover,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta]:hover,
+[data-plugin="form-sender-v4"] .formsenderCSS_button:hover,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake):hover,
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake):hover{filter:brightness(.94)}
+
+/* Project-wide spacing / composition bridge */
+.site-container,.formsenderV4_container{width:min(var(--container),calc(100% - 40px));margin-inline:auto}
+:where(.faq-layout,.location-layout,.lead-layout,.specs-layout,.payment-card,.pp-flip-layout,.formsenderV4_container){gap:var(--content-gap)}
+:where(.hero-actions,.price-block,.testimonial-grid,.property-slider-dots){gap:var(--element-gap)}
+:where(.lead-form,.formsenderV4_card,.testimonial-grid blockquote){padding:var(--component-padding)}
+.payment-card{padding:clamp(var(--component-padding),5vw,80px)}
+.section-intro{margin-bottom:var(--content-gap)}
+:where(.hero-copy,.lifestyle-copy>p:not(.eyebrow),.location-layout .address,.lead-layout>div>p:not(.eyebrow),.pp-flip-intro>p:last-child,.formsenderV4_intro>p:last-child){margin-top:var(--element-gap)}
+
+/* Generic composition support for future Plugin Play packages. Local plugin properties still win when more specific. */
+[data-plugin] :where(.card,[class$="__card"],[class$="-card"],[class*=" card-"]){border-radius:var(--radius)}
+[data-plugin] :where(.container,[class$="__container"],[class$="-container"]){max-width:var(--container)}
+[data-plugin] :where(.grid,[class$="__grid"],[class$="-grid"]){gap:var(--element-gap)}
+
+@media(max-width:720px){.site-container,.formsenderV4_container{width:min(100% - 28px,var(--container))}.svp-hero-title{font-size:clamp(2rem,11vw,min(4rem,var(--h1-max)))}}
+
+/* Bridges for Flip Card 4.3 / Video and menu without changing their 3D mechanics */
+[data-plugin="flip-card-pro"] .flip-card__inner,[data-plugin="flipcard-3d-video-v1"] .flip-card__inner{font-family:var(--body);color:var(--inverse-body-color)}
+[data-plugin="flip-card-pro"] .flip-card__title,[data-plugin="flipcard-3d-video-v1"] .flip-card__title{font-family:var(--heading);font-weight:var(--heading-weight);letter-spacing:var(--heading-tracking);color:var(--inverse-heading-color)}
+[data-plugin="flip-card-pro"] .flip-card__list,[data-plugin="flipcard-3d-video-v1"] .flip-card__list{color:var(--inverse-body-color)}
+[data-plugin="flip-card-pro"] :where(.btn-flip,.btn-flipFake),[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake){background:var(--action-button-bg);color:var(--action-button-text);border-radius:calc(var(--radius) * 2)}
+[data-plugin="flip-card-pro"] :where(.flip-card__front,.flip-card__back),[data-plugin="flipcard-3d-video-v1"] :where(.flip-card__front,.flip-card__back){border-radius:var(--radius)}
+[data-plugin="form-sender-v4"] .formsenderCSS_form{font-family:var(--body)}
+
+/* 5.0.0 — spacing bridge: every ordinary Plugin Play section consumes the project
+   vertical rhythm. Full-screen, overlay and explicit layout/divider components are excluded. */
+.plugin-play-section:not([data-plugin="scheduled-popup-pro"]):not([data-plugin="property-slider"]):not(:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])):not([data-plugin="section-layout-pro"]):not([data-plugin="segment-layout"]):not([data-plugin="spacer-divider-pro"]){padding-block:var(--section-space)}
+/* These legacy packages already owned an inner section wrapper; keep a single source of spacing. */
+[data-plugin="location"]>.location-section,[data-plugin="form-sender-v4"]>.formsenderV4_section{padding-block:0}
+/* Split-image composition keeps the image full bleed and applies the project rhythm to its copy. */
+.lifestyle-copy{padding-block:var(--section-space)}
+
+/* 5.0.0 — structural radius bridge. Intentional circles (hotspots, slider arrows, close controls)
+   are deliberately not included. Local plugin controls with higher specificity remain exceptions. */
+[data-plugin] :where(
+  .payment-card,.lead-form,.formsenderV4_card,.testimonial-grid blockquote,.location-map,
+  .opp-card,.fsp-form,.fsp-result,.hpp-stage,.hpp-panel,.spp-dialog,.svp-hero,
+  .gallery-grid figure,.flip-card__front,.flip-card__back,.pp-flip-face
+){border-radius:var(--radius)}
+[data-plugin] :where(.lead-form input,.lead-form select,.fsp-form input,.formsenderCSS_input,.formsenderCSS_textarea,.formsenderCSS_select){border-radius:calc(var(--radius) * .65)}
+
+/* CTA roundness follows the project profile as well. Branded utility buttons remain independent. */
+[data-plugin] .button-primary,
+[data-plugin="offer-price-pro"] .opp-cta,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta],
+[data-plugin="form-sender-v4"] .formsenderCSS_button,
+[data-plugin="scheduled-popup-pro"] .spp-cta,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake),
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake){border-radius:calc(var(--radius) * .7)}
+
+@media(max-width:720px){
+  /* The value is generated from the same design control; no hard-coded mobile reset. */
+  .lifestyle-copy{padding-block:var(--section-space)}
+}
+
+
+
+/* 5.0.1.11 — functional contrast layer.
+   Palette colors remain customizable, while semantic text colors are protected
+   by renderer-generated WCAG contrast variables. */
+[data-plugin]{
+  --component-title-color:var(--heading-color);
+  --component-text-color:var(--body-color);
+  --component-muted-color:var(--muted-color);
+}
+
+/* Primary/accent used as text must remain readable on the light project surface. */
+[data-plugin] :where(.eyebrow,[class$="__eyebrow"],[class$="-eyebrow"],[class$="_eyebrow"]){color:var(--primary-on-surface,var(--primary))}
+:where(.hero-section,.payment-section,.lead-section,.site-footer,.gallery-section,[data-plugin="gallery-big-four"],[data-plugin="gallery-big-four-video"],[data-plugin="property-slider"],:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])) :where(.eyebrow,[class$="__eyebrow"],[class$="-eyebrow"],[class$="_eyebrow"]){color:var(--primary-on-dark,var(--primary))}
+
+/* Known white composition contexts need their own semantic foreground instead of
+   inheriting colors calculated against the project surface. */
+:where(.faq-section,.location-section,.lead-form,.testimonial-grid blockquote){
+  --component-title-color:var(--white-heading,var(--heading-color));
+  --component-text-color:var(--white-body,var(--body-color));
+  --component-muted-color:var(--white-muted,var(--muted-color));
+  color:var(--component-text-color);
+}
+.faq-list details p,.testimonial-grid blockquote>p,.testimonial-grid footer small,.lead-form .consent{color:var(--component-muted-color)}
+
+/* Color-filled badges, counters and pills use a foreground calculated for the
+   actual fill, not a hard-coded white/dark guess. */
+[data-plugin="offer-price-pro"] .opp-badge{color:var(--accent-contrast,#111827)}
+[data-plugin="timeline-process-pro"] .tpp-index{color:var(--primary-contrast,#111827)}
+[data-plugin="timeline-process-pro"] .tpp-step small{color:var(--primary-on-surface,var(--primary))}
+[data-plugin="offer-price-pro"] :where(.opp-eyebrow,.opp-price strong){color:var(--primary-on-surface,var(--primary))}
+[data-plugin="offer-price-pro"] .opp-wrap[data-dark="true"] :where(.opp-eyebrow,.opp-price strong){color:var(--primary-on-dark,var(--primary))}
+.highlight-grid article>span{color:color-mix(in srgb,var(--body-color) 72%,transparent)}
+.highlight-grid p{color:var(--body-color)}
+.lifestyle-copy>p:not(.eyebrow){color:var(--body-color)}
+
+/* Global CTAs always use the protected action foreground. */
+[data-plugin] .button-primary,
+[data-plugin="offer-price-pro"] .opp-cta,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta],
+[data-plugin="form-sender-v4"] .formsenderCSS_button,
+[data-plugin="scheduled-popup-pro"] .spp-cta,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake),
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake){color:var(--action-button-text)!important}
+
+/* Improve secondary text comfort in inverse contexts without lowering opacity
+   below the semantic contrast color produced by the renderer. */
+.hero-copy,.lead-layout>div>p:not(.eyebrow),.payment-card .legal,.price-block>span,.price-block small,.property-slide-content>p:not(.eyebrow),.svp-hero-text,.svp-loading-label{color:var(--component-muted-color)}
+
+
+/* 5.0.1.11 — plugin-specific semantic contrast bridges */
+[data-plugin="payment"] .price-block>strong{color:var(--primary-on-dark,var(--primary))}
+[data-plugin="financing-simulator-pro"] :where(.fsp-result small,.fsp-result .fsp-payment){color:var(--accent-on-dark,var(--accent))}
+[data-plugin="hotspot-plant-pro"] .hpp-head>p{color:var(--primary-on-surface,var(--primary))}
+[data-plugin="hotspot-plant-pro"] .hpp-hotspot{color:var(--primary-contrast,#111827)}
+[data-plugin="hotspot-plant-pro"] .hpp-panel small{color:var(--accent-on-dark,var(--accent))}
+[data-plugin="hotspot-plant-pro"] .hpp-panel a{color:var(--inverse-heading-color)}
+[data-plugin="testimonials"] .testimonial-grid blockquote>span{color:var(--primary-on-white,var(--primary))}
+[data-plugin="faq"] .faq-list summary span{color:var(--primary-on-white,var(--primary))}
+[data-plugin="flip-card-pro"] .pp-flip-icon,[data-plugin="flipcard-3d-video-v1"] .pp-flip-icon{color:var(--primary-contrast,#111827)}
+[data-plugin="flip-card-pro"] .pp-flip-content li:before,[data-plugin="flipcard-3d-video-v1"] .pp-flip-content li:before{color:var(--primary-on-dark,var(--primary))}
+.site-footer :where(.footer-brand span,.footer-contact,p,small,.footer-trust){color:var(--inverse-body-color)}
+
+[data-plugin="location"] .map-pin{color:var(--primary-contrast,#111827)}
+[data-plugin="location"] :where(.location-layout .address,.location-layout li span){color:var(--white-muted,var(--muted-color))}
+[data-plugin="location"] .location-layout li strong{color:var(--primary-on-white,var(--primary))}
+.imobify-nav-links a:last-child{color:var(--primary-contrast,#111827)}
+
+/* 5.0.1.11 — authoritative semantic contexts.
+   These rules intentionally have greater specificity than the generic [data-plugin]
+   defaults so inverse/light contexts cannot be lost in the cascade. */
+:is(
+  .hero-section[data-plugin],
+  .payment-section[data-plugin],
+  .lead-section[data-plugin],
+  .site-footer[data-plugin],
+  .gallery-section[data-plugin],
+  [data-plugin="gallery-big-four"],
+  [data-plugin="gallery-big-four-video"],
+  [data-plugin="property-slider"],
+  :is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])
+){
+  --component-title-color:var(--inverse-heading-color);
+  --component-text-color:var(--inverse-body-color);
+  --component-muted-color:var(--inverse-body-color);
+  color:var(--component-text-color);
+}
+:is(
+  .hero-section[data-plugin],
+  .payment-section[data-plugin],
+  .lead-section[data-plugin],
+  .site-footer[data-plugin],
+  .gallery-section[data-plugin],
+  [data-plugin="gallery-big-four"],
+  [data-plugin="gallery-big-four-video"],
+  [data-plugin="property-slider"],
+  :is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])
+) :where(h1,h2,h3,h4,h5,h6){color:var(--component-title-color)}
+:is(
+  .hero-section[data-plugin],
+  .payment-section[data-plugin],
+  .lead-section[data-plugin],
+  .site-footer[data-plugin],
+  .gallery-section[data-plugin],
+  [data-plugin="gallery-big-four"],
+  [data-plugin="gallery-big-four-video"],
+  [data-plugin="property-slider"],
+  :is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])
+) :where(.eyebrow,[class$="__eyebrow"],[class$="-eyebrow"],[class$="_eyebrow"]){color:var(--primary-on-dark,var(--primary))}
+
+:is(.faq-section[data-plugin],.location-section[data-plugin],.lead-form,.testimonial-grid blockquote){
+  --component-title-color:var(--white-heading,var(--heading-color));
+  --component-text-color:var(--white-body,var(--body-color));
+  --component-muted-color:var(--white-muted,var(--muted-color));
+  color:var(--component-text-color);
+}
+:is(.faq-section[data-plugin],.location-section[data-plugin]) :where(h1,h2,h3,h4,h5,h6){color:var(--component-title-color)}
+
+/* Avoid :where() on selectors that must beat local plugin declarations. */
+[data-plugin="financing-simulator-pro"] .fsp-result small{color:var(--accent-on-dark,var(--accent))}
+[data-plugin="financing-simulator-pro"] .fsp-result .fsp-payment{color:var(--accent-on-dark,var(--accent))}
+[data-plugin="offer-price-pro"] .opp-eyebrow{color:var(--primary-on-surface,var(--primary))}
+[data-plugin="offer-price-pro"] .opp-price strong{color:var(--primary-on-surface,var(--primary))}
+
+/* Professional Branding project-profile bridge: its local accent/muted tokens are
+   used as both text and fills, so feed them contrast-safe semantic variants. */
+[data-plugin="professional-branding-pro"] .bbp[data-project-profile="true"]{
+  --bbp-accent:var(--accent-on-dark,var(--accent));
+  --bbp-muted:var(--inverse-body-color);
+}
+[data-plugin="professional-branding-pro"] .bbp[data-project-profile="true"] .bbp__cta{
+  border-color:color-mix(in srgb,var(--action-on-dark,var(--action-button-bg)) 80%,transparent);
+  color:var(--action-on-dark,var(--action-button-bg));
+}
+[data-plugin="professional-branding-pro"] .bbp[data-project-profile="true"] .bbp__cta:hover{
+  background:var(--action-button-bg);
+  color:var(--action-button-text);
+}
+
+/* 5.0.1.11 — final semantic foreground authority.
+   This deliberately beats legacy high-specificity color rules while leaving
+   backgrounds/palette choices fully editable. */
+[data-plugin].section-shell:not(.hero-section):not(.hero-plus-section):not(.payment-section):not(.lead-section):not(.site-footer) .eyebrow{
+  color:var(--primary-on-surface,var(--primary));
+}
+:is(.hero-section[data-plugin],.payment-section[data-plugin],.lead-section[data-plugin],.site-footer[data-plugin]) .eyebrow{
+  color:var(--primary-on-dark,var(--primary));
+}
+.button-ghost{color:var(--inverse-heading-color)}
+
+/* Common plugin labels that historically used the raw primary/accent color as
+   text now consume a foreground calculated for the actual surface. */
+[data-plugin="implantacao-tiles-pro"] .itp-eyebrow,
+[data-plugin="financing-simulator-pro"] .fsp-eyebrow,
+[data-plugin="timeline-process-pro"] .tpp-eyebrow,
+[data-plugin="payment-investment-glass-pro"] .pit-type{
+  color:var(--primary-on-surface,var(--primary));
+}
+[data-plugin="implantacao-tiles-pro"] .itp-control:hover{color:var(--primary-contrast,#000)}
+[data-plugin="payment-investment-glass-pro"] .pit-table thead tr{color:var(--pit-accent-contrast,var(--primary-contrast,#000))}
+[data-plugin="payment-investment-glass-pro"] .pit-type{color:var(--pit-accent-on-surface,var(--primary-on-surface,var(--primary)))}
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta,
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta:hover{color:var(--pit-accent-contrast,var(--action-button-text))}
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta]{background:var(--action-button-bg);color:var(--action-button-text)!important}
+
+/* Local-color widgets are protected at runtime because their colors are section
+   properties and therefore cannot be derived safely from the global palette alone. */
+.iwfp-button{color:var(--iwfp-text-safe,var(--iwfp-text))}
+.iwfp-label{color:var(--iwfp-text-safe,var(--iwfp-text))}
+.iwfp-icon{fill:var(--iwfp-icon-safe,var(--iwfp-icon))}
+
+.imobify-menu-pro{
+  --imp-current-text:var(--imp-text-safe,var(--imp-text));
+  --imp-current-accent:var(--imp-accent-safe,var(--imp-accent));
+  color:var(--imp-current-text);
+}
+.imobify-menu-pro.is-scrolled{
+  --imp-current-text:var(--imp-text-scroll-safe,var(--imp-text));
+  --imp-current-accent:var(--imp-accent-scroll-safe,var(--imp-accent));
+}
+.imobify-menu-pro__brand,.imobify-menu-pro__links a{color:var(--imp-current-text)}
+.imobify-menu-pro__brand strong,
+.imobify-menu-pro[data-hover-effect="glow"] .imobify-menu-pro__links a:hover,
+.imobify-menu-pro__links a:hover{color:var(--imp-current-accent)}
+.imobify-menu-pro[data-hover-effect*="linha"] .imobify-menu-pro__links a::after,
+.imobify-menu-pro__toggle span{background:var(--imp-current-accent)}
+.imobify-menu-pro[data-cta-last="true"] .imobify-menu-pro__links li:last-child a:hover{
+  background:var(--imp-accent);
+  color:var(--imp-accent-contrast,#000);
+}
+@media(max-width:768px){
+  .imobify-menu-pro__panel{color:var(--imp-text-mobile-safe,var(--imp-text))}
+  .imobify-menu-pro__panel .imobify-menu-pro__links a{color:var(--imp-text-mobile-safe,var(--imp-text))}
+  .imobify-menu-pro__panel .imobify-menu-pro__links a:hover{color:var(--imp-accent-mobile-safe,var(--imp-accent))}
+}
+
+
+/* 5.0.1.12 — semantic text emphasis.
+   Contrast chooses the readable foreground; this layer adds optical separation
+   so copy remains legible over dark surfaces, photography and complex media. */
+:root{
+  --text-shadow-inverse-heading:0 1px 1px rgba(0,0,0,.68),0 3px 8px rgba(0,0,0,.42),0 10px 28px rgba(0,0,0,.28);
+  --text-shadow-inverse-body:0 1px 2px rgba(0,0,0,.58),0 4px 14px rgba(0,0,0,.25);
+  --text-shadow-light-heading:0 1px 0 rgba(255,255,255,.55),0 1px 2px rgba(0,0,0,.08);
+  --text-shadow-light-body:none;
+  --text-stroke-inverse:.22px rgba(0,0,0,.48);
+  --text-stroke-light:0 transparent;
+}
+
+/* Light/surface typography gets only a restrained optical lift. */
+[data-plugin].section-shell:not(.hero-section):not(.hero-plus-section):not(.payment-section):not(.lead-section):not(.site-footer) :where(h1,h2,h3,h4,h5,h6),
+:is(.faq-section[data-plugin],.location-section[data-plugin]) :where(h1,h2,h3,h4,h5,h6){
+  text-shadow:var(--text-shadow-light-heading);
+  -webkit-text-stroke:var(--text-stroke-light);
+  paint-order:stroke fill;
+}
+
+/* Dark/media contexts receive the stronger treatment requested by the design profile. */
+:is(
+  .hero-section[data-plugin],
+  .payment-section[data-plugin],
+  .lead-section[data-plugin],
+  .site-footer[data-plugin],
+  .gallery-section[data-plugin],
+  [data-plugin="gallery-big-four"],
+  [data-plugin="gallery-big-four-video"],
+  [data-plugin="property-slider"],
+  :is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])
+){
+  text-shadow:var(--text-shadow-inverse-body);
+}
+:is(
+  .hero-section[data-plugin],
+  .payment-section[data-plugin],
+  .lead-section[data-plugin],
+  .site-footer[data-plugin],
+  .gallery-section[data-plugin],
+  [data-plugin="gallery-big-four"],
+  [data-plugin="gallery-big-four-video"],
+  [data-plugin="property-slider"],
+  :is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"])
+) :where(h1,h2,h3,h4,h5,h6,.eyebrow,[class$="__eyebrow"],[class$="-eyebrow"],[class$="_eyebrow"]){
+  text-shadow:var(--text-shadow-inverse-heading);
+  -webkit-text-stroke:var(--text-stroke-inverse);
+  paint-order:stroke fill;
+}
+
+/* Interactive controls and form fields should stay crisp rather than inherit a halo. */
+[data-plugin] :where(button,input,select,textarea,.button-primary,.opp-cta,.fsp-result a[data-fsp-cta],.formsenderCSS_button,.spp-cta,.pit-glass-cta){
+  text-shadow:none;
+  -webkit-text-stroke:0 transparent;
+}
+
+/* Hero/image copy receives extra separation from photography without adding a box behind it. */
+.hero-content :where(.hero-copy,.hero-badge),
+.property-slide-content>p,
+.svp-hero-text{
+  text-shadow:var(--text-shadow-inverse-body);
+}
+
+/* In Strong mode the generated light-body token becomes active; in Auto/Soft it is `none`. */
+[data-plugin].section-shell:not(.hero-section):not(.hero-plus-section):not(.payment-section):not(.lead-section):not(.site-footer) :where(p,li,blockquote,dt,dd){
+  text-shadow:var(--text-shadow-light-body);
+}
+
+
+/* 5.0.1.13 — proportional title/subtitle contrast effects.
+   Stroke is defined in em, so the configured percentage follows the rendered font size. */
+[data-plugin] :where(
+  h1,h2,h3,h4,h5,h6,
+  [class$="__title"],[class$="-title"],[class$="_title"],
+  [class$="__heading"],[class$="-heading"],[class$="_heading"]
+){
+  -webkit-text-stroke:var(--title-outline);
+  text-shadow:var(--title-shadow);
+  paint-order:stroke fill;
+  -webkit-font-smoothing:antialiased;
+}
+[data-plugin] :where(
+  .hero-copy,.svp-hero-subtitle,
+  [class$="__subtitle"],[class$="-subtitle"],[class$="_subtitle"],
+  [class$="__subheading"],[class$="-subheading"],[class$="_subheading"],
+  h1 + p:not(.eyebrow):not(.legal),
+  h2 + p:not(.eyebrow):not(.legal)
+){
+  -webkit-text-stroke:var(--subtitle-outline);
+  text-shadow:var(--subtitle-shadow);
+  paint-order:stroke fill;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* Preserve crisp form/control labels: only semantic display subtitles receive the effect. */
+[data-plugin] :where(button,input,select,textarea,label){
+  paint-order:normal;
+}
+
+/* 5.0.1.13 — global CTA material system.
+   Plugin-local appearance controls can still override these tokens with stronger selectors. */
+[data-plugin] .button-primary,
+[data-plugin="offer-price-pro"] .opp-cta,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta],
+[data-plugin="form-sender-v4"] .formsenderCSS_button,
+[data-plugin="scheduled-popup-pro"] .spp-cta,
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake),
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake){
+  color:var(--action-button-text);
+  background:var(--action-button-fill);
+  border-style:solid;
+  border-width:var(--action-button-border-width);
+  border-color:var(--action-button-border-color);
+  box-shadow:var(--action-button-shadow);
+  -webkit-backdrop-filter:var(--action-button-backdrop);
+  backdrop-filter:var(--action-button-backdrop);
+  text-shadow:var(--action-button-text-shadow);
+  transform:translateY(0);
+  transition:
+    transform .18s cubic-bezier(.2,.75,.25,1),
+    box-shadow .18s ease,
+    filter .18s ease,
+    background .18s ease,
+    border-color .18s ease;
+  will-change:transform,box-shadow;
+}
+[data-plugin] .button-primary:hover,
+[data-plugin="offer-price-pro"] .opp-cta:hover,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button:hover,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta]:hover,
+[data-plugin="form-sender-v4"] .formsenderCSS_button:hover,
+[data-plugin="scheduled-popup-pro"] .spp-cta:hover,
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta:hover,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake):hover,
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake):hover{
+  transform:var(--action-button-hover-transform);
+  box-shadow:var(--action-button-hover-shadow);
+  filter:brightness(1.035) saturate(1.04);
+}
+[data-plugin] .button-primary:active,
+[data-plugin="offer-price-pro"] .opp-cta:active,
+:is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button:active,
+[data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta]:active,
+[data-plugin="form-sender-v4"] .formsenderCSS_button:active,
+[data-plugin="scheduled-popup-pro"] .spp-cta:active,
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta:active,
+[data-plugin="flip-card-pro"] :where(.pp-flip-cta,.btn-flip,.btn-flipFake):active,
+[data-plugin="flipcard-3d-video-v1"] :where(.btn-flip,.btn-flipFake):active{
+  transform:var(--action-button-active-transform);
+  transition-duration:.08s;
+}
+@media (prefers-reduced-motion:reduce){
+  [data-plugin] .button-primary,
+  [data-plugin="offer-price-pro"] .opp-cta,
+  :is([data-plugin="parallax"],[data-plugin="scrollytelling-video-pro"]) .svp-hero-button,
+  [data-plugin="financing-simulator-pro"] .fsp-result a[data-fsp-cta],
+  [data-plugin="form-sender-v4"] .formsenderCSS_button,
+  [data-plugin="scheduled-popup-pro"] .spp-cta,
+  [data-plugin="payment-investment-glass-pro"] .pit-glass-cta{
+    transition:none;
+  }
+}
+
+/* 5.0.1.14 — authoritative project application layer.
+   The previous controls correctly generated tokens, but plugin selectors could have
+   greater specificity and keep their local text/button appearance. Runtime now marks
+   semantic elements and this final layer deliberately wins only the requested visual
+   properties, leaving layout, sizing and 3D mechanics owned by each plugin. */
+[data-plugin] .imobify-design-title,
+[data-plugin] h1,
+[data-plugin] h2,
+[data-plugin] h3,
+[data-plugin] h4,
+[data-plugin] h5,
+[data-plugin] h6,
+[data-plugin] [data-design-role="title"]{
+  -webkit-text-stroke:var(--title-outline)!important;
+  text-shadow:var(--title-shadow)!important;
+  paint-order:stroke fill!important;
+  -webkit-font-smoothing:antialiased;
+}
+
+[data-plugin] .imobify-design-subtitle,
+[data-plugin] .hero-copy,
+[data-plugin] .svp-hero-subtitle,
+[data-plugin] [class$="__subtitle"],
+[data-plugin] [class$="-subtitle"],
+[data-plugin] [class$="_subtitle"],
+[data-plugin] [class$="__subheading"],
+[data-plugin] [class$="-subheading"],
+[data-plugin] [class$="_subheading"],
+[data-plugin] [data-design-role="subtitle"]{
+  -webkit-text-stroke:var(--subtitle-outline)!important;
+  text-shadow:var(--subtitle-shadow)!important;
+  paint-order:stroke fill!important;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* CTA appearance is project-authoritative. Dimensions and plugin-specific positioning
+   are intentionally untouched. */
+[data-plugin] .imobify-design-cta,
+[data-plugin] [data-design-role="cta"]{
+  color:var(--action-button-text)!important;
+  background:var(--action-button-fill)!important;
+  border-style:solid!important;
+  border-width:var(--action-button-border-width)!important;
+  border-color:var(--action-button-border-color)!important;
+  box-shadow:var(--action-button-shadow)!important;
+  -webkit-backdrop-filter:var(--action-button-backdrop)!important;
+  backdrop-filter:var(--action-button-backdrop)!important;
+  text-shadow:var(--action-button-text-shadow)!important;
+}
+[data-plugin] .imobify-design-cta:hover,
+[data-plugin] [data-design-role="cta"]:hover{
+  transform:var(--action-button-hover-transform)!important;
+  box-shadow:var(--action-button-hover-shadow)!important;
+  filter:brightness(1.035) saturate(1.04)!important;
+}
+[data-plugin] .imobify-design-cta:active,
+[data-plugin] [data-design-role="cta"]:active{
+  transform:var(--action-button-active-transform)!important;
+  box-shadow:var(--action-button-shadow)!important;
+}
+
+/* Components that paint the visible button on an inner optical layer need the
+   project material forwarded to that layer too. */
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta.imobify-design-cta .glassButton__lens-curvature{
+  background:var(--action-button-fill)!important;
+}
+[data-plugin="payment-investment-glass-pro"] .pit-glass-cta.imobify-design-cta :where(.glassButton__text,.glassButton__icon){
+  color:var(--action-button-text)!important;
+}
+[data-plugin="professional-branding-pro"] .bbp[data-project-profile="true"] .bbp__cta.imobify-design-cta{
+  color:var(--action-button-text)!important;
+  background:var(--action-button-fill)!important;
+}
+
+
+/* 5.0.1.15 — BUTTON KIT GLOBAL
+   Todos os efeitos trabalham sobre .imobify-design-cta, marcada pelo runtime.
+   O plugin continua dono de layout, tamanho, href e comportamento funcional. */
+[data-plugin] .imobify-design-cta,
+[data-plugin] [data-design-role="cta"]{
+  isolation:isolate;
+  background-size:var(--action-button-background-size,auto)!important;
+  background-position:var(--action-button-background-position,center)!important;
+  border-color:var(--action-button-border-color,transparent)!important;
+  transition:
+    transform var(--action-button-speed,180ms) cubic-bezier(.2,.75,.25,1),
+    box-shadow var(--action-button-speed,180ms) ease,
+    filter var(--action-button-speed,180ms) ease,
+    background-position var(--action-button-speed,180ms) ease,
+    background var(--action-button-speed,180ms) ease,
+    border-color var(--action-button-speed,180ms) ease!important;
+  animation:var(--action-button-animation,none);
+  -webkit-tap-highlight-color:transparent;
+}
+[data-plugin] .imobify-design-cta:hover,
+[data-plugin] [data-design-role="cta"]:hover{
+  transform:translate3d(var(--imobify-button-x,0px),var(--imobify-button-y,0px),0) var(--action-button-hover-transform)!important;
+  background-position:var(--action-button-hover-background-position,center)!important;
+  border-color:var(--action-button-hover-border-color,var(--action-button-border-color))!important;
+}
+[data-plugin] .imobify-design-cta:active,
+[data-plugin] [data-design-role="cta"]:active{
+  transform:translate3d(var(--imobify-button-x,0px),var(--imobify-button-y,0px),0) var(--action-button-active-transform)!important;
+}
+[data-plugin] .imobify-design-cta:focus-visible,
+[data-plugin] [data-design-role="cta"]:focus-visible{
+  outline:3px solid color-mix(in srgb,var(--action-button-bg) 55%,#ffffff)!important;
+  outline-offset:3px!important;
+}
+[data-plugin] .imobify-design-cta:is([disabled],[aria-disabled="true"]),
+[data-plugin] [data-design-role="cta"]:is([disabled],[aria-disabled="true"]){
+  opacity:.56!important;
+  cursor:not-allowed!important;
+  filter:saturate(.45)!important;
+  transform:none!important;
+  animation:none!important;
+}
+
+/* Ripple fica isolado apenas quando solicitado para nao cortar efeitos 3D de outros modelos. */
+[data-plugin] .imobify-design-cta[data-imobify-effect="ripple"],
+[data-plugin] .imobify-design-cta.imobify-ripple-active{overflow:hidden!important}
+.imobify-button-ripple{
+  position:absolute!important;
+  width:12px!important;height:12px!important;
+  margin:-6px 0 0 -6px!important;
+  border-radius:999px!important;
+  background:rgba(255,255,255,.52)!important;
+  pointer-events:none!important;
+  z-index:0!important;
+  transform:scale(0);
+  animation:imobify-button-ripple .58s ease-out forwards!important;
+}
+
+.imobify-button-click-bounce{animation:imobify-button-bounce .38s cubic-bezier(.2,.8,.2,1)!important}
+.imobify-button-click-flash{animation:imobify-button-flash .32s ease!important}
+
+@keyframes imobify-button-gradient{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes imobify-button-pulse{0%,100%{filter:brightness(1);box-shadow:var(--action-button-shadow)}50%{filter:brightness(1.07);box-shadow:var(--action-button-hover-shadow)}}
+@keyframes imobify-button-ripple{0%{transform:scale(0);opacity:.75}100%{transform:scale(24);opacity:0}}
+@keyframes imobify-button-bounce{0%{transform:scale(1)}42%{transform:scale(.94)}72%{transform:scale(1.055)}100%{transform:scale(1)}}
+@keyframes imobify-button-flash{0%,100%{filter:brightness(1)}45%{filter:brightness(1.32) saturate(1.12)}}
+
+@media (prefers-reduced-motion:reduce){
+  [data-plugin] .imobify-design-cta,
+  [data-plugin] [data-design-role="cta"]{animation:none!important;transition-duration:.01ms!important;--imobify-button-x:0px!important;--imobify-button-y:0px!important}
+  .imobify-button-ripple,.imobify-button-click-bounce,.imobify-button-click-flash{animation:none!important}
+}
+
+/* 5.1.31 — Hero Imobiliário Plus mantém autoridade tipográfica local no Studio avançado. */
+[data-plugin="hero-plus"] .hp-title{ -webkit-text-stroke:0!important; text-shadow:0 8px 36px rgba(0,0,0,var(--hp-title-shadow,.25))!important; paint-order:normal!important; }
+[data-plugin="hero-plus"] .hp-subtitle{ -webkit-text-stroke:0!important; text-shadow:0 3px 18px rgba(0,0,0,.24)!important; paint-order:normal!important; }
+
+
+/* 5.9.1 — mobile composition lock: pan continua permitido; pinch/double-tap zoom são bloqueados pelo viewport/runtime. */
+html, body { touch-action: pan-x pan-y; }
+button, a, input, select, textarea, [role="button"] { touch-action: manipulation; }
+
+/* 6.0.30 — refinamentos opt-in: valores zero conservam os projetos anteriores. */
+:where(.section-shell, [data-plugin]) p {letter-spacing:var(--body-tracking,0em)}
+:where(.section-shell, [data-plugin]) :where(.section-intro p,.section-copy p,.rich-text p,.prose p,.otc-body p,.mtp-body p){text-indent:var(--paragraph-indent,0px)}
+:where(.section-shell, [data-plugin]) :where(.section-intro p,.section-copy p,.rich-text p,.prose p,.otc-body p,.mtp-body p) + p{margin-block-start:var(--paragraph-spacing,0px)}
+
+/* 6.0.32 · Interactive / Surprise Button Kits — scoped to selected global effect.
+   Uses pseudo layers only; never changes the CTA's href, label or dimensions. */
+[data-plugin] .imobify-design-cta:is([data-imobify-effect="cursor-halo"],[data-imobify-effect="liquid-follow"],[data-imobify-effect="split-curtain"],[data-imobify-effect="prism-shimmer"],[data-imobify-effect="orbit-ring"],[data-imobify-effect="neon-trace"]){position:relative;isolation:isolate;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="cursor-halo"]:hover{background:radial-gradient(circle at var(--imobify-cursor-x,50%) var(--imobify-cursor-y,50%),rgba(255,255,255,.6),transparent 58%),var(--action-button-fill)!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="liquid-follow"]:hover{background:radial-gradient(ellipse at var(--imobify-cursor-x,50%) var(--imobify-cursor-y,50%),rgba(255,255,255,.55),transparent 67%),linear-gradient(115deg,var(--action-button-bg),var(--accent),var(--action-button-bg))!important;background-size:auto,200% 200%!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="tilt-3d"]:hover{transform:perspective(650px) rotateX(var(--imobify-tilt-x,0deg)) rotateY(var(--imobify-tilt-y,0deg)) var(--action-button-hover-transform)!important;transform-style:preserve-3d;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="gravity-lift"]:hover{transform:translateY(-9px) var(--action-button-hover-transform)!important;box-shadow:0 24px 42px rgba(0,0,0,.28),var(--action-button-hover-shadow)!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="rubber-wobble"]:hover{animation:imobify-surprise-rubber .7s ease both!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="glitch-shift"]:hover{animation:imobify-surprise-glitch .48s steps(2,end) both!important;text-shadow:2px 0 #00e5ff,-2px 0 #ff4dba!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="flip-reveal"]:hover{transform:perspective(850px) rotateY(-12deg) rotateX(5deg) var(--action-button-hover-transform)!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="heartbeat"]{animation:imobify-surprise-heartbeat 3.6s ease-in-out infinite!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="spring-pop"]:hover{animation:imobify-surprise-spring .7s cubic-bezier(.2,.8,.2,1) both!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="split-curtain"]:hover{background:linear-gradient(90deg,rgba(255,255,255,.45),transparent 48%,rgba(255,255,255,.45)),var(--action-button-fill)!important;background-size:200% 100%,auto!important;background-position:50% 0,center!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="prism-shimmer"]:hover{background:radial-gradient(circle at var(--imobify-cursor-x,50%) var(--imobify-cursor-y,50%),rgba(255,90,212,.28),rgba(73,234,255,.25) 30%,transparent 65%),var(--action-button-fill)!important;filter:saturate(1.4) brightness(1.1)!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="orbit-ring"]:hover{outline:2px dashed var(--accent)!important;outline-offset:5px!important;animation:imobify-surprise-orbit 3s linear infinite!important;}
+[data-plugin] .imobify-design-cta[data-imobify-effect="neon-trace"]:hover{outline:2px solid var(--accent)!important;outline-offset:4px!important;box-shadow:0 0 8px var(--accent),0 0 22px var(--accent)!important;animation:imobify-surprise-neon 1.6s ease-in-out infinite alternate!important;}
+@keyframes imobify-surprise-rubber{0%,100%{scale:1 1}30%{scale:1.1 .88}55%{scale:.94 1.1}80%{scale:1.03 .98}}
+@keyframes imobify-surprise-glitch{0%,100%{translate:0 0}20%{translate:2px -1px}40%{translate:-3px 1px}60%{translate:2px 1px}80%{translate:-1px -2px}}
+@keyframes imobify-surprise-spring{0%{scale:1}35%{scale:1.13}65%{scale:.96}85%{scale:1.04}100%{scale:1}}
+@keyframes imobify-surprise-heartbeat{0%,8%,17%,100%{scale:1}12%{scale:1.065}21%{scale:1.04}}
+@keyframes imobify-surprise-orbit{0%,100%{outline-offset:3px}50%{outline-offset:8px}}
+@keyframes imobify-surprise-neon{from{filter:brightness(1)}to{filter:brightness(1.15)}}
+@media (hover:none),(pointer:coarse){[data-plugin] .imobify-design-cta[data-imobify-effect]{--imobify-button-x:0px;--imobify-button-y:0px;}}
+@media (prefers-reduced-motion:reduce){
+ [data-plugin] .imobify-design-cta[data-imobify-effect]{animation:none!important;transition:none!important;scale:1!important;translate:0!important}
+ [data-plugin] .imobify-design-cta[data-imobify-effect]:hover{animation:none!important;transform:none!important}
+}
+
+
+/* 6.0.33 — Click experiences: independent of visual preset; semantic CTA preserved. */
+.imobify-design-cta{isolation:isolate}
+.imobify-click-particle,.imobify-click-success{position:absolute!important;pointer-events:none!important;z-index:5!important;user-select:none!important}
+.imobify-click-particle{width:7px!important;height:7px!important;margin:-3px 0 0 -3px!important;background:var(--accent,#f59e0b)!important;border-radius:50%!important;animation:imobify-click-scatter .68s ease-out forwards!important}
+.imobify-click-particle-confetti{border-radius:2px!important;background:hsl(calc(var(--i)*37) 90% 60%)!important}
+.imobify-click-particle-sparks{background:#fff2a0!important;box-shadow:0 0 8px #ffab00!important}
+.imobify-click-particle-pixel-burst{border-radius:0!important}
+.imobify-click-ring{width:16px!important;height:16px!important;margin:-8px 0 0 -8px!important;border:2px solid var(--accent,#fff)!important;background:transparent!important;border-radius:50%!important;animation:imobify-click-ring .64s ease-out forwards!important;animation-delay:var(--delay)!important}
+.imobify-click-ring-glow-burst{box-shadow:0 0 15px var(--accent,#fff)!important}
+.imobify-click-success{right:9px;top:50%;transform:translateY(-50%);font-size:19px;font-weight:bold;color:#42ff9e;animation:imobify-click-check .65s ease-out forwards!important}
+.imobify-click-stamp{animation:imobify-click-stamp-kf .44s ease-out!important}
+.imobify-click-jelly{animation:imobify-click-jelly-kf .6s ease!important}
+.imobify-click-spin{animation:imobify-click-spin-kf .52s ease!important}
+.imobify-click-flip{animation:imobify-click-flip-kf .55s ease!important}
+.imobify-click-shake{animation:imobify-click-shake-kf .4s ease!important}
+@keyframes imobify-click-scatter{from{transform:rotate(var(--angle)) translateX(0) scale(1);opacity:1}to{transform:rotate(var(--angle)) translateX(40px) scale(.25);opacity:0}}
+@keyframes imobify-click-ring{from{transform:scale(.3);opacity:.9}to{transform:scale(6);opacity:0}}
+@keyframes imobify-click-check{0%{opacity:0;transform:translateY(-50%) scale(.2)}40%{opacity:1;transform:translateY(-50%) scale(1.2)}100%{opacity:0;transform:translateY(-50%) scale(1)}}
+@keyframes imobify-click-stamp-kf{0%,100%{transform:scale(1)}35%{transform:scale(.87) translateY(3px)}60%{transform:scale(1.035)}}
+@keyframes imobify-click-jelly-kf{0%,100%{transform:scale(1)}28%{transform:scale(1.13,.85)}55%{transform:scale(.92,1.1)}75%{transform:scale(1.04,.97)}}
+@keyframes imobify-click-spin-kf{0%,100%{transform:rotate(0)}50%{transform:rotate(9deg) scale(.96)}}
+@keyframes imobify-click-flip-kf{0%,100%{transform:perspective(600px) rotateX(0)}45%{transform:perspective(600px) rotateX(-22deg)}}
+@keyframes imobify-click-shake-kf{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-4px)}40%,80%{transform:translateX(4px)}}
+@media(prefers-reduced-motion:reduce){.imobify-click-particle,.imobify-click-success,.imobify-click-stamp,.imobify-click-jelly,.imobify-click-spin,.imobify-click-flip,.imobify-click-shake{animation:none!important;display:none!important}}
+
+/* 6.0.34 — correção de feedback Press e efeitos de clique.
+   Especificidade acima do hover/active do kit: não deixa o transform fixo
+   impedir a animação de click. */
+.imobify-design-cta.imobify-click-press,
+[data-design-role="cta"].imobify-click-press{
+  animation:imobify-press-feedback .36s cubic-bezier(.22,.75,.25,1) both!important;
+  filter:brightness(.86) saturate(1.15)!important;
+}
+@keyframes imobify-press-feedback{
+  0%{box-shadow:var(--action-button-shadow);filter:brightness(1)}
+  32%{box-shadow:inset 0 4px 12px rgba(0,0,0,.35),0 1px 2px rgba(0,0,0,.2);filter:brightness(.75)}
+  100%{box-shadow:var(--action-button-shadow);filter:brightness(1)}
+}
+.imobify-design-cta:is(.imobify-click-stamp,.imobify-click-jelly,.imobify-click-spin,.imobify-click-flip,.imobify-click-shake),
+[data-design-role="cta"]:is(.imobify-click-stamp,.imobify-click-jelly,.imobify-click-spin,.imobify-click-flip,.imobify-click-shake){
+  /* As regras globais de hover usam transform!important; a animação de clique
+     assume prioridade temporária e retoma o estilo do kit ao terminar. */
+  animation-duration:.55s!important;
+  filter:brightness(.86)!important;
+  box-shadow:inset 0 4px 12px rgba(0,0,0,.26),var(--action-button-shadow)!important;
+}
+.imobify-design-cta .imobify-click-particle,
+.imobify-design-cta .imobify-click-success{visibility:visible!important;opacity:1;}
+@media(prefers-reduced-motion:reduce){
+  .imobify-design-cta.imobify-click-press{animation:none!important;filter:none!important;}
+}
+
+/* 6.0.41 — final baseline for plugins: keyboard, optical consistency and narrow screens.
+   Intentionally avoids overriding custom plugin typography and motion settings. */
+[data-plugin]{--ib-focus-ring:#2855b9}
+:is(.hero-section,.hero-plus-section,.payment-section,.lead-section,.gallery-section,.site-footer,[data-plugin="parallax"],[data-plugin="property-slider"],[data-plugin="scrollytelling-video-pro"]){--ib-focus-ring:#f6e894}
+[data-plugin] :where(a,button,input,select,textarea,summary,[role="button"],[tabindex]):focus-visible{
+  outline:3px solid var(--ib-focus-ring);
+  outline-offset:3px;
+}
+[data-plugin] :where(button,[role="button"],a.button,[class*="-cta"],[class*="__cta"]):disabled,
+[data-plugin] :where(button,[role="button"],a.button,[class*="-cta"],[class*="__cta"])[aria-disabled="true"]{
+  cursor:not-allowed;
+  opacity:.62;
+}
+[data-plugin] :where(h1,h2,h3,h4,p,blockquote,figcaption,dt,dd){overflow-wrap:break-word}
+[data-plugin] :where(.site-container,.section-intro,.highlight-item-copy,.gallery-grid,.testimonial-grid,.faq-layout,.specs-layout){min-width:0}
+[data-plugin] :where(a.button,button,summary){-webkit-tap-highlight-color:transparent}
+[data-plugin] :where(input,textarea,select){max-width:100%}
+@media(max-width:720px){
+  [data-plugin] :where(.section-intro h2){max-width:100%}
+  [data-plugin] :where(.button){min-height:48px}
+}
+
+/* 6.0.88 — CTA do popup criado em tempo de execução segue o Button Kit global. */
+[data-plugin="form-sender-popup"] .fsp-primary{background:var(--action-button-bg)!important;color:var(--action-button-text)!important;border-radius:calc(var(--radius) * .7)!important}

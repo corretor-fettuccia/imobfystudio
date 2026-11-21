@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "casa-individual",
+  "name": "Casa individual",
+  "description": "Modelo para venda ou apresentação de casa individual.",
+  "category": "Casa individual",
+  "baseBlueprint": "construction",
+  "project": null,
+  "overrides": {
+    "projectName": "Novo projeto — Casa individual",
+    "templateMeta": {
+      "presetId": "casa-individual",
+      "category": "Casa individual",
+      "subcategory": ""
+    }
+  }
+}

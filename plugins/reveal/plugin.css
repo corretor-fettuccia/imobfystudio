@@ -1,0 +1,49 @@
+/* Imobify 6.0.1 — animações por componente, sem ocultar conteúdo interno. */
+html.imobify-motion-ready [data-section-transition]:not([data-section-transition="none"]):not(.is-visible):not([data-plugin="parallax"]):not([data-plugin="scrollytelling-video-pro"]) { opacity:0; transform:translate3d(0,28px,0); transition-property:opacity,transform,filter,clip-path,border-radius; transition-duration:.8s; transition-timing-function:cubic-bezier(.22,1,.36,1); will-change:opacity,transform; }
+html.imobify-motion-ready [data-section-transition].is-visible { opacity:1; transform:none; filter:none; clip-path:inset(0 0 0 0); border-radius:inherit; }
+html.imobify-motion-ready [data-section-transition="fade"]:not(.is-visible) {transform:none}
+html.imobify-motion-ready [data-section-transition="slide-left"]:not(.is-visible) {transform:translate3d(-56px,0,0)}
+html.imobify-motion-ready [data-section-transition="slide-right"]:not(.is-visible) {transform:translate3d(56px,0,0)}
+html.imobify-motion-ready [data-section-transition="zoom"]:not(.is-visible) {transform:scale(.92)}
+html.imobify-motion-ready [data-section-transition="scroll-reveal"]:not(.is-visible) {transform:translate3d(0,70px,0);filter:blur(5px)}
+html.imobify-motion-ready [data-section-transition="mask-reveal"]:not(.is-visible) {transform:none;clip-path:inset(0 0 100% 0)}
+html.imobify-motion-ready [data-section-transition="curtain-reveal"]:not(.is-visible) {transform:none;clip-path:inset(0 50% 0 50%)}
+html.imobify-motion-ready [data-section-transition="scroll-triggered"]:not(.is-visible) {transform:translate3d(0,46px,0) scale(.98)}
+html.imobify-motion-ready [data-section-transition="liquid-blur"]:not(.is-visible) {transform:translate3d(0,25px,0) scale(1.035) skewX(-2deg);filter:blur(19px);border-radius:12% 2% 15% 3%}
+html.imobify-motion-ready [data-section-transition="ripple-reveal"]:not(.is-visible) {transform:none;clip-path:circle(0% at 50% 50%);filter:blur(4px)}
+html.imobify-motion-ready [data-section-transition="ripple-reveal"].is-visible {clip-path:circle(150% at 50% 50%)}
+html.imobify-motion-ready [data-section-transition="soft-focus"]:not(.is-visible) {transform:scale(1.025);filter:blur(15px)}
+html.imobify-motion-ready [data-section-transition="none"] {opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}
+html.imobify-motion-ready [data-section-transition="curtain-reveal"],html.imobify-motion-ready [data-section-transition="ripple-reveal"] {transition-duration:1.15s}
+body[data-motion="minimal"] [data-section-transition] {transition-duration:.4s!important}
+body[data-motion="expressive"] [data-section-transition] {transition-duration:1.1s}
+@media(prefers-reduced-motion:reduce){html.imobify-motion-ready [data-section-transition]{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important;transition:none!important}}
+
+/* Curtain vinculada ao progresso real do scroll, sem interpolação automática. */
+html.imobify-motion-ready [data-section-transition="curtain-reveal"] { opacity:1!important; transform:none!important; clip-path:inset(0 calc((1 - var(--imobify-scroll-progress, 0)) * 50%) 0 calc((1 - var(--imobify-scroll-progress, 0)) * 50%))!important; transition:none!important; }
+
+/* Configurações personalizadas v6.0.1 */
+html.imobify-motion-ready [data-section-transition]:not([data-section-transition="none"]){transition-duration:var(--imobify-duration,800ms);transition-delay:var(--imobify-delay,0ms);transition-timing-function:var(--imobify-easing,cubic-bezier(.22,1,.36,1))}
+html.imobify-motion-ready [data-section-transition="default"]:not(.is-visible),html.imobify-motion-ready [data-section-transition="scroll-reveal"]:not(.is-visible),html.imobify-motion-ready [data-section-transition="scroll-triggered"]:not(.is-visible){transform:translate3d(0,var(--imobify-distance,46px),0)}
+html.imobify-motion-ready [data-section-transition="slide-left"]:not(.is-visible){transform:translate3d(calc(-1 * var(--imobify-distance,56px)),0,0)}
+html.imobify-motion-ready [data-section-transition="slide-right"]:not(.is-visible){transform:translate3d(var(--imobify-distance,56px),0,0)}
+html.imobify-motion-ready [data-section-transition="zoom"]:not(.is-visible){transform:scale(var(--imobify-scale,.92))}
+html.imobify-motion-ready [data-section-transition="liquid-blur"]:not(.is-visible){filter:blur(var(--imobify-blur,19px));transform:translateY(var(--imobify-distance,25px)) scale(var(--imobify-scale,1.035)) skewX(-2deg)}
+html.imobify-motion-ready [data-section-transition="soft-focus"]:not(.is-visible){filter:blur(var(--imobify-blur,15px));transform:scale(var(--imobify-scale,1.025))}
+html.imobify-motion-ready [data-section-transition="scroll-reveal"]:not(.is-visible){filter:blur(var(--imobify-blur,5px))}
+html.imobify-motion-ready [data-section-transition="ripple-reveal"]:not(.is-visible){clip-path:circle(0% at var(--imobify-origin-x,50%) var(--imobify-origin-y,50%));filter:blur(var(--imobify-blur,4px))}
+html.imobify-motion-ready [data-section-transition="ripple-reveal"].is-visible{clip-path:circle(150% at var(--imobify-origin-x,50%) var(--imobify-origin-y,50%))}
+html.imobify-motion-ready [data-section-transition="mask-reveal"][data-motion-direction="top"]:not(.is-visible){clip-path:inset(100% 0 0 0)}
+html.imobify-motion-ready [data-section-transition="mask-reveal"][data-motion-direction="left"]:not(.is-visible){clip-path:inset(0 100% 0 0)}
+html.imobify-motion-ready [data-section-transition="mask-reveal"][data-motion-direction="right"]:not(.is-visible){clip-path:inset(0 0 0 100%)}
+
+/* v6.0.2: propriedades de transição permanecem idênticas nos estados inicial e final. */
+html.imobify-motion-ready [data-section-transition]:not([data-section-transition="none"]){transition-property:opacity,transform,filter,clip-path,border-radius;transition-duration:var(--imobify-duration,800ms)!important;transition-delay:var(--imobify-delay,0ms)!important;transition-timing-function:var(--imobify-easing,cubic-bezier(.22,1,.36,1))!important;}
+html.imobify-motion-ready [data-section-transition="curtain-reveal"]{transition:none!important}
+html.imobify-motion-ready [data-section-transition="mask-reveal"][data-motion-direction="bottom"]:not(.is-visible){clip-path:inset(0 0 100% 0)}
+html.imobify-motion-ready [data-section-transition="ripple-reveal"]:not(.is-visible){opacity:0.01;}
+@media(prefers-reduced-motion:reduce){html.imobify-motion-ready [data-section-transition]{transition:none!important}}
+/* v6.0.4 — a cortina fica fechada até o gatilho e só avança depois dele. */
+html.imobify-motion-ready [data-section-transition="curtain-reveal"] {
+  clip-path:inset(0 var(--imobify-curtain-side,50%) 0 var(--imobify-curtain-side,50%))!important;
+}

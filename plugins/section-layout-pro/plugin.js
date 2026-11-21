@@ -1,0 +1,1 @@
+(function(){document.querySelectorAll('[data-plugin="section-layout-pro"] .slp-stage').forEach(function(stage){if(stage.dataset.slpReady)return;stage.dataset.slpReady='1';});})();

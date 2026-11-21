@@ -1,0 +1,49 @@
+<div class="itp-root"
+     data-tiles-path="{{tilesPath}}"
+     data-tiles-xml="{{tilesXml}}"
+     data-tile-pattern="{{tilePattern}}"
+     data-fallback-tile-size="{{fallbackTileSize}}"
+     data-fallback-original-width="{{fallbackOriginalWidth}}"
+     data-fallback-original-height="{{fallbackOriginalHeight}}"
+     data-fallback-min-zoom="{{fallbackMinZoom}}"
+     data-fallback-max-zoom="{{fallbackMaxZoom}}"
+     data-zoom-snap="{{zoomSnap}}"
+     data-control-position="{{controlPosition}}"
+     data-show-zoom="{{showZoomControls}}"
+     data-show-fit="{{showFitControl}}"
+     data-mobile-guard="{{mobileGuard}}"
+     data-scroll-wheel="{{scrollWheelZoom}}"
+     data-double-click="{{doubleClickZoom}}"
+     data-lock-bounds="{{lockBounds}}"
+     data-full-width="{{fullWidth}}"
+     style="--itp-height:{{heightDesktop}}px;--itp-height-mobile:{{heightMobile}}px;--itp-control-size:{{controlSize}}px;--itp-control-size-mobile:{{controlSizeMobile}}px;--itp-control-gap:{{controlGap}}px;--itp-control-x:{{controlOffsetX}}px;--itp-control-y:{{controlOffsetY}}px;--itp-bg:{{backgroundColor}};">
+
+  {{#if showHeader}}
+  <div class="itp-header">
+    <div class="itp-eyebrow">{{eyebrow}}</div>
+    <h2 class="itp-title">{{title}}</h2>
+    <p class="itp-subtitle">{{subtitle}}</p>
+  </div>
+  {{/if}}
+
+  <div class="itp-shell">
+    <div class="itp-frame">
+      <div class="itp-map" role="application" aria-label="Implantação interativa"></div>
+
+      <div class="itp-controls" aria-label="Controles da implantação">
+        {{#if showZoomControls}}<button type="button" class="itp-control itp-zoom-in" aria-label="Aproximar">+</button>{{/if}}
+        {{#if showFitControl}}<button type="button" class="itp-control itp-fit" aria-label="Enquadrar implantação">⌂</button>{{/if}}
+        {{#if showZoomControls}}<button type="button" class="itp-control itp-zoom-out" aria-label="Afastar">−</button>{{/if}}
+      </div>
+
+      {{#if mobileGuard}}
+      <button type="button" class="itp-mobile-guard" aria-label="Ativar interação com a implantação">
+        <span class="itp-mobile-guard-icon">◎</span>
+        <span>{{mobileGuardText}}</span>
+      </button>
+      {{/if}}
+
+      <div class="itp-status" aria-live="polite"></div>
+    </div>
+  </div>
+</div>

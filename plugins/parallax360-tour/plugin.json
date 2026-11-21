@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 3,
+  "id": "parallax360-tour",
+  "name": "Parallax360Tour",
+  "version": "1.0.2",
+  "type": "section",
+  "category": "Experiência",
+  "icon": "◉",
+  "description": "Narrativa 360 sequencial por cenas e hotspots, com navegação por rolagem, passos e botões — panorama Full Bleed sem bordas.",
+  "composition": {
+    "role": "section"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "tourConfig": "{\"format\":\"ImobStudioTour360\",\"version\":7,\"project\":{\"id\":\"tour360-section\",\"name\":\"Novo tour imersivo\",\"createdAt\":\"\",\"updatedAt\":\"\"},\"settings\":{\"firstSceneId\":null,\"preloadAdjacent\":true,\"showCompass\":false,\"showZoomControls\":true,\"showFullscreenControl\":true,\"autoLoad\":true,\"defaultHfov\":100,\"minHfov\":50,\"maxHfov\":120,\"authoringGrid\":false},\"branding\":{\"enabled\":false,\"banner\":\"\",\"bannerName\":\"\",\"position\":\"bottom-right\",\"floatingEnabled\":false,\"floatingText\":\"\",\"floatingLink\":\"\"},\"sceneOrder\":[],\"scenes\":{}}",
+    "eyebrow": "DESCUBRA CADA AMBIENTE",
+    "headline": "Uma jornada por cada detalhe",
+    "subheadline": "Uma sequência imersiva de cenas, ambientes e descobertas.",
+    "ctaLabel": "Quero conhecer",
+    "ctaUrl": "",
+    "heightDesktop": 760,
+    "heightMobile": 630,
+    "overlayOpacity": 42,
+    "accentColor": "#dec49b",
+    "textColor": "#ffffff",
+    "radius": 0,
+    "maxWidth": 1920,
+    "paddingY": 0,
+    "scrollNavigation": true,
+    "showProgress": true
+  },
+  "fields": [
+    {
+      "key": "eyebrow",
+      "label": "Eyebrow",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "headline",
+      "label": "Headline",
+      "type": "text",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "subheadline",
+      "label": "Subheadline",
+      "type": "textarea",
+      "group": "Conteúdo"
+    },
+    {
+      "key": "ctaLabel",
+      "label": "Texto do CTA",
+      "type": "text",
+      "group": "Conversão"
+    },
+    {
+      "key": "ctaUrl",
+      "label": "URL do CTA",
+      "type": "url",
+      "group": "Conversão"
+    },
+    {
+      "key": "heightDesktop",
+      "label": "Altura desktop (px)",
+      "type": "range",
+      "group": "Layout",
+      "min": 440,
+      "max": 1080,
+      "step": 20
+    },
+    {
+      "key": "heightMobile",
+      "label": "Altura mobile (px)",
+      "type": "range",
+      "group": "Layout",
+      "min": 420,
+      "max": 920,
+      "step": 20
+    },
+    {
+      "key": "overlayOpacity",
+      "label": "Escurecimento do panorama (%)",
+      "type": "range",
+      "group": "Aparência",
+      "min": 0,
+      "max": 75,
+      "step": 5
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Aparência"
+    },
+    {
+      "key": "scrollNavigation",
+      "label": "Avançar etapas ao rolar sobre o panorama",
+      "type": "toggle",
+      "group": "Navegação sequencial"
+    },
+    {
+      "key": "showProgress",
+      "label": "Mostrar progresso da sequência",
+      "type": "toggle",
+      "group": "Navegação sequencial"
+    }
+  ],
+  "editor": {
+    "mode": "modal",
+    "label": "Configurar cenas e hotspots 360",
+    "title": "Parallax360Tour Studio",
+    "description": "Importe um projeto Tour360 existente ou configure cenas, visões e pontos. O texto de apresentação do hotspot está no campo Informação.",
+    "template": "editor/index.html",
+    "style": "editor/styles.css",
+    "script": "editor/app.js",
+    "field": "tourConfig"
+  }
+}

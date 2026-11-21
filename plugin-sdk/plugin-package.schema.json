@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://imobify.local/schema/plugin-package-v4.json",
+  "title": "Imobify Plugin Play Package",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "id",
+    "name",
+    "version",
+    "type",
+    "entry",
+    "defaults",
+    "fields"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "enum": [
+        2,
+        3
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{2,48}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 2
+    },
+    "version": {
+      "type": "string"
+    },
+    "type": {
+      "enum": [
+        "section",
+        "behavior"
+      ]
+    },
+    "output": {
+      "type": "string",
+      "enum": [
+        "document-tag"
+      ],
+      "description": "Opcional. document-tag transforma uma seção configurável em injeção direta no documento, sem ocupar espaço visual na publicação."
+    },
+    "category": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "composition": {
+      "type": "object",
+      "description": "Declara onde o componente pode ser usado pelo compositor nativo de segmentos.",
+      "properties": {
+        "role": {
+          "type": "string",
+          "enum": [
+            "section",
+            "item",
+            "both"
+          ]
+        }
+      },
+      "required": [
+        "role"
+      ]
+    },
+    "layout": {
+      "type": "object",
+      "description": "Contrato opcional para plugins que recebem outros blocos.",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "next-sections",
+            "segment-slots"
+          ]
+        },
+        "slot": {
+          "type": "string"
+        },
+        "maxChildren": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "maxTracks": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "excludeTypes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "acceptRoles": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "section",
+              "item",
+              "both"
+            ]
+          }
+        }
+      },
+      "required": [
+        "mode",
+        "slot"
+      ]
+    },
+    "entry": {
+      "type": "object",
+      "properties": {
+        "template": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        },
+        "script": {
+          "type": "string"
+        },
+        "styles": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "scripts": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "required": [
+                "style"
+              ]
+            },
+            {
+              "required": [
+                "styles"
+              ]
+            }
+          ]
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "script"
+              ]
+            },
+            {
+              "required": [
+                "scripts"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "defaults": {
+      "type": "object"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "label",
+          "type"
+        ],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          },
+          "type": {
+            "enum": [
+              "text",
+              "textarea",
+              "url",
+              "image",
+              "video",
+              "audio",
+              "toggle",
+              "select",
+              "icon",
+              "color",
+              "number",
+              "range",
+              "computed"
+            ]
+          },
+          "group": {
+            "type": "string"
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "value"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": [
+                        "string",
+                        "number"
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "min": {
+            "type": "number"
+          },
+          "max": {
+            "type": "number"
+          },
+          "step": {
+            "type": "number"
+          },
+          "rows": {
+            "type": "number",
+            "minimum": 3,
+            "maximum": 18
+          },
+          "template": {
+            "type": "string",
+            "description": "Para campos computed, template derivado das props da instância. Ex.: #{{panelId}}."
+          },
+          "copy": {
+            "type": "boolean",
+            "description": "Para campos computed, exibe ação de copiar no inspetor."
+          },
+          "note": {
+            "type": "string",
+            "description": "Texto de apoio opcional exibido abaixo do campo no inspetor."
+          }
+        }
+      }
+    },
+    "instanceIdField": {
+      "type": "string",
+      "description": "Campo de props que deve receber um identificador único a cada nova instância ou duplicação do plugin."
+    },
+    "instanceIdPrefix": {
+      "type": "string",
+      "description": "Prefixo usado pelo framework ao gerar o valor de instanceIdField."
+    },
+    "inspectorGuide": {
+      "type": "object",
+      "description": "Opcional. Exibe um botão de ajuda contextual no inspetor do plugin.",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "targetField": {
+          "type": "string"
+        },
+        "targetPrefix": {
+          "type": "string"
+        },
+        "childCountField": {
+          "type": "string"
+        },
+        "columns": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "modes": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "editor": {
+      "type": "object",
+      "description": "Editor avançado opcional aberto em modal pelo Imobify Studio. Os arquivos são incorporados ao pacote Plugin Play.",
+      "properties": {
+        "mode": {
+          "enum": [
+            "modal"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "template": {
+          "type": "string"
+        },
+        "style": {
+          "type": "string"
+        },
+        "script": {
+          "type": "string"
+        },
+        "field": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "mode",
+        "template",
+        "style",
+        "script",
+        "field"
+      ]
+    }
+  }
+}

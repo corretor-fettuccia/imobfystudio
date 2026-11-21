@@ -1,0 +1,14 @@
+const fs=require('fs'); const assert=require('assert');
+const js=fs.readFileSync('plugins/parallax/plugin.js','utf8');
+const html=fs.readFileSync('plugins/parallax/template.html','utf8');
+const manifest=JSON.parse(fs.readFileSync('plugins/parallax/plugin.json','utf8'));
+const app=fs.readFileSync('assets/js/app.js','utf8');
+assert.equal(manifest.version,'2.10.3');
+assert.equal(manifest.defaults.forwardOnlyScroll,true);
+assert.match(html,/data-forward-only-scroll="\{\{forwardOnlyScroll\}\}"/);
+assert.match(js,/config\.forwardOnlyScroll && direction < 0/);
+assert.match(js,/function releaseAtMarkedBanner/);
+assert.match(js,/bool\(point\.releaseScroll\)/);
+assert.match(js,/jumpToTimePaused\(number\(point\.startTime, config\.start\), \{ intent:"chapter-marker" \}\)/);
+assert.match(app,/Este banner libera o scroll/);
+console.log('Parallax 2.10 release + forward-only behavior OK');

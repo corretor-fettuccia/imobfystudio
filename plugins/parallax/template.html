@@ -1,0 +1,109 @@
+<div class="svp-root"
+  data-video-src="{{videoSrc}}"
+  data-poster="{{poster}}"
+  data-start-time="{{startTime}}"
+  data-end-time="{{endTime}}"
+  data-video-duration="{{videoDuration}}"
+  data-end-time-auto="{{endTimeAuto}}"
+  data-scroll-height="{{scrollHeight}}"
+  data-smoothing="{{smoothing}}"
+  data-time-epsilon="{{timeEpsilon}}"
+  data-interaction-mode="{{interactionMode}}"
+  data-forward-only-scroll="{{forwardOnlyScroll}}"
+  data-experience-profile="{{experienceProfile}}"
+  data-preload-mode="{{preloadMode}}"
+  data-restart-on-return-start="{{restartOnReturnStart}}"
+  data-restart-on-return-delay-ms="{{restartOnReturnDelayMs}}"
+  data-auto-start="{{autoStart}}"
+  data-auto-start-delay="{{autoStartDelay}}"
+  data-cinematic-duration-ms="{{cinematicDurationMs}}"
+  data-cinematic-accel-ms="{{cinematicAccelMs}}"
+  data-cinematic-decel-ms="{{cinematicDecelMs}}"
+  data-cinematic-accel-curve="{{cinematicAccelCurve}}"
+  data-cinematic-decel-curve="{{cinematicDecelCurve}}"
+  data-cinematic-speed="{{cinematicSpeed}}"
+  data-cinematic-max-rate="{{cinematicMaxRate}}"
+  data-cinematic-ramp="{{cinematicRamp}}"
+  data-wheel-threshold="{{wheelThreshold}}"
+  data-gesture-cooldown="{{gestureCooldown}}"
+  data-direction="{{scrollDirection}}"
+  data-reverse="{{reverse}}"
+  data-preload="{{preload}}"
+  data-fit="{{fit}}"
+  data-position-x="{{positionX}}"
+  data-position-y="{{positionY}}"
+  data-scale-desktop="{{scaleDesktop}}"
+  data-mobile-position-x="{{mobilePositionX}}"
+  data-mobile-position-y="{{mobilePositionY}}"
+  data-scale-mobile="{{scaleMobile}}"
+  data-disable-mobile="{{disableOnMobile}}"
+  data-mobile-breakpoint="{{mobileBreakpoint}}"
+  data-mobile-auto-adapt="{{mobileAutoAdapt}}"
+  data-mobile-typography-scale="{{mobileTypographyScale}}"
+  data-banner-font-family="{{bannerFontFamily}}"
+  data-banner-eyebrow-size="{{bannerEyebrowSize}}"
+  data-banner-title-size="{{bannerTitleSize}}"
+  data-banner-subtitle-size="{{bannerSubtitleSize}}"
+  data-banner-text-size="{{bannerTextSize}}"
+  data-banner-button-size="{{bannerButtonSize}}"
+  data-banner-title-weight="{{bannerTitleWeight}}"
+  data-banner-text-weight="{{bannerTextWeight}}"
+  data-banner-title-line-height="{{bannerTitleLineHeight}}"
+  data-banner-text-line-height="{{bannerTextLineHeight}}"
+  data-overlay-color="{{overlayColor}}"
+  data-overlay-opacity="{{overlayOpacity}}"
+  data-pause-points="{{pausePoints}}"
+  data-hero-points="{{heroPoints}}"
+  data-show-progress="{{showProgress}}"
+  data-show-scroll-hint="{{showScrollHint}}"
+  data-show-skip="{{showSkip}}"
+  data-show-restart="{{showRestart}}"
+  data-show-sound="{{showSound}}"
+  data-audio-muted="{{audioMuted}}"
+  data-background-audio="{{backgroundAudio}}"
+  data-background-loop="{{backgroundLoop}}"
+  data-background-volume="{{backgroundVolume}}"
+  data-audio-fade-out-duration="{{audioFadeOutDuration}}"
+  data-narration-volume="{{narrationVolume}}"
+  data-audio-ducking="{{audioDucking}}"
+  data-ducking-volume="{{duckingVolume}}"
+  data-video-audio="{{videoAudio}}"
+  data-show-chapters="{{showChapters}}"
+  data-debug-time="{{debugTime}}"
+  data-timeline-fps="{{timelineFps}}"
+  data-timeline-snap="{{timelineSnap}}">
+
+  <div class="svp-sticky">
+    <div class="svp-media" aria-hidden="true">
+      <img class="svp-poster" src="{{poster}}" alt="">
+      <video class="svp-video" muted playsinline webkit-playsinline disablepictureinpicture></video>
+      <div class="svp-overlay"></div>
+    </div>
+
+    <div class="svp-loading" role="status" aria-live="polite">
+      <div class="svp-loading-ring"></div>
+      <span class="svp-loading-label">Preparando experiência</span>
+      <strong class="svp-loading-percent">0%</strong>
+    </div>
+
+    <div class="svp-error" role="status" aria-live="polite" hidden>
+      O vídeo não pôde ser carregado. O conteúdo continua disponível.
+    </div>
+
+    <div class="svp-content-layer" aria-live="polite"></div>
+    <nav class="svp-chapters" aria-label="Capítulos da experiência"></nav>
+
+    <div class="svp-toolbar svp-toolbar-primary" aria-label="Controles da experiência">
+      <button class="svp-control svp-skip" type="button" aria-label="Pular introdução">Pular intro</button>
+      <button class="svp-control svp-restart" type="button" aria-label="Reiniciar experiência">Reiniciar</button>
+    </div>
+
+    <div class="svp-toolbar svp-toolbar-secondary">
+      <button class="svp-control svp-sound" type="button" aria-label="Ativar ou desativar som">Som</button>
+    </div>
+
+    <div class="svp-scroll-hint" aria-hidden="true"><span class="svp-scroll-hint-icon"></span><span class="svp-scroll-hint-label">Rolar para explorar</span></div>
+    <output class="svp-debug-time" aria-label="Segundo atual do vídeo"></output>
+    <div class="svp-progress" aria-hidden="true"><span></span></div>
+  </div>
+</div>

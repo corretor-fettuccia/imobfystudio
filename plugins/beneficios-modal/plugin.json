@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 3,
+  "id": "beneficios-modal",
+  "name": "Benefícios + Modal",
+  "version": "1.1.1",
+  "type": "section",
+  "category": "Conteúdo",
+  "icon": "✦",
+  "description": "Grade responsiva de benefícios e infraestrutura com perfis independentes de vitrine e modal, ajuste manual prioritário, contraste automático pelo fundo efetivo, ícones Font Awesome, modal semântico e acessível e texto indexável.",
+  "composition": {
+    "role": "both"
+  },
+  "instanceIdField": "benefitsId",
+  "instanceIdPrefix": "beneficios",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "benefitsId": "beneficios",
+    "showHeading": true,
+    "eyebrow": "INFRAESTRUTURA",
+    "title": "Benefícios que fazem diferença no dia a dia",
+    "headingAlign": "center",
+    "items": "[{\"id\":\"item-1\",\"icon\":\"fa-solid fa-water-ladder\",\"title\":\"Piscina descoberta\",\"description\":\"Piscina descoberta integrada à área de lazer, pensada para convivência, descanso e uso nos dias de maior temperatura.\"},{\"id\":\"item-2\",\"icon\":\"fa-solid fa-hot-tub-person\",\"title\":\"Spa\",\"description\":\"Espaço de spa destinado a relaxamento e bem-estar, complementando a estrutura de lazer do empreendimento.\"},{\"id\":\"item-3\",\"icon\":\"fa-solid fa-dumbbell\",\"title\":\"Academia\",\"description\":\"Ambiente preparado para atividades físicas, permitindo manter a rotina de treino sem sair do condomínio.\"},{\"id\":\"item-4\",\"icon\":\"fa-solid fa-wine-bottle\",\"title\":\"Adega\",\"description\":\"Ambiente dedicado à guarda e apreciação de vinhos, agregando conveniência e sofisticação às áreas comuns.\"},{\"id\":\"item-5\",\"icon\":\"fa-solid fa-tree\",\"title\":\"Áreas verdes\",\"description\":\"Paisagismo e áreas verdes integradas ao projeto para ampliar conforto visual, convivência e contato com a natureza.\"}]",
+    "showcaseProfile": "signature",
+    "desktopColumns": 5,
+    "mobileColumns": 3,
+    "gridGap": 20,
+    "itemMinHeight": 126,
+    "titleSize": 15,
+    "titleColor": "#1d2730",
+    "iconSize": 28,
+    "iconBoxSize": 68,
+    "iconColor": "#ffffff",
+    "iconSurfaceColor": "#18232d",
+    "iconBorderColor": "#6f8f62",
+    "iconBorderWidth": 1,
+    "iconRadius": 22,
+    "iconDepth": "premium",
+    "iconShadowStrength": 42,
+    "hoverMotion": "lift",
+    "modalProfile": "obsidian",
+    "modalContrastMode": "auto",
+    "modalBackground": "#0f171d",
+    "modalTitleColor": "#ffffff",
+    "modalTextColor": "#d9e0e4",
+    "modalIconColor": "#ffffff",
+    "modalIconSurfaceColor": "#18232d",
+    "modalAccentColor": "#83a873",
+    "modalBorderColor": "#83a873",
+    "modalBorderWidth": 1,
+    "modalRadius": 24,
+    "modalWidth": 760,
+    "modalIconSize": 42,
+    "modalIconBoxSize": 94,
+    "modalFontFamily": "var(--body)",
+    "modalTitleSize": 30,
+    "modalTextSize": 17,
+    "modalTextAlignDesktop": "justify",
+    "modalTextAlignMobile": "justify",
+    "modalBackdropOpacity": 72,
+    "modalAnimation": "scale",
+    "modalAnimationDuration": 280,
+    "closeOnBackdrop": true
+  },
+  "fields": [
+    {
+      "key": "showHeading",
+      "label": "Exibir título da seção",
+      "type": "toggle",
+      "group": "Seção"
+    },
+    {
+      "key": "eyebrow",
+      "label": "Chamada superior",
+      "type": "text",
+      "group": "Seção"
+    },
+    {
+      "key": "title",
+      "label": "Título da seção",
+      "type": "text",
+      "group": "Seção"
+    },
+    {
+      "key": "headingAlign",
+      "label": "Alinhamento do título",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Seção"
+    },
+    {
+      "key": "showcaseProfile",
+      "label": "Perfil da vitrine",
+      "type": "select",
+      "options": [
+        {
+          "label": "Assinatura · grafite + verde",
+          "value": "signature"
+        },
+        {
+          "label": "Marfim · bronze quente",
+          "value": "ivory"
+        },
+        {
+          "label": "Mineral · ardósia + azul",
+          "value": "mineral"
+        },
+        {
+          "label": "Floresta · verde profundo",
+          "value": "forest"
+        },
+        {
+          "label": "Monocromático · preto + branco",
+          "value": "monochrome"
+        },
+        {
+          "label": "Personalizado · usar cores abaixo",
+          "value": "custom"
+        }
+      ],
+      "group": "Vitrine · Perfil",
+      "note": "Define a paleta-base da vitrine. Se você alterar uma cor abaixo, a cor escolhida passa a ter prioridade naquele atributo."
+    },
+    {
+      "key": "desktopColumns",
+      "label": "Ícones por linha · desktop",
+      "type": "range",
+      "min": 3,
+      "max": 8,
+      "step": 1,
+      "group": "Grade"
+    },
+    {
+      "key": "mobileColumns",
+      "label": "Ícones por linha · mobile",
+      "type": "range",
+      "min": 2,
+      "max": 4,
+      "step": 1,
+      "group": "Grade"
+    },
+    {
+      "key": "gridGap",
+      "label": "Espaçamento entre itens",
+      "type": "range",
+      "min": 8,
+      "max": 44,
+      "step": 2,
+      "group": "Grade"
+    },
+    {
+      "key": "itemMinHeight",
+      "label": "Altura mínima do item",
+      "type": "range",
+      "min": 96,
+      "max": 190,
+      "step": 2,
+      "group": "Grade"
+    },
+    {
+      "key": "titleSize",
+      "label": "Tamanho do título do item",
+      "type": "range",
+      "min": 10,
+      "max": 24,
+      "step": 1,
+      "group": "Grade"
+    },
+    {
+      "key": "titleColor",
+      "label": "Cor do título do item",
+      "type": "color",
+      "group": "Grade"
+    },
+    {
+      "key": "hoverMotion",
+      "label": "Movimento no hover",
+      "type": "select",
+      "options": [
+        {
+          "label": "Elevar suavemente",
+          "value": "lift"
+        },
+        {
+          "label": "Aproximar",
+          "value": "zoom"
+        },
+        {
+          "label": "Sem movimento",
+          "value": "none"
+        }
+      ],
+      "group": "Grade"
+    },
+    {
+      "key": "iconSize",
+      "label": "Tamanho do ícone",
+      "type": "range",
+      "min": 18,
+      "max": 54,
+      "step": 1,
+      "group": "Ícones"
+    },
+    {
+      "key": "iconBoxSize",
+      "label": "Tamanho da base do ícone",
+      "type": "range",
+      "min": 48,
+      "max": 112,
+      "step": 2,
+      "group": "Ícones"
+    },
+    {
+      "key": "iconColor",
+      "label": "Cor do ícone",
+      "type": "color",
+      "group": "Ícones"
+    },
+    {
+      "key": "iconSurfaceColor",
+      "label": "Cor da base",
+      "type": "color",
+      "group": "Ícones"
+    },
+    {
+      "key": "iconBorderColor",
+      "label": "Cor da borda",
+      "type": "color",
+      "group": "Ícones"
+    },
+    {
+      "key": "iconBorderWidth",
+      "label": "Espessura da borda",
+      "type": "range",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "group": "Ícones"
+    },
+    {
+      "key": "iconRadius",
+      "label": "Arredondamento",
+      "type": "range",
+      "min": 0,
+      "max": 56,
+      "step": 2,
+      "group": "Ícones"
+    },
+    {
+      "key": "iconDepth",
+      "label": "Profundidade visual",
+      "type": "select",
+      "options": [
+        {
+          "label": "Premium · profundidade + brilho",
+          "value": "premium"
+        },
+        {
+          "label": "Glass",
+          "value": "glass"
+        },
+        {
+          "label": "Soft shadow",
+          "value": "soft"
+        },
+        {
+          "label": "Outline",
+          "value": "outline"
+        },
+        {
+          "label": "Plano",
+          "value": "flat"
+        }
+      ],
+      "group": "Ícones"
+    },
+    {
+      "key": "iconShadowStrength",
+      "label": "Força da profundidade",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "group": "Ícones"
+    },
+    {
+      "key": "modalProfile",
+      "label": "Perfil do modal",
+      "type": "select",
+      "options": [
+        {
+          "label": "Obsidian · grafite + champagne",
+          "value": "obsidian"
+        },
+        {
+          "label": "Ivory · marfim + bronze",
+          "value": "ivory"
+        },
+        {
+          "label": "Forest · verde profundo + sálvia",
+          "value": "forest"
+        },
+        {
+          "label": "Midnight · azul noturno + mineral",
+          "value": "midnight"
+        },
+        {
+          "label": "Mineral · carvão + areia",
+          "value": "mineral"
+        },
+        {
+          "label": "Personalizado · usar cores abaixo",
+          "value": "custom"
+        }
+      ],
+      "group": "Modal · Perfil",
+      "note": "Define a paleta-base do modal. Cores alteradas manualmente abaixo passam a sobrescrever o perfil naquele atributo."
+    },
+    {
+      "key": "modalContrastMode",
+      "label": "Contraste do texto",
+      "type": "select",
+      "options": [
+        {
+          "label": "Automático · inverte conforme o fundo",
+          "value": "auto"
+        },
+        {
+          "label": "Manual · respeitar cores escolhidas",
+          "value": "manual"
+        }
+      ],
+      "group": "Modal · Perfil",
+      "note": "No automático, título, descrição, fechar e ícone são recalculados a partir da cor efetiva do fundo, inclusive quando ela é personalizada."
+    },
+    {
+      "key": "modalBackground",
+      "label": "Fundo do modal",
+      "type": "color",
+      "group": "Modal · Aparência",
+      "note": "Ao alterar esta cor, ela passa a ter prioridade sobre o fundo do perfil; no contraste automático, a tipografia é recalculada junto."
+    },
+    {
+      "key": "modalTitleColor",
+      "label": "Cor do título",
+      "type": "color",
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalTextColor",
+      "label": "Cor do texto",
+      "type": "color",
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalAccentColor",
+      "label": "Cor de destaque",
+      "type": "color",
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalBorderColor",
+      "label": "Cor da borda",
+      "type": "color",
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalBorderWidth",
+      "label": "Espessura da borda",
+      "type": "range",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalRadius",
+      "label": "Arredondamento",
+      "type": "range",
+      "min": 0,
+      "max": 48,
+      "step": 2,
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalWidth",
+      "label": "Largura máxima",
+      "type": "range",
+      "min": 420,
+      "max": 1080,
+      "step": 20,
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalBackdropOpacity",
+      "label": "Escurecimento do fundo",
+      "type": "range",
+      "min": 20,
+      "max": 92,
+      "step": 2,
+      "group": "Modal · Aparência"
+    },
+    {
+      "key": "modalIconSize",
+      "label": "Tamanho do ícone no modal",
+      "type": "range",
+      "min": 26,
+      "max": 74,
+      "step": 2,
+      "group": "Modal · Ícone"
+    },
+    {
+      "key": "modalIconBoxSize",
+      "label": "Base do ícone no modal",
+      "type": "range",
+      "min": 64,
+      "max": 150,
+      "step": 2,
+      "group": "Modal · Ícone"
+    },
+    {
+      "key": "modalIconColor",
+      "label": "Cor do ícone no modal",
+      "type": "color",
+      "group": "Modal · Ícone"
+    },
+    {
+      "key": "modalIconSurfaceColor",
+      "label": "Fundo do ícone no modal",
+      "type": "color",
+      "group": "Modal · Ícone"
+    },
+    {
+      "key": "modalFontFamily",
+      "label": "Fonte do modal",
+      "type": "text",
+      "group": "Modal · Tipografia",
+      "note": "Use var(--body), var(--heading), inherit ou uma família instalada no projeto."
+    },
+    {
+      "key": "modalTitleSize",
+      "label": "Tamanho do título",
+      "type": "range",
+      "min": 20,
+      "max": 52,
+      "step": 1,
+      "group": "Modal · Tipografia"
+    },
+    {
+      "key": "modalTextSize",
+      "label": "Tamanho do texto",
+      "type": "range",
+      "min": 13,
+      "max": 26,
+      "step": 1,
+      "group": "Modal · Tipografia"
+    },
+    {
+      "key": "modalTextAlignDesktop",
+      "label": "Alinhamento do texto · desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "Justificado",
+          "value": "justify"
+        },
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Modal · Tipografia"
+    },
+    {
+      "key": "modalTextAlignMobile",
+      "label": "Alinhamento do texto · mobile",
+      "type": "select",
+      "options": [
+        {
+          "label": "Justificado",
+          "value": "justify"
+        },
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Modal · Tipografia"
+    },
+    {
+      "key": "modalAnimation",
+      "label": "Animação de abertura",
+      "type": "select",
+      "options": [
+        {
+          "label": "Escala suave",
+          "value": "scale"
+        },
+        {
+          "label": "Subir",
+          "value": "slide-up"
+        },
+        {
+          "label": "Descer",
+          "value": "slide-down"
+        },
+        {
+          "label": "Fade",
+          "value": "fade"
+        },
+        {
+          "label": "Sem animação",
+          "value": "none"
+        }
+      ],
+      "group": "Modal · Comportamento"
+    },
+    {
+      "key": "modalAnimationDuration",
+      "label": "Duração da animação",
+      "type": "range",
+      "min": 100,
+      "max": 900,
+      "step": 20,
+      "group": "Modal · Comportamento"
+    },
+    {
+      "key": "closeOnBackdrop",
+      "label": "Fechar ao clicar fora",
+      "type": "toggle",
+      "group": "Modal · Comportamento"
+    }
+  ]
+}

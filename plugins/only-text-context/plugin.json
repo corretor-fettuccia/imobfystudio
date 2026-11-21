@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 3,
+  "id": "only-text-context",
+  "name": "Only TEXT — Context",
+  "version": "1.2.1",
+  "type": "section",
+  "category": "Conteúdo",
+  "icon": "¶",
+  "description": "Bloco editorial somente de texto com tipografia completa, justificação sem hífen, ajuste óptico de linha e efeitos cinematográficos.",
+  "composition": {
+    "role": "both"
+  },
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "title": "O fato principal, apresentado com clareza e impacto.",
+    "subtitle": "A linha fina amplia o título com um detalhe essencial para situar o leitor.",
+    "lead": "O lide resume o que aconteceu, quem está envolvido, quando e onde ocorreu, além de explicar como e por quê.",
+    "body": "Desenvolva o assunto com dados verificáveis, contexto e informações que ajudem o leitor a compreender o tema.\n\nAcrescente falas de fontes ou entrevistas, atribuindo cada declaração com clareza e preservando o ritmo da leitura.",
+    "useProjectProfile": true,
+    "headingTypeface": "project",
+    "bodyTypeface": "project",
+    "textAlign": "left",
+    "maxWidth": 980,
+    "paddingX": 28,
+    "paddingY": 72,
+    "elementGap": 18,
+    "titleSize": 64,
+    "titleWeight": 800,
+    "titleLineHeight": 1.04,
+    "titleTracking": -0.03,
+    "subtitleSize": 24,
+    "subtitleWeight": 500,
+    "leadSize": 21,
+    "leadWeight": 600,
+    "bodySize": 18,
+    "bodyWeight": 400,
+    "bodyLineHeight": 1.75,
+    "bodyColumns": "1",
+    "columnGap": 36,
+    "dropCap": false,
+    "titleEffect": "none",
+    "accentStyle": "line",
+    "surfaceEffect": "none",
+    "backgroundEnabled": false,
+    "backgroundColor": "#ffffff",
+    "titleColor": "#15171a",
+    "subtitleColor": "#5a6168",
+    "leadColor": "#30363c",
+    "bodyColor": "#3c4248",
+    "accentColor": "#6b55ff",
+    "borderRadius": 0,
+    "blockAlign": "center",
+    "subtitleLineHeight": 1.38,
+    "subtitleTracking": 0,
+    "leadLineHeight": 1.55,
+    "leadTracking": 0,
+    "bodyTracking": 0,
+    "motionPreset": "cinema-soft",
+    "lineFit": "balanced"
+  },
+  "fields": [
+    {
+      "key": "title",
+      "label": "Título — fato principal",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "note": "Resume o fato principal e atrai a atenção do leitor."
+    },
+    {
+      "key": "subtitle",
+      "label": "Subtítulo / linha fina",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "note": "Expande o título com um detalhe ou contexto adicional."
+    },
+    {
+      "key": "lead",
+      "label": "Lead / lide",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "note": "Apresente o quê, quem, quando, onde, como e por quê."
+    },
+    {
+      "key": "body",
+      "label": "Corpo do texto",
+      "type": "textarea",
+      "group": "Conteúdo",
+      "note": "Desenvolva dados, contexto e falas de fontes ou entrevistas."
+    },
+    {
+      "key": "useProjectProfile",
+      "label": "Seguir tipografia e cores do projeto",
+      "type": "toggle",
+      "group": "Perfil visual"
+    },
+    {
+      "key": "headingTypeface",
+      "label": "Família do título",
+      "type": "select",
+      "options": [
+        {
+          "label": "Perfil do projeto",
+          "value": "project"
+        },
+        {
+          "label": "Sans-serif editorial",
+          "value": "sans"
+        },
+        {
+          "label": "Serif editorial",
+          "value": "serif"
+        },
+        {
+          "label": "Monoespaçada",
+          "value": "mono"
+        }
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyTypeface",
+      "label": "Família do texto",
+      "type": "select",
+      "options": [
+        {
+          "label": "Perfil do projeto",
+          "value": "project"
+        },
+        {
+          "label": "Sans-serif editorial",
+          "value": "sans"
+        },
+        {
+          "label": "Serif editorial",
+          "value": "serif"
+        },
+        {
+          "label": "Monoespaçada",
+          "value": "mono"
+        }
+      ],
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleSize",
+      "label": "Tamanho do título (px)",
+      "type": "range",
+      "min": 28,
+      "max": 120,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleWeight",
+      "label": "Peso do título",
+      "type": "range",
+      "min": 300,
+      "max": 900,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleLineHeight",
+      "label": "Entrelinha do título",
+      "type": "range",
+      "min": 0.9,
+      "max": 1.5,
+      "step": 0.02,
+      "group": "Tipografia"
+    },
+    {
+      "key": "titleTracking",
+      "label": "Espaçamento do título (em)",
+      "type": "range",
+      "min": -0.08,
+      "max": 0.15,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleSize",
+      "label": "Tamanho do subtítulo (px)",
+      "type": "range",
+      "min": 14,
+      "max": 44,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleWeight",
+      "label": "Peso do subtítulo",
+      "type": "range",
+      "min": 300,
+      "max": 800,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleLineHeight",
+      "label": "Entrelinha do subtítulo",
+      "type": "range",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "subtitleTracking",
+      "label": "Tracking do subtítulo (em)",
+      "type": "range",
+      "min": -0.05,
+      "max": 0.18,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadSize",
+      "label": "Tamanho do lide (px)",
+      "type": "range",
+      "min": 15,
+      "max": 34,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadWeight",
+      "label": "Peso do lide",
+      "type": "range",
+      "min": 300,
+      "max": 800,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadLineHeight",
+      "label": "Entrelinha do lide",
+      "type": "range",
+      "min": 1.0,
+      "max": 2.0,
+      "step": 0.01,
+      "group": "Tipografia"
+    },
+    {
+      "key": "leadTracking",
+      "label": "Tracking do lide (em)",
+      "type": "range",
+      "min": -0.05,
+      "max": 0.18,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodySize",
+      "label": "Tamanho do corpo (px)",
+      "type": "range",
+      "min": 13,
+      "max": 26,
+      "step": 1,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyWeight",
+      "label": "Peso do corpo",
+      "type": "range",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyLineHeight",
+      "label": "Entrelinha do corpo",
+      "type": "range",
+      "min": 1.25,
+      "max": 2.2,
+      "step": 0.05,
+      "group": "Tipografia"
+    },
+    {
+      "key": "bodyTracking",
+      "label": "Tracking do corpo (em)",
+      "type": "range",
+      "min": -0.04,
+      "max": 0.12,
+      "step": 0.005,
+      "group": "Tipografia"
+    },
+    {
+      "key": "textAlign",
+      "label": "Alinhamento do texto",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        },
+        {
+          "label": "Justificado",
+          "value": "justify"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "lineFit",
+      "label": "Quebra e ajuste de linha",
+      "type": "select",
+      "options": [
+        {
+          "label": "Normal",
+          "value": "normal"
+        },
+        {
+          "label": "Editorial · sem hífen",
+          "value": "editorial"
+        },
+        {
+          "label": "Balanceado · recomendado",
+          "value": "balanced"
+        }
+      ],
+      "group": "Tipografia",
+      "note": "Equilibra as linhas sem justificar os espaços entre palavras. Preserva palavras inteiras e evita hifenização automática."
+    },
+    {
+      "key": "blockAlign",
+      "label": "Alinhamento do bloco",
+      "type": "select",
+      "options": [
+        {
+          "label": "Esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Centro",
+          "value": "center"
+        },
+        {
+          "label": "Direita",
+          "value": "right"
+        }
+      ],
+      "group": "Composição",
+      "note": "Posiciona o bloco dentro da largura disponível sem alterar o alinhamento do texto."
+    },
+    {
+      "key": "bodyColumns",
+      "label": "Colunas do corpo no desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "1 coluna",
+          "value": "1"
+        },
+        {
+          "label": "2 colunas",
+          "value": "2"
+        },
+        {
+          "label": "3 colunas",
+          "value": "3"
+        }
+      ],
+      "group": "Composição"
+    },
+    {
+      "key": "columnGap",
+      "label": "Espaço entre colunas (px)",
+      "type": "range",
+      "min": 16,
+      "max": 80,
+      "step": 2,
+      "group": "Composição"
+    },
+    {
+      "key": "maxWidth",
+      "label": "Largura máxima (px)",
+      "type": "range",
+      "min": 360,
+      "max": 1500,
+      "step": 20,
+      "group": "Composição"
+    },
+    {
+      "key": "paddingX",
+      "label": "Respiro lateral (px · precisão 0,25)",
+      "type": "range",
+      "min": 0,
+      "max": 96,
+      "step": 0.25,
+      "group": "Composição"
+    },
+    {
+      "key": "paddingY",
+      "label": "Respiro vertical (px · precisão 0,25)",
+      "type": "range",
+      "min": 0,
+      "max": 160,
+      "step": 0.25,
+      "group": "Composição"
+    },
+    {
+      "key": "elementGap",
+      "label": "Espaço entre elementos (px)",
+      "type": "range",
+      "min": 4,
+      "max": 64,
+      "step": 0.25,
+      "group": "Composição"
+    },
+    {
+      "key": "dropCap",
+      "label": "Capitular no corpo",
+      "type": "toggle",
+      "group": "Composição"
+    },
+    {
+      "key": "motionPreset",
+      "label": "Entrada cinematográfica",
+      "type": "select",
+      "options": [
+        {
+          "label": "Sem animação",
+          "value": "none"
+        },
+        {
+          "label": "Cinema suave",
+          "value": "cinema-soft"
+        },
+        {
+          "label": "Foco / blur",
+          "value": "blur-focus"
+        },
+        {
+          "label": "Subida elegante",
+          "value": "rise-soft"
+        },
+        {
+          "label": "Reveal por máscara",
+          "value": "mask-reveal"
+        },
+        {
+          "label": "Profundidade editorial",
+          "value": "editorial-depth"
+        }
+      ],
+      "group": "Efeitos",
+      "note": "Preset otimizado de movimento. Evita excesso de controles técnicos e mantém a animação polida."
+    },
+    {
+      "key": "titleEffect",
+      "label": "Efeito do título",
+      "type": "select",
+      "options": [
+        {
+          "label": "Sem efeito",
+          "value": "none"
+        },
+        {
+          "label": "Sombra suave",
+          "value": "soft-shadow"
+        },
+        {
+          "label": "Sombra de impacto",
+          "value": "strong-shadow"
+        },
+        {
+          "label": "Contorno",
+          "value": "outline"
+        },
+        {
+          "label": "Halo / glow",
+          "value": "glow"
+        },
+        {
+          "label": "Texto em gradiente",
+          "value": "gradient"
+        }
+      ],
+      "group": "Efeitos"
+    },
+    {
+      "key": "accentStyle",
+      "label": "Marcador editorial",
+      "type": "select",
+      "options": [
+        {
+          "label": "Sem marcador",
+          "value": "none"
+        },
+        {
+          "label": "Linha fina",
+          "value": "line"
+        },
+        {
+          "label": "Barra forte",
+          "value": "bar"
+        }
+      ],
+      "group": "Efeitos"
+    },
+    {
+      "key": "surfaceEffect",
+      "label": "Efeito da superfície",
+      "type": "select",
+      "options": [
+        {
+          "label": "Sem efeito",
+          "value": "none"
+        },
+        {
+          "label": "Sombra suave",
+          "value": "soft"
+        },
+        {
+          "label": "Cartão elevado",
+          "value": "raised"
+        },
+        {
+          "label": "Borda editorial",
+          "value": "border"
+        }
+      ],
+      "group": "Efeitos"
+    },
+    {
+      "key": "borderRadius",
+      "label": "Arredondamento (px)",
+      "type": "range",
+      "min": 0,
+      "max": 64,
+      "step": 2,
+      "group": "Efeitos"
+    },
+    {
+      "key": "backgroundEnabled",
+      "label": "Usar fundo no bloco",
+      "type": "toggle",
+      "group": "Cores locais"
+    },
+    {
+      "key": "backgroundColor",
+      "label": "Cor do fundo local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "titleColor",
+      "label": "Cor do título local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "subtitleColor",
+      "label": "Cor do subtítulo local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "leadColor",
+      "label": "Cor do lide local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "bodyColor",
+      "label": "Cor do corpo local",
+      "type": "color",
+      "group": "Cores locais"
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque local",
+      "type": "color",
+      "group": "Cores locais"
+    }
+  ]
+}

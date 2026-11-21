@@ -1,0 +1,104 @@
+'use strict';
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const vm=require('node:vm');
+const root=path.resolve(__dirname,'..');
+const JSZip=require(path.join(root,'vendor/jszip.min.js'));
+const window={JSZip,indexedDB:null,location:{href:'http://localhost:8765/'}};
+global.window=window;
+global.JSZip=JSZip;
+global.fetch=async url=>{
+  const source=String(url).split(/[?#]/)[0].replace(/^\.\//,'');
+  const resolved=path.resolve(root,source);
+  if(!resolved.startsWith(root+path.sep)||!fs.existsSync(resolved))return {ok:false,status:404};
+  const b=fs.readFileSync(resolved);
+  return {ok:true,status:200,headers:{get:()=>null},text:async()=>b.toString('utf8'),json:async()=>JSON.parse(b.toString('utf8')),arrayBuffer:async()=>b.buffer.slice(b.byteOffset,b.byteOffset+b.byteLength)};
+};
+const load=f=>vm.runInThisContext(fs.readFileSync(path.join(root,f),'utf8'),{filename:f});
+const ready=(async()=>{
+  ['assets/js/util.js','assets/js/catalog.js','assets/js/plugin-loader.js'].forEach(load);
+  await window.ImobifyPluginLoader.ready;
+  load('assets/js/renderer.js');load('assets/js/compiler.js');
+})();
+const make=(type='faq')=>{
+  const c=window.ImobifyCatalog,s=c.defaultState(),section=c.createSection(type);
+  assert.ok(section,type);
+  section.props.itemCount=section.props.itemCount===undefined?undefined:0;
+  s.sections=[section];return {s,section};
+};
+test('all visual plugins inherit the shared background model with no change by default',async()=>{
+  await ready;
+  const registry=JSON.parse(fs.readFileSync(path.join(root,'plugins/registry.json'),'utf8'));
+  const pluginIds=registry.packages.map(x=>JSON.parse(fs.readFileSync(path.join(root,x.manifest),'utf8'))).filter(x=>x.type==='section'&&x.output!=='document-tag').map(x=>x.id);
+  const ids=[...new Set([...pluginIds,...registry.corePlugins.filter(id=>window.ImobifyCatalog.plugins[id]?.kind==='section')])];
+  let tested=0;
+  for(const type of ids){
+    const {s,section}=make(type);
+    assert.equal(section.settings.background.enabled,false,type);
+    assert.ok(!window.ImobifyRenderer.sectionOverrides(s).includes('background-image:url('),type);
+    section.settings.background={enabled:true,type:'color',colorMode:'solid',color1:'#123456'};
+    const css=window.ImobifyRenderer.sectionOverrides(s);
+    assert.match(css,/background:#123456!important/,type);
+    assert.match(css,new RegExp(`data-section-id="${section.id}"`),type);
+    tested++;
+  }
+  assert.ok(tested>=40,`expected all visual sections, got ${tested}`);
+});
+test('all 5 modes output scoped CSS, mobile fallback and no active style bleed',async()=>{
+  await ready;
+  const {s,section}=make('smart-plant');
+  const styles=window.ImobifyRenderer.sectionOverrides;
+  assert.deepEqual(section.settings.background,window.ImobifyCatalog.sectionBackgroundDefaults());
+  section.settings.background={enabled:true,type:'color',colorMode:'gradient',color1:'#123456',color2:'#fedcba',angle:85};
+  assert.match(styles(s),/linear-gradient\(85deg,#123456,#fedcba\)/);
+  section.settings.background={enabled:true,type:'image',image:'assets/images/hero-placeholder.jpg',imageMode:'static'};
+  assert.match(styles(s),/background-size:cover!important;background-attachment:scroll!important/);
+  section.settings.background.imageMode='fixed';
+  assert.match(styles(s),/background-attachment:fixed!important/);
+  assert.match(styles(s),/@media\(max-width:767px\)/);
+  section.settings.background.imageMode='repeat';
+  assert.match(styles(s),/background-repeat:repeat!important;background-size:auto!important/);
+  assert.doesNotMatch(styles(s),/background-attachment:fixed!important/);
+  section.settings.background.image='javascript:alert(1)';
+  assert.doesNotMatch(styles(s),/javascript:/);
+  section.settings.background={enabled:false,type:'color',colorMode:'solid',color1:'#123456'};
+  assert.doesNotMatch(styles(s),/background:#123456!important/);
+});
+test('background image from local upload is physically packaged into export and project is preserved',async()=>{
+  await ready;
+  const {s,section}=make('only-text-context');
+  s.seo.canonical='https://www.example.org/imovel/';s.seo.title='Teste Fundo';s.seo.description='Teste exportação fundo de seção.';
+  const original='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQIHWP4z8DwHwAFgAI/ScLzvgAAAABJRU5ErkJggg==';
+  section.settings.background={enabled:true,type:'image',imageMode:'repeat',image:original};
+  const output=await window.ImobifyCompiler.compile(s);
+  assert.equal(section.settings.background.image,original,'saved project is not mutated');
+  assert.equal(output.outputState.version,'7.3.6');
+  const zip=await JSZip.loadAsync(await output.blob.arrayBuffer());
+  const media=output.outputState.sections[0].settings.background.image;
+  assert.match(media,/^assets\/images\/.*\.png$/);
+  assert.ok(zip.file(media),`image file ${media}`);
+  const css=await zip.file('assets/css/site.css').async('text');
+  const html=await zip.file('index.html').async('text');
+  assert.ok(css.includes(`url("${media}")`));
+  assert.ok(!css.includes('data:image/png;base64'));
+  assert.match(css,/background-repeat:repeat!important/);
+  assert.match(html,/data-section-id="only-text-context-/);
+  const publicData=JSON.parse(await zip.file('content/project.json').async('text'));
+  assert.equal(publicData.sections[0].settings.background.image,media);
+});
+test('local image path is included and missing local image refuses an incomplete export',async()=>{
+  await ready;
+  const {s,section}=make('faq');
+  s.seo.canonical='https://www.example.org/imovel/';s.seo.title='Teste imagem';s.seo.description='Validação de mídias locais.';
+  section.settings.background={enabled:true,type:'image',imageMode:'static',image:'assets/images/hero-placeholder.jpg'};
+  const result=await window.ImobifyCompiler.compile(s);
+  const zip=await JSZip.loadAsync(await result.blob.arrayBuffer());
+  const asset=result.outputState.sections[0].settings.background.image;
+  assert.ok(zip.file(asset));
+  assert.match(await zip.file('assets/css/site.css').async('text'),new RegExp(`background-image:url\\("${asset.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}"\\)`));
+  assert.equal(section.settings.background.image,'assets/images/hero-placeholder.jpg');
+  section.settings.background.image='assets/images/missing-background-736.jpg';
+  await assert.rejects(window.ImobifyCompiler.compile(s),/Imagem de fundo da seção faq não encontrada/);
+});

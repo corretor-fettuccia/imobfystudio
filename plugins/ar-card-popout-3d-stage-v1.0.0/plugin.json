@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 3,
+  "id": "ar-card-popout-3d-stage",
+  "name": "AR Card Popout 3D Stage",
+  "version": "1.0.0",
+  "type": "section",
+  "category": "Interação",
+  "icon": "▱",
+  "description": "Section ampla com um cartão 3D que pulsa; ao abrir, o cartão deita, a casa é projetada em 3D e a frase principal e três blocos de texto saem do cartão. Sem botão, escalável do celular ao desktop.",
+  "composition": {
+    "role": "both",
+    "cardinality": "single"
+  },
+  "origin": "Evolução do AR Card Popout 3D Single 1.2.0 (V9). Plugin independente: o original continua disponível.",
+  "entry": {
+    "template": "template.html",
+    "style": "plugin.css",
+    "script": "plugin.js"
+  },
+  "defaults": {
+    "cardImage": "assets/card-normal.png",
+    "cardImageAlt": "Terreno do empreendimento",
+    "kicker": "SEU TERRENO",
+    "title": "Toque e veja\no futuro",
+    "subtitle": "Projeção 3D do que vai ser construído aqui.",
+    "textColor": "#ffffff",
+    "cardAriaLabel": "Ver a projeção 3D da casa",
+    "useProjectTypography": true,
+    "projectionImage": "assets/popout.png",
+    "projectionImageAlt": "Projeção 3D da casa",
+    "projectionWidth": 122,
+    "projectionLift": 10,
+    "projectionDepth": 28,
+    "headline": "É assim que vai ficar sua nova casa",
+    "headlineUseProjectColor": true,
+    "headlineColor": "#111827",
+    "block1Label": "Planta inteligente",
+    "block1Text": "3 dormitórios com suíte e luz natural o dia todo.",
+    "block2Label": "Espaço para viver",
+    "block2Text": "Varanda integrada à sala e quintal para a família.",
+    "block3Label": "Pronto para morar",
+    "block3Text": "Acabamento completo, entregue com escritura.",
+    "blocksLayout": "orbit",
+    "blockStyle": "glass-light",
+    "blockConnectors": true,
+    "blockDepth": 60,
+    "accentMode": "project",
+    "accentColor": "#2c66ff",
+    "stageHeight": 88,
+    "cardFill": 66,
+    "mobileCardWidth": 76,
+    "cardRatio": "0.6667",
+    "radiusMode": "original",
+    "cardRadius": 22,
+    "perspective": 2.2,
+    "openTilt": 68,
+    "openDrop": 15,
+    "pointerTilt": true,
+    "floatProjection": true,
+    "openTrigger": "both",
+    "autoOpenDelay": 350,
+    "replayOnScroll": true,
+    "pulseMode": "waves",
+    "pulseStrength": "medium",
+    "showHint": true,
+    "hintText": "Toque no cartão",
+    "openByDefault": false,
+    "projectionShadows": true,
+    "projectionShadowColor": "#000000",
+    "projectionShadowOpacity": 28,
+    "castShadowOpacity": 90,
+    "contactShadowOpacity": 76
+  },
+  "fields": [
+    {
+      "key": "cardImage",
+      "label": "Imagem do card",
+      "type": "image",
+      "group": "Cartão"
+    },
+    {
+      "key": "cardImageAlt",
+      "label": "Texto alternativo do card",
+      "type": "text",
+      "group": "Cartão"
+    },
+    {
+      "key": "kicker",
+      "label": "Chamada superior (no card)",
+      "type": "text",
+      "group": "Cartão"
+    },
+    {
+      "key": "title",
+      "label": "Título (no card)",
+      "type": "textarea",
+      "group": "Cartão"
+    },
+    {
+      "key": "subtitle",
+      "label": "Subtítulo (no card)",
+      "type": "textarea",
+      "group": "Cartão"
+    },
+    {
+      "key": "textColor",
+      "label": "Cor do texto no card",
+      "type": "color",
+      "group": "Cartão"
+    },
+    {
+      "key": "cardAriaLabel",
+      "label": "Descrição acessível do card",
+      "type": "text",
+      "group": "Cartão"
+    },
+    {
+      "key": "useProjectTypography",
+      "label": "Usar fontes do Perfil Visual",
+      "type": "toggle",
+      "group": "Cartão"
+    },
+    {
+      "key": "projectionImage",
+      "label": "Imagem projetada (PNG sem fundo)",
+      "type": "image",
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionImageAlt",
+      "label": "Texto alternativo da projeção",
+      "type": "text",
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionWidth",
+      "label": "Largura da projeção (% do card)",
+      "type": "range",
+      "min": 70,
+      "max": 170,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionLift",
+      "label": "Altura da projeção (% do card)",
+      "type": "range",
+      "min": -10,
+      "max": 40,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "projectionDepth",
+      "label": "Profundidade da projeção (% do card)",
+      "type": "range",
+      "min": 5,
+      "max": 60,
+      "step": 1,
+      "group": "Projeção"
+    },
+    {
+      "key": "headline",
+      "label": "Frase principal",
+      "type": "textarea",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "headlineUseProjectColor",
+      "label": "Frase principal com cor do Perfil Visual",
+      "type": "toggle",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "headlineColor",
+      "label": "Cor da frase principal",
+      "type": "color",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "block1Label",
+      "label": "Bloco 1 · rótulo",
+      "type": "text",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "block1Text",
+      "label": "Bloco 1 · frase",
+      "type": "textarea",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "block2Label",
+      "label": "Bloco 2 · rótulo",
+      "type": "text",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "block2Text",
+      "label": "Bloco 2 · frase",
+      "type": "textarea",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "block3Label",
+      "label": "Bloco 3 · rótulo",
+      "type": "text",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "block3Text",
+      "label": "Bloco 3 · frase",
+      "type": "textarea",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "blocksLayout",
+      "label": "Posição dos blocos no desktop",
+      "type": "select",
+      "options": [
+        {
+          "label": "Órbita (esq · dir · esq)",
+          "value": "orbit"
+        },
+        {
+          "label": "Órbita invertida (dir · esq · dir)",
+          "value": "orbit-alt"
+        },
+        {
+          "label": "Todos à esquerda",
+          "value": "left"
+        },
+        {
+          "label": "Todos à direita",
+          "value": "right"
+        }
+      ],
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "blockStyle",
+      "label": "Estilo dos blocos",
+      "type": "select",
+      "options": [
+        {
+          "label": "Vidro claro",
+          "value": "glass-light"
+        },
+        {
+          "label": "Vidro escuro",
+          "value": "glass-dark"
+        },
+        {
+          "label": "Só texto com filete",
+          "value": "plain"
+        }
+      ],
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "blockConnectors",
+      "label": "Linha e ponto ligando o bloco à casa",
+      "type": "toggle",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "blockDepth",
+      "label": "Profundidade 3D dos blocos",
+      "type": "range",
+      "min": 0,
+      "max": 140,
+      "step": 5,
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "accentMode",
+      "label": "Cor de destaque",
+      "type": "select",
+      "options": [
+        {
+          "label": "Perfil Visual do projeto",
+          "value": "project"
+        },
+        {
+          "label": "Personalizada",
+          "value": "custom"
+        }
+      ],
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "accentColor",
+      "label": "Cor de destaque personalizada",
+      "type": "color",
+      "group": "Frases (saem do cartão)"
+    },
+    {
+      "key": "stageHeight",
+      "label": "Altura da section no desktop (% da tela)",
+      "type": "range",
+      "min": 60,
+      "max": 100,
+      "step": 1,
+      "group": "Palco e dimensões"
+    },
+    {
+      "key": "cardFill",
+      "label": "Tamanho do card no desktop (% da altura)",
+      "type": "range",
+      "min": 45,
+      "max": 80,
+      "step": 1,
+      "group": "Palco e dimensões"
+    },
+    {
+      "key": "mobileCardWidth",
+      "label": "Largura do card no celular (% da largura)",
+      "type": "range",
+      "min": 56,
+      "max": 92,
+      "step": 1,
+      "group": "Palco e dimensões"
+    },
+    {
+      "key": "cardRatio",
+      "label": "Proporção do card",
+      "type": "select",
+      "options": [
+        {
+          "label": "2:3 (retrato)",
+          "value": "0.6667"
+        },
+        {
+          "label": "3:4",
+          "value": "0.75"
+        },
+        {
+          "label": "4:5",
+          "value": "0.8"
+        },
+        {
+          "label": "9:16 (alto)",
+          "value": "0.5625"
+        }
+      ],
+      "group": "Palco e dimensões"
+    },
+    {
+      "key": "radiusMode",
+      "label": "Arredondamento",
+      "type": "select",
+      "options": [
+        {
+          "label": "Valor próprio",
+          "value": "original"
+        },
+        {
+          "label": "Perfil Visual do projeto",
+          "value": "project"
+        }
+      ],
+      "group": "Palco e dimensões"
+    },
+    {
+      "key": "cardRadius",
+      "label": "Arredondamento do card (px)",
+      "type": "range",
+      "min": 0,
+      "max": 48,
+      "step": 1,
+      "group": "Palco e dimensões"
+    },
+    {
+      "key": "perspective",
+      "label": "Perspectiva (× altura do card)",
+      "type": "range",
+      "min": 1.2,
+      "max": 4.5,
+      "step": 0.1,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "openTilt",
+      "label": "Inclinação do card ao abrir (°)",
+      "type": "range",
+      "min": 30,
+      "max": 82,
+      "step": 1,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "openDrop",
+      "label": "Descida do card ao abrir (% do card)",
+      "type": "range",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "pointerTilt",
+      "label": "Perspectiva acompanha o mouse (e deriva no celular)",
+      "type": "toggle",
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "floatProjection",
+      "label": "Projeção flutua quando aberta",
+      "type": "toggle",
+      "group": "Efeito 3D"
+    },
+    {
+      "key": "openTrigger",
+      "label": "Como abre",
+      "type": "select",
+      "options": [
+        {
+          "label": "Ao rolar e no toque",
+          "value": "both"
+        },
+        {
+          "label": "Somente no toque/clique",
+          "value": "click"
+        },
+        {
+          "label": "Somente ao rolar",
+          "value": "scroll"
+        }
+      ],
+      "group": "Comportamento"
+    },
+    {
+      "key": "autoOpenDelay",
+      "label": "Atraso da abertura ao rolar (ms)",
+      "type": "range",
+      "min": 0,
+      "max": 2000,
+      "step": 50,
+      "group": "Comportamento"
+    },
+    {
+      "key": "replayOnScroll",
+      "label": "Repetir ao voltar para a section",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "pulseMode",
+      "label": "Pulso do cartão fechado",
+      "type": "select",
+      "options": [
+        {
+          "label": "Batimento + ondas",
+          "value": "waves"
+        },
+        {
+          "label": "Só batimento",
+          "value": "beat"
+        },
+        {
+          "label": "Desligado",
+          "value": "off"
+        }
+      ],
+      "group": "Comportamento"
+    },
+    {
+      "key": "pulseStrength",
+      "label": "Intensidade do pulso",
+      "type": "select",
+      "options": [
+        {
+          "label": "Suave",
+          "value": "soft"
+        },
+        {
+          "label": "Média",
+          "value": "medium"
+        },
+        {
+          "label": "Forte",
+          "value": "strong"
+        }
+      ],
+      "group": "Comportamento"
+    },
+    {
+      "key": "showHint",
+      "label": "Exibir dica abaixo do card",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "hintText",
+      "label": "Texto da dica",
+      "type": "text",
+      "group": "Comportamento"
+    },
+    {
+      "key": "openByDefault",
+      "label": "Iniciar aberto (útil para editar as frases)",
+      "type": "toggle",
+      "group": "Comportamento"
+    },
+    {
+      "key": "projectionShadows",
+      "label": "Exibir sombras da projeção",
+      "type": "toggle",
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowColor",
+      "label": "Cor das sombras",
+      "type": "color",
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "projectionShadowOpacity",
+      "label": "Sombra do objeto (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "castShadowOpacity",
+      "label": "Sombra projetada (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sombras da projeção"
+    },
+    {
+      "key": "contactShadowOpacity",
+      "label": "Sombra de contato (%)",
+      "type": "range",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "group": "Sombras da projeção"
+    }
+  ]
+}

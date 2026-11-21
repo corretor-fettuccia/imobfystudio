@@ -1,0 +1,57 @@
+<div class="arst-root"
+     data-state="closed"
+     data-layout="{{blocksLayout}}"
+     data-block-style="{{blockStyle}}"
+     data-connectors="{{blockConnectors}}"
+     data-pulse="{{pulseMode}}"
+     data-pulse-strength="{{pulseStrength}}"
+     data-trigger="{{openTrigger}}"
+     data-auto-delay="{{autoOpenDelay}}"
+     data-replay="{{replayOnScroll}}"
+     data-pointer-tilt="{{pointerTilt}}"
+     data-float="{{floatProjection}}"
+     data-open-default="{{openByDefault}}"
+     data-project-fonts="{{useProjectTypography}}"
+     data-radius-mode="{{radiusMode}}"
+     data-accent-mode="{{accentMode}}"
+     data-headline-project="{{headlineUseProjectColor}}"
+     data-shadows="{{projectionShadows}}"
+     data-hint="{{showHint}}"
+     style="--arst-stage-vh:{{stageHeight}};--arst-card-fill:{{cardFill}};--arst-card-ratio:{{cardRatio}};--arst-mobile-card:{{mobileCardWidth}};--arst-radius:{{cardRadius}}px;--arst-persp:{{perspective}};--arst-open-rx:{{openTilt}}deg;--arst-open-drop:{{openDrop}};--arst-proj-w:{{projectionWidth}}%;--arst-proj-lift:{{projectionLift}};--arst-proj-depth:{{projectionDepth}};--arst-text:{{textColor}};--arst-accent-local:{{accentColor}};--arst-headline-local:{{headlineColor}};--arst-shadow-color:{{projectionShadowColor}};--arst-shadow-op:{{projectionShadowOpacity}}%;--arst-cast-op:{{castShadowOpacity}}%;--arst-contact-op:{{contactShadowOpacity}}%;--arst-block-depth:{{blockDepth}};">
+  <div class="arst-stage">
+    <div class="arst-scene-wrap">
+      <div class="arst-scene">
+        <div class="arst-card" role="button" tabindex="0" aria-expanded="false" aria-label="{{cardAriaLabel}}">
+          <span class="arst-ground" aria-hidden="true"></span>
+          <span class="arst-ring arst-ring-a" aria-hidden="true"></span>
+          <span class="arst-ring arst-ring-b" aria-hidden="true"></span>
+          <span class="arst-plane">
+            <img class="arst-card-image" src="{{cardImage}}" alt="{{cardImageAlt}}" draggable="false" decoding="async">
+            <span class="arst-copy">
+              <span class="arst-kicker arst-depth" data-text="{{kicker}}">{{kicker}}</span>
+              <span class="arst-title arst-depth" data-text="{{title}}">{{title}}</span>
+              <span class="arst-subtitle arst-depth" data-text="{{subtitle}}">{{subtitle}}</span>
+            </span>
+            <span class="arst-dark" aria-hidden="true"></span>
+            <span class="arst-specular" aria-hidden="true"></span>
+            <span class="arst-edge" aria-hidden="true"></span>
+          </span>
+          <span class="arst-cast" aria-hidden="true"></span>
+          <span class="arst-contact" aria-hidden="true"></span>
+          <span class="arst-proj">
+            <span class="arst-proj-motion"><span class="arst-proj-float"><span class="arst-aura" aria-hidden="true"></span><img class="arst-proj-image" src="{{projectionImage}}" alt="{{projectionImageAlt}}" draggable="false" decoding="async"></span></span>
+          </span>
+        </div>
+      </div>
+      <span class="arst-hint" aria-hidden="true"><span class="arst-hint-dot"></span>{{hintText}}</span>
+    </div>
+    <div class="arst-phrases">
+      {{#if headline}}<p class="arst-headline"><span class="arst-anim"><span class="arst-face">{{headline}}</span></span></p>{{/if}}
+      <div class="arst-blocks">
+        {{#if block1Text}}<div class="arst-block" data-index="1"><div class="arst-anim"><div class="arst-face"><span class="arst-block-label">{{block1Label}}</span><span class="arst-block-text">{{block1Text|br}}</span></div></div></div>{{/if}}
+        {{#if block2Text}}<div class="arst-block" data-index="2"><div class="arst-anim"><div class="arst-face"><span class="arst-block-label">{{block2Label}}</span><span class="arst-block-text">{{block2Text|br}}</span></div></div></div>{{/if}}
+        {{#if block3Text}}<div class="arst-block" data-index="3"><div class="arst-anim"><div class="arst-face"><span class="arst-block-label">{{block3Label}}</span><span class="arst-block-text">{{block3Text|br}}</span></div></div></div>{{/if}}
+      </div>
+    </div>
+  </div>
+</div>
