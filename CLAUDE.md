@@ -46,7 +46,7 @@ Esqueleto recorrente:
 5. `location`, planta/implantação (`smart-plant`, `implantacao-tiles-pro`), condições (`payment`, `offer-price-pro`, `payment-investment-glass-pro`).
 6. `faq` → `form-sender-v4` (âncora `contato`) → `anti-ia-copy-policy` → `footer`.
 7. Utilitários no fim da lista: `menu-fixo-adaptavel-pro`, `whatsapp-flutuante-pro`, `tag-installer-pro`.
-- Âncoras usadas: `galeria, localizacao, implantacao, condicoes, contato, conceito, logistica, estrutura`.
+- Âncoras usadas: `galeria, logistica, estrutura, conceito, prova, localizacao, implantacao, faq, condicoes, contato`.
 - Variantes mobile/desktop são feitas com `hideMobile` / `hideDesktop` em seções duplicadas (ex.: `gallery-big-four` só no desktop + `section-layout-pro` só no mobile).
 - Transições de seção preferidas: `liquid-blur`; também zoom, soft-focus, ripple-reveal, mask-reveal, slide-right.
 
